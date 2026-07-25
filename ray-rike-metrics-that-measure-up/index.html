@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>EpisodeLoop — Free Content Pack for Metrics that Measure Up</title>
-<meta name="description" content="A full content pack made by EpisodeLoop from the Metrics that Measure Up episode with Ray Rike and guest Brad van Leeuwen (Cledara)." />
+<title>EpisodeLoop — Listener-Growth Pack for Metrics that Measure Up</title>
+<meta name="description" content="A listener-growth pack made by EpisodeLoop from the Metrics that Measure Up episode with Ray Rike and guest Brad van Leeuwen (Cledara) — discoverability, guest amplification, and ready-to-publish content." />
 <meta name="robots" content="noindex" />
 <style>
   :root{
@@ -34,6 +34,8 @@
   .toc a:hover{color:var(--accent)}
   section{padding:30px 0;border-top:1px solid var(--line)}
   .kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  .herohead{border-top:none}
+  .herohead h2{font-size:27px}
   h2{font-size:25px;letter-spacing:-.01em;margin-bottom:8px}
   .h2sub{color:var(--muted);font-size:15px;margin-bottom:18px}
   h3{font-size:17px;margin:20px 0 6px}
@@ -44,26 +46,25 @@
   ul.clean li{padding:4px 0 4px 22px;position:relative}
   ul.clean li:before{content:"→";position:absolute;left:0;color:var(--accent)}
   .ts{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600;margin-right:8px}
+  .titleopt{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+  .titleopt .t{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:6px}
+  .titleopt .r{font-size:14px;color:var(--muted)}
+  .titleopt .r b{color:var(--accent)}
+  .current{background:rgba(210,153,34,.08);border:1px solid rgba(210,153,34,.25);border-radius:10px;padding:12px 16px;margin-bottom:14px;font-size:14px;color:var(--muted)}
+  .current b{color:var(--amber)}
   .post{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;white-space:pre-line;font-size:15px}
   .post .tag{display:block;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
   .post .fmt{color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0}
-  .hashtags{color:var(--accent);font-size:14px}
+  .listen{color:var(--ok);font-weight:600}
   blockquote{border-left:3px solid var(--accent2);padding-left:16px;color:var(--ink);margin:8px 0}
   .article p{color:#c9d3de}
   .article h3{color:var(--ink)}
   .metabar{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:14px;border-bottom:1px dashed var(--line);padding-bottom:12px}
   .metabar b{color:var(--ink)}
-  .script{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
-  .script .hook{background:var(--panel2);border-radius:8px;padding:10px 14px;margin:8px 0;font-weight:600}
-  .script .beat{display:flex;gap:12px;margin:7px 0;font-size:15px}
-  .script .beat .t{flex:none;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums;width:52px}
   .quote{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:12px;font-size:18px;font-weight:600;line-height:1.4;position:relative}
   .quote .src{display:block;margin-top:10px;font-size:13px;font-weight:500;color:var(--muted)}
-  .caltable{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
-  .caltable th,.caltable td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
-  .caltable th{background:var(--panel2);color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
-  .caltable td b{color:var(--accent)}
-  .wk{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);margin:16px 0 6px}
+  .flag{background:rgba(210,153,34,.08);border:1px solid rgba(210,153,34,.25);border-radius:8px;padding:10px 14px;margin:10px 0;font-size:13px;color:var(--muted)}
+  .flag b{color:var(--amber)}
   .cta{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:12px;font-size:16px;margin-top:6px}
   a.mail{color:var(--accent);text-decoration:none}
   footer{padding:44px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
@@ -71,6 +72,7 @@
   .value{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
   .value div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
   .value b{display:block;color:var(--accent);font-size:20px}
+  .valueadd{background:var(--panel2);border:1px dashed var(--line);border-radius:10px;padding:14px 18px;color:var(--muted);font-size:14px}
   @media(max-width:600px){.hero h1{font-size:27px}.toc ol{columns:1}}
 </style>
 </head>
@@ -78,7 +80,7 @@
 <header>
   <div class="wrap headrow">
     <div class="brand">Episode<span>Loop</span></div>
-    <div class="navpill">Free content pack · prepared for Ray Rike</div>
+    <div class="navpill">Listener-growth pack · prepared for Ray Rike</div>
   </div>
 </header>
 
@@ -86,70 +88,107 @@
 
   <div class="hero">
     <div class="badge">FREE SAMPLE · BUILT FROM YOUR EPISODE</div>
-    <h1>One episode, <em>a full month of content.</em></h1>
-    <p class="sub">Metrics that Measure Up · "The State of SaaS &amp; AI — by the numbers" · with Brad van Leeuwen (Cledara)</p>
+    <h1>Your podcast is a goldmine. <em>Let's get it found.</em></h1>
+    <p class="sub">Metrics that Measure Up · "The State of SaaS & AI — by the numbers" · with Brad van Leeuwen (Cledara)</p>
   </div>
 
   <div class="note">
-    Hi Ray. This is a real, finished content pack built entirely from your episode with Brad van Leeuwen. Nothing here is a template. Every post, script, and framing is pulled from what the episode actually covered, written in your voice. <b>It's yours to publish, free, with no strings.</b> This is exactly what you'd receive from EpisodeLoop for every episode you release.
+    Hi Ray. This is a real, finished growth pack built entirely from your episode with Brad van Leeuwen. It's not a template and it's not a "wall of LinkedIn content." It's engineered to do one thing: <b>put this episode in front of more of the right listeners</b> — SaaS operators, RevOps leaders, and finance teams — through search discoverability, guest amplification, and support content that all drives back to press play. It's yours to use, free, with no strings. This is exactly what you'd receive from EpisodeLoop for every episode you release.
   </div>
 
   <div class="value">
-    <div><b>18+</b> ready-to-publish assets</div>
-    <div><b>5</b> platforms covered</div>
-    <div><b>4 weeks</b> of scheduled content</div>
-    <div><b>~7 hrs</b> of work, done for you</div>
+    <div><b>5</b> SEO title options</div>
+    <div><b>10</b> searchable chapters</div>
+    <div><b>~1,200-word</b> ranking article</div>
+    <div><b>1-click</b> guest share kit</div>
   </div>
 
   <div class="toc">
     <h4>What's inside this pack</h4>
     <ol>
-      <li><a href="#notes">Full show notes + timestamps</a></li>
-      <li><a href="#blog">SEO blog article (~1,300 words)</a></li>
-      <li><a href="#linkedin">5 LinkedIn posts</a></li>
-      <li><a href="#thread">X / Twitter thread</a></li>
-      <li><a href="#video">Short-form video script</a></li>
-      <li><a href="#tiktok">TikTok script</a></li>
-      <li><a href="#newsletter">Newsletter edition</a></li>
-      <li><a href="#quotes">8 pull-quote graphics</a></li>
-      <li><a href="#calendar">4-week content calendar</a></li>
+      <li><a href="#disco">1 · Discoverability engine</a></li>
+      <li><a href="#titles">→ SEO title options</a></li>
+      <li><a href="#chapters">→ Chapters + timestamps</a></li>
+      <li><a href="#shownotes">→ SEO show notes</a></li>
+      <li><a href="#blog">→ Ranking blog article</a></li>
+      <li><a href="#amplify">2 · Guest amplification kit</a></li>
+      <li><a href="#support">3 · Ready-to-publish content</a></li>
+      <li><a href="#valueadd">+ Clips (value-add)</a></li>
     </ol>
   </div>
 
-  <!-- 1. SHOW NOTES -->
-  <section id="notes">
-    <div class="kicker">01 · Show Notes</div>
-    <h2>Full show notes, timestamps &amp; highlights</h2>
-    <div class="h2sub">Drop straight into your episode description, Apple Podcasts, and YouTube.</div>
+  <!-- 1. DISCOVERABILITY -->
+  <section id="disco">
+    <div class="kicker">01 · The hero</div>
+    <h2>Discoverability engine</h2>
+    <div class="h2sub">The #1 real listener-growth lever — it makes this episode findable by SaaS operators, RevOps leaders, and CFOs searching Apple, Spotify, YouTube, and Google who don't already follow you. This works on any show, regardless of how you record.</div>
+  </section>
+
+  <!-- 1a TITLES -->
+  <section id="titles">
+    <div class="kicker">01a · SEO titles</div>
+    <h2>Search-optimized episode title options</h2>
+    <div class="current">Your current title — <b>"The State of SaaS & AI — by the numbers"</b> — is on-brand and clean, but it's soft for search. Nobody types that into a search bar. Here are 5 rewrites that lead with the stats and terms operators and finance leaders actually search, while keeping your benchmarks-first, data-over-narrative angle.</div>
+
+    <div class="titleopt"><div class="t">1. SaaS Spend Is Down 50%: What the Data Says About AI Budgets in 2024 (Cledara's Brad van Leeuwen)</div><div class="r"><b>Why:</b> Leads with a hard, searchable stat + "AI budgets" (high-intent for operators and CFOs), names the company + guest for authority. The number is the hook, and it's real. <b>Recommended for the podcast feed.</b></div></div>
+    <div class="titleopt"><div class="t">2. AI Budget Benchmarks: How Much Are Companies Actually Spending on AI? (Metrics that Measure Up)</div><div class="r"><b>Why:</b> Targets "AI budget benchmarks" and "how much are companies spending on AI" — question-format queries that pull in buyers and finance teams building their own numbers. <b>Recommended for YouTube.</b></div></div>
+    <div class="titleopt"><div class="t">3. The SaaS Momentum Index Explained: Why Buyers Stopped Adding New Software (w/ Cledara)</div><div class="r"><b>Why:</b> "SaaS Momentum Index" is a distinctive, ownable Cledara term — ranking on it captures branded search, and "why buyers stopped adding new software" mirrors the pain a vendor types in when pipeline stalls.</div></div>
+    <div class="titleopt"><div class="t">4. AI vs SaaS Spend: The CFO Gap Between "No ROI Yet" and Surging Adoption (300+ CFOs Surveyed)</div><div class="r"><b>Why:</b> Front-loads "AI vs SaaS spend" and "CFO" (a high-value ICP keyword); the "no ROI vs. surging adoption" tension is a curiosity hook grounded in a real 300+ CFO survey.</div></div>
+    <div class="titleopt"><div class="t">5. State of SaaS & AI 2024, By the Numbers: Consolidation, AI Budgets & Churn | Metrics that Measure Up</div><div class="r"><b>Why:</b> Keeps your signature framing but front-loads the searchable themes and adds the show name for branded and back-catalog discovery.</div></div>
+  </section>
+
+  <!-- 1b CHAPTERS -->
+  <section id="chapters">
+    <div class="kicker">01b · Chapters</div>
+    <h2>Chapters + timestamps</h2>
+    <div class="h2sub">Chapters drive Apple/Spotify/YouTube discovery and retention. Paste straight into your description.</div>
     <div class="card">
-      <div class="meta"><b>Metrics that Measure Up — The State of SaaS &amp; AI, by the numbers</b> · Guest: Brad van Leeuwen, Co-Founder &amp; COO of Cledara</div>
-      <p>Everyone has an opinion about what AI is doing to SaaS. On this episode, we look at what the <em>spend data</em> actually says. My guest is Brad van Leeuwen, Co-Founder and COO of Cledara, a SaaS spend-management platform with a rare vantage point: over 1,000 customers across 30+ countries, and visibility into what they're actually buying, renewing, and churning. The headline number sets the tone. The count of new SaaS solutions purchased has fallen roughly <b>50% over the last two years</b>. Buyers aren't in expansion mode — they're consolidating, renewing longer for better pricing, and getting far more discerning about what they keep. Cledara's SaaS Momentum Index sat around <b>100 for the first half of 2024</b>, meaning most buyers weren't increasing spend at all. Then we get to AI, and the data is more interesting than the headlines. AI is roughly <b>3.5–4% of total software spend</b> today. Marketing is allocating about <b>5%</b> of its software budget to AI; Sales about <b>1.3%</b> — but that Sales number jumped from just <b>0.3% in January 2024</b>. And based on a survey of 300+ CFOs, the C-suite still treats AI as experimentation with no tangible ROI yet — even as individual-contributor adoption quietly climbs.</p>
-      <h3>Timestamps</h3>
       <ul class="clean">
-        <li><span class="ts">00:00</span> The state of SaaS &amp; AI — by the numbers, not the narrative</li>
-        <li><span class="ts">03:00</span> New SaaS purchases down ~50% in two years</li>
-        <li><span class="ts">07:20</span> The SaaS Momentum Index at ~100 for 1H-2024</li>
-        <li><span class="ts">11:10</span> Consolidation everywhere — except native-AI point solutions</li>
-        <li><span class="ts">15:00</span> AI budget by team: Marketing ~5%, Sales ~1.3% (up from 0.3%)</li>
-        <li><span class="ts">19:30</span> The CFO gap: 300+ CFOs say "no ROI" while ICs adopt</li>
-        <li><span class="ts">24:00</span> Adoption vs. churn: 30–40 new vendors/month, fast churn</li>
-        <li><span class="ts">28:15</span> Brad's productivity thesis: AI raises the baseline</li>
+        <li><span class="ts">00:00</span> The setup: reading spend data instead of narrative</li>
+        <li><span class="ts">02:30</span> Cledara's vantage point: 1,000+ customers across 30+ countries</li>
+        <li><span class="ts">05:15</span> The headline: new SaaS purchases down ~50% in two years</li>
+        <li><span class="ts">09:00</span> Consolidation, longer renewals, and more discerning buyers</li>
+        <li><span class="ts">12:30</span> The SaaS Momentum Index at ~100 — and what it confirms</li>
+        <li><span class="ts">16:00</span> Where AI actually sits: ~3.5–4% of total software spend</li>
+        <li><span class="ts">19:30</span> Read the slope, not the level: Sales AI spend 0.3% → 1.3%</li>
+        <li><span class="ts">23:00</span> The CFO gap: "experimentation, no ROI" vs. surging IC adoption</li>
+        <li><span class="ts">27:00</span> Adoption vs. churn: 30–40 new vendors/month, and how fast they leave</li>
+        <li><span class="ts">31:00</span> Brad's productivity thesis: raising the baseline, not cutting headcount</li>
       </ul>
-      <p style="color:var(--muted);font-size:13px;margin-top:10px">Note: timestamps are estimated from the episode structure and should be confirmed against your final audio. EpisodeLoop verifies exact timestamps against the real file for paying clients.</p>
-      <h3>Guest</h3>
-      <p>Brad van Leeuwen — Co-Founder &amp; COO, Cledara (SaaS spend management, 1,000+ customers, 30+ countries).</p>
-      <p style="margin-top:6px">🎧 benchmarkit.ai · Apple Podcasts · Spotify · 📊 Benchmark yourself → Benchmarkit</p>
+      <div class="flag"><b>Confirm against final audio.</b> Timestamps are estimated from the episode's structure and topic flow. For paying clients we transcribe the real file (Whisper) and lock exact chapter marks.</div>
     </div>
   </section>
 
-  <!-- 2. BLOG -->
+  <!-- 1c SHOW NOTES -->
+  <section id="shownotes">
+    <div class="kicker">01c · Show notes</div>
+    <h2>SEO show notes / episode description</h2>
+    <div class="h2sub">First two lines written for search + the "read more" cutoff. Drop straight into Apple, Spotify, and YouTube.</div>
+    <div class="card">
+      <p><b>How much are companies actually spending on AI — and why are new SaaS purchases down ~50%?</b> In this episode of Metrics that Measure Up, Ray Rike gets the state of SaaS and AI grounded in real purchasing data with Brad van Leeuwen, Co-Founder &amp; COO of Cledara.</p>
+      <p>Everyone has an opinion about what AI is doing to SaaS budgets. This episode looks at what the spend data actually says. Brad's vantage point is rare: Cledara is a SaaS spend-management platform with visibility into over 1,000 customers across 30+ countries. We cover why new SaaS purchases have fallen roughly 50% in two years, why Cledara's SaaS Momentum Index sat around 100 for the first half of 2024, and where AI really sits — about 3.5–4% of total software spend, with Sales AI budgets jumping from 0.3% to 1.3% in under two years. If you want AI budget benchmarks grounded in behavior instead of vibes, this one's for you.</p>
+      <h3>What you'll learn</h3>
+      <ul class="clean">
+        <li>Why new SaaS purchases have dropped ~50% in two years, and what buyers are doing instead</li>
+        <li>The SaaS Momentum Index at ~100 — and why it confirms softer public-SaaS guidance</li>
+        <li>Consolidation everywhere, except native-AI (which is skewing toward point solutions)</li>
+        <li>AI budget by team: Marketing ~5%, Sales ~1.3% (up from 0.3% in Jan 2024)</li>
+        <li>The CFO gap: AI framed as "experimentation, no ROI" while IC adoption surges</li>
+        <li>Adoption vs. churn: 30–40 new vendors/month adopted, but AI churn is nearly as fast</li>
+      </ul>
+      <p><b>Guest:</b> Brad van Leeuwen — Co-Founder &amp; COO, Cledara (SaaS spend management, 1,000+ customers, 30+ countries).</p>
+      <p><span class="listen">🎧 Press play now, and subscribe to Metrics that Measure Up</span> so you never miss an episode: benchmarkit.ai · Apple Podcasts · Spotify. 📊 Benchmark yourself → compare to the benchmark, not just your own last quarter, at Benchmarkit.</p>
+    </div>
+  </section>
+
+  <!-- 1d BLOG -->
   <section id="blog" class="article">
-    <div class="kicker">02 · SEO Blog Article</div>
+    <div class="kicker">01d · Ranking blog article</div>
     <h2>The State of SaaS &amp; AI, By the Numbers</h2>
     <div class="metabar">
-      <span><b>Word count:</b> ~1,300</span>
-      <span><b>Primary keyword:</b> state of SaaS and AI spend</span>
-      <span><b>Meta:</b> Cledara's Brad van Leeuwen on the spend data behind SaaS &amp; AI: new purchases down ~50%, AI at 3.5–4%, and the CFO adoption gap.</span>
+      <span><b>Word count:</b> ~1,200</span>
+      <span><b>Target keyword:</b> AI budget benchmarks</span>
+      <span><b>Slug:</b> /state-of-saas-ai-by-the-numbers-cledara</span>
     </div>
     <div class="card">
       <p>I built Benchmarkit on a simple conviction: a metric without a benchmark is just a number with an opinion attached. So when we talk about what AI is doing to SaaS, I don't want the narrative — I want the data. On this episode of Metrics that Measure Up, I got exactly that, because my guest, Brad van Leeuwen, Co-Founder and COO of Cledara, sits on top of one of the better datasets in the industry: actual SaaS purchasing behavior across more than 1,000 customers in over 30 countries.</p>
@@ -175,306 +214,127 @@
       <p>I asked Brad the question everyone eventually asks: does AI reduce the headcount you need to produce the same output? His answer was more nuanced than the doom takes.</p>
       <p>He sees AI mostly raising everyone in a department to the same baseline of capability. The tools level the floor. The interesting — and harder — question becomes how a person differentiates <em>above</em> a baseline that everyone now shares. And on headcount, his bet is that AI won't primarily cut jobs. It'll produce more output from the current staff, which shows up as faster revenue growth or improved growth efficiency rather than a smaller org chart. As someone who lives in efficiency metrics, that's the version I find most credible: the gains land in the numerator, not by shrinking the denominator.</p>
       <h3>What to actually do with this</h3>
-      <p>If I distill the episode into operator moves: assume your buyers are consolidating — new-logo SaaS demand is down ~50%, so compete on depth and renewal value, not just acquisition. Read AI spend by slope, not level: 3.5–4% overall looks small, but Sales going 0.3% → 1.3% does not, so position for the curve. Close your own CFO gap by measuring real AI adoption bottom-up before you decide it has "no ROI" — the ICs already voted. And watch AI retention, not AI signups, because viral adoption with matching churn is a vanity metric in disguise.</p>
+      <p>If I distill the episode into operator moves: first, assume your buyers are consolidating — new-logo SaaS demand is down ~50%, so compete on depth and renewal value, not just acquisition. Second, read AI spend by slope, not level — 3.5–4% overall looks small, but Sales going 0.3% → 1.3% does not; position for the curve. Third, close your own CFO gap — measure real AI adoption in your org bottom-up before you decide it has "no ROI," because the ICs already voted. Fourth, watch AI retention, not AI signups — viral adoption with matching churn is a vanity metric in disguise.</p>
       <p>The state of SaaS and AI isn't a vibe. It's a set of numbers, and the numbers are more sober — and more precise — than the narrative. That's exactly why we measure.</p>
-      <p><em>Listen to the full conversation with Brad van Leeuwen on Metrics that Measure Up at benchmarkit.ai.</em></p>
+      <p><span class="listen">Listen here:</span> the full conversation with Brad van Leeuwen is on Metrics that Measure Up — press play at benchmarkit.ai, and subscribe so the next benchmark-backed episode lands in your feed automatically.</p>
     </div>
   </section>
 
-  <!-- 3. LINKEDIN -->
-  <section id="linkedin">
-    <div class="kicker">03 · LinkedIn</div>
-    <h2>5 LinkedIn posts, 5 different formats</h2>
-    <div class="h2sub">Hook, contrarian take, the CFO-gap list, framework, and a big-idea reflection with a soft CTA. One idea each, built to be scanned on mobile.</div>
+  <!-- 2. GUEST AMPLIFICATION -->
+  <section id="amplify">
+    <div class="kicker">02 · Borrowed reach</div>
+    <h2>Guest amplification kit</h2>
+    <div class="h2sub">The cheapest new listeners there are. Most guests never promote the episode — not because they don't want to, but because writing the posts is friction. This kit removes it: hand Brad the note + posts and he shares to Cledara's audience in one click, putting Metrics that Measure Up in front of a whole new room of finance leaders and SaaS operators — your exact ICP.</div>
 
-    <div class="post"><span class="tag">Post 1 <span class="fmt">· The hook</span></span>The number of NEW SaaS solutions companies buy has dropped ~50% in two years.
+    <div class="post"><span class="tag">"Your episode is live" note <span class="fmt">· ready to send to Brad</span></span>Subject: You're live on Metrics that Measure Up 🎧
 
-That's not a blip. That's a structural change in buyer behavior.
+Hi Brad,
 
-On Metrics that Measure Up, Brad van Leeuwen (Co-Founder &amp; COO of Cledara) walked me through the spend data across 1,000+ customers in 30+ countries.
+Your episode is officially live — thanks again for bringing the actual spend data instead of the usual AI narrative. The 50%-decline number and the CFO gap are already the parts people are quoting back to me.
 
-What buyers are doing instead:
-→ Deepening relationships with vendors they already have
-→ Renewing longer for better pricing
-→ Getting ruthless about what they keep
+🎧 Listen / share: [episode link]
 
-So a lot of the churn vendors are feeling? It's not a product problem. It's portfolio pruning.
+To make it easy to share with your network, I've drafted a few ready-to-post captions below (LinkedIn + X) — feel free to use them as-is or tweak. I've also pulled a couple of quote graphics from the best data points; happy to send those over too.
 
-The macro guidance and the micro purchasing data are finally telling the same story.
+Really appreciate you coming on. Would love for the Cledara team and your network to hear it.
 
-🎧 Full episode in comments.
-<span class="hashtags">#SaaS #Metrics #B2B</span></div>
+— Ray</div>
 
-    <div class="post"><span class="tag">Post 2 <span class="fmt">· Contrarian</span></span>Everyone's shouting about AI spend.
+    <div class="post"><span class="tag">For Brad to share <span class="fmt">· LinkedIn (his voice)</span></span>I joined Ray Rike on the Metrics that Measure Up podcast to talk through what our data at Cledara actually shows about SaaS and AI spend — across 1,000+ customers in 30+ countries.
 
-The data says it's ~3.5–4% of total software spend today. (Yes, including ChatGPT/OpenAI.)
+A few numbers that surprised people: new SaaS purchases are down ~50% in two years, AI is still only ~3.5–4% of total software spend, and there's a real gap between CFOs calling AI "experimentation, no ROI" and the surging adoption we see happening bottom-up.
 
-AI dominates the conversation far more than it dominates the budget.
+If you care about where SaaS and AI budgets are actually going — not the narrative — I think this one's worth a listen. 🎧 [episode link]</div>
 
-But — and this is the part that matters — never read a level without reading the slope.
+    <div class="post"><span class="tag">For Brad to share <span class="fmt">· X / Twitter (his voice)</span></span>Went on Metrics that Measure Up w/ @RayRike to share what Cledara's data shows about SaaS + AI spend across 1,000+ companies.
 
-Sales went from 0.3% of software spend on AI in January 2024 to ~1.3% now.
+New SaaS purchases down ~50%. AI still only ~3.5–4% of software spend. The CFO/adoption gap is the wild part 👇 [episode link]</div>
 
-That's a 4x move off a small base.
+    <div class="post"><span class="tag">For Brad to share <span class="fmt">· X / Twitter — shorter</span></span>Everyone's talking about AI spend. The data says it's ~3.5–4% of software budgets — but Sales went 0.3% → 1.3% in under two years.
 
-The level is modest. The trajectory is not.
+Read the slope, not the level. Talked it through on Metrics that Measure Up 🎧 [episode link]</div>
 
-From my Metrics that Measure Up episode with Brad van Leeuwen (Cledara). This is the early part of a curve, not a plateau.
-<span class="hashtags">#AI #SaaS #Data</span></div>
-
-    <div class="post"><span class="tag">Post 3 <span class="fmt">· The CFO-gap list</span></span>The most important number from my latest Metrics that Measure Up episode isn't a spend figure.
-
-It's a GAP.
-
-From 300+ CFOs (via Cledara's Brad van Leeuwen):
-
-1. The C-suite still views AI as experimentation. "No tangible ROI yet."
-
-2. Meanwhile, actual adoption is climbing fast — driven by individual contributors.
-
-3. The people doing the work adopted AI. The people holding the budget can't see it.
-
-4. It's happening bottom-up, seat by seat, under the CFO's radar.
-
-If your leadership's model is "experimentation, no ROI" while your teams are already dependent on these tools —
-
-you're budgeting off a number that's two years out of date.
-
-Measure real adoption bottom-up. The ICs already voted.
-<span class="hashtags">#CFO #AI #SaaS</span></div>
-
-    <div class="post"><span class="tag">Post 4 <span class="fmt">· Framework</span></span>Viral adoption is not the metric. It's the trap.
-
-From Cledara's data (Metrics that Measure Up, w/ Brad van Leeuwen):
-
-→ Customers adopt 30–40 new vendors per MONTH
-→ AI-native tools spread virally across the base
-→ But churn is happening almost as fast as adoption
-
-High velocity in. High velocity out.
-
-This is why I keep pushing operators past top-of-funnel counts:
-
-Logo acquisition means very little when net retention is leaking out the back at nearly the same rate.
-
-A viral trial curve can hide a broken retention curve — for a quarter or two.
-
-Then it can't.
-
-Watch AI retention, not AI signups.
-<span class="hashtags">#SaaSMetrics #Retention #AI</span></div>
-
-    <div class="post"><span class="tag">Post 5 <span class="fmt">· Big idea + soft CTA</span></span>Does AI cut the headcount you need?
-
-I asked Brad van Leeuwen (Cledara) on Metrics that Measure Up. His answer was more useful than the doom takes:
-
-AI mostly raises everyone in a department to the same baseline. The tools level the floor.
-
-The harder question becomes: how do you differentiate ABOVE a baseline everyone now shares?
-
-And on headcount — his bet is AI won't primarily cut jobs. It'll produce more output from current staff. Faster growth, better growth efficiency.
-
-As someone who lives in efficiency metrics, that's the version I find most credible:
-
-The gains land in the numerator. Not by shrinking the denominator.
-
-🎧 The whole state of SaaS &amp; AI, by the numbers. Link in comments.
-<span class="hashtags">#SaaS #GrowthEfficiency</span></div>
+    <h3>Guest pull-quotes</h3>
+    <div class="flag"><b>Host-voice framings, not verbatim.</b> No public transcript existed at build time, so these are framings of the episode's sourced data points, attributed to the episode — not presented as direct Brad van Leeuwen quotes. Every hard number is sourced from the Benchmarkit episode page. For a paying client we pull exact verbatim quotes from the real audio.</div>
+    <div class="quote">"New SaaS purchases are down about 50% in two years — buyers aren't expanding, they're consolidating."<span class="src">framing of Brad van Leeuwen's point · Cledara</span></div>
+    <div class="quote">"AI is still only 3.5–4% of software spend. But Sales went from 0.3% to 1.3% in under two years — read the slope, not the level."<span class="src">framing · Cledara</span></div>
+    <div class="quote">"CFOs call AI 'experimentation, no ROI' — but the adoption is already happening bottom-up, under their radar."<span class="src">framing · Cledara</span></div>
+    <div class="note"><b>Why this matters:</b> every episode has a guest with their own audience. When Brad shares, Cledara's followers — many of them the finance leaders and SaaS operators who are your exact listeners — hear about Metrics that Measure Up for the first time. New listeners at zero ad spend, compounding every single episode.</div>
   </section>
 
-  <!-- 4. THREAD -->
-  <section id="thread">
-    <div class="kicker">04 · X / Twitter</div>
-    <h2>A 10-tweet thread</h2>
-    <div class="h2sub">Each tweet stands alone. Hook first. Built to be screenshotted.</div>
-    <div class="post">1/ The state of SaaS &amp; AI — by the numbers, not the narrative.
+  <!-- 3. READY-TO-PUBLISH -->
+  <section id="support">
+    <div class="kicker">03 · Support</div>
+    <h2>Ready-to-publish content</h2>
+    <div class="h2sub">In your voice, and deliberately lean — not a wall of thought-leadership. Every piece ends by pointing back to press play / subscribe. This supports the discoverability + amplification engine above; it's not the main event.</div>
 
-I had Brad van Leeuwen (Co-Founder &amp; COO, Cledara) on Metrics that Measure Up. He sees actual spend across 1,000+ customers in 30+ countries.
-
-Some of these numbers should make you sit up 🧵
-
-2/ New SaaS purchases are down ~50% over two years.
-
-Not a blip. A structural shift.
-
-Buyers are consolidating, renewing longer for better pricing, and cutting what they don't use.
-
-3/ Cledara's SaaS Momentum Index (spend more vs. less YoY) sat at ~100 for 1H-2024.
-
-Flat. Most buyers weren't increasing SaaS spend at all.
-
-Which lines up perfectly with the softer guidance public SaaS gave the market.
-
-4/ A lot of the churn vendors feel right now isn't a product problem.
-
-It's portfolio pruning. The CFO is consolidating.
-
-5/ Now AI. Everyone's shouting about it.
-
-Reality: AI is ~3.5–4% of total software spend (incl. ChatGPT/OpenAI).
-
-It dominates the conversation far more than the budget.
-
-6/ But never read a level without reading the slope.
-
-Sales AI spend: 0.3% of software budget in Jan 2024 → ~1.3% now.
-
-4x off a small base. That's a curve, not a plateau.
-
-7/ The most important number isn't a spend figure. It's a GAP.
-
-300+ CFOs still call AI "experimentation, no ROI."
-
-Meanwhile IC adoption is surging — bottom-up, under the CFO's radar.
-
-8/ Adoption is viral: 30–40 new vendors/month across the base.
-
-But AI churn is nearly as fast as adoption.
-
-High velocity in. High velocity out.
-
-9/ Which is the whole reason I push past top-of-funnel counts.
-
-A viral trial curve can hide a broken retention curve for a quarter or two.
-
-Then it can't. Watch AI retention, not AI signups.
-
-10/ That's the episode: the state of SaaS &amp; AI, by the numbers.
-
-A metric without a benchmark is just a number with an opinion attached.
-
-🎧 benchmarkit.ai
-Follow for more metric-informed, benchmark-validated SaaS.</div>
-  </section>
-
-  <!-- 5. VIDEO SCRIPT -->
-  <section id="video">
-    <div class="kicker">05 · Short-form video</div>
-    <h2>Short-form video script (Reel / Short)</h2>
-    <div class="h2sub">Hook in the first 3 seconds, one idea, clear payoff. Talking-head or text-on-screen ready. ~45s.</div>
-    <div class="script">
-      <b>"AI is only 3.5% of software spend. Here's why that's misleading." (~45s)</b>
-      <div class="hook">HOOK (0–3s): "AI is only about 3.5 to 4% of all software spend. And that number is completely misleading."</div>
-      <div class="beat"><span class="t">3–14s</span>"On my podcast, Brad van Leeuwen of Cledara — who sees spend across 1,000+ companies — gave me the real picture. AI dominates the conversation way more than the budget."</div>
-      <div class="beat"><span class="t">14–30s</span>"But never read a level without reading the slope. Sales spending on AI went from 0.3% of its software budget in January 2024 to about 1.3% today. That's 4x off a small base."</div>
-      <div class="beat"><span class="t">30–40s</span>"The level is modest. The trajectory is not. That's the early part of a curve — not a plateau."</div>
-      <div class="beat"><span class="t">40–45s</span>"The state of SaaS &amp; AI, by the numbers. On Metrics that Measure Up."</div>
-      <div style="color:var(--muted);font-size:13px;margin-top:8px">On-screen text: "read the slope, not just the level"</div>
-    </div>
-  </section>
-
-  <!-- 6. TIKTOK -->
-  <section id="tiktok">
-    <div class="kicker">06 · TikTok</div>
-    <h2>TikTok script (native tone)</h2>
-    <div class="h2sub">Faster, punchier, more casual than the Reel above. Written for a feed that scrolls in 1.5 seconds.</div>
-    <div class="script">
-      <b>"POV: your CFO thinks AI has 'no ROI yet'" (~30s)</b>
-      <div class="hook">HOOK (0–2s): "POV: your CFO says AI is 'just experimentation, no ROI.' 💀"</div>
-      <div class="beat"><span class="t">2–14s</span>"A survey of 300+ CFOs says exactly that. Meanwhile — real data from Cledara — actual AI adoption is surging, driven by the people doing the work."</div>
-      <div class="beat"><span class="t">14–24s</span>"It's happening bottom-up, seat by seat, under the CFO's radar. The ICs already voted. Leadership just can't see the ballots."</div>
-      <div class="beat"><span class="t">24–30s</span>"Metrics that Measure Up. The numbers, not the vibes. 👀"</div>
-      <div style="color:var(--muted);font-size:13px;margin-top:8px">On-screen text: "the ICs already adopted AI. the CFO just can't see it." · Trending audio: low-key sound.</div>
-    </div>
-  </section>
-
-  <!-- 7. NEWSLETTER -->
-  <section id="newsletter">
-    <div class="kicker">07 · Newsletter</div>
-    <h2>Full newsletter edition</h2>
-    <div class="h2sub">3 subject-line options, preview text, and a complete send in your voice.</div>
+    <h3>Newsletter feature</h3>
     <div class="card">
       <p><b>Subject line options:</b></p>
       <ul class="clean">
-        <li>A: The state of SaaS &amp; AI, by the numbers</li>
-        <li>B: New SaaS purchases are down ~50%. Here's what buyers do instead.</li>
+        <li>A: New SaaS purchases are down ~50%. Here's what buyers do instead.</li>
+        <li>B: The state of SaaS &amp; AI, by the numbers</li>
         <li>C: Your CFO says AI has "no ROI." The data disagrees.</li>
       </ul>
-      <p><b>Preview text:</b> AI is only 3.5% of software spend — and that number is misleading.</p>
+      <p><b>Preview text:</b> AI is only ~3.5–4% of software spend — and that number is misleading.</p>
       <hr style="border:none;border-top:1px dashed var(--line);margin:16px 0">
       <p>Hey,</p>
       <p>New Metrics that Measure Up is live — a data-first look at the state of SaaS and AI with Brad van Leeuwen, Co-Founder &amp; COO of Cledara, who sees actual purchasing across 1,000+ customers in 30+ countries.</p>
       <p>A few numbers worth sitting with:</p>
       <ul class="clean">
-        <li><b>New SaaS purchases are down ~50% over two years.</b> Buyers are consolidating, renewing longer for better pricing, and cutting what they don't use. Cledara's SaaS Momentum Index sat at ~100 for 1H-24 — flat.</li>
-        <li><b>AI is only ~3.5–4% of software spend today.</b> But read the slope: Sales went from 0.3% of its software budget on AI in Jan 2024 to ~1.3% now. 4x off a small base.</li>
-        <li><b>The CFO gap:</b> 300+ CFOs still call AI "experimentation, no ROI" — while IC adoption surges bottom-up, under their radar.</li>
-        <li><b>Adoption is viral (30–40 new vendors/month) — but AI churn is nearly as fast.</b> Watch retention, not signups.</li>
+        <li>New SaaS purchases are down ~50% over two years. Buyers are consolidating, renewing longer for better pricing, and cutting what they don't use. Cledara's SaaS Momentum Index sat at ~100 for 1H-24 — flat.</li>
+        <li>AI is only ~3.5–4% of software spend today. But read the slope: Sales went from 0.3% of its software budget on AI in Jan 2024 to ~1.3% now. 4x off a small base.</li>
+        <li>The CFO gap: 300+ CFOs still call AI "experimentation, no ROI" — while IC adoption surges bottom-up, under their radar.</li>
+        <li>Adoption is viral (30–40 new vendors/month) — but AI churn is nearly as fast. Watch retention, not signups.</li>
       </ul>
       <p>A metric without a benchmark is just a number with an opinion attached. This episode is the numbers.</p>
-      <p>🎧 Listen → [episode link]<br>📊 Benchmark yourself → Benchmarkit</p>
+      <p><span class="listen">🎧 Listen here</span> → the full conversation on Metrics that Measure Up. And if you're not subscribed yet, fix that so the next benchmark-backed episode lands automatically.<br>📊 Benchmark yourself → Benchmarkit.</p>
       <p>Ray</p>
     </div>
+
+    <h3>Host-voice social posts</h3>
+    <div class="post"><span class="tag">LinkedIn <span class="fmt">· the hook</span></span>The number of NEW SaaS solutions companies buy has dropped ~50% in two years.
+
+That's not a blip. That's a structural change in buyer behavior.
+
+On Metrics that Measure Up, Brad van Leeuwen (Co-Founder & COO of Cledara) walked me through the spend data across 1,000+ customers in 30+ countries.
+
+What buyers are doing instead: deepening relationships with vendors they already have, renewing longer for better pricing, and getting ruthless about what they keep.
+
+So a lot of the churn vendors are feeling? It's not a product problem. It's portfolio pruning.
+
+🎧 Listen here → [episode link]</div>
+
+    <div class="post"><span class="tag">LinkedIn <span class="fmt">· the big idea</span></span>The most important number from my latest Metrics that Measure Up episode isn't a spend figure. It's a GAP.
+
+From a survey of 300+ CFOs (via Cledara's Brad van Leeuwen): the C-suite still views AI as "experimentation, no ROI yet."
+
+Meanwhile, actual adoption is climbing fast — driven by individual contributors, bottom-up, seat by seat, under the CFO's radar.
+
+The people doing the work adopted AI. The people holding the budget can't see it.
+
+If your leadership's model is "no ROI" while your teams are already dependent on these tools, you're budgeting off a number that's two years out of date. Measure real adoption bottom-up. The ICs already voted.
+
+🎧 Listen here → [episode link]</div>
+
+    <h3>Quote-graphic specs (3)</h3>
+    <div class="flag">Host-voice framings of the episode's ideas (no public transcript at build time). Every hard number is sourced from the Benchmarkit episode page. Attribute to the episode, not as verbatim guest quotes.</div>
+    <div class="quote">"New SaaS purchases are down ~50% in two years. That's structural, not a blip."<span class="src">Metrics that Measure Up · w/ Cledara · ends with "🎧 Listen here"</span></div>
+    <div class="quote">"AI is only ~3.5–4% of software spend. It dominates the conversation, not the budget."<span class="src">Metrics that Measure Up</span></div>
+    <div class="quote">"300+ CFOs still call AI 'experimentation, no ROI.' The ICs already voted."<span class="src">Metrics that Measure Up · w/ Brad van Leeuwen, Cledara</span></div>
+    <p style="color:var(--muted);font-size:14px">Design spec: 1080×1080, dark background (#0d1117), quote in large white bold sans, "Metrics that Measure Up" wordmark top-right, "with Brad van Leeuwen · Cledara" in accent color bottom-left. Consistent template. Each caption ends with "🎧 Listen here."</p>
   </section>
 
-  <!-- 8. QUOTE GRAPHICS -->
-  <section id="quotes">
-    <div class="kicker">08 · Quote graphics</div>
-    <h2>8 pull-quote graphics</h2>
-    <div class="h2sub">Host-voice framings of the episode's ideas (no public verbatim transcript existed at build time, so these are attributed to the episode/idea, not as verbatim guest quotes). Every hard number is sourced directly from the Benchmarkit episode page. Ready to drop into Canva. Design spec below.</div>
-    <div class="quote">"New SaaS purchases are down ~50% in two years. That's structural."<span class="src">Metrics that Measure Up</span></div>
-    <div class="quote">"The SaaS Momentum Index sat at ~100. Most buyers weren't growing spend at all."<span class="src">Metrics that Measure Up</span></div>
-    <div class="quote">"AI is ~3.5–4% of software spend. It dominates the conversation, not the budget."<span class="src">Metrics that Measure Up</span></div>
-    <div class="quote">"Never read a level without reading the slope: Sales AI spend went 0.3% → 1.3%."<span class="src">Metrics that Measure Up</span></div>
-    <div class="quote">"300+ CFOs still call AI 'experimentation, no ROI.' The ICs already voted."<span class="src">On Brad van Leeuwen, Cledara · MtMU</span></div>
-    <div class="quote">"30–40 new vendors adopted per month — and AI churn is nearly as fast."<span class="src">Metrics that Measure Up</span></div>
-    <div class="quote">"Watch AI retention, not AI signups. A viral curve hides a broken one."<span class="src">Metrics that Measure Up</span></div>
-    <div class="quote">"A metric without a benchmark is just a number with an opinion attached."<span class="src">Ray Rike · Metrics that Measure Up</span></div>
-    <p style="color:var(--muted);font-size:14px">Design spec: 1080×1080, dark background (#0d1117), quote in large white bold sans, "Metrics that Measure Up" wordmark top-right, "with Brad van Leeuwen · Cledara" in accent blue bottom-left. Consistent template across all 8.</p>
-  </section>
-
-  <!-- 9. CALENDAR -->
-  <section id="calendar">
-    <div class="kicker">09 · Distribution plan</div>
-    <h2>4-week distribution plan, scheduled for you</h2>
-    <div class="h2sub">Here's the part that matters: <b>you don't post any of this.</b> We map every asset across four weeks, load it into your scheduler, and you approve the whole batch in about five minutes. Then it publishes itself while you focus on recording. The mix follows a metrics-optimized ratio: 40% education, 30% data/POV, 20% engagement, 10% offer.</div>
-    <div class="note" style="margin-top:0">
-      <b>How the hands-off part works:</b> You record. We create the pack, schedule everything into your posting tool, and send you one approval link. One click and a month of content goes live on autopilot. Add a second show later and we fold it into the same managed queue, so it never becomes more work for you, no matter how many episodes you run.
-    </div>
-
-    <div class="wk">Week 1 — Launch</div>
-    <table class="caltable">
-      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
-      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 1</b> (the hook) + episode link in comments</td></tr>
-      <tr><td>Mon</td><td>X</td><td><b>The 10-tweet thread</b></td></tr>
-      <tr><td>Tue</td><td>Newsletter</td><td><b>Full edition</b> (subject A)</td></tr>
-      <tr><td>Wed</td><td>Reels + TikTok</td><td><b>Video</b> / <b>TikTok</b> scripts</td></tr>
-      <tr><td>Thu</td><td>LinkedIn</td><td><b>Post 3</b> (the CFO gap list)</td></tr>
-      <tr><td>Fri</td><td>LinkedIn</td><td><b>Post 4</b> (retention framework) + <b>Quote graphic 7</b></td></tr>
-    </table>
-
-    <div class="wk">Week 2 — Depth</div>
-    <table class="caltable">
-      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
-      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 2</b> (contrarian: AI spend is small)</td></tr>
-      <tr><td>Tue</td><td>Reels + TikTok</td><td>Repost video w/ new hook + <b>Quote graphic 4</b></td></tr>
-      <tr><td>Wed</td><td>Blog</td><td>Publish <b>SEO article</b> on benchmarkit.ai</td></tr>
-      <tr><td>Thu</td><td>X</td><td>Repost thread w/ new opener + <b>Quote graphic 1</b></td></tr>
-      <tr><td>Fri</td><td>LinkedIn</td><td><b>Post 5</b> (productivity thesis + soft CTA)</td></tr>
-    </table>
-
-    <div class="wk">Week 3 — Engagement</div>
-    <table class="caltable">
-      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
-      <tr><td>Mon</td><td>LinkedIn</td><td>Poll: "AI spend in your org: (a) &lt;1%, (b) 1–4%, (c) 5%+, (d) no idea — and that's the problem"</td></tr>
-      <tr><td>Wed</td><td>Reels + TikTok</td><td>"Read the slope, not the level" cut + <b>Quote graphic 3</b></td></tr>
-      <tr><td>Thu</td><td>LinkedIn</td><td>Reshare <b>Post 1</b> as a data-led reflection</td></tr>
-      <tr><td>Fri</td><td>X + IG</td><td><b>Quote graphics 5 &amp; 6</b></td></tr>
-    </table>
-
-    <div class="wk">Week 4 — Payoff</div>
-    <table class="caltable">
-      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
-      <tr><td>Mon</td><td>Reels + TikTok</td><td>"The ICs already voted" clip</td></tr>
-      <tr><td>Wed</td><td>LinkedIn</td><td><b>Post 4</b> reshared w/ personal reflection + Benchmarkit CTA</td></tr>
-      <tr><td>Thu</td><td>Newsletter</td><td>Follow-up: "the one number I can't stop thinking about" (repurpose Post 3)</td></tr>
-      <tr><td>Fri</td><td>IG + X</td><td><b>Quote graphics 2 &amp; 8</b> to close the cycle</td></tr>
-    </table>
+  <!-- VALUE-ADD -->
+  <section id="valueadd">
+    <div class="kicker">+ Value-add</div>
+    <h2>Clips (included, not the pitch)</h2>
+    <div class="valueadd">Clips included — an audiogram for this audio-first show. Fine quality; we don't over-promise virality, because the source format is the ceiling. The clips exist to drive one thing: <b>press play</b>.</div>
   </section>
 
   <div class="final">
     <h2>This is one episode.</h2>
-    <p style="color:var(--muted);max-width:560px;margin:0 auto 22px">18+ assets, five platforms, a full month of distribution, all pulled from a single recording and written in your voice. Imagine this landing in your inbox every time you publish, with nothing left for you to do but hit post.</p>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 22px">Search-optimized so new listeners find it, packaged so your guest amplifies it to their audience, and supported with content that all drives back to press play. Imagine this landing every time you publish — the growth work done for you, in your voice.</p>
     <a class="cta" href="mailto:hello@episodeloop.com?subject=Let's%20talk%20EpisodeLoop">Email me to get started →</a>
     <p style="color:var(--muted);font-size:14px;margin-top:16px">Or just reply to my email. Either way, this pack is yours to keep.</p>
   </div>
@@ -484,7 +344,7 @@ Follow for more metric-informed, benchmark-validated SaaS.</div>
 <footer>
   <div class="wrap">
     Made by <b>EpisodeLoop</b> · <a class="mail" href="mailto:hello@episodeloop.com">hello@episodeloop.com</a><br>
-    Created from publicly available episode content, shared free with our best wishes.
+    We turn every episode into more listeners — discoverable, shareable, done for you. Created from publicly available episode content, shared free with our best wishes.
   </div>
 </footer>
 
