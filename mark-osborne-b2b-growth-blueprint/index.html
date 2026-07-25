@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EpisodeLoop — Free Content Pack for The B2B Growth Blueprint</title>
+<meta name="description" content="A full content pack made by EpisodeLoop from The B2B Growth Blueprint episode with Mark Osborne and guest Brit Summerill (NOW CFO)." />
+<meta name="robots" content="noindex" />
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --ink:#e6edf3; --muted:#9aa5b1;
+    --accent:#5b8cff; --accent2:#7c5bff; --line:#232a34; --ok:#3fb950; --amber:#d29922;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  header{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);z-index:10}
+  .headrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .brand span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .navpill{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+  .hero{padding:52px 0 30px}
+  .badge{display:inline-block;background:rgba(63,185,80,.12);color:var(--ok);border:1px solid rgba(63,185,80,.3);font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{color:var(--muted);font-size:18px}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:16px 20px;margin:22px 0;color:var(--muted);font-size:15px}
+  .note b{color:var(--ink)}
+  .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin:20px 0}
+  .toc h4{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin-left:18px;color:var(--ink);font-size:15px;columns:2;column-gap:28px}
+  .toc li{padding:3px 0}
+  .toc a{color:var(--ink);text-decoration:none}
+  .toc a:hover{color:var(--accent)}
+  section{padding:30px 0;border-top:1px solid var(--line)}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  h2{font-size:25px;letter-spacing:-.01em;margin-bottom:8px}
+  .h2sub{color:var(--muted);font-size:15px;margin-bottom:18px}
+  h3{font-size:17px;margin:20px 0 6px}
+  p{margin-bottom:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .card .meta{color:var(--muted);font-size:14px;margin-bottom:10px}
+  ul.clean{list-style:none;margin:10px 0}
+  ul.clean li{padding:4px 0 4px 22px;position:relative}
+  ul.clean li:before{content:"→";position:absolute;left:0;color:var(--accent)}
+  .ts{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600;margin-right:8px}
+  .post{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;white-space:pre-line;font-size:15px}
+  .post .tag{display:block;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+  .post .fmt{color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0}
+  .hashtags{color:var(--accent);font-size:14px}
+  blockquote{border-left:3px solid var(--accent2);padding-left:16px;color:var(--ink);margin:8px 0}
+  .article p{color:#c9d3de}
+  .article h3{color:var(--ink)}
+  .metabar{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:14px;border-bottom:1px dashed var(--line);padding-bottom:12px}
+  .metabar b{color:var(--ink)}
+  .script{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .script .hook{background:var(--panel2);border-radius:8px;padding:10px 14px;margin:8px 0;font-weight:600}
+  .script .beat{display:flex;gap:12px;margin:7px 0;font-size:15px}
+  .script .beat .t{flex:none;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums;width:52px}
+  .quote{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:12px;font-size:18px;font-weight:600;line-height:1.4;position:relative}
+  .quote .src{display:block;margin-top:10px;font-size:13px;font-weight:500;color:var(--muted)}
+  .caltable{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+  .caltable th,.caltable td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  .caltable th{background:var(--panel2);color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+  .caltable td b{color:var(--accent)}
+  .wk{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);margin:16px 0 6px}
+  .cta{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:12px;font-size:16px;margin-top:6px}
+  a.mail{color:var(--accent);text-decoration:none}
+  footer{padding:44px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  .final{text-align:center;padding:48px 0}
+  .value{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+  .value div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
+  .value b{display:block;color:var(--accent);font-size:20px}
+  @media(max-width:600px){.hero h1{font-size:27px}.toc ol{columns:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap headrow">
+    <div class="brand">Episode<span>Loop</span></div>
+    <div class="navpill">Free content pack · prepared for Mark Osborne</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge">FREE SAMPLE · BUILT FROM YOUR EPISODE</div>
+    <h1>One episode, <em>a full month of content.</em></h1>
+    <p class="sub">The B2B Growth Blueprint · "Beyond the Bank Balance: When Does Your Growing Business Need a Real CFO?" · with Brit Summerill (NOW CFO)</p>
+  </div>
+
+  <div class="note">
+    Hi Mark. This is a real, finished content pack built entirely from your episode with Brit Summerill. Nothing here is a template. Every post, script, and framing is pulled from what the episode actually covered, written in your voice. <b>It's yours to publish, free, with no strings.</b> This is exactly what you'd receive from EpisodeLoop for every episode you release.
+  </div>
+
+  <div class="value">
+    <div><b>18+</b> ready-to-publish assets</div>
+    <div><b>5</b> platforms covered</div>
+    <div><b>4 weeks</b> of scheduled content</div>
+    <div><b>~7 hrs</b> of work, done for you</div>
+  </div>
+
+  <div class="toc">
+    <h4>What's inside this pack</h4>
+    <ol>
+      <li><a href="#notes">Full show notes + timestamps</a></li>
+      <li><a href="#blog">SEO blog article (~1,300 words)</a></li>
+      <li><a href="#linkedin">5 LinkedIn posts</a></li>
+      <li><a href="#thread">X / Twitter thread</a></li>
+      <li><a href="#video">Short-form video script</a></li>
+      <li><a href="#tiktok">TikTok script</a></li>
+      <li><a href="#newsletter">Newsletter edition</a></li>
+      <li><a href="#quotes">8 pull-quote graphics</a></li>
+      <li><a href="#calendar">4-week content calendar</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. SHOW NOTES -->
+  <section id="notes">
+    <div class="kicker">01 · Show Notes</div>
+    <h2>Full show notes, timestamps &amp; highlights</h2>
+    <div class="h2sub">Drop straight into your episode description, Apple Podcasts, and YouTube.</div>
+    <div class="card">
+      <div class="meta"><b>Beyond the Bank Balance: When Does Your Growing Business Need a Real CFO?</b> · Guest: Brit Summerill, Partner at NOW CFO</div>
+      <p>How do you know when your business has outgrown managing by bank balance — and what does it cost you to find out too late, when a buyer or lender is already looking at your books? Most founders run their companies on a single question: how much is in the bank? It works in the early days. But as revenue climbs, that cash-basis, gut-driven approach quietly stacks up risk — unknown margins, no internal controls, and books that won't survive diligence. By the time a funding round, an M&amp;A conversation, or an unexpected private-equity call shows up, the cleanup required can derail the whole deal. On this episode, I sit down with Brit Summerill, Partner at NOW CFO, who has spent 14 years rebuilding broken financial systems for companies from startup through $60M+. We get into the exact revenue inflection points where founders outgrow QuickBooks and bank-balance thinking, the hidden costs of waiting too long to fix the books, what actually kills M&amp;A deals after a letter of intent, and why durable financial systems beat hustle-driven growth when it comes to enterprise value.</p>
+      <h3>Timestamps</h3>
+      <ul class="clean">
+        <li><span class="ts">00:00</span> Why "how much is in the bank" is a trap as you scale</li>
+        <li><span class="ts">03:10</span> "Nobody comes to me for accounting — they come for visibility"</li>
+        <li><span class="ts">07:30</span> The ~$5M inflection: cash-basis stops working</li>
+        <li><span class="ts">11:45</span> The ~$10M inflection: controllers &amp; internal controls</li>
+        <li><span class="ts">15:20</span> The hidden costs of flying blind</li>
+        <li><span class="ts">19:00</span> "Growing broke" — the warning sign founders miss</li>
+        <li><span class="ts">22:40</span> Why accounting kills deals "every time"</li>
+        <li><span class="ts">26:15</span> Building a business that runs — and sells — without you</li>
+      </ul>
+      <p style="color:var(--muted);font-size:13px;margin-top:10px">Note: timestamps are estimated from the episode structure and should be confirmed against your final audio. EpisodeLoop verifies exact timestamps against the real file for paying clients.</p>
+      <h3>Guest</h3>
+      <p>Brit Summerill — Partner, NOW CFO. 14 years rebuilding financial systems for high-growth companies (startup → $60M+). LinkedIn: /in/brit-summerillnowcfo · nowcfo.com</p>
+      <p style="margin-top:6px">🎧 The B2B Growth Blueprint on Apple Podcasts, Spotify &amp; YouTube · 🔧 Building revenue that survives diligence? That's what we do at Modern Revenue Strategies → modernrevenuestrategies.com</p>
+    </div>
+  </section>
+
+  <!-- 2. BLOG -->
+  <section id="blog" class="article">
+    <div class="kicker">02 · SEO Blog Article</div>
+    <h2>Beyond the Bank Balance: When Your Growing Business Actually Needs a Real CFO</h2>
+    <div class="metabar">
+      <span><b>Word count:</b> ~1,300</span>
+      <span><b>Primary keyword:</b> when does a business need a CFO</span>
+      <span><b>Meta:</b> NOW CFO's Brit Summerill on the revenue inflection points where bank-balance thinking breaks, the hidden costs of flying blind, and why accounting kills deals.</span>
+    </div>
+    <div class="card">
+      <p>I started The B2B Growth Blueprint to dig into the systems and processes behind durable growth — the unglamorous machinery that separates companies that scale from companies that just stay busy. My conversation with Brit Summerill, a Partner at NOW CFO who's spent 14 years rebuilding broken financial systems for companies from startup through $60M and beyond, is one of the clearest examples I've had on the show of a system most founders don't fix until it's too late.</p>
+      <p>Here's the line from Brit that reframed the whole conversation for me: "Nobody comes to me for accounting, they're coming to me for visibility." That's the heart of it. This episode isn't really about bookkeeping. It's about whether you can actually see your business clearly enough to make good decisions — and whether the story your numbers tell will hold up the day someone with a checkbook comes to look.</p>
+      <h3>Most founders run the whole company on one number</h3>
+      <p>In the early days, you manage by bank balance. How much is in the account? Are we okay this month? It works, and honestly it's the right instinct when you're small and every dollar is visible.</p>
+      <p>But as revenue climbs, that cash-basis, gut-driven approach quietly stacks up risk. You don't actually know your true margins. You have no internal controls. And your books — the ones that felt fine when it was just you — won't survive diligence. Brit's description of that state stuck with me: "They're really just bootstrapping and flying by the seat of their pants, and there's duct tape on the wheels."</p>
+      <p>The problem is that nothing forces the issue until it's expensive. The business feels fine right up until a funding round, an M&amp;A conversation, or an out-of-nowhere private-equity call shows up. And then the cleanup required can derail the entire deal.</p>
+      <h3>The inflection points where bank-balance thinking breaks</h3>
+      <p>One of the most useful parts of this conversation is that Brit put actual numbers on when to change your system — which is exactly the kind of specificity founders rarely get.</p>
+      <p>Around $5M in revenue, cash-basis bookkeeping and bank-balance management stop working. That's the point to move to accrual accounting, add revenue recognition, and start tracking basic KPIs so you can see what's actually happening beneath the top line.</p>
+      <p>Around $10M, you need controllers and real internal controls — not because you've done anything wrong, but because the surface area for error and risk has grown past what one person watching the bank account can manage.</p>
+      <p>And here's the trap: the founders who wait until $20M to make these shifts create expensive cleanup and avoidable risk. They don't save money by delaying. They defer a smaller bill into a much bigger one, and they carry unnecessary risk the whole way there.</p>
+      <h3>The hidden costs of flying blind</h3>
+      <p>The thing I want other founders to sit with is that the cost of poor visibility isn't just stress. It's concrete, and it's larger than most people think.</p>
+      <p>Without visibility into true margins, companies waste resources building against their weakest products — pouring energy into things that look busy but don't actually pay. They get denied credit lines and end up resorting to expensive hard-money loans. They overpay taxes and penalties on multi-state activity they didn't track properly. And when controls are missing, they expose themselves to internal theft.</p>
+      <p>Brit had a phrase for the warning sign: "growing broke." You're busier than ever, revenue is climbing, and yet there's less and less cash. That feeling — working harder for a shrinking bank balance — is the signal that you're flying blind. It's not a cash-flow hiccup. It's a visibility problem wearing a cash-flow costume.</p>
+      <h3>Why accounting kills deals "every time"</h3>
+      <p>This is the part every founder thinking about an eventual exit needs to hear. Brit was blunt: "There's a few things that'll kill a deal. One of them's accounting. Every time."</p>
+      <p>The numbers around this are sobering. Roughly 50% of owners are forced to sell when they're unprepared — not on their terms, not at their timing. And around 70% of small-business M&amp;A deals fall through. The two biggest deal-killers he sees are messy books that don't tell a clean story, and founder dependency with no succession plan.</p>
+      <p>The line that I'll be repeating: "There's no bigger way to lose a deal than to walk in the room not knowing what your company's really worth, and the numbers don't tell the story that's in your head." You can have a great business in your gut and still lose the deal because the financials can't back up the story you're telling.</p>
+      <h3>What to actually do about it</h3>
+      <p>The good news is that the fixes are the same whether or not you ever plan to sell — because they're really about running a clearer, more durable business.</p>
+      <p>Treat your books as if you could be audited tomorrow. That single standard forces the discipline that makes everything else easier. Automate your manual processes so visibility doesn't depend on someone remembering to update a spreadsheet. Benchmark your margins against your industry so you know whether you're actually healthy or just surviving. And build a team that can run the business without you — because founder dependency is both a daily bottleneck and a deal-killer.</p>
+      <p>This maps almost perfectly onto what I talk about constantly with the founders I work with. The most valuable businesses aren't necessarily the biggest. They're the ones with clean books, strong margins, and systems that don't depend on the founder grinding it out. That's what makes revenue durable — and durable revenue is what a buyer, a lender, or frankly your own future self will pay a premium for.</p>
+      <p>Brit's whole message is that you should invest in visibility before you need it — accrual accounting, real controls, benchmarked KPIs, and a leadership team that lets you step out. Whether your goal is a credit line, an acquisition, or simply sleeping better at night, doing the foundational work early is what lets you seize the best opportunities and survive the worst, instead of watching a deal fall apart at the table.</p>
+      <p><em>Listen to the full conversation with Brit Summerill on The B2B Growth Blueprint, on Apple Podcasts, Spotify, and YouTube.</em></p>
+    </div>
+  </section>
+
+  <!-- 3. LINKEDIN -->
+  <section id="linkedin">
+    <div class="kicker">03 · LinkedIn</div>
+    <h2>5 LinkedIn posts, 5 different formats</h2>
+    <div class="h2sub">Hook, contrarian take, inflection-point list, framework, and a big-idea reflection with a soft CTA. One idea each, built to be scanned on mobile.</div>
+
+    <div class="post"><span class="tag">Post 1 <span class="fmt">· The hook</span></span>Most founders run their entire company on one number: how much is in the bank.
+
+It works — right up until it doesn't.
+
+On the latest B2B Growth Blueprint, Brit Summerill (Partner, NOW CFO) put it perfectly:
+
+"They're really just bootstrapping and flying by the seat of their pants, and there's duct tape on the wheels."
+
+As revenue climbs, bank-balance thinking quietly stacks up risk: unknown margins, no controls, books that won't survive diligence.
+
+Then a funding round or an M&amp;A call shows up — and the cleanup derails the whole deal.
+
+We got into exactly when to fix it. 🎧 Link in comments.
+<span class="hashtags">#B2B #Finance #Founders</span></div>
+
+    <div class="post"><span class="tag">Post 2 <span class="fmt">· Contrarian</span></span>"Nobody comes to me for accounting. They're coming to me for visibility."
+
+That's Brit Summerill (NOW CFO) on the latest B2B Growth Blueprint — and it reframes the whole thing.
+
+This isn't about bookkeeping.
+
+It's about whether you can actually SEE your business clearly enough to make good decisions.
+
+Most founders can't. They're managing by bank balance and calling it financial control.
+
+The tell? "Growing broke" — busier than ever, revenue climbing, and somehow less and less cash.
+
+That's not a cash-flow hiccup. It's a visibility problem wearing a cash-flow costume.
+<span class="hashtags">#CFO #B2B #Scaling</span></div>
+
+    <div class="post"><span class="tag">Post 3 <span class="fmt">· Inflection-point list</span></span>When does managing by bank balance actually break?
+
+Brit Summerill (NOW CFO) put real numbers on it — the kind founders rarely get:
+
+1. ~$5M revenue → cash-basis stops working. Move to accrual, add revenue recognition, track basic KPIs.
+
+2. ~$10M → you need controllers and real internal controls.
+
+3. Wait until $20M to fix it? You create expensive cleanup and avoidable risk.
+
+You don't save money by delaying. You defer a small bill into a much bigger one — and carry the risk the whole way there.
+
+Full breakdown on the latest B2B Growth Blueprint. 🎧
+<span class="hashtags">#Finance #Scaling #B2B</span></div>
+
+    <div class="post"><span class="tag">Post 4 <span class="fmt">· Framework</span></span>"There's a few things that'll kill a deal. One of them's accounting. Every time."
+
+That's Brit Summerill on the B2B Growth Blueprint. The numbers are sobering:
+
+→ ~50% of owners are FORCED to sell when they're unprepared
+→ ~70% of small-business M&amp;A deals fall through
+
+The two biggest deal-killers after an LOI:
+
+→ Messy books that don't tell a clean story
+→ Founder dependency with no succession plan
+
+Brit's line I keep coming back to: "There's no bigger way to lose a deal than to walk in the room not knowing what your company's really worth."
+
+You can have a great business in your gut and still lose the deal because the financials can't back the story.
+<span class="hashtags">#MnA #Exit #Founders</span></div>
+
+    <div class="post"><span class="tag">Post 5 <span class="fmt">· Big idea + soft CTA</span></span>The most valuable businesses aren't the biggest.
+
+They're the ones with clean books, strong margins, and systems that don't depend on the founder grinding it out.
+
+That's the throughline of my conversation with Brit Summerill (NOW CFO) on the B2B Growth Blueprint.
+
+His advice, whether or not you ever plan to sell:
+
+- Treat your books like you could be audited tomorrow
+- Automate manual processes
+- Benchmark your margins against your industry
+- Build a team that can run the business without you
+
+Invest in visibility BEFORE you need it. That's what makes revenue durable.
+
+🎧 If you're scaling a B2B or professional-services firm, this one's a gut-check. Link in comments.
+<span class="hashtags">#B2B #EnterpriseValue</span></div>
+  </section>
+
+  <!-- 4. THREAD -->
+  <section id="thread">
+    <div class="kicker">04 · X / Twitter</div>
+    <h2>A 10-tweet thread</h2>
+    <div class="h2sub">Each tweet stands alone. Hook first. Built to be screenshotted.</div>
+    <div class="post">1/ Most founders run their whole company on one number: how much is in the bank.
+
+It works — until a buyer, a lender, or a PE call shows up and the cleanup derails the deal.
+
+Here's what Brit Summerill (Partner, NOW CFO) taught me about outgrowing bank-balance thinking 🧵
+
+2/ The reframe that set the tone:
+
+"Nobody comes to me for accounting, they're coming to me for visibility."
+
+This isn't about bookkeeping. It's about whether you can see your business clearly enough to make good decisions.
+
+3/ Early on, managing by bank balance is fine. But as revenue climbs it quietly stacks up risk:
+
+→ unknown true margins
+→ no internal controls
+→ books that won't survive diligence
+
+Brit's words: "duct tape on the wheels."
+
+4/ The inflection points (real numbers, rare to get):
+
+~$5M → cash-basis breaks. Move to accrual, add revenue recognition, track KPIs.
+
+~$10M → you need controllers + real internal controls.
+
+5/ The trap: waiting until $20M to fix it.
+
+You don't save money by delaying. You defer a small bill into a much bigger one — and carry the risk the whole way there.
+
+6/ The hidden costs of flying blind:
+
+→ building against your weakest products
+→ denied credit → expensive hard-money loans
+→ tax penalties on multi-state activity
+→ internal theft when controls are missing
+
+7/ The warning sign has a name: "growing broke."
+
+Busier than ever. Revenue climbing. And somehow less and less cash.
+
+That's not a cash-flow hiccup. It's a visibility problem in disguise.
+
+8/ On exits, Brit was blunt:
+
+"There's a few things that'll kill a deal. One of them's accounting. Every time."
+
+~50% of owners are forced to sell unprepared. ~70% of small-biz M&amp;A deals fall through.
+
+9/ The two biggest deal-killers after an LOI:
+
+→ messy books that don't tell a clean story
+→ founder dependency with no succession plan
+
+"No bigger way to lose a deal than to walk in the room not knowing what your company's really worth."
+
+10/ The fix (sell or not):
+
+Books audit-ready. Automate. Benchmark margins. Build a team that runs it without you.
+
+Invest in visibility BEFORE you need it.
+
+🎧 Full episode: The B2B Growth Blueprint.
+Follow for more systems that make revenue durable.</div>
+  </section>
+
+  <!-- 5. VIDEO SCRIPT -->
+  <section id="video">
+    <div class="kicker">05 · Short-form video</div>
+    <h2>Short-form video script (Reel / Short)</h2>
+    <div class="h2sub">Hook in the first 3 seconds, one idea, clear payoff. Talking-head or text-on-screen ready. ~45s.</div>
+    <div class="script">
+      <b>"Growing broke: the warning sign founders miss" (~45s)</b>
+      <div class="hook">HOOK (0–3s): "If your revenue is climbing but your bank account is shrinking, you're not having a cash-flow problem. You're flying blind."</div>
+      <div class="beat"><span class="t">3–14s</span>"On my podcast, Brit Summerill of NOW CFO called it 'growing broke.' Busier than ever, revenue up — and somehow less and less cash."</div>
+      <div class="beat"><span class="t">14–30s</span>"Here's why it happens. Most founders manage by bank balance. But past ~$5M, that stops working. You can't see your true margins, so you keep investing in your weakest products."</div>
+      <div class="beat"><span class="t">30–40s</span>"The fix isn't hustle. It's visibility — accrual accounting, real KPIs, controls. Brit's line: 'Nobody comes to me for accounting. They come to me for visibility.'"</div>
+      <div class="beat"><span class="t">40–45s</span>"That's the latest B2B Growth Blueprint. Follow for more."</div>
+      <div style="color:var(--muted);font-size:13px;margin-top:8px">On-screen text: "growing broke = a visibility problem in disguise"</div>
+    </div>
+  </section>
+
+  <!-- 6. TIKTOK -->
+  <section id="tiktok">
+    <div class="kicker">06 · TikTok</div>
+    <h2>TikTok script (native tone)</h2>
+    <div class="h2sub">Faster, punchier, more casual than the Reel above. Written for a feed that scrolls in 1.5 seconds.</div>
+    <div class="script">
+      <b>"POV: the buyer's due diligence team opens your books" (~30s)</b>
+      <div class="hook">HOOK (0–2s): "POV: you're finally selling your business and the buyer's team opens your books. 💀"</div>
+      <div class="beat"><span class="t">2–14s</span>"A CFO told me on my podcast: 'There's a few things that'll kill a deal. One of them's accounting. Every time.'"</div>
+      <div class="beat"><span class="t">14–24s</span>"~70% of small-business M&amp;A deals fall through. Biggest killers: messy books + a business that can't run without the founder."</div>
+      <div class="beat"><span class="t">24–30s</span>"Fix the books BEFORE you need to. B2B Growth Blueprint. 👀"</div>
+      <div style="color:var(--muted);font-size:13px;margin-top:8px">On-screen text: "your gut says it's worth $X. your books have to prove it." · Trending audio: tense-to-payoff sound.</div>
+    </div>
+  </section>
+
+  <!-- 7. NEWSLETTER -->
+  <section id="newsletter">
+    <div class="kicker">07 · Newsletter</div>
+    <h2>Full newsletter edition</h2>
+    <div class="h2sub">3 subject-line options, preview text, and a complete send in your voice.</div>
+    <div class="card">
+      <p><b>Subject line options:</b></p>
+      <ul class="clean">
+        <li>A: When does your business actually need a real CFO?</li>
+        <li>B: "Growing broke" — the warning sign most founders miss</li>
+        <li>C: The one thing that kills M&amp;A deals every time</li>
+      </ul>
+      <p><b>Preview text:</b> Most founders run the whole company on one number. Here's when that breaks.</p>
+      <hr style="border:none;border-top:1px dashed var(--line);margin:16px 0">
+      <p>Hey,</p>
+      <p>This week on The B2B Growth Blueprint I talked with Brit Summerill, a Partner at NOW CFO who's spent 14 years rebuilding broken financial systems for companies from startup through $60M+.</p>
+      <p>His reframe set the tone for the whole conversation: "Nobody comes to me for accounting, they're coming to me for visibility."</p>
+      <p>A few things I keep coming back to:</p>
+      <ul class="clean">
+        <li>Most founders manage by bank balance. Around $5M in revenue that stops working — you need accrual, revenue recognition, and real KPIs. Around $10M you need controllers and internal controls. Wait until $20M and you're paying for expensive cleanup plus avoidable risk.</li>
+        <li>Watch for "growing broke" — busier than ever, revenue climbing, and somehow less and less cash. That's not a cash-flow hiccup; it's a visibility problem in disguise.</li>
+        <li>On exits: "There's a few things that'll kill a deal. One of them's accounting. Every time." Roughly 70% of small-business M&amp;A deals fall through, and the biggest killers are messy books and founder dependency.</li>
+        <li>The fix, whether or not you ever sell: treat your books like you could be audited tomorrow, automate, benchmark your margins, and build a team that can run the business without you.</li>
+      </ul>
+      <p>The most valuable businesses aren't the biggest — they're the ones with clean books, strong margins, and systems that don't depend on the founder grinding it out.</p>
+      <p>🎧 Listen to the full episode → [episode link]<br>🔧 Build revenue that survives diligence → modernrevenuestrategies.com</p>
+      <p>Talk soon,<br>Mark</p>
+    </div>
+  </section>
+
+  <!-- 8. QUOTE GRAPHICS -->
+  <section id="quotes">
+    <div class="kicker">08 · Quote graphics</div>
+    <h2>8 pull-quote graphics</h2>
+    <div class="h2sub">Quotes 1–4 are verbatim from guest Brit Summerill (published in the episode show notes). Quotes 5–8 are host-voice framings of the episode's ideas, attributed to the episode/idea, not as verbatim guest quotes. Ready to drop into Canva. Design spec below.</div>
+    <div class="quote">"Nobody comes to me for accounting. They're coming to me for visibility."<span class="src">Brit Summerill · B2B Growth Blueprint</span></div>
+    <div class="quote">"There's a few things that'll kill a deal. One of them's accounting. Every time."<span class="src">Brit Summerill · B2B Growth Blueprint</span></div>
+    <div class="quote">"No bigger way to lose a deal than to walk in the room not knowing what your company's really worth."<span class="src">Brit Summerill · B2B Growth Blueprint</span></div>
+    <div class="quote">"They're bootstrapping and flying by the seat of their pants — and there's duct tape on the wheels."<span class="src">Brit Summerill · B2B Growth Blueprint</span></div>
+    <div class="quote">"'Growing broke' — busier than ever, and somehow less and less cash."<span class="src">B2B Growth Blueprint</span></div>
+    <div class="quote">"You don't save money by delaying. You defer a small bill into a much bigger one."<span class="src">B2B Growth Blueprint</span></div>
+    <div class="quote">"The most valuable businesses aren't the biggest. They're the cleanest."<span class="src">B2B Growth Blueprint</span></div>
+    <div class="quote">"Invest in visibility before you need it."<span class="src">B2B Growth Blueprint</span></div>
+    <p style="color:var(--muted);font-size:14px">Design spec: 1080×1080, dark professional background (#0d1117), quote in large white bold sans, "B2B Growth Blueprint" wordmark top-right, "Brit Summerill · NOW CFO" in accent blue bottom-left. Consistent template across all 8.</p>
+  </section>
+
+  <!-- 9. CALENDAR -->
+  <section id="calendar">
+    <div class="kicker">09 · Distribution plan</div>
+    <h2>4-week distribution plan, scheduled for you</h2>
+    <div class="h2sub">Here's the part that matters: <b>you don't post any of this.</b> We map every asset across four weeks, load it into your scheduler, and you approve the whole batch in about five minutes. Then it publishes itself while you focus on recording. The mix follows a founder-optimized ratio: 40% education, 30% story/POV, 20% engagement, 10% offer.</div>
+    <div class="note" style="margin-top:0">
+      <b>How the hands-off part works:</b> You record. We create the pack, schedule everything into your posting tool, and send you one approval link. One click and a month of content goes live on autopilot. Add a second show later and we fold it into the same managed queue, so it never becomes more work for you, no matter how many episodes you run.
+    </div>
+
+    <div class="wk">Week 1 — Launch</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 1</b> (the hook) + episode link in comments</td></tr>
+      <tr><td>Mon</td><td>X</td><td><b>The 10-tweet thread</b></td></tr>
+      <tr><td>Tue</td><td>Newsletter</td><td><b>Full edition</b> (subject B)</td></tr>
+      <tr><td>Wed</td><td>Reels + TikTok</td><td><b>Video</b> / <b>TikTok</b> scripts</td></tr>
+      <tr><td>Thu</td><td>LinkedIn</td><td><b>Post 3</b> (inflection-point list)</td></tr>
+      <tr><td>Fri</td><td>LinkedIn</td><td><b>Post 4</b> (deal-killer framework) + <b>Quote graphic 2</b></td></tr>
+    </table>
+
+    <div class="wk">Week 2 — Depth</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 2</b> (contrarian: visibility, not accounting)</td></tr>
+      <tr><td>Tue</td><td>Reels + TikTok</td><td>Repost video w/ new hook + <b>Quote graphic 5</b></td></tr>
+      <tr><td>Wed</td><td>Blog</td><td>Publish <b>SEO article</b> on your site</td></tr>
+      <tr><td>Thu</td><td>X</td><td>Repost thread w/ new opener + <b>Quote graphic 1</b></td></tr>
+      <tr><td>Fri</td><td>LinkedIn</td><td><b>Post 5</b> (durable revenue + soft CTA)</td></tr>
+    </table>
+
+    <div class="wk">Week 3 — Engagement</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn</td><td>Poll: "Bigger deal-killer in an exit? (a) messy books, (b) founder dependency, (c) both equally"</td></tr>
+      <tr><td>Wed</td><td>Reels + TikTok</td><td>"Growing broke" cut + <b>Quote graphic 5</b></td></tr>
+      <tr><td>Thu</td><td>LinkedIn</td><td>Reshare <b>Post 1</b> as a story-led reflection</td></tr>
+      <tr><td>Fri</td><td>X + IG</td><td><b>Quote graphics 3 &amp; 6</b></td></tr>
+    </table>
+
+    <div class="wk">Week 4 — Payoff</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>Reels + TikTok</td><td>"Invest in visibility before you need it" clip</td></tr>
+      <tr><td>Wed</td><td>LinkedIn</td><td><b>Post 5</b> reshared w/ personal reflection + Modern Revenue Strategies CTA</td></tr>
+      <tr><td>Thu</td><td>Newsletter</td><td>Follow-up: "the CFO line I keep repeating" (repurpose Post 4)</td></tr>
+      <tr><td>Fri</td><td>IG + X</td><td><b>Quote graphics 4 &amp; 7</b> to close the cycle</td></tr>
+    </table>
+  </section>
+
+  <div class="final">
+    <h2>This is one episode.</h2>
+    <p style="color:var(--muted);max-width:560px;margin:0 auto 22px">18+ assets, five platforms, a full month of distribution, all pulled from a single recording and written in your voice. Imagine this landing in your inbox every time you publish, with nothing left for you to do but hit post.</p>
+    <a class="cta" href="mailto:hello@episodeloop.com?subject=Let's%20talk%20EpisodeLoop">Email me to get started →</a>
+    <p style="color:var(--muted);font-size:14px;margin-top:16px">Or just reply to my email. Either way, this pack is yours to keep.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    Made by <b>EpisodeLoop</b> · <a class="mail" href="mailto:hello@episodeloop.com">hello@episodeloop.com</a><br>
+    Created from publicly available episode content, shared free with our best wishes.
+  </div>
+</footer>
+
+</body>
+</html>
