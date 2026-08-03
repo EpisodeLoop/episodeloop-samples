@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EpisodeLoop — Listener-Growth Pack for LinkedIn AdWise (ft. Nico Kusterer)</title>
+<meta name="description" content="A listener-growth pack made by EpisodeLoop from the LinkedIn AdWise episode with Justin Rowe and guest Nico Kusterer — discoverability, guest amplification, and ready-to-publish content." />
+<meta name="robots" content="noindex" />
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --ink:#e6edf3; --muted:#9aa5b1;
+    --accent:#5b8cff; --accent2:#7c5bff; --line:#232a34; --ok:#3fb950; --amber:#d29922;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  header{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);z-index:10}
+  .headrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .brand span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .navpill{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+  .hero{padding:52px 0 30px}
+  .badge{display:inline-block;background:rgba(63,185,80,.12);color:var(--ok);border:1px solid rgba(63,185,80,.3);font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{color:var(--muted);font-size:18px}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:16px 20px;margin:22px 0;color:var(--muted);font-size:15px}
+  .note b{color:var(--ink)}
+  .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin:20px 0}
+  .toc h4{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin-left:18px;color:var(--ink);font-size:15px;columns:2;column-gap:28px}
+  .toc li{padding:3px 0}
+  .toc a{color:var(--ink);text-decoration:none}
+  .toc a:hover{color:var(--accent)}
+  section{padding:30px 0;border-top:1px solid var(--line)}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  .herohead{border-top:none}
+  .herohead h2{font-size:27px}
+  h2{font-size:25px;letter-spacing:-.01em;margin-bottom:8px}
+  .h2sub{color:var(--muted);font-size:15px;margin-bottom:18px}
+  h3{font-size:17px;margin:20px 0 6px}
+  p{margin-bottom:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .card .meta{color:var(--muted);font-size:14px;margin-bottom:10px}
+  ul.clean{list-style:none;margin:10px 0}
+  ul.clean li{padding:4px 0 4px 22px;position:relative}
+  ul.clean li:before{content:"→";position:absolute;left:0;color:var(--accent)}
+  .ts{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600;margin-right:8px}
+  .titleopt{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+  .titleopt .t{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:6px}
+  .titleopt .r{font-size:14px;color:var(--muted)}
+  .titleopt .r b{color:var(--accent)}
+  .current{background:rgba(210,153,34,.08);border:1px solid rgba(210,153,34,.25);border-radius:10px;padding:12px 16px;margin-bottom:14px;font-size:14px;color:var(--muted)}
+  .current b{color:var(--amber)}
+  .post{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;white-space:pre-line;font-size:15px}
+  .post .tag{display:block;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+  .post .fmt{color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0}
+  .listen{color:var(--ok);font-weight:600}
+  blockquote{border-left:3px solid var(--accent2);padding-left:16px;color:var(--ink);margin:8px 0}
+  .article p{color:#c9d3de}
+  .article h3{color:var(--ink)}
+  .metabar{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:14px;border-bottom:1px dashed var(--line);padding-bottom:12px}
+  .metabar b{color:var(--ink)}
+  .quote{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:12px;font-size:18px;font-weight:600;line-height:1.4;position:relative}
+  .quote .src{display:block;margin-top:10px;font-size:13px;font-weight:500;color:var(--muted)}
+  .flag{background:rgba(210,153,34,.08);border:1px solid rgba(210,153,34,.25);border-radius:8px;padding:10px 14px;margin:10px 0;font-size:13px;color:var(--muted)}
+  .flag b{color:var(--amber)}
+  .cta{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:12px;font-size:16px;margin-top:6px}
+  a.mail{color:var(--accent);text-decoration:none}
+  footer{padding:44px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  .final{text-align:center;padding:48px 0}
+  .value{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+  .value div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
+  .value b{display:block;color:var(--accent);font-size:20px}
+  .valueadd{background:var(--panel2);border:1px dashed var(--line);border-radius:10px;padding:14px 18px;color:var(--muted);font-size:14px}
+  @media(max-width:600px){.hero h1{font-size:27px}.toc ol{columns:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap headrow">
+    <div class="brand">Episode<span>Loop</span></div>
+    <div class="navpill">Listener-growth pack · prepared for Justin Rowe</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge">FREE SAMPLE · BUILT FROM YOUR NICO KUSTERER EPISODE</div>
+    <h1>Your podcast is a goldmine. <em>Let's get it found.</em></h1>
+    <p class="sub">LinkedIn AdWise · "LinkedIn Ads Cost 40x More But Deliver 10x Better Leads" · with Nico Kusterer (The One Media)</p>
+  </div>
+
+  <div class="note">
+    Hi Justin. This is a real, finished growth pack built entirely from your LinkedIn AdWise episode with Nico Kusterer. It's not a template and it's not a "wall of LinkedIn content." It's engineered to do one thing: <b>put this episode in front of more of the right listeners</b> — through search discoverability, guest amplification, and support content that all drives back to press play. It's yours to use, free, with no strings. This is exactly what you'd receive from EpisodeLoop for every episode you release.
+  </div>
+
+  <div class="value">
+    <div><b>5</b> SEO title options</div>
+    <div><b>11</b> searchable chapters</div>
+    <div><b>~1,150-word</b> ranking article</div>
+    <div><b>1-click</b> guest share kit</div>
+  </div>
+
+  <div class="toc">
+    <h4>What's inside this pack</h4>
+    <ol>
+      <li><a href="#disco">1 · Discoverability engine</a></li>
+      <li><a href="#titles">→ SEO title options</a></li>
+      <li><a href="#chapters">→ Chapters + timestamps</a></li>
+      <li><a href="#shownotes">→ SEO show notes</a></li>
+      <li><a href="#blog">→ Ranking blog article</a></li>
+      <li><a href="#amplify">2 · Guest amplification kit</a></li>
+      <li><a href="#support">3 · Ready-to-publish content</a></li>
+      <li><a href="#valueadd">+ Clips (value-add)</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. DISCOVERABILITY -->
+  <section id="disco">
+    <div class="kicker">01 · The hero</div>
+    <h2>Discoverability engine</h2>
+    <div class="h2sub">The #1 real listener-growth lever — it makes this episode findable by B2B marketers searching Apple, Spotify, YouTube, and Google who don't already follow you. This works on any show, regardless of how you record.</div>
+  </section>
+
+  <!-- 1a TITLES -->
+  <section id="titles">
+    <div class="kicker">01a · SEO titles</div>
+    <h2>Search-optimized episode title options</h2>
+    <div class="current">Your current title — <b>"LinkedIn Ads Cost 40x More But Deliver 10x Better Leads ft. Nico Kusterer"</b> — is already a strong hook. These 5 rewrites keep that punch but pull in the exact phrases marketers type into search (framework names, "intent-based full funnel," "thought leader ads") so new listeners find it.</div>
+
+    <div class="titleopt"><div class="t">1. LinkedIn Ads Cost 40x More But Deliver 10x Better Leads — The Intent-Based Full-Funnel Framework (ft. Nico Kusterer)</div><div class="r"><b>Why:</b> Keeps your winning contrarian hook, then adds "intent-based full-funnel framework" — the exact thing marketers search when fixing a leaky LinkedIn funnel. <b>Recommended for the podcast feed.</b></div></div>
+    <div class="titleopt"><div class="t">2. The 16-Week LinkedIn Ads Pipeline Framework: Start Mid-Funnel, Prove Conversion First (Nico Kusterer)</div><div class="r"><b>Why:</b> Leads with a concrete, ownable framework name + a number. "16-week pipeline framework" is memorable and searchable; "start mid-funnel" earns the click.</div></div>
+    <div class="titleopt"><div class="t">3. Are LinkedIn Ads Too Expensive? Why Cost-Per-Quality-Lead Beats CPC (LinkedIn AdWise)</div><div class="r"><b>Why:</b> Targets the literal question buyers Google — "are LinkedIn ads too expensive" — and answers it with your reframe.</div></div>
+    <div class="titleopt"><div class="t">4. Thought Leader Ads: Why 80% of Your LinkedIn Budget Should Go Here (ft. Nico Kusterer)</div><div class="r"><b>Why:</b> "Thought Leader Ads" is a rising high-intent search term; the "80% of budget" number is a scroll-stopper and a real takeaway. <b>Recommended for YouTube.</b></div></div>
+    <div class="titleopt"><div class="t">5. How to Build an Intent-Based LinkedIn Ads Funnel That Actually Generates Pipeline | LinkedIn AdWise</div><div class="r"><b>Why:</b> Front-loads "intent-based LinkedIn ads funnel" + "pipeline," includes the show name for branded and back-catalog discovery.</div></div>
+  </section>
+
+  <!-- 1b CHAPTERS -->
+  <section id="chapters">
+    <div class="kicker">01b · Chapters</div>
+    <h2>Chapters + timestamps</h2>
+    <div class="h2sub">You already publish these on YouTube — here they are cleaned up for search/retention and ready to paste into Apple + Spotify too, so you're indexed everywhere, not just YouTube.</div>
+    <div class="card">
+      <ul class="clean">
+        <li><span class="ts">00:00</span> Intro: meeting Nico Kusterer (The One Media)</li>
+        <li><span class="ts">00:52</span> From Meta to LinkedIn: building expertise in an underserved market</li>
+        <li><span class="ts">02:58</span> The #1 expensive mistake: cold targeting + sales messaging</li>
+        <li><span class="ts">10:46</span> Why generalist agencies waste big LinkedIn budgets</li>
+        <li><span class="ts">13:39</span> The 16-week pipeline framework: start mid-funnel, prove conversion first</li>
+        <li><span class="ts">15:08</span> How to build an intent-based full funnel (awareness → mid → bottom)</li>
+        <li><span class="ts">22:33</span> Lead Gen Forms: capture quality without dev delays</li>
+        <li><span class="ts">25:03</span> Thought Leader Ads: why 80% budget allocation beats company-page posts</li>
+        <li><span class="ts">29:57</span> Your format mix: text ads, spotlight ads, customer testimonials</li>
+        <li><span class="ts">33:36</span> Busting the "LinkedIn Ads are expensive" myth (cost-per-quality-lead)</li>
+        <li><span class="ts">37:12</span> Key takeaways + where to find Nico</li>
+      </ul>
+      <div class="flag"><b>Sourced from your own published YouTube chapters</b> for this episode — no guesswork. For paying clients we lock these to the exact audio and mirror them across Apple + Spotify automatically.</div>
+    </div>
+  </section>
+
+  <!-- 1c SHOW NOTES -->
+  <section id="shownotes">
+    <div class="kicker">01c · Show notes</div>
+    <h2>SEO show notes / episode description</h2>
+    <div class="h2sub">First two lines written for search + the "read more" cutoff. Drop straight into Apple, Spotify, and YouTube.</div>
+    <div class="card">
+      <p><b>Are LinkedIn Ads too expensive? Not if you measure cost-per-quality-lead.</b> In this episode of LinkedIn AdWise, host Justin Rowe (Impactable) sits down with Nico Kusterer, founder of The One Media and a former LinkedIn Certified Marketing Expert, to break down why LinkedIn Ads can cost 40x more per click yet deliver 10x better leads — and the intent-based full-funnel framework that makes that math work.</p>
+      <p>Most companies run LinkedIn ads with cold targeting and sales messaging, then conclude the platform is "too expensive." Nico and Justin unpack what actually drives pipeline: a 16-week framework that starts mid-funnel to prove conversion first, an intent-based full funnel that identifies intent at every stage (account-level first, then person-level), why Thought Leader Ads deserve ~80% of your budget over company-page posts, and how to build your format mix across text, spotlight, and testimonial ads. If your LinkedIn ads aren't producing pipeline, this is the diagnosis.</p>
+      <h3>What you'll learn</h3>
+      <ul class="clean">
+        <li>Why LinkedIn's true ROI only shows up when you measure beyond surface metrics like CPC and CPM</li>
+        <li>The 16-week pipeline framework: why you start mid-funnel and prove conversion before scaling awareness</li>
+        <li>How to build an intent-based full funnel — identifying intent at the account level, then the person level</li>
+        <li>Why Thought Leader Ads outperform company-page posts (and why they deserve ~80% of budget)</li>
+        <li>How to use Lead Gen Forms to capture quality leads without development delays</li>
+      </ul>
+      <p><b>Guest:</b> Nico Kusterer — Founder, The One Media; former LinkedIn Certified Marketing Expert.</p>
+      <p><span class="listen">🎧 Press play now, and subscribe to LinkedIn AdWise</span> so you never miss an episode. 🔧 LinkedIn ads not producing pipeline? See how Impactable builds intent-based funnels → impactable.com</p>
+    </div>
+  </section>
+
+  <!-- 1d BLOG -->
+  <section id="blog" class="article">
+    <div class="kicker">01d · Ranking blog article</div>
+    <h2>LinkedIn Ads Cost 40x More But Deliver 10x Better Leads. Here's Why That Math Works.</h2>
+    <div class="metabar">
+      <span><b>Word count:</b> ~1,150</span>
+      <span><b>Target keyword:</b> intent-based LinkedIn ads funnel</span>
+      <span><b>Slug:</b> /linkedin-ads-intent-based-full-funnel-nico-kusterer</span>
+    </div>
+    <div class="card">
+      <p>I've overseen more than 150 LinkedIn ad campaigns at Impactable, and I still hear the same objection almost every week: "LinkedIn is too expensive." I get why people say it. If you look at cost-per-click or CPM in isolation, LinkedIn can cost 40 times more than the other channels you're used to. But that's the wrong number to look at, and my conversation with Nico Kusterer on LinkedIn AdWise is one of the cleanest breakdowns I've done of why.</p>
+      <p>Nico is the founder of The One Media and a former LinkedIn Certified Marketing Expert. He came to LinkedIn from the Meta side, which is exactly why his perspective is useful — he's seen both worlds, and he built his expertise in what's still, frankly, an underserved market. Very few people run LinkedIn ads well. Most run them the way they'd run Meta, and that's where the money leaks out.</p>
+      <h3>The most expensive mistake on LinkedIn</h3>
+      <p>Here's the mistake Nico and I keep seeing, and it's a costly one: cold targeting paired with sales messaging. Marketers switch LinkedIn on, point it at a cold audience they've never warmed up, and hit them with "book a demo." On a platform where a click can cost 40x what you're used to, that combination burns budget faster than anything else you can do.</p>
+      <p>The problem isn't LinkedIn. The problem is treating the most expensive click in your stack like a bottom-of-funnel coupon. If you're going to pay a premium for the click, you'd better have a reason for that person to care before you ask them to buy.</p>
+      <h3>The 16-week pipeline framework: start mid-funnel, prove conversion first</h3>
+      <p>One of the most useful things Nico shared is a 16-week pipeline framework — and the counterintuitive part is where you start. Most people want to start at the top, run big awareness campaigns, and fill the funnel. Nico does the opposite. He starts mid-funnel, with a high-intent lead magnet, and proves conversion before scaling anything.</p>
+      <p>Why? Because if you can't convert the people already showing intent, spending more to pour cold traffic in at the top just makes the leak bigger. Prove the mid-funnel converts. Build your first retargeting audiences off that activity — company-tab, high-intent ABM audiences, and person-based audiences. Then, once you can see it working, you layer awareness campaigns on top to feed more of the right people into the machine.</p>
+      <p>I want to be honest the way Nico was: this framework works for specific clients, not everyone. If you don't have enough traffic or a real offer that converts, no framework saves you. But for the right B2B company, starting mid-funnel and earning the right to scale is exactly how you make expensive clicks pay for themselves.</p>
+      <h3>How to build an intent-based full funnel</h3>
+      <p>This is the core idea, and it's why LinkedIn's premium price can still deliver 10x better leads. The goal isn't reach. The goal is to identify intent at every single stage of the funnel.</p>
+      <p>Start at the account level. LinkedIn's company-engagement data — the company tab that's been around a year and a half or two now — lets you see which accounts are actually engaging. That's your first intent signal, and it's the one most advertisers ignore. From there you move to the person level: single-image ads to individuals inside those engaged accounts.</p>
+      <p>Each stage has its own intent signal. In the awareness stage, intent looks like video views or ungated document interactions — someone consuming your content is telling you something. In the next stage, it's engagement with person-level ads. You're not spraying and hoping; you're reading signals and moving people forward based on what they actually do. That's the difference between "expensive" and "efficient," even at the same CPC.</p>
+      <h3>Thought Leader Ads deserve ~80% of your budget</h3>
+      <p>If there's one tactical takeaway I'd put in bold, it's this: Thought Leader Ads outperform company-page posts, and Nico allocates something like 80% of budget to them for a reason. People trust people, not logos. A promoted post from a real person in your company — sharing a genuine point of view — earns attention that a company-page ad simply can't buy on LinkedIn anymore.</p>
+      <p>Pair that with the right format mix — text ads, spotlight ads, customer testimonials — and Lead Gen Forms to capture quality without waiting on your dev team to build landing pages. Lead Gen Forms remove friction on both sides: the prospect converts in-platform, and you don't lose weeks to development delays.</p>
+      <h3>So, are LinkedIn Ads too expensive?</h3>
+      <p>Back to the myth. LinkedIn ads look expensive on a cost-per-click basis and cheap on a cost-per-quality-lead basis. That's the whole reframe. If you measure the surface metric everyone obsesses over — CPC, CPM — you'll always conclude LinkedIn is overpriced. If you measure the thing that actually matters to your business — the cost of a lead that turns into pipeline and revenue — LinkedIn frequently wins, precisely because the targeting and the trust are better.</p>
+      <p>The 40x/10x line isn't a gimmick. It's a summary of a real trade-off: you pay more per touch, but with an intent-based full funnel and Thought Leader Ads doing the heavy lifting, the leads you get are dramatically better qualified. Expensive clicks, cheaper customers.</p>
+      <p>If your LinkedIn ads aren't producing pipeline right now, don't conclude the channel is broken. Look at your funnel. Are you starting mid-funnel and proving conversion, or dumping cold traffic on sales messaging? Are you reading intent at the account and person level, or buying reach? Are you leaning on Thought Leader Ads, or boosting company-page posts and wondering why nobody cares?</p>
+      <p><span class="listen">Listen here:</span> the full conversation with Nico Kusterer is on LinkedIn AdWise — press play, and subscribe so the next data-backed LinkedIn playbook lands in your feed automatically.</p>
+    </div>
+  </section>
+
+  <!-- 2. GUEST AMPLIFICATION -->
+  <section id="amplify">
+    <div class="kicker">02 · Borrowed reach</div>
+    <h2>Guest amplification kit</h2>
+    <div class="h2sub">The cheapest new listeners there are. Most guests never promote the episode — not because they don't want to, but because writing the posts is friction. This kit removes it: hand Nico the note + posts and he shares to The One Media's audience in one click, putting LinkedIn AdWise in front of a whole new room of your exact ICP.</div>
+
+    <div class="post"><span class="tag">"Your episode is live" note <span class="fmt">· ready to send to Nico</span></span>Subject: You're live on LinkedIn AdWise 🎧
+
+Hi Nico,
+
+Your episode is officially live — thanks again for such a sharp breakdown of the intent-based full funnel and the 16-week framework. The "40x more expensive, 10x better leads" reframe is going to stick with a lot of people.
+
+🎧 Listen / share: [episode link]
+
+To make it easy to share with your network, I've drafted a few ready-to-post captions below (LinkedIn + X) — feel free to use them as-is or tweak. I've also pulled a couple of quote graphics from your best moments; happy to send those over.
+
+Really appreciate you coming on. Would love for The One Media's audience to hear it.
+
+— Justin</div>
+
+    <div class="post"><span class="tag">For Nico to share <span class="fmt">· LinkedIn (his voice)</span></span>I joined Justin Rowe on the LinkedIn AdWise podcast to talk about something most marketers get backwards: LinkedIn Ads cost ~40x more per click, but they can deliver 10x better leads — IF you build the funnel right.
+
+We got into the intent-based full funnel I use: start mid-funnel to prove conversion, read intent at the account level before the person level, and put ~80% of budget behind Thought Leader Ads instead of company-page posts.
+
+If you've ever concluded "LinkedIn is too expensive," this one's worth a listen. 🎧 [episode link]</div>
+
+    <div class="post"><span class="tag">For Nico to share <span class="fmt">· X / Twitter (his voice)</span></span>Went on @LinkedInAdWise with Justin Rowe to bust the "LinkedIn Ads are too expensive" myth.
+
+They cost 40x more per click — and deliver 10x better leads, if you build an intent-based full funnel. Here's how 👇 [episode link]</div>
+
+    <div class="post"><span class="tag">For Nico to share <span class="fmt">· X / Twitter — shorter</span></span>Most B2B teams run LinkedIn like Meta: cold targeting + sales messaging. That's the expensive mistake.
+
+Talked through the fix — the intent-based full funnel — with Justin Rowe on LinkedIn AdWise 🎧 [episode link]</div>
+
+    <h3>Guest pull-quotes</h3>
+    <div class="flag"><b>Host/guest-voice framings, not verbatim.</b> These are framings of the episode's sourced ideas, attributed to the episode — not presented as exact verbatim quotes. For a paying client we pull exact verbatim quotes from the real audio.</div>
+    <div class="quote">"LinkedIn ads cost 40x more per click and deliver 10x better leads — the trade is expensive touches for cheaper customers."<span class="src">framing of the episode's core idea · LinkedIn AdWise ft. Nico Kusterer</span></div>
+    <div class="quote">"Start mid-funnel. Prove conversion first. Then earn the right to scale awareness."<span class="src">framing · LinkedIn AdWise ft. Nico Kusterer</span></div>
+    <div class="quote">"Thought Leader Ads beat company-page posts — that's why ~80% of the budget goes there."<span class="src">framing · LinkedIn AdWise ft. Nico Kusterer</span></div>
+    <div class="note"><b>Why this matters:</b> every episode has a guest with their own audience. When Nico shares, The One Media's followers — many of them your exact ICP — hear about LinkedIn AdWise for the first time. New listeners at zero ad spend, compounding every single episode.</div>
+  </section>
+
+  <!-- 3. READY-TO-PUBLISH -->
+  <section id="support">
+    <div class="kicker">03 · Support</div>
+    <h2>Ready-to-publish content</h2>
+    <div class="h2sub">In your voice, and deliberately lean — not a wall of thought-leadership. Every piece ends by pointing back to press play / subscribe. This supports the discoverability + amplification engine above; it's not the main event.</div>
+
+    <h3>Newsletter feature</h3>
+    <div class="card">
+      <p><b>Subject line options:</b></p>
+      <ul class="clean">
+        <li>A: LinkedIn Ads cost 40x more. Here's why that's fine.</li>
+        <li>B: The expensive LinkedIn mistake almost everyone makes</li>
+        <li>C: Start mid-funnel. (Yes, really.)</li>
+      </ul>
+      <p><b>Preview text:</b> Expensive clicks, cheaper customers — if you build the funnel right.</p>
+      <hr style="border:none;border-top:1px dashed var(--line);margin:16px 0">
+      <p>Hey,</p>
+      <p>This week on LinkedIn AdWise I sat down with Nico Kusterer, founder of The One Media and a former LinkedIn Certified Marketing Expert, to settle an argument I have almost every week: "LinkedIn is too expensive."</p>
+      <p>Here's what we got into:</p>
+      <ul class="clean">
+        <li>LinkedIn Ads can cost 40x more per click — and still deliver 10x better leads. The trick is measuring cost-per-quality-lead, not CPC.</li>
+        <li>The most expensive mistake is cold targeting + sales messaging. If you're going to pay a premium for the click, give people a reason to care first.</li>
+        <li>Nico's 16-week framework starts mid-funnel and proves conversion before scaling awareness. If the mid-funnel doesn't convert, more cold traffic just makes the leak bigger.</li>
+        <li>Read intent at every stage — account level first (the company tab), then person level.</li>
+        <li>Put ~80% of budget behind Thought Leader Ads. People trust people, not logos.</li>
+      </ul>
+      <p>If your LinkedIn ads aren't producing pipeline, don't blame the channel — look at the funnel. This episode is the diagnosis.</p>
+      <p><span class="listen">🎧 Listen here</span> → LinkedIn AdWise with Nico Kusterer. And if you're not subscribed yet, fix that so the next playbook lands automatically.</p>
+      <p>Talk soon,<br>Justin</p>
+    </div>
+
+    <h3>Host-voice social posts</h3>
+    <div class="post"><span class="tag">LinkedIn <span class="fmt">· the hook</span></span>"LinkedIn is too expensive."
+
+I hear it every week. And on a cost-per-click basis, it's true — LinkedIn can cost 40x more than the channels you're used to.
+
+But that's the wrong number.
+
+On the latest LinkedIn AdWise, Nico Kusterer and I break down why LinkedIn can cost 40x more per click and still deliver 10x better leads — because when you measure cost-per-quality-lead instead of CPC, the math flips.
+
+Expensive clicks. Cheaper customers.
+
+🎧 Listen here → [episode link]</div>
+
+    <div class="post"><span class="tag">LinkedIn <span class="fmt">· the tactical one</span></span>Most B2B teams build their LinkedIn funnel top-down: big awareness spend, fill the top, hope it converts.
+
+Nico Kusterer does the opposite. On LinkedIn AdWise he walked through his 16-week framework:
+
+→ Start mid-funnel with a high-intent lead magnet
+→ Prove conversion FIRST
+→ Build retargeting audiences off that activity (account-level, then person-level)
+→ THEN layer awareness on top
+
+Because if the mid-funnel doesn't convert, pouring cold traffic in just makes the leak bigger.
+
+🎧 Full breakdown — listen here → [episode link]</div>
+
+    <h3>Quote-graphic specs (3)</h3>
+    <div class="flag">Host/guest-voice framings of the episode's ideas. Attribute to the episode, not as verbatim quotes.</div>
+    <div class="quote">"LinkedIn Ads cost 40x more per click — and deliver 10x better leads."<span class="src">LinkedIn AdWise · ft. Nico Kusterer · ends with "🎧 Listen here"</span></div>
+    <div class="quote">"Start mid-funnel. Prove conversion first. Then scale."<span class="src">LinkedIn AdWise · ft. Nico Kusterer</span></div>
+    <div class="quote">"People trust people, not logos. That's why 80% of budget goes to Thought Leader Ads."<span class="src">LinkedIn AdWise · ft. Nico Kusterer</span></div>
+    <p style="color:var(--muted);font-size:14px">Design spec: 1080×1080, dark background (#0d1117), quote in large white bold sans, "LinkedIn AdWise" wordmark top-right, "ft. Nico Kusterer · The One Media" in accent blue bottom-left. Consistent template. Each caption ends with "🎧 Listen here → LinkedIn AdWise."</p>
+  </section>
+
+  <!-- VALUE-ADD -->
+  <section id="valueadd">
+    <div class="kicker">+ Value-add</div>
+    <h2>Clips (included, not the pitch)</h2>
+    <div class="valueadd">Clips included — audiogram or vertical clip depending on how you record. Fine quality; we don't over-promise virality, because the source format is the ceiling. The clips exist to drive one thing: <b>press play</b>.</div>
+  </section>
+
+  <div class="final">
+    <h2>This is one episode.</h2>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 22px">Search-optimized so new listeners find it, packaged so your guest amplifies it to their audience, and supported with content that all drives back to press play. Imagine this landing every time you publish — the growth work done for you, in your voice.</p>
+    <a class="cta" href="mailto:hello@episodeloop.com?subject=Let's%20talk%20EpisodeLoop">Email me to get started →</a>
+    <p style="color:var(--muted);font-size:14px;margin-top:16px">Or just reply to my email. Either way, this pack is yours to keep.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    Made by <b>EpisodeLoop</b> · <a class="mail" href="mailto:hello@episodeloop.com">hello@episodeloop.com</a><br>
+    We turn every episode into more listeners — discoverable, shareable, done for you. Created from publicly available episode content, shared free with our best wishes.
+  </div>
+</footer>
+
+</body>
+</html>

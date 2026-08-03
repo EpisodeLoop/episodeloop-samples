@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EpisodeLoop — Listener-Growth Pack for Fractional Futures</title>
+<meta name="description" content="A listener-growth pack made by EpisodeLoop from the Fractional Futures episode with Paul Mills and guest Rachael Wheatley — discoverability, guest amplification, and ready-to-publish content." />
+<meta name="robots" content="noindex" />
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --ink:#e6edf3; --muted:#9aa5b1;
+    --accent:#5b8cff; --accent2:#7c5bff; --line:#232a34; --ok:#3fb950; --amber:#d29922;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  header{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);z-index:10}
+  .headrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .brand span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .navpill{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+  .hero{padding:52px 0 30px}
+  .badge{display:inline-block;background:rgba(63,185,80,.12);color:var(--ok);border:1px solid rgba(63,185,80,.3);font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{color:var(--muted);font-size:18px}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:16px 20px;margin:22px 0;color:var(--muted);font-size:15px}
+  .note b{color:var(--ink)}
+  .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin:20px 0}
+  .toc h4{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin-left:18px;color:var(--ink);font-size:15px;columns:2;column-gap:28px}
+  .toc li{padding:3px 0}
+  .toc a{color:var(--ink);text-decoration:none}
+  .toc a:hover{color:var(--accent)}
+  section{padding:30px 0;border-top:1px solid var(--line)}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  .herohead{border-top:none}
+  .herohead h2{font-size:27px}
+  h2{font-size:25px;letter-spacing:-.01em;margin-bottom:8px}
+  .h2sub{color:var(--muted);font-size:15px;margin-bottom:18px}
+  h3{font-size:17px;margin:20px 0 6px}
+  p{margin-bottom:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .card .meta{color:var(--muted);font-size:14px;margin-bottom:10px}
+  ul.clean{list-style:none;margin:10px 0}
+  ul.clean li{padding:4px 0 4px 22px;position:relative}
+  ul.clean li:before{content:"→";position:absolute;left:0;color:var(--accent)}
+  .ts{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600;margin-right:8px}
+  .titleopt{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+  .titleopt .t{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:6px}
+  .titleopt .r{font-size:14px;color:var(--muted)}
+  .titleopt .r b{color:var(--accent)}
+  .current{background:rgba(210,153,34,.08);border:1px solid rgba(210,153,34,.25);border-radius:10px;padding:12px 16px;margin-bottom:14px;font-size:14px;color:var(--muted)}
+  .current b{color:var(--amber)}
+  .post{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;white-space:pre-line;font-size:15px}
+  .post .tag{display:block;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+  .post .fmt{color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0}
+  .listen{color:var(--ok);font-weight:600}
+  blockquote{border-left:3px solid var(--accent2);padding-left:16px;color:var(--ink);margin:8px 0}
+  .article p{color:#c9d3de}
+  .article h3{color:var(--ink)}
+  .metabar{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:14px;border-bottom:1px dashed var(--line);padding-bottom:12px}
+  .metabar b{color:var(--ink)}
+  .quote{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:12px;font-size:18px;font-weight:600;line-height:1.4;position:relative}
+  .quote .src{display:block;margin-top:10px;font-size:13px;font-weight:500;color:var(--muted)}
+  .flag{background:rgba(210,153,34,.08);border:1px solid rgba(210,153,34,.25);border-radius:8px;padding:10px 14px;margin:10px 0;font-size:13px;color:var(--muted)}
+  .flag b{color:var(--amber)}
+  .cta{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:12px;font-size:16px;margin-top:6px}
+  a.mail{color:var(--accent);text-decoration:none}
+  footer{padding:44px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  .final{text-align:center;padding:48px 0}
+  .value{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+  .value div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
+  .value b{display:block;color:var(--accent);font-size:20px}
+  .valueadd{background:var(--panel2);border:1px dashed var(--line);border-radius:10px;padding:14px 18px;color:var(--muted);font-size:14px}
+  @media(max-width:600px){.hero h1{font-size:27px}.toc ol{columns:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap headrow">
+    <div class="brand">Episode<span>Loop</span></div>
+    <div class="navpill">Listener-growth pack · prepared for Paul Mills</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge">FREE SAMPLE · BUILT FROM YOUR LATEST EPISODE</div>
+    <h1>Your podcast is a goldmine. <em>Let's get it found.</em></h1>
+    <p class="sub">Fractional Futures · "What Does A Fractional CMO Actually DO?" · with Paul Mills &amp; guest Rachael Wheatley</p>
+  </div>
+
+  <div class="note">
+    Hi Paul. This is a real, finished growth pack built entirely from your episode with Rachael Wheatley on what a fractional CMO actually does. It's not a template and it's not a "wall of LinkedIn content." It's engineered to do one thing: <b>put this episode in front of more of the right listeners</b> — CEOs, founders, and investors — through search discoverability, guest amplification, and support content that all drives back to press play. It's yours to use, free, with no strings. This is exactly what you'd receive from EpisodeLoop for every episode you release.
+  </div>
+
+  <div class="value">
+    <div><b>5</b> SEO title options</div>
+    <div><b>8</b> searchable chapters</div>
+    <div><b>~1,150-word</b> ranking article</div>
+    <div><b>1-click</b> guest share kit</div>
+  </div>
+
+  <div class="toc">
+    <h4>What's inside this pack</h4>
+    <ol>
+      <li><a href="#disco">1 · Discoverability engine</a></li>
+      <li><a href="#titles">→ SEO title options</a></li>
+      <li><a href="#chapters">→ Chapters + timestamps</a></li>
+      <li><a href="#shownotes">→ SEO show notes</a></li>
+      <li><a href="#blog">→ Ranking blog article</a></li>
+      <li><a href="#amplify">2 · Guest amplification kit</a></li>
+      <li><a href="#support">3 · Ready-to-publish content</a></li>
+      <li><a href="#valueadd">+ Clips (value-add)</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. DISCOVERABILITY -->
+  <section id="disco">
+    <div class="kicker">01 · The hero</div>
+    <h2>Discoverability engine</h2>
+    <div class="h2sub">The #1 real listener-growth lever — it makes this episode findable by CEOs, founders, and investors searching Apple, Spotify, YouTube, and Google who don't already follow you. This works on any show, regardless of how you record.</div>
+  </section>
+
+  <!-- 1a TITLES -->
+  <section id="titles">
+    <div class="kicker">01a · SEO titles</div>
+    <h2>Search-optimised episode title options</h2>
+    <div class="current">Your current title — <b>"What Does A Fractional CMO Actually DO?"</b> — is genuinely good: it mirrors a real search query. These options sharpen it further by adding the outcome and the ICP terms buyers type when they're evaluating whether to hire one.</div>
+
+    <div class="titleopt"><div class="t">1. What Does a Fractional CMO Actually Do? Building Marketing Capability at Three Levels</div><div class="r"><b>Why:</b> Keeps your high-intent question (people literally search it) and adds the episode's signature idea — capability at three levels — for depth and long-tail reach. <b>Recommended for the podcast feed.</b></div></div>
+    <div class="titleopt"><div class="t">2. Fractional CMO Explained: From Marketing Tactics to Strategy That Drives Growth</div><div class="r"><b>Why:</b> "Fractional CMO explained" is a top evaluation search; "tactics to strategy" captures Rachael's core distinction and the buyer's real question. <b>Recommended for YouTube.</b></div></div>
+    <div class="titleopt"><div class="t">3. When Marketing Is "Just Doing More Stuff": The Case for a Fractional CMO (w/ Rachael Wheatley)</div><div class="r"><b>Why:</b> Leads with the pain a founder feels — busy marketing, no strategy — and names the guest for authority.</div></div>
+    <div class="titleopt"><div class="t">4. Reframing Marketing as an Investment: What a Fractional CMO Really Delivers</div><div class="r"><b>Why:</b> Targets the CEO/investor mindset in your audience; "marketing as an investment" is a phrase your exact buyers respond to.</div></div>
+    <div class="titleopt"><div class="t">5. Building Strategic Marketing Capability (Not Just a Bigger Team) | Fractional Futures</div><div class="r"><b>Why:</b> Captures the "capability at three levels" idea plus branded show discovery for the back catalogue.</div></div>
+  </section>
+
+  <!-- 1b CHAPTERS -->
+  <section id="chapters">
+    <div class="kicker">01b · Chapters</div>
+    <h2>Chapters + timestamps</h2>
+    <div class="h2sub">Chapters drive Apple/Spotify/YouTube discovery and retention. Paste straight into your description.</div>
+    <div class="card">
+      <ul class="clean">
+        <li><span class="ts">00:00</span> What a fractional CMO actually does (and what it isn't)</li>
+        <li><span class="ts">03:30</span> Why businesses jump to tactics when the real gap is strategy</li>
+        <li><span class="ts">07:30</span> "Doing the right stuff, not just more stuff"</li>
+        <li><span class="ts">12:00</span> Building marketing capability at three levels</li>
+        <li><span class="ts">17:00</span> Reframing marketing as an investment, not a cost</li>
+        <li><span class="ts">22:00</span> Aligning organisational culture with customer centricity</li>
+        <li><span class="ts">27:00</span> Customer journey mapping: seeing the business as the buyer does</li>
+        <li><span class="ts">32:00</span> Defining scope, expectations, and measurable commercial outcomes</li>
+      </ul>
+      <div class="flag"><b>Confirm against final audio.</b> Timestamps are estimated from the episode structure and typical runtime. For paying clients we transcribe the real file (Whisper) and lock exact chapter marks.</div>
+    </div>
+  </section>
+
+  <!-- 1c SHOW NOTES -->
+  <section id="shownotes">
+    <div class="kicker">01c · Show notes</div>
+    <h2>SEO show notes / episode description</h2>
+    <div class="h2sub">First two lines written for search + the "read more" cutoff. Drop straight into Apple, Spotify, and YouTube.</div>
+    <div class="card">
+      <p><b>What does a fractional CMO actually do — and how do you know when you need one?</b> In this episode of Fractional Futures, VCMO founder Paul Mills sits down with Chartered Fractional CMO Rachael Wheatley to cut through the jargon and explain what strategic marketing leadership really delivers.</p>
+      <p>Too many businesses respond to soft growth by doing more marketing — more campaigns, more activity, more spend — when the real gap is strategy. Paul and Rachael unpack how a fractional CMO builds marketing capability at three levels, reframes marketing as an investment rather than a cost, aligns organisational culture with customer centricity, and uses customer journey mapping to see the business the way its buyers do. It's about doing the right stuff, not just more stuff.</p>
+      <h3>What you'll learn</h3>
+      <ul class="clean">
+        <li>What a fractional CMO actually does day to day — and what it isn't</li>
+        <li>Why businesses default to tactics when the real problem is missing strategy</li>
+        <li>How to build strategic marketing capability at three levels (not just a bigger team)</li>
+        <li>Why reframing marketing as an investment changes the whole conversation</li>
+        <li>How customer journey mapping reveals where growth really leaks</li>
+      </ul>
+      <p><b>Guest:</b> Rachael Wheatley — Chartered Fractional CMO. <b>Host:</b> Paul Mills — Founder of VCMO, Chartered Marketer and Fellow of the CIM; fractional CMO for B2B, SaaS, and PE-backed businesses.</p>
+      <p><span class="listen">🎧 Press play now, and subscribe to Fractional Futures</span> so you never miss an episode: vcmo.uk · Fractional Futures on Apple, Spotify &amp; YouTube (@VCMO-UK). 🔧 Wondering whether your business needs embedded marketing leadership? Try VCMO's free GROWTH™ Diagnostic at vcmo.uk.</p>
+    </div>
+  </section>
+
+  <!-- 1d BLOG -->
+  <section id="blog" class="article">
+    <div class="kicker">01d · Ranking blog article</div>
+    <h2>What Does a Fractional CMO Actually Do?</h2>
+    <div class="metabar">
+      <span><b>Word count:</b> ~1,150</span>
+      <span><b>Target keyword:</b> what does a fractional CMO do</span>
+      <span><b>Slug:</b> /what-does-a-fractional-cmo-actually-do</span>
+    </div>
+    <div class="card">
+      <p>It's the question I get asked more than any other, so I put it at the centre of this episode of Fractional Futures with Rachael Wheatley, a fellow Chartered Fractional CMO. The honest answer is that "fractional CMO" has become a fashionable label, and fashionable labels get fuzzy fast. So Rachael and I set out to be precise about what the role actually delivers — and, just as importantly, what it isn't.</p>
+      <p>Here's the shortest version I can give you. A fractional CMO is senior marketing leadership, brought in part-time, to make sure the strategic decisions get made and owned by someone who actually knows how. Not more hands to run more campaigns. A head to decide which campaigns are worth running in the first place.</p>
+      <h3>Why businesses reach for tactics when they need strategy</h3>
+      <p>The pattern I see again and again is this. Growth softens, the numbers wobble, and the instinct is to do more marketing. Launch another campaign. Post more. Try a new channel. Spend more. It feels like action, and action feels like progress.</p>
+      <p>But more activity is not a strategy. When marketing accountability sits with a junior team, or with a well-intentioned leader who doesn't have formal marketing expertise, the business defaults to tactics because tactics are visible and strategy is hard. The result is a lot of motion and not much movement. As Rachael put it, the job isn't doing more stuff — it's doing the right stuff.</p>
+      <p>That distinction sounds simple. It is not. Deciding what not to do, where to focus a limited budget, and which marketing task actually matters at this stage of the business — that's strategic work, and it's exactly the work that goes undone when nobody senior owns it.</p>
+      <h3>Building marketing capability at three levels</h3>
+      <p>One of the ideas I most wanted to get across in this conversation is that a good fractional CMO doesn't just do the marketing. They build capability so the organisation gets stronger, at three levels.</p>
+      <p>The first level is strategy: setting a clear direction, aligned to commercial goals, so every pound spent has a job to do. The second is the team and its skills: mentoring the people you already have, so their day-to-day activity is pointed at the right targets rather than kept busy. The third is the wider organisation: helping the whole business — not just the marketing function — understand its customers and act with them in mind.</p>
+      <p>This is the part that separates embedded leadership from an agency retainer. An agency does the work and takes the capability with them when they leave. A fractional CMO does the work and leaves the capability behind. When the engagement ends, the business is genuinely more able than when you started. That's the point.</p>
+      <h3>Reframing marketing as an investment</h3>
+      <p>If there's one mindset shift I'd want every CEO and founder to take from this episode, it's this: stop treating marketing as a cost to be minimised and start treating it as an investment to be optimised.</p>
+      <p>A cost is something you cut when times are tight. An investment is something you manage for a return. The moment marketing becomes an investment in the conversation, everything changes — you start asking what return each activity produces, you stop tolerating activity that can't be tied to an outcome, and you make decisions with the discipline you'd apply to any other use of capital. That framing is a large part of what a fractional CMO brings into the boardroom.</p>
+      <h3>Culture, customer centricity, and journey mapping</h3>
+      <p>Strategy on paper is worthless if the organisation doesn't live it, which is why Rachael and I spent real time on culture. Aligning organisational culture with customer centricity means the whole business — sales, product, service, leadership — makes decisions with the customer's actual experience in mind, not just the marketing team.</p>
+      <p>The practical tool we kept coming back to is customer journey mapping. When you map the real journey your buyers take — from the first time they become aware of you, through evaluation, to becoming and staying a customer — you stop guessing and start seeing. You see where the experience is strong and, more usefully, where it leaks. I've long been a believer in the "leaky bucket" idea: you can pour endless leads into the top, but if the journey leaks at the touchpoints that matter, you never fill the bucket. Journey mapping is how you find the leaks.</p>
+      <h3>When do you actually need one?</h3>
+      <p>I won't pretend every business needs a fractional CMO. You need one when the strategic marketing decisions are being made by people who aren't equipped to make them — or aren't being made at all. When marketing accountability has quietly landed on a junior team, or on a founder already stretched thin, and the business is defaulting to tactics because there's no senior head to set direction. That's the signal. Not "we should do more marketing," but "nobody senior actually owns this."</p>
+      <p>If that sounds like your business, the fix isn't more activity. It's leadership — the right stuff, done deliberately, with someone accountable for the commercial outcome.</p>
+      <p><span class="listen">Listen here:</span> the full conversation with Rachael Wheatley is on Fractional Futures — press play wherever you get your podcasts, or watch on the VCMO YouTube channel, and subscribe so the next conversation on fractional leadership lands in your feed automatically.</p>
+    </div>
+  </section>
+
+  <!-- 2. GUEST AMPLIFICATION -->
+  <section id="amplify">
+    <div class="kicker">02 · Borrowed reach</div>
+    <h2>Guest amplification kit</h2>
+    <div class="h2sub">The cheapest new listeners there are. Most guests never promote the episode — not because they don't want to, but because writing the posts is friction. This kit removes it: hand Rachael the note + posts and she shares to her audience in one click, putting Fractional Futures in front of a whole new room of your exact ICP.</div>
+
+    <div class="post"><span class="tag">"Your episode is live" note <span class="fmt">· ready to send to Rachael</span></span>Subject: You're live on Fractional Futures 🎧
+
+Hi Rachael,
+
+Your episode is officially live — thank you again for such a clear, practical conversation on what a fractional CMO actually does. I think it'll be genuinely useful for the founders and CEOs still trying to work out whether they need one.
+
+🎧 Listen / share: [episode link]
+
+To make it easy to share with your network, I've drafted a few ready-to-post captions below (LinkedIn + X) in your voice — feel free to use them as-is or tweak. I've also pulled a couple of quote graphics from your best moments; happy to send those over.
+
+Would love for your network to hear it.
+
+— Paul</div>
+
+    <div class="post"><span class="tag">For Rachael to share <span class="fmt">· LinkedIn (her voice)</span></span>I joined Paul Mills on the Fractional Futures podcast to answer the question I get asked most: what does a fractional CMO actually do?
+
+We got into the bit that matters — building strategic marketing capability, not just in the marketing team; reframing marketing as an investment rather than a cost; and moving from tactics to strategy, because it's about doing the right stuff, not just more stuff.
+
+If you're a founder or CEO trying to work out whether you need embedded marketing leadership, this one's worth a listen. 🎧 [episode link]</div>
+
+    <div class="post"><span class="tag">For Rachael to share <span class="fmt">· X / Twitter (her voice)</span></span>"What does a fractional CMO actually do?"
+
+I answered it properly with @VCMO-UK's Paul Mills on Fractional Futures: building capability at three levels, marketing as an investment, and doing the right stuff — not just more. 🎧 [episode link]</div>
+
+    <div class="post"><span class="tag">For Rachael to share <span class="fmt">· X / Twitter — shorter</span></span>The job of a fractional CMO isn't doing more marketing. It's doing the right marketing.
+
+Talked it through with Paul Mills on Fractional Futures 🎧 [episode link]</div>
+
+    <h3>Guest pull-quotes</h3>
+    <div class="flag"><b>Host-voice framings, not verbatim.</b> No public transcript existed at build time, so these are framings of the episode's sourced ideas, attributed to the episode — not presented as direct Rachael Wheatley quotes. For a paying client we pull exact verbatim quotes from the real audio.</div>
+    <div class="quote">"It's not about doing more stuff. It's about doing the right stuff."<span class="src">framing of the episode's point · w/ Rachael Wheatley</span></div>
+    <div class="quote">"A fractional CMO builds capability so the organisation gets stronger — not just busier."<span class="src">framing</span></div>
+    <div class="quote">"Stop treating marketing as a cost to be cut. Start treating it as an investment to be optimised."<span class="src">framing</span></div>
+    <div class="note"><b>Why this matters:</b> every episode has a guest with their own audience. When Rachael shares, her network — many of them your exact ICP of founders, CEOs, and fellow fractionals — hears about Fractional Futures for the first time. New listeners at zero ad spend, compounding every single episode.</div>
+  </section>
+
+  <!-- 3. READY-TO-PUBLISH -->
+  <section id="support">
+    <div class="kicker">03 · Support</div>
+    <h2>Ready-to-publish content</h2>
+    <div class="h2sub">In your voice, and deliberately lean — not a wall of thought-leadership. Every piece ends by pointing back to press play / subscribe. This supports the discoverability + amplification engine above; it's not the main event.</div>
+
+    <h3>Newsletter feature</h3>
+    <div class="card">
+      <p><b>Subject line options:</b></p>
+      <ul class="clean">
+        <li>A: What does a fractional CMO actually do?</li>
+        <li>B: Doing the right stuff, not just more stuff</li>
+        <li>C: When "more marketing" is exactly the wrong answer</li>
+      </ul>
+      <p><b>Preview text:</b> The gap usually isn't activity. It's strategy nobody senior owns.</p>
+      <hr style="border:none;border-top:1px dashed var(--line);margin:16px 0">
+      <p>Hi,</p>
+      <p>This week on Fractional Futures I sat down with Rachael Wheatley, a fellow Chartered Fractional CMO, to answer the question I'm asked more than any other: what does a fractional CMO actually do?</p>
+      <p>A few things from the conversation worth keeping:</p>
+      <ul class="clean">
+        <li>When growth softens, most businesses do more marketing. But more activity isn't a strategy — and doing more of the wrong stuff just costs more.</li>
+        <li>A good fractional CMO builds capability at three levels: strategy, the team's skills, and the wider organisation's understanding of its customers.</li>
+        <li>Reframe marketing as an investment, not a cost. A cost gets cut; an investment gets managed for a return.</li>
+        <li>Customer journey mapping shows you where growth leaks — you can pour leads into a leaky bucket forever and never fill it.</li>
+        <li>The signal you need a fractional CMO isn't "we should do more marketing." It's "nobody senior actually owns this."</li>
+      </ul>
+      <p>If that last line sounds familiar, it might be worth a proper look at where the strategic decisions are being made — and by whom.</p>
+      <p><span class="listen">🎧 Listen here</span> → the full conversation with Rachael on Fractional Futures, or watch it on the VCMO YouTube channel. And if you're not subscribed yet, do — the next one will land automatically.</p>
+      <p>Best,<br>Paul</p>
+    </div>
+
+    <h3>Host-voice social posts</h3>
+    <div class="post"><span class="tag">LinkedIn <span class="fmt">· the hook</span></span>When growth softens, most businesses do the same thing: more marketing.
+
+Another campaign. More posts. A new channel. More spend.
+
+It feels like progress. But more activity is not a strategy — and doing more of the wrong stuff just costs you more.
+
+The real gap is usually that nobody senior actually owns the strategic marketing decisions. They've quietly landed on a junior team, or on a founder already stretched too thin.
+
+Rachael Wheatley and I unpacked what a fractional CMO really does about that on the latest Fractional Futures. 🎧 Listen here → [episode link]</div>
+
+    <div class="post"><span class="tag">LinkedIn <span class="fmt">· the big idea</span></span>One reframe from the latest Fractional Futures that changes the whole conversation:
+
+Stop treating marketing as a cost to be cut. Start treating it as an investment to be optimised.
+
+A cost is something you minimise when times are tight. An investment is something you manage for a return. The moment marketing becomes an investment in the boardroom, you start asking what return each activity produces — and you stop tolerating activity that can't be tied to an outcome.
+
+That shift is a big part of what a fractional CMO brings.
+
+🎧 Rachael Wheatley and I got into all of it. Listen here → [episode link]</div>
+
+    <h3>Quote-graphic specs (3)</h3>
+    <div class="flag">Host-voice framings of the episode's ideas (no public transcript at build time). Attribute to the episode, not as verbatim guest quotes.</div>
+    <div class="quote">"It's not about doing more stuff. It's about doing the right stuff."<span class="src">Fractional Futures · w/ Rachael Wheatley · ends with "🎧 Listen here"</span></div>
+    <div class="quote">"A fractional CMO builds capability — not just keeps the team busy."<span class="src">Fractional Futures</span></div>
+    <div class="quote">"Marketing isn't a cost to cut. It's an investment to optimise."<span class="src">Fractional Futures</span></div>
+    <p style="color:var(--muted);font-size:14px">Design spec: 1080×1080, dark background (#0d1117), quote in large white bold sans, "Fractional Futures" wordmark top-right, "Paul Mills · VCMO" in accent blue bottom-left. Consistent template. Each caption ends with "🎧 Listen here → Fractional Futures."</p>
+  </section>
+
+  <!-- VALUE-ADD -->
+  <section id="valueadd">
+    <div class="kicker">+ Value-add</div>
+    <h2>Clips (included, not the pitch)</h2>
+    <div class="valueadd">Clips included — an audiogram / short cuts for your show. Fine quality; we don't over-promise virality, because the source format is the ceiling. The clips exist to drive one thing: <b>press play</b>.</div>
+  </section>
+
+  <div class="final">
+    <h2>This is one episode.</h2>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 22px">Search-optimised so new listeners find it, packaged so your guest amplifies it to their audience, and supported with content that all drives back to press play. Imagine this landing every time you publish — the growth work done for you, in your voice.</p>
+    <a class="cta" href="mailto:hello@episodeloop.com?subject=Let's%20talk%20EpisodeLoop">Email me to get started →</a>
+    <p style="color:var(--muted);font-size:14px;margin-top:16px">Or just reply to my email. Either way, this pack is yours to keep.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    Made by <b>EpisodeLoop</b> · <a class="mail" href="mailto:hello@episodeloop.com">hello@episodeloop.com</a><br>
+    We turn every episode into more listeners — discoverable, shareable, done for you. Created from publicly available episode content, shared free with our best wishes.
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EpisodeLoop — Listener-Growth Pack for Predictable B2B Success (Ep #547)</title>
+<meta name="description" content="A listener-growth pack made by EpisodeLoop from episode #547 of the Predictable B2B Success podcast with Vinay Koshy and guest Mansoor Osmani — discoverability, guest amplification, and ready-to-publish content." />
+<meta name="robots" content="noindex" />
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --ink:#e6edf3; --muted:#9aa5b1;
+    --accent:#5b8cff; --accent2:#7c5bff; --line:#232a34; --ok:#3fb950; --amber:#d29922;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  header{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);z-index:10}
+  .headrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .brand span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .navpill{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+  .hero{padding:52px 0 30px}
+  .badge{display:inline-block;background:rgba(63,185,80,.12);color:var(--ok);border:1px solid rgba(63,185,80,.3);font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{color:var(--muted);font-size:18px}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:16px 20px;margin:22px 0;color:var(--muted);font-size:15px}
+  .note b{color:var(--ink)}
+  .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin:20px 0}
+  .toc h4{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin-left:18px;color:var(--ink);font-size:15px;columns:2;column-gap:28px}
+  .toc li{padding:3px 0}
+  .toc a{color:var(--ink);text-decoration:none}
+  .toc a:hover{color:var(--accent)}
+  section{padding:30px 0;border-top:1px solid var(--line)}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  .herohead{border-top:none}
+  .herohead h2{font-size:27px}
+  h2{font-size:25px;letter-spacing:-.01em;margin-bottom:8px}
+  .h2sub{color:var(--muted);font-size:15px;margin-bottom:18px}
+  h3{font-size:17px;margin:20px 0 6px}
+  p{margin-bottom:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .card .meta{color:var(--muted);font-size:14px;margin-bottom:10px}
+  ul.clean{list-style:none;margin:10px 0}
+  ul.clean li{padding:4px 0 4px 22px;position:relative}
+  ul.clean li:before{content:"→";position:absolute;left:0;color:var(--accent)}
+  .ts{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600;margin-right:8px}
+  .titleopt{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+  .titleopt .t{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:6px}
+  .titleopt .r{font-size:14px;color:var(--muted)}
+  .titleopt .r b{color:var(--accent)}
+  .current{background:rgba(210,153,34,.08);border:1px solid rgba(210,153,34,.25);border-radius:10px;padding:12px 16px;margin-bottom:14px;font-size:14px;color:var(--muted)}
+  .current b{color:var(--amber)}
+  .post{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;white-space:pre-line;font-size:15px}
+  .post .tag{display:block;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+  .post .fmt{color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0}
+  .listen{color:var(--ok);font-weight:600}
+  blockquote{border-left:3px solid var(--accent2);padding-left:16px;color:var(--ink);margin:8px 0}
+  .article p{color:#c9d3de}
+  .article h3{color:var(--ink)}
+  .metabar{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:14px;border-bottom:1px dashed var(--line);padding-bottom:12px}
+  .metabar b{color:var(--ink)}
+  .quote{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:12px;font-size:18px;font-weight:600;line-height:1.4;position:relative}
+  .quote .src{display:block;margin-top:10px;font-size:13px;font-weight:500;color:var(--muted)}
+  .flag{background:rgba(210,153,34,.08);border:1px solid rgba(210,153,34,.25);border-radius:8px;padding:10px 14px;margin:10px 0;font-size:13px;color:var(--muted)}
+  .flag b{color:var(--amber)}
+  .cta{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:12px;font-size:16px;margin-top:6px}
+  a.mail{color:var(--accent);text-decoration:none}
+  footer{padding:44px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  .final{text-align:center;padding:48px 0}
+  .value{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+  .value div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
+  .value b{display:block;color:var(--accent);font-size:20px}
+  .valueadd{background:var(--panel2);border:1px dashed var(--line);border-radius:10px;padding:14px 18px;color:var(--muted);font-size:14px}
+  @media(max-width:600px){.hero h1{font-size:27px}.toc ol{columns:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap headrow">
+    <div class="brand">Episode<span>Loop</span></div>
+    <div class="navpill">Listener-growth pack · prepared for Vinay Koshy</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge">FREE SAMPLE · BUILT FROM YOUR EPISODE #547</div>
+    <h1>Your podcast is a goldmine. <em>Let's get it found.</em></h1>
+    <p class="sub">Predictable B2B Success · "Why Your Discount Code Box Is Killing E-Commerce Conversions" · with Mansoor Osmani (Dbargain)</p>
+  </div>
+
+  <div class="note">
+    Hi Vinay. This is a real, finished growth pack built entirely from your episode #547 with Mansoor Osmani. It's not a template and it's not a "wall of LinkedIn content." It's engineered to do one thing: <b>put this episode in front of more of the right listeners</b> — through search discoverability, guest amplification, and support content that all drives back to press play. Operating clarity, systems over tactics — in your voice. Think of it as voice extraction from your own episode. It's yours to use, free, with no strings. This is exactly what you'd receive from EpisodeLoop for every episode you release.
+  </div>
+
+  <div class="value">
+    <div><b>5</b> SEO title options</div>
+    <div><b>10</b> searchable chapters</div>
+    <div><b>~1,150-word</b> ranking article</div>
+    <div><b>1-click</b> guest share kit</div>
+  </div>
+
+  <div class="toc">
+    <h4>What's inside this pack</h4>
+    <ol>
+      <li><a href="#disco">1 · Discoverability engine</a></li>
+      <li><a href="#titles">→ SEO title options</a></li>
+      <li><a href="#chapters">→ Chapters + timestamps</a></li>
+      <li><a href="#shownotes">→ SEO show notes</a></li>
+      <li><a href="#blog">→ Ranking blog article</a></li>
+      <li><a href="#amplify">2 · Guest amplification kit</a></li>
+      <li><a href="#support">3 · Ready-to-publish content</a></li>
+      <li><a href="#valueadd">+ Clips (value-add)</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. DISCOVERABILITY -->
+  <section id="disco">
+    <div class="kicker">01 · The hero</div>
+    <h2>Discoverability engine</h2>
+    <div class="h2sub">The #1 real listener-growth lever — it makes this episode findable by the founders and CEOs searching Apple, Spotify, YouTube, and Google who don't already follow you. This works on any show, regardless of how you record.</div>
+  </section>
+
+  <!-- 1a TITLES -->
+  <section id="titles">
+    <div class="kicker">01a · SEO titles</div>
+    <h2>Search-optimized episode title options</h2>
+    <div class="current">Your current title — <b>"Why Your Discount Code Box Is Killing E-Commerce Conversions"</b> — is a strong, punchy hook (great work). Here are variations that keep the pattern-interrupt while leading with terms buyers actually search, plus options that pull the AI-negotiation angle forward for a different search surface.</div>
+
+    <div class="titleopt"><div class="t">1. Why Your Discount Code Box Is Killing Conversions — and the AI Negotiation Fix (Mansoor Osmani, Dbargain)</div><div class="r"><b>Why:</b> Keeps your winning hook, adds the searchable "AI negotiation," and names the guest + company for authority and back-catalog SEO.</div></div>
+    <div class="titleopt"><div class="t">2. Can an AI Agent Negotiate Your Prices? Inside Dbargain's Bargaining Bot (Mansoor Osmani)</div><div class="r"><b>Why:</b> Targets "AI agent negotiate price" / "agentic AI ecommerce" — high-intent, fast-rising terms — and the question format earns the click. <b>Recommended for YouTube.</b></div></div>
+    <div class="titleopt"><div class="t">3. Pricing Psychology: Why Discounts Erode Your Brand (Lessons from $500K Mercedes Deals)</div><div class="r"><b>Why:</b> "Pricing psychology" is a core, evergreen search term; the "$500K Mercedes deals" detail is a curiosity hook that's true to the episode.</div></div>
+    <div class="titleopt"><div class="t">4. Stop Discounting: How to Sell High-Ticket Without Slashing Price</div><div class="r"><b>Why:</b> Front-loads the pain your ICP searches ("stop discounting," "sell high-ticket"), reads like a playbook, and mirrors what a founder types when margins are eroding.</div></div>
+    <div class="titleopt"><div class="t">5. The Psychology of the Deal: AI, Pricing &amp; the Future of Online Retail | Predictable B2B Success Ep 547</div><div class="r"><b>Why:</b> Captures the big themes, adds searchable terms, and includes show + episode number for branded and back-catalog discovery. <b>Recommended for the podcast feed.</b></div></div>
+  </section>
+
+  <!-- 1b CHAPTERS -->
+  <section id="chapters">
+    <div class="kicker">01b · Chapters</div>
+    <h2>Chapters + timestamps</h2>
+    <div class="h2sub">Chapters drive Apple/Spotify/YouTube discovery and retention. Paste straight into your description.</div>
+    <div class="card">
+      <ul class="clean">
+        <li><span class="ts">00:00</span> The premise: is your discount code box costing you more than you think?</li>
+        <li><span class="ts">03:30</span> Meet Mansoor: 30+ years advising enterprises on high-stakes negotiation</li>
+        <li><span class="ts">08:15</span> From Saudi Arabian Airlines to Jeddah car showrooms: where pricing psychology is learned</li>
+        <li><span class="ts">14:00</span> Why the universal need to "get a deal" runs deeper than price</li>
+        <li><span class="ts">20:10</span> The hidden long-term cost of coupons and constant sales</li>
+        <li><span class="ts">26:30</span> The origin of Dbargain: negotiating with an AI agent, not a salesperson</li>
+        <li><span class="ts">33:00</span> How agentic AI negotiates prices in real time (and stays on your side)</li>
+        <li><span class="ts">39:20</span> Setting discount thresholds: keeping the bot inside your guardrails</li>
+        <li><span class="ts">45:00</span> The limits of AI: hallucination, control, and where humans stay in charge</li>
+        <li><span class="ts">51:30</span> Friction vs. engagement at checkout — and what this means for B2B</li>
+      </ul>
+      <div class="flag"><b>Confirm against final audio.</b> Timestamps are estimated from the episode's described structure and ~58:50 runtime. For paying clients we transcribe the real file (Whisper) and lock exact chapter marks.</div>
+    </div>
+  </section>
+
+  <!-- 1c SHOW NOTES -->
+  <section id="shownotes">
+    <div class="kicker">01c · Show notes</div>
+    <h2>SEO show notes / episode description</h2>
+    <div class="h2sub">First two lines written for search + the "read more" cutoff. Drop straight into Apple, Spotify, and YouTube.</div>
+    <div class="card">
+      <p><b>Could the simple discount code box on your checkout page be costing you more than you realize?</b> In this episode of Predictable B2B Success, Vinay Koshy talks with Mansoor Osmani — who spent 30+ years advising multi-billion-dollar enterprises on high-stakes negotiation — about pricing psychology, the hidden cost of discounting, and Dbargain, his AI-powered negotiation engine for high-ticket e-commerce.</p>
+      <p>Mansoor has watched pricing psychology drive buying behavior everywhere from Saudi Arabian Airlines headquarters to luxury car showrooms in Jeddah, and he built Dbargain to rethink how high-ticket sales close — without slashing prices or eroding brand value. Imagine an online store where buyers negotiate price not with a salesperson, but with an AI agent empowered to protect your bottom line. We get into the psychological triggers behind shoppers' need to "get a deal," why discount-driven sales cause long-term harm, how agentic AI negotiates in real time inside merchant guardrails, the real limits of AI (hallucination, control), and what all of it means for B2B.</p>
+      <h3>What you'll learn</h3>
+      <ul class="clean">
+        <li>Why the discount code box can quietly erode both margin and brand value</li>
+        <li>The psychology of "getting a deal" — and why it's universal across cultures and price points</li>
+        <li>How an AI agent can negotiate prices in real time while safeguarding your bottom line</li>
+        <li>How to set and control discount thresholds so the bot stays inside your guardrails</li>
+        <li>The real limits of agentic AI — hallucination, control boundaries — and where humans stay in charge</li>
+        <li>What negotiation AI and pricing psychology mean for B2B, not just e-commerce</li>
+      </ul>
+      <p><b>Guest:</b> Mansoor Osmani — 30+ years advising multi-billion-dollar enterprises on high-stakes negotiation; founder of Dbargain, an AI-powered negotiation engine for high-ticket e-commerce.</p>
+      <p><span class="listen">🎧 Press play now, and subscribe to Predictable B2B Success</span> — a new episode every week: sproutworth.com. 📩 Get The Inclined, the newsletter for funded B2B tech CEOs → sproutworth.com/newsletter</p>
+    </div>
+  </section>
+
+  <!-- 1d BLOG -->
+  <section id="blog" class="article">
+    <div class="kicker">01d · Ranking blog article</div>
+    <h2>The Hidden Cost of Your Discount Code Box — and What Agentic AI Changes</h2>
+    <div class="metabar">
+      <span><b>Word count:</b> ~1,150</span>
+      <span><b>Target keyword:</b> pricing psychology in ecommerce</span>
+      <span><b>Slug:</b> /pricing-psychology-ai-negotiation-mansoor-osmani</span>
+    </div>
+    <div class="card">
+      <p>I built Predictable B2B Success to do one thing: help founders and CEOs replace random acts of growth with systems that actually hold up. Most of that work is about pipeline, positioning, and go-to-market. But every so often a conversation reframes something you thought was settled, and my conversation with Mansoor Osmani did exactly that — about something as mundane as the discount code box on your checkout page.</p>
+      <p>Mansoor has spent more than three decades advising multi-billion-dollar enterprises on high-stakes negotiation. He's watched pricing psychology drive real buying behavior everywhere from Saudi Arabian Airlines headquarters to luxury car showrooms in Jeddah, closing deals as large as a $500,000 Mercedes-Benz. So when he tells you that your innocent little "got a promo code?" field might be quietly costing you more than it earns, it's worth slowing down.</p>
+      <h3>The discount box is a decision, not a default</h3>
+      <p>Here's the reframe. Most stores treat the discount code box as a neutral piece of checkout furniture. It's just there. But it isn't neutral — it's a message. The moment a buyer sees that empty field, you've told them a price exists that's lower than the one they're looking at, and now they feel like a sucker for paying full price. You've introduced doubt at the exact moment you wanted commitment.</p>
+      <p>That's not a UX nitpick. It's a margin and brand problem. Every reflexive coupon, every "constant sale," trains your market to never buy at full price and to associate your brand with discounting rather than value. Mansoor's point is that discount-driven selling can cause real long-term harm even when it looks like it's "working" this quarter — because you're borrowing volume from your future margin and your brand equity.</p>
+      <h3>Why we all need to "get a deal"</h3>
+      <p>The deeper thread of the conversation was the psychology underneath all of this. The need to feel like you got a deal is close to universal — it shows up across cultures and across price points, from a market stall to a half-million-dollar car. It isn't really about the money saved. It's about the feeling of having won the exchange, of not being taken.</p>
+      <p>For anyone building a business, that's a profound insight, because it means the goal isn't to have the lowest price. The goal is to make the buyer feel they got a deal — which is a completely different, and much more defensible, problem to solve. If you can satisfy the psychology without gutting the price, you protect margin and brand at the same time.</p>
+      <h3>Enter the AI negotiation agent</h3>
+      <p>This is where Dbargain comes in, and it's the part I found genuinely novel. Instead of a static discount box, imagine an online store where the buyer can negotiate the price — not with a salesperson, and not with a blunt coupon, but with an AI agent that's empowered to protect your bottom line. The buyer gets the experience of negotiating, of earning their deal. The merchant sets the guardrails.</p>
+      <p>What makes this more than a gimmick is control. Mansoor was clear that the merchant sets and controls the discount thresholds. The agent negotiates in real time, but always inside boundaries you define — so you're not handing your margin to an unpredictable bot, you're deploying a system that gives buyers the psychological win without breaching your floor. That's the difference between "AI discounting" and AI negotiation.</p>
+      <h3>The honest limits of agentic AI</h3>
+      <p>What I appreciated most is that Mansoor didn't oversell it. We talked openly about the limits: hallucination, the need for hard control boundaries, and the reality that an autonomous agent negotiating on your behalf has to be constrained carefully or it becomes a liability. This is the maturity I look for. Agentic AI is powerful precisely when it operates inside a well-designed system with human-set rules — not when it's turned loose to "figure it out."</p>
+      <p>That's a lesson that generalizes far beyond a checkout page. Any time you put an AI agent in front of customers or money, the win comes from the system and the guardrails around it, not from the raw capability of the model.</p>
+      <h3>What this means for B2B</h3>
+      <p>You might be thinking: I'm not running a high-ticket e-commerce store. Neither are most of my listeners. But the principles map directly onto B2B.</p>
+      <p>First, your pricing page and your proposals are full of "discount boxes" — signals that quietly tell buyers your real price is lower. Every reflexive discount to close a deal trains your pipeline to expect one next time. Second, the psychology of "getting a deal" is exactly why negotiation is so central to B2B sales; the buyer needs to feel they won, and a rigid take-it-or-leave-it price often loses to a structured negotiation that lets them earn a concession you'd planned to give anyway. Third, the friction-versus-engagement question at checkout is the same question you face in every B2B funnel: where does friction kill the deal, and where does the right kind of friction actually deepen engagement and commitment?</p>
+      <p>The bigger takeaway for me is the one that fits this whole show: don't treat pricing as a default. Treat it as a system. Decide, deliberately, how you want buyers to experience price — and build the guardrails so every interaction protects your margin and your brand instead of quietly eroding both.</p>
+      <p>That's what turns pricing from a reflex into a repeatable, predictable engine. Which is, after 547 episodes, still the only thing I care about here.</p>
+      <p><span class="listen">Listen here:</span> the full conversation with Mansoor Osmani is episode #547 of Predictable B2B Success — press play wherever you listen, and subscribe so the next operating playbook lands in your feed every week.</p>
+    </div>
+  </section>
+
+  <!-- 2. GUEST AMPLIFICATION -->
+  <section id="amplify">
+    <div class="kicker">02 · Borrowed reach</div>
+    <h2>Guest amplification kit</h2>
+    <div class="h2sub">The cheapest new listeners there are. Most guests never promote the episode — not because they don't want to, but because writing the posts is friction. This kit removes it: hand Mansoor the note + posts and he shares to Dbargain's audience in one click, putting Predictable B2B Success in front of a whole new room of your exact ICP.</div>
+
+    <div class="post"><span class="tag">"Your episode is live" note <span class="fmt">· ready to send to Mansoor</span></span>Subject: You're live on Predictable B2B Success 🎧
+
+Hi Mansoor,
+
+Your episode is officially live — thank you again for such a sharp conversation. The reframe that the discount code box is quietly eroding margin and brand, and the way you explained AI negotiation inside merchant guardrails, made this one of my favorite pricing conversations on the show.
+
+🎧 Listen / share: [episode link]
+
+To make it easy to share with your network, I've drafted a few ready-to-post captions below (LinkedIn + X) — feel free to use them as-is or tweak. I've also pulled a couple of quote graphics from your best moments; happy to send those over.
+
+Really appreciate you coming on. Would love for the Dbargain community to hear it.
+
+— Vinay</div>
+
+    <div class="post"><span class="tag">For Mansoor to share <span class="fmt">· LinkedIn (his voice)</span></span>I joined Vinay Koshy on the Predictable B2B Success podcast to talk about something I've watched for 30+ years, from Saudi Arabian Airlines to $500K Mercedes deals: the psychology of the deal.
+
+We got into why your discount code box may be quietly killing conversions and eroding your brand, why the need to "get a deal" is universal, and how an AI negotiation agent can close high-ticket sales without slashing price — as long as the merchant controls the guardrails.
+
+If you sell anything high-ticket, I think this one's worth a listen. 🎧 [episode link]</div>
+
+    <div class="post"><span class="tag">For Mansoor to share <span class="fmt">· X / Twitter (his voice)</span></span>I went on @sproutworth's Predictable B2B Success podcast to explain why your discount code box is killing conversions.
+
+The fix isn't lower prices — it's letting buyers negotiate with an AI agent that protects your bottom line. 🎧 [episode link]</div>
+
+    <div class="post"><span class="tag">For Mansoor to share <span class="fmt">· X / Twitter — shorter</span></span>Buyers don't want a lower price. They want to feel they got a deal.
+
+That's the whole psychology — and why AI negotiation beats blunt discounting. Talked it through on @sproutworth's podcast 🎧 [episode link]</div>
+
+    <h3>Guest pull-quotes</h3>
+    <div class="flag"><b>Host-voice framings, not verbatim.</b> No public transcript existed at build time, so these are framings of the episode's sourced ideas, attributed to the episode — not presented as direct Mansoor Osmani quotes. For a paying client we pull exact verbatim quotes from the real audio.</div>
+    <div class="quote">"The discount code box isn't neutral. It tells the buyer a lower price exists — right when you wanted commitment."<span class="src">framing of Mansoor Osmani's point · Ep #547</span></div>
+    <div class="quote">"Buyers don't want the lowest price. They want to feel they got a deal. Those are different problems."<span class="src">framing · Ep #547</span></div>
+    <div class="quote">"AI negotiation works because the merchant sets the guardrails — the agent never breaches your floor."<span class="src">framing · Ep #547</span></div>
+    <div class="note"><b>Why this matters:</b> every episode has a guest with their own audience. When Mansoor shares, Dbargain's followers — many of them your exact ICP — hear about Predictable B2B Success for the first time. New listeners at zero ad spend, compounding every single episode.</div>
+  </section>
+
+  <!-- 3. READY-TO-PUBLISH -->
+  <section id="support">
+    <div class="kicker">03 · Support</div>
+    <h2>Ready-to-publish content</h2>
+    <div class="h2sub">In your voice — operating clarity, systems over tactics. Every piece ends by pointing back to press play / subscribe. This supports the discoverability + amplification engine above; it's not the main event.</div>
+
+    <h3>Newsletter feature (for The Inclined)</h3>
+    <div class="card">
+      <p><b>Subject line options:</b></p>
+      <ul class="clean">
+        <li>A: Your discount code box is a decision, not a default</li>
+        <li>B: Buyers don't want a lower price. They want to feel they won.</li>
+        <li>C: What a $500K Mercedes deal taught me about your checkout page</li>
+      </ul>
+      <p><b>Preview text:</b> The most dangerous line on your pricing page might be the one you never think about.</p>
+      <hr style="border:none;border-top:1px dashed var(--line);margin:16px 0">
+      <p>Hey,</p>
+      <p>This week on Predictable B2B Success I talked with Mansoor Osmani, who spent 30+ years advising multi-billion-dollar enterprises on high-stakes negotiation — from Saudi Arabian Airlines to $500K Mercedes deals — and now runs Dbargain, an AI negotiation engine for high-ticket e-commerce.</p>
+      <p>A few things I keep coming back to:</p>
+      <ul class="clean">
+        <li>The discount code box isn't neutral furniture. It's a message: "a lower price exists, and you're a sucker for paying full." You introduced doubt at the exact moment you wanted commitment.</li>
+        <li>Discount-driven selling can cause real long-term harm even when it "works" this quarter — you're borrowing from future margin and brand equity.</li>
+        <li>The psychology underneath it is universal: buyers don't want the lowest price, they want to feel they got a deal. That's a different, more defensible problem to solve.</li>
+        <li>AI negotiation works because the merchant controls the thresholds. The agent gives buyers the psychological win without breaching your floor. The win is in the system and guardrails, not the raw model.</li>
+      </ul>
+      <p>And it all maps onto B2B: your proposals are full of "discount boxes," and every reflexive concession trains your pipeline to expect one next time. Treat pricing as a system, not a reflex.</p>
+      <p><span class="listen">🎧 Listen here</span> → episode #547 of Predictable B2B Success. Subscribe so the next operating playbook lands automatically.</p>
+      <p>Talk soon,<br>Vinay</p>
+    </div>
+
+    <h3>Host-voice social posts</h3>
+    <div class="post"><span class="tag">LinkedIn <span class="fmt">· the hook</span></span>The most dangerous line on your checkout page is the one you never think about:
+
+"Got a promo code?"
+
+On this week's episode, Mansoor Osmani — 30+ years advising enterprises on high-stakes negotiation — explained why that innocent little box quietly kills conversions.
+
+The moment a buyer sees it, you've told them a lower price exists, and now they feel like a sucker for paying full. You introduced doubt exactly when you wanted commitment.
+
+It's not a UX nitpick. It's a margin and brand problem.
+
+We got into the fix on episode #547 of Predictable B2B Success. 🎧 Listen here → [episode link]</div>
+
+    <div class="post"><span class="tag">LinkedIn <span class="fmt">· the big idea</span></span>The line from episode #547 I'll be repeating for a while:
+
+Buyers don't want the lowest price. They want to feel they got a deal.
+
+Those are completely different problems. One guts your margin. The other — solved well — protects it.
+
+Mansoor Osmani built an AI negotiation agent around exactly this: let buyers earn their deal, but keep the merchant in control of the guardrails so the agent never breaches your floor. The win is in the system, not the model.
+
+And it maps straight onto B2B pricing and proposals. 🎧 Listen here → [episode link]</div>
+
+    <h3>Quote-graphic specs (3)</h3>
+    <div class="flag">Host-voice framings of the episode's ideas (no public transcript at build time). Attribute to the episode, not as verbatim guest quotes.</div>
+    <div class="quote">"The discount code box isn't neutral. It tells buyers a lower price exists."<span class="src">Predictable B2B Success · Ep #547 · ends with "🎧 Listen here → Ep #547"</span></div>
+    <div class="quote">"Buyers don't want the lowest price. They want to feel they got a deal."<span class="src">Predictable B2B Success · Ep #547</span></div>
+    <div class="quote">"AI negotiation works because you set the guardrails. The win is the system, not the model."<span class="src">Predictable B2B Success · Ep #547</span></div>
+    <p style="color:var(--muted);font-size:14px">Design spec: 1080×1080, dark background (#0d1117), quote in large white bold sans, "Predictable B2B Success" wordmark top-right, "Ep #547 · Mansoor Osmani, Dbargain" in accent blue bottom-left. Consistent template. Each caption ends with "🎧 Listen here → Ep #547."</p>
+  </section>
+
+  <!-- VALUE-ADD -->
+  <section id="valueadd">
+    <div class="kicker">+ Value-add</div>
+    <h2>Clips (included, not the pitch)</h2>
+    <div class="valueadd">Clips included — an audiogram for this audio-first show. Fine quality; we don't over-promise virality, because the source format is the ceiling. The clips exist to drive one thing: <b>press play</b>.</div>
+  </section>
+
+  <div class="final">
+    <h2>This is one episode.</h2>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 22px">Search-optimized so new listeners find it, packaged so your guest amplifies it to their audience, and supported with content that all drives back to press play. Imagine this landing every time you publish — the growth work done for you, in your voice. Voice extraction from your own episodes.</p>
+    <a class="cta" href="mailto:hello@episodeloop.com?subject=Let's%20talk%20EpisodeLoop">Email me to get started →</a>
+    <p style="color:var(--muted);font-size:14px;margin-top:16px">Or just reply to my email. Either way, this pack is yours to keep.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    Made by <b>EpisodeLoop</b> · <a class="mail" href="mailto:hello@episodeloop.com">hello@episodeloop.com</a><br>
+    We turn every episode into more listeners — discoverable, shareable, done for you. Created from publicly available episode content, shared free with our best wishes.
+  </div>
+</footer>
+
+</body>
+</html>

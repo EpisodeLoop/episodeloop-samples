@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EpisodeLoop — Listener-Growth Pack for Breaking B2B (Ep #491)</title>
+<meta name="description" content="A listener-growth pack made by EpisodeLoop from episode #491 of the Breaking B2B podcast with Sam Dunning — discoverability, amplification, and ready-to-publish content." />
+<meta name="robots" content="noindex" />
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --ink:#e6edf3; --muted:#9aa5b1;
+    --accent:#5b8cff; --accent2:#7c5bff; --line:#232a34; --ok:#3fb950; --amber:#d29922;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  header{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);z-index:10}
+  .headrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .brand span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .navpill{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+  .hero{padding:52px 0 30px}
+  .badge{display:inline-block;background:rgba(63,185,80,.12);color:var(--ok);border:1px solid rgba(63,185,80,.3);font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{color:var(--muted);font-size:18px}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:16px 20px;margin:22px 0;color:var(--muted);font-size:15px}
+  .note b{color:var(--ink)}
+  .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin:20px 0}
+  .toc h4{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin-left:18px;color:var(--ink);font-size:15px;columns:2;column-gap:28px}
+  .toc li{padding:3px 0}
+  .toc a{color:var(--ink);text-decoration:none}
+  .toc a:hover{color:var(--accent)}
+  section{padding:30px 0;border-top:1px solid var(--line)}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  .herohead{border-top:none}
+  .herohead h2{font-size:27px}
+  h2{font-size:25px;letter-spacing:-.01em;margin-bottom:8px}
+  .h2sub{color:var(--muted);font-size:15px;margin-bottom:18px}
+  h3{font-size:17px;margin:20px 0 6px}
+  p{margin-bottom:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .card .meta{color:var(--muted);font-size:14px;margin-bottom:10px}
+  ul.clean{list-style:none;margin:10px 0}
+  ul.clean li{padding:4px 0 4px 22px;position:relative}
+  ul.clean li:before{content:"→";position:absolute;left:0;color:var(--accent)}
+  .ts{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600;margin-right:8px}
+  .titleopt{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+  .titleopt .t{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:6px}
+  .titleopt .r{font-size:14px;color:var(--muted)}
+  .titleopt .r b{color:var(--accent)}
+  .current{background:rgba(210,153,34,.08);border:1px solid rgba(210,153,34,.25);border-radius:10px;padding:12px 16px;margin-bottom:14px;font-size:14px;color:var(--muted)}
+  .current b{color:var(--amber)}
+  .post{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;white-space:pre-line;font-size:15px}
+  .post .tag{display:block;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+  .post .fmt{color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0}
+  .listen{color:var(--ok);font-weight:600}
+  blockquote{border-left:3px solid var(--accent2);padding-left:16px;color:var(--ink);margin:8px 0}
+  .article p{color:#c9d3de}
+  .article h3{color:var(--ink)}
+  .metabar{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:14px;border-bottom:1px dashed var(--line);padding-bottom:12px}
+  .metabar b{color:var(--ink)}
+  .quote{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:12px;font-size:18px;font-weight:600;line-height:1.4;position:relative}
+  .quote .src{display:block;margin-top:10px;font-size:13px;font-weight:500;color:var(--muted)}
+  .flag{background:rgba(210,153,34,.08);border:1px solid rgba(210,153,34,.25);border-radius:8px;padding:10px 14px;margin:10px 0;font-size:13px;color:var(--muted)}
+  .flag b{color:var(--amber)}
+  .cta{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:12px;font-size:16px;margin-top:6px}
+  a.mail{color:var(--accent);text-decoration:none}
+  footer{padding:44px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  .final{text-align:center;padding:48px 0}
+  .value{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+  .value div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
+  .value b{display:block;color:var(--accent);font-size:20px}
+  .valueadd{background:var(--panel2);border:1px dashed var(--line);border-radius:10px;padding:14px 18px;color:var(--muted);font-size:14px}
+  @media(max-width:600px){.hero h1{font-size:27px}.toc ol{columns:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap headrow">
+    <div class="brand">Episode<span>Loop</span></div>
+    <div class="navpill">Listener-growth pack · prepared for Sam Dunning</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge">FREE SAMPLE · BUILT FROM YOUR EPISODE #491</div>
+    <h1>Your podcast is a goldmine. <em>Let's get it found.</em></h1>
+    <p class="sub">Breaking B2B · "Asking London B2B Marketing Questions (SEO, SaaS, LinkedIn, &amp; More)"</p>
+  </div>
+
+  <div class="note">
+    Hi Sam. This is a real, finished growth pack built entirely from your episode #491 — the one where you took a mic to the streets of central London to quiz random members of the public on SEO, LinkedIn, and AI recommendations. It's not a template and it's not a "wall of LinkedIn content." It's engineered to do one thing: <b>put this episode in front of more of the right listeners</b> — through search discoverability, amplification, and support content that all drives back to press play. Pipeline-first, zero fluff — in your voice. It's yours to use, free, with no strings. This is exactly what you'd receive from EpisodeLoop for every episode you release.
+  </div>
+
+  <div class="value">
+    <div><b>5</b> SEO title options</div>
+    <div><b>8</b> searchable chapters</div>
+    <div><b>~1,150-word</b> ranking article</div>
+    <div><b>1-click</b> share kit</div>
+  </div>
+
+  <div class="toc">
+    <h4>What's inside this pack</h4>
+    <ol>
+      <li><a href="#disco">1 · Discoverability engine</a></li>
+      <li><a href="#titles">→ SEO title options</a></li>
+      <li><a href="#chapters">→ Chapters + timestamps</a></li>
+      <li><a href="#shownotes">→ SEO show notes</a></li>
+      <li><a href="#blog">→ Ranking blog article</a></li>
+      <li><a href="#amplify">2 · Amplification kit</a></li>
+      <li><a href="#support">3 · Ready-to-publish content</a></li>
+      <li><a href="#valueadd">+ Clips (value-add)</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. DISCOVERABILITY -->
+  <section id="disco">
+    <div class="kicker">01 · The hero</div>
+    <h2>Discoverability engine</h2>
+    <div class="h2sub">The #1 real listener-growth lever — it makes this episode findable by the founders and B2B marketers searching Apple, Spotify, YouTube, Google, and increasingly ChatGPT who don't already follow you. This works on any show, regardless of how you record.</div>
+  </section>
+
+  <!-- 1a TITLES -->
+  <section id="titles">
+    <div class="kicker">01a · SEO titles</div>
+    <h2>Search-optimized episode title options</h2>
+    <div class="current">Your current title — <b>"Asking London B2B Marketing Questions (SEO, SaaS, LinkedIn, &amp; More)"</b> — is fun and true to the format, but nobody searches for it. Here are 5 rewrites that lead with terms your ICP actually types, while keeping the man-on-the-street hook that makes this episode yours.</div>
+
+    <div class="titleopt"><div class="t">1. I Asked Random Londoners: ChatGPT or Google for Business? (The Answer Surprised Me)</div><div class="r"><b>Why:</b> Leads with the "ChatGPT or Google" question people actually search and debate, keeps the street-interview curiosity hook, and "surprised me" still reads as substance.</div></div>
+    <div class="titleopt"><div class="t">2. Does Anyone Outside Marketing Know What LinkedIn Is For? (Street Interviews)</div><div class="r"><b>Why:</b> Targets "what is LinkedIn for" curiosity + your brand-positioning angle; the parenthetical signals the unique format that separates this from every talking-head SEO episode.</div></div>
+    <div class="titleopt"><div class="t">3. How to Get Your Business Recommended by ChatGPT (AI Search / GEO Explained)</div><div class="r"><b>Why:</b> Front-loads "recommended by ChatGPT" + "AI search / GEO" — exactly the high-intent terms SaaS founders search now, and the terms you own. <b>Recommended for YouTube.</b></div></div>
+    <div class="titleopt"><div class="t">4. Prompts Beat Keywords Now: What AI Search Means for B2B SEO in 2026</div><div class="r"><b>Why:</b> "AI search," "B2B SEO," "2026" are all searchable; "prompts beat keywords" is the one-line takeaway that makes people click and remember.</div></div>
+    <div class="titleopt"><div class="t">5. SEO, LinkedIn &amp; AI Recommendations — What the Public Really Thinks | Breaking B2B Ep 491</div><div class="r"><b>Why:</b> Captures the full scope and includes show + episode number for branded and back-catalog discovery. <b>Recommended for the podcast feed.</b></div></div>
+  </section>
+
+  <!-- 1b CHAPTERS -->
+  <section id="chapters">
+    <div class="kicker">01b · Chapters</div>
+    <h2>Chapters + timestamps</h2>
+    <div class="h2sub">Chapters drive Apple/Spotify/YouTube discovery and retention. Paste straight into your description.</div>
+    <div class="card">
+      <ul class="clean">
+        <li><span class="ts">00:00</span> The premise: taking B2B marketing questions to the street</li>
+        <li><span class="ts">01:40</span> What random Londoners actually think LinkedIn is for</li>
+        <li><span class="ts">05:10</span> Professional network or "just another social channel"? The positioning gap</li>
+        <li><span class="ts">09:00</span> ChatGPT vs Google: which does the public trust for business decisions?</li>
+        <li><span class="ts">13:30</span> What that trust split means for where B2B buyers find vendors now</li>
+        <li><span class="ts">17:15</span> Prompts &gt; keywords: how AI search actually works</li>
+        <li><span class="ts">21:00</span> How to get your business recommended by ChatGPT (topical depth + mentions)</li>
+        <li><span class="ts">25:20</span> The lead-gen strategies still driving B2B pipeline in 2026 (SEO + GEO)</li>
+      </ul>
+      <div class="flag"><b>Confirm against final audio.</b> Timestamps are estimated from the episode's described structure. For paying clients we transcribe the real file (Whisper) and lock exact chapter marks.</div>
+    </div>
+  </section>
+
+  <!-- 1c SHOW NOTES -->
+  <section id="shownotes">
+    <div class="kicker">01c · Show notes</div>
+    <h2>SEO show notes / episode description</h2>
+    <div class="h2sub">First two lines written for search + the "read more" cutoff. Drop straight into Apple, Spotify, and YouTube.</div>
+    <div class="card">
+      <p><b>ChatGPT or Google — which does the public actually trust for business decisions?</b> In this episode of Breaking B2B, Sam Dunning takes B2B marketing questions to the streets of central London, asking random members of the public what they really think about SEO, LinkedIn, and AI recommendations — and the perception gaps every B2B marketer should know about.</p>
+      <p>The results are a gut-check on the story we tell ourselves in B2B. We get into what people outside marketing think LinkedIn is even for (and whether that gap is a positioning opportunity or a content mistake), which source the public trusts more between ChatGPT and Google for real decisions, and why that split changes where your buyers go looking for vendors. Then Sam breaks down the practical side: why prompts matter more than keywords for AI search, how to actually get your business recommended by engines like ChatGPT, and the lead-gen strategies that still drive B2B pipeline in 2026 when you layer SEO fundamentals with GEO.</p>
+      <h3>What you'll learn</h3>
+      <ul class="clean">
+        <li>What non-marketers really think LinkedIn is for — and the brand-positioning opening it reveals</li>
+        <li>ChatGPT vs Google: which the public trusts for business decisions, and why it matters for vendor discovery</li>
+        <li>Why prompts, not keywords, are the new unit of AI search</li>
+        <li>How to get your business recommended by ChatGPT: topical depth, authoritative mentions, being the obvious answer</li>
+        <li>The B2B lead-gen strategies still generating pipeline in 2026 — SEO + GEO layered together</li>
+      </ul>
+      <p><b>Host:</b> Sam Dunning — founder of Breaking B2B, a senior-led B2B SaaS SEO &amp; AEO agency built to drive pipeline and revenue, not vanity metrics.</p>
+      <p><span class="listen">🎧 Press play now, and subscribe to Breaking B2B</span> so you never miss an episode. 🔧 Want to use SEO and GEO to generate revenue? Book a call with Sam → breakingb2b.com/book-a-call</p>
+    </div>
+  </section>
+
+  <!-- 1d BLOG -->
+  <section id="blog" class="article">
+    <div class="kicker">01d · Ranking blog article</div>
+    <h2>I Asked Random Londoners About SEO, LinkedIn &amp; ChatGPT — Here's the Gut-Check for B2B</h2>
+    <div class="metabar">
+      <span><b>Word count:</b> ~1,150</span>
+      <span><b>Target keyword:</b> how to get recommended by ChatGPT</span>
+      <span><b>Slug:</b> /chatgpt-vs-google-ai-search-b2b-street-interviews</span>
+    </div>
+    <div class="card">
+      <p>I run Breaking B2B, and most of what I do all day is help B2B and SaaS companies drive pipeline from organic search. So I spend a lot of time inside the marketing bubble — arguing about keywords, LinkedIn algorithms, AI search, GEO, all of it. And every so often it's worth stepping outside that bubble to check whether any of it lands with actual humans. So I took a mic to the streets of central London and asked random members of the public what they think about SEO, LinkedIn, and AI recommendations. No marketers. No founders. Just people.</p>
+      <p>It was humbling in the best way. Here's what stuck with me, and what it means if you're trying to grow a B2B company right now.</p>
+      <h3>What people outside marketing think LinkedIn is for</h3>
+      <p>We treat LinkedIn like the center of the B2B universe. Ask a marketer and they'll tell you it's the professional network, the demand-gen engine, the founder-brand flywheel. Ask a random Londoner and you get something very different — for a lot of people it's just another social channel they half-check, or a place they go when they're job hunting and then ignore.</p>
+      <p>That gap matters more than it looks. If the people you're trying to reach don't see LinkedIn the way you do, the way you show up there has to change. It's either a positioning opportunity — you can own a lane most people aren't even paying attention to — or it's a content strategy mistake waiting to happen, if you're posting into a room that isn't listening the way you assume. The point isn't "LinkedIn is dead." The point is: don't confuse how marketers use a channel with how your buyers actually use it.</p>
+      <h3>ChatGPT vs Google: who does the public actually trust?</h3>
+      <p>This was the one I really wanted to test. In our world, everyone has an opinion about AI search — whether ChatGPT is eating Google, whether SEO is dead, all the usual noise. So I asked people directly: when you've got a real decision to make, where do you go, and who do you trust more?</p>
+      <p>The split was more interesting than a clean winner. People still reach for Google out of habit for a lot of things, but a growing number reach for ChatGPT when they want an answer rather than a list of links — especially when they want something explained or recommended. And that's the part B2B marketers need to sit with. Your buyers are increasingly asking an AI for a recommendation instead of scrolling ten blue links. If you're not the answer the AI gives, you're invisible in that moment, no matter how well you rank on page one of Google.</p>
+      <h3>Why prompts beat keywords now</h3>
+      <p>Here's the mental shift I keep coming back to. For twenty years, the game was keywords: pick a term, rank a page, capture the click. But people don't prompt an AI the way they type a keyword. They ask a full question, with context, in their own words. "What's a good tool for X if I'm a small B2B team and I care about Y?"</p>
+      <p>You can't rank for a single keyword and expect to win that. What wins is consistent brand signals in the right context — showing up, credibly and repeatedly, everywhere the model learns about your category. Prompts are messier and more specific than keywords, which means the way you get found has to be broader and deeper than one optimized page.</p>
+      <h3>How to actually get recommended by ChatGPT</h3>
+      <p>So how do you become the answer? From everything I'm seeing, it comes down to three things. First, topical depth. Don't publish one thin page on your category — build genuine depth so you're the obvious, comprehensive source on the specific problem you solve. Models reward the source that clearly knows the most.</p>
+      <p>Second, authoritative mentions. It's not just what's on your site; it's whether other credible places in your category talk about you. Being referenced across the web where the model reads is closer to how this works than the old backlink game — it's about being part of the conversation, not just having a page.</p>
+      <p>Third, be the obvious answer to a specific problem. Vague, everything-for-everyone positioning is death in AI search. The narrower and clearer you are about the exact problem you solve and who you solve it for, the more likely you are to be the thing the model surfaces when someone prompts that problem.</p>
+      <h3>The lead-gen strategies still working in 2026</h3>
+      <p>None of this means the fundamentals are dead. Quite the opposite. The B2B companies driving predictable pipeline in 2026 are the ones layering old-school SEO fundamentals with GEO — generative engine optimization, getting recommended by AI. SEO still gets you the intent-rich searches on Google. GEO gets you into the AI answers where more and more buyers now start. You don't pick one. You layer them, and you point everything at the specific, high-intent problems your buyers actually search and prompt.</p>
+      <p>That's the whole game, and it's why I still believe organic search is the best long-term pipeline channel for B2B and SaaS — as long as you stop measuring vanity traffic and start measuring whether you're the answer when it counts.</p>
+      <p>The street interviews reminded me of something easy to forget in the bubble: your buyers aren't thinking about your marketing anywhere near as much as you are. They ask a question, they trust an answer, they move on. Your job is to be that answer — on Google, in ChatGPT, and everywhere in between.</p>
+      <p><span class="listen">Listen here:</span> the full episode #491 of Breaking B2B — press play wherever you get your podcasts, and subscribe so the next one lands in your feed. Want to turn organic search into pipeline? Book a call at breakingb2b.com/book-a-call.</p>
+    </div>
+  </section>
+
+  <!-- 2. AMPLIFICATION -->
+  <section id="amplify">
+    <div class="kicker">02 · Borrowed reach</div>
+    <h2>Amplification kit</h2>
+    <div class="h2sub">This is a solo episode, so there's no guest to borrow reach from — instead, here's a ready-made promotion kit built to make the episode spread on its own. The man-on-the-street format is inherently shareable; these posts are engineered to get people to hit play and repost, putting Breaking B2B in front of new B2B operators at zero ad spend.</div>
+
+    <div class="post"><span class="tag">"New episode" push <span class="fmt">· ready to send to your list / community</span></span>Subject: I asked random Londoners: ChatGPT or Google? 🎧
+
+Quick one — new Breaking B2B episode is live.
+
+I took a mic to the streets of central London and asked random members of the public what they actually think about SEO, LinkedIn, and AI recommendations. No marketers. Just real people.
+
+The ChatGPT-vs-Google answer genuinely surprised me, and there's a positioning lesson in what people think LinkedIn is even for.
+
+🎧 Listen here: [episode link]
+
+If it lands, a repost or share means a lot — it's the fastest way more B2B folks find the show.</div>
+
+    <div class="post"><span class="tag">Ready-to-post caption <span class="fmt">· LinkedIn (your voice)</span></span>I left the marketing bubble and took a mic to the streets of central London.
+
+I asked random members of the public what they actually think about SEO, LinkedIn, and AI recommendations.
+
+A few things that stuck with me:
+→ Most people outside marketing don't see LinkedIn the way we do — that's either a positioning goldmine or a content mistake.
+→ A growing number reach for ChatGPT over Google when they want an answer, not a list of links.
+→ Which means: if you're not the answer the AI gives, you're invisible in that moment — no matter how well you rank.
+
+Full episode (#491) is live. 🎧 Listen here → [episode link]</div>
+
+    <div class="post"><span class="tag">Ready-to-post caption <span class="fmt">· X / Twitter (your voice)</span></span>I asked random Londoners: ChatGPT or Google for business decisions?
+
+The split says a lot about where your B2B buyers are actually going for vendor recommendations now.
+
+New Breaking B2B ep 👇 [episode link]</div>
+
+    <div class="post"><span class="tag">Ready-to-post caption <span class="fmt">· X / Twitter — shorter</span></span>Prompts beat keywords now.
+
+People don't type a term into an AI — they ask a full question. If you're not the answer, you're invisible.
+
+Took this one to the streets of London on the new Breaking B2B ep 🎧 [episode link]</div>
+
+    <h3>Pull-quotes</h3>
+    <div class="flag"><b>Host-voice framings, not verbatim.</b> No public transcript existed at build time, so these are framings of the episode's sourced ideas, attributed to the episode — not presented as direct quotes. For a paying client we pull exact verbatim quotes from the real audio.</div>
+    <div class="quote">"If you're not the answer the AI gives, you're invisible in that moment — no matter how well you rank."<span class="src">framing · Ep #491</span></div>
+    <div class="quote">"Don't confuse how marketers use LinkedIn with how your buyers actually use it."<span class="src">framing · Ep #491</span></div>
+    <div class="quote">"Prompts beat keywords. People ask a full question — you can't rank one term and win that."<span class="src">framing · Ep #491</span></div>
+    <div class="note"><b>Why this matters:</b> the street-interview format is unusually shareable — a pattern-interrupt in a feed full of talking-head marketing takes. Packaged right, this episode earns reposts, and every repost puts Breaking B2B in front of a new B2B operator at zero ad spend.</div>
+  </section>
+
+  <!-- 3. READY-TO-PUBLISH -->
+  <section id="support">
+    <div class="kicker">03 · Support</div>
+    <h2>Ready-to-publish content</h2>
+    <div class="h2sub">In your voice — direct, pipeline-first, no fluff. Every piece ends by pointing back to press play / subscribe. This supports the discoverability + amplification engine above; it's not the main event.</div>
+
+    <h3>Newsletter feature</h3>
+    <div class="card">
+      <p><b>Subject line options:</b></p>
+      <ul class="clean">
+        <li>A: I asked random Londoners: ChatGPT or Google?</li>
+        <li>B: What people outside marketing think LinkedIn is for (it's not what you think)</li>
+        <li>C: Prompts beat keywords now — here's what that means for your pipeline</li>
+      </ul>
+      <p><b>Preview text:</b> I left the marketing bubble and took a mic to the street. Humbling.</p>
+      <hr style="border:none;border-top:1px dashed var(--line);margin:16px 0">
+      <p>Hey,</p>
+      <p>New Breaking B2B episode is live, and it's a different one. I took a mic to the streets of central London and asked random members of the public what they actually think about SEO, LinkedIn, and AI recommendations. No marketers. Just people.</p>
+      <p>A few things I keep chewing on:</p>
+      <ul class="clean">
+        <li>Most people outside marketing don't see LinkedIn the way we do. For a lot of them it's "just another social channel." That gap is either a positioning opportunity you can own, or a content mistake if you're posting into a room that isn't listening the way you assume.</li>
+        <li>ChatGPT vs Google isn't a clean winner — but a growing number of people reach for ChatGPT when they want an answer, not ten links. That changes where your buyers go for vendor recommendations.</li>
+        <li>Prompts beat keywords now. People ask a full question in their own words. You can't rank one term and expect to win that — you need consistent brand signals everywhere the model learns about your category.</li>
+        <li>The lead-gen that still works in 2026 layers SEO fundamentals with GEO. Not one or the other. Both, pointed at the specific problems your buyers actually search and prompt.</li>
+      </ul>
+      <p>The whole thing was a reminder that your buyers aren't thinking about your marketing nearly as much as you are. Your job is to be the answer when they ask.</p>
+      <p><span class="listen">🎧 Listen here</span> → episode #491 of Breaking B2B. Subscribe so the next one lands automatically.<br>🔧 Want organic search to actually drive pipeline? Book a call → breakingb2b.com/book-a-call</p>
+      <p>Cheers,<br>Sam</p>
+    </div>
+
+    <h3>Host-voice social posts</h3>
+    <div class="post"><span class="tag">LinkedIn <span class="fmt">· the hook</span></span>We treat LinkedIn like the center of the B2B universe.
+
+So I asked random people on the streets of London what they think LinkedIn is even for.
+
+Most of them? "Just another social channel." A place for job hunting they mostly ignore.
+
+That's the gap. And it's either a positioning goldmine — own a lane nobody's paying attention to — or a content mistake, if you're posting into a room that isn't listening the way you assume.
+
+Don't confuse how marketers use a channel with how your buyers actually use it.
+
+Took the whole thing to the street on episode #491 of Breaking B2B. 🎧 Listen here → [episode link]</div>
+
+    <div class="post"><span class="tag">LinkedIn <span class="fmt">· the big idea</span></span>Prompts beat keywords now. Here's what I mean.
+
+For 20 years the game was: pick a keyword, rank a page, capture the click.
+
+But nobody prompts an AI the way they type a keyword. They ask a full question, with context, in their own words.
+
+You can't rank for one term and win that. What wins is consistent brand signals everywhere the model learns about your category — topical depth, credible mentions, being the obvious answer to a specific problem.
+
+If you're not the answer ChatGPT gives, you're invisible in that moment. No matter how well you rank on Google.
+
+I got into all of it on episode #491. 🎧 Listen here → [episode link]</div>
+
+    <h3>Quote-graphic specs (3)</h3>
+    <div class="flag">Host-voice framings of the episode's ideas (no public transcript at build time). Attribute to the episode, not as verbatim quotes.</div>
+    <div class="quote">"If you're not the answer the AI gives, you're invisible in that moment."<span class="src">Breaking B2B · Ep #491 · ends with "🎧 Listen here → Ep #491"</span></div>
+    <div class="quote">"Don't confuse how marketers use LinkedIn with how your buyers actually use it."<span class="src">Breaking B2B · Ep #491</span></div>
+    <div class="quote">"Prompts beat keywords. People ask a full question — you can't rank one term and win that."<span class="src">Breaking B2B · Ep #491</span></div>
+    <p style="color:var(--muted);font-size:14px">Design spec: 1080×1080, dark background (#0d1117), quote in large white bold sans, "Breaking B2B" wordmark top-right, "Ep #491 · Sam Dunning" in accent blue bottom-left. Consistent template. Each caption ends with "🎧 Listen here → Ep #491."</p>
+  </section>
+
+  <!-- VALUE-ADD -->
+  <section id="valueadd">
+    <div class="kicker">+ Value-add</div>
+    <h2>Clips (included, not the pitch)</h2>
+    <div class="valueadd">Clips included. For a street-interview episode like this, short vertical clips of the sharpest public answers are genuinely strong — the format is inherently watchable. We don't over-promise virality; the clips exist to drive one thing: <b>press play</b> on the full episode.</div>
+  </section>
+
+  <div class="final">
+    <h2>This is one episode.</h2>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 22px">Search-optimized so new listeners find it, packaged so it spreads, and supported with content that all drives back to press play. Imagine this landing every time you publish — the growth work done for you, in your voice.</p>
+    <a class="cta" href="mailto:hello@episodeloop.com?subject=Let's%20talk%20EpisodeLoop">Email me to get started →</a>
+    <p style="color:var(--muted);font-size:14px;margin-top:16px">Or just reply to my email. Either way, this pack is yours to keep.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    Made by <b>EpisodeLoop</b> · <a class="mail" href="mailto:hello@episodeloop.com">hello@episodeloop.com</a><br>
+    We turn every episode into more listeners — discoverable, shareable, done for you. Created from publicly available episode content, shared free with our best wishes.
+  </div>
+</footer>
+
+</body>
+</html>

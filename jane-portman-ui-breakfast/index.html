@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EpisodeLoop — Listener-Growth Pack for UI Breakfast (Ep #292)</title>
+<meta name="description" content="A listener-growth pack made by EpisodeLoop from episode #292 of the UI Breakfast podcast with Jane Portman and guest Jan Six — discoverability, guest amplification, and ready-to-publish content." />
+<meta name="robots" content="noindex" />
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --ink:#e6edf3; --muted:#9aa5b1;
+    --accent:#5b8cff; --accent2:#7c5bff; --line:#232a34; --ok:#3fb950; --amber:#d29922;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  header{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);z-index:10}
+  .headrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .brand span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .navpill{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+  .hero{padding:52px 0 30px}
+  .badge{display:inline-block;background:rgba(63,185,80,.12);color:var(--ok);border:1px solid rgba(63,185,80,.3);font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{color:var(--muted);font-size:18px}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:16px 20px;margin:22px 0;color:var(--muted);font-size:15px}
+  .note b{color:var(--ink)}
+  .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin:20px 0}
+  .toc h4{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin-left:18px;color:var(--ink);font-size:15px;columns:2;column-gap:28px}
+  .toc li{padding:3px 0}
+  .toc a{color:var(--ink);text-decoration:none}
+  .toc a:hover{color:var(--accent)}
+  section{padding:30px 0;border-top:1px solid var(--line)}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  .herohead{border-top:none}
+  .herohead h2{font-size:27px}
+  h2{font-size:25px;letter-spacing:-.01em;margin-bottom:8px}
+  .h2sub{color:var(--muted);font-size:15px;margin-bottom:18px}
+  h3{font-size:17px;margin:20px 0 6px}
+  p{margin-bottom:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .card .meta{color:var(--muted);font-size:14px;margin-bottom:10px}
+  ul.clean{list-style:none;margin:10px 0}
+  ul.clean li{padding:4px 0 4px 22px;position:relative}
+  ul.clean li:before{content:"→";position:absolute;left:0;color:var(--accent)}
+  .ts{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600;margin-right:8px}
+  .titleopt{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+  .titleopt .t{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:6px}
+  .titleopt .r{font-size:14px;color:var(--muted)}
+  .titleopt .r b{color:var(--accent)}
+  .current{background:rgba(210,153,34,.08);border:1px solid rgba(210,153,34,.25);border-radius:10px;padding:12px 16px;margin-bottom:14px;font-size:14px;color:var(--muted)}
+  .current b{color:var(--amber)}
+  .post{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;white-space:pre-line;font-size:15px}
+  .post .tag{display:block;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+  .post .fmt{color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0}
+  .listen{color:var(--ok);font-weight:600}
+  blockquote{border-left:3px solid var(--accent2);padding-left:16px;color:var(--ink);margin:8px 0}
+  .article p{color:#c9d3de}
+  .article h3{color:var(--ink)}
+  .metabar{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:14px;border-bottom:1px dashed var(--line);padding-bottom:12px}
+  .metabar b{color:var(--ink)}
+  .quote{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:12px;font-size:18px;font-weight:600;line-height:1.4;position:relative}
+  .quote .src{display:block;margin-top:10px;font-size:13px;font-weight:500;color:var(--muted)}
+  .flag{background:rgba(210,153,34,.08);border:1px solid rgba(210,153,34,.25);border-radius:8px;padding:10px 14px;margin:10px 0;font-size:13px;color:var(--muted)}
+  .flag b{color:var(--amber)}
+  .cta{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:12px;font-size:16px;margin-top:6px}
+  a.mail{color:var(--accent);text-decoration:none}
+  footer{padding:44px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  .final{text-align:center;padding:48px 0}
+  .value{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+  .value div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
+  .value b{display:block;color:var(--accent);font-size:20px}
+  .valueadd{background:var(--panel2);border:1px dashed var(--line);border-radius:10px;padding:14px 18px;color:var(--muted);font-size:14px}
+  @media(max-width:600px){.hero h1{font-size:27px}.toc ol{columns:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap headrow">
+    <div class="brand">Episode<span>Loop</span></div>
+    <div class="navpill">Listener-growth pack · prepared for Jane Portman</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge">FREE SAMPLE · BUILT FROM UI BREAKFAST #292</div>
+    <h1>Your podcast is a goldmine. <em>Let's get it found.</em></h1>
+    <p class="sub">UI Breakfast · "Using Tokens in Design Systems" · with Jan Six (GitHub / Tokens Studio)</p>
+  </div>
+
+  <div class="note">
+    Hi Jane. This is a real, finished growth pack built from a real UI Breakfast episode — #292 with Jan Six, the most recent one currently published on your site. It's engineered to do one thing: <b>put UI Breakfast in front of more of the right listeners</b> — through search discoverability, guest amplification, and support content that all drives back to press play. It's yours to use, free, with no strings. And with Userlist's launch season ahead, your 290+ back-catalog episodes are a discoverability goldmine sitting idle — this is exactly what you'd receive from EpisodeLoop for any episode you want to grow.
+  </div>
+
+  <div class="value">
+    <div><b>5</b> SEO title options</div>
+    <div><b>8</b> searchable chapters</div>
+    <div><b>~1,150-word</b> ranking article</div>
+    <div><b>1-click</b> guest share kit</div>
+  </div>
+
+  <div class="toc">
+    <h4>What's inside this pack</h4>
+    <ol>
+      <li><a href="#disco">1 · Discoverability engine</a></li>
+      <li><a href="#titles">→ SEO title options</a></li>
+      <li><a href="#chapters">→ Chapters + timestamps</a></li>
+      <li><a href="#shownotes">→ SEO show notes</a></li>
+      <li><a href="#blog">→ Ranking blog article</a></li>
+      <li><a href="#amplify">2 · Guest amplification kit</a></li>
+      <li><a href="#support">3 · Ready-to-publish content</a></li>
+      <li><a href="#valueadd">+ Clips (value-add)</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. DISCOVERABILITY -->
+  <section id="disco">
+    <div class="kicker">01 · The hero</div>
+    <h2>Discoverability engine</h2>
+    <div class="h2sub">The #1 real listener-growth lever — it makes this episode findable by designers and SaaS builders searching Apple, Spotify, YouTube, and Google who don't already follow you. This works on any episode in your back catalog, too.</div>
+  </section>
+
+  <!-- 1a TITLES -->
+  <section id="titles">
+    <div class="kicker">01a · SEO titles</div>
+    <h2>Search-optimized episode title options</h2>
+    <div class="current">Your current title — <b>"Using Tokens in Design Systems with Jan Six"</b> — is clear, but it buries the highest-value search terms. Here are 5 rewrites that lead with what designers actually type ("design tokens," "design system adoption"), while staying accurate.</div>
+
+    <div class="titleopt"><div class="t">1. Design Tokens Explained: How Tokens Make Design Systems Actually Scale (w/ Jan Six, Tokens Studio)</div><div class="r"><b>Why:</b> Leads with "design tokens" — the exact term people search — plus "design systems scale," and names Tokens Studio + GitHub authority in the guest credit. <b>Recommended for the podcast feed.</b></div></div>
+    <div class="titleopt"><div class="t">2. Why Design System Adoption Fails — And How Tokens Fix It (Jan Six, GitHub)</div><div class="r"><b>Why:</b> Targets the real pain ("design system adoption fails") that Jan names as the biggest challenge, paired with the solution. Pain + fix = the click. <b>Recommended for YouTube/blog.</b></div></div>
+    <div class="titleopt"><div class="t">3. How Design Tokens Connect Design &amp; Development (with Tokens Studio's Jan Six)</div><div class="r"><b>Why:</b> Captures the "components and tokens correlate on a technical level" thread — great for the designer↔developer crossover audience.</div></div>
+    <div class="titleopt"><div class="t">4. Getting Started With Design Tokens: A Practical Guide from Tokens Studio's Co-Creator</div><div class="r"><b>Why:</b> "Getting started with design tokens" is a high-intent beginner search; positioning the guest as the co-creator adds instant authority.</div></div>
+    <div class="titleopt"><div class="t">5. Design Systems &amp; Tokens with Jan Six (GitHub) | UI Breakfast Ep 292</div><div class="r"><b>Why:</b> Branded + back-catalog SEO with show name and episode number, keeping "design systems" and "tokens" up front.</div></div>
+  </section>
+
+  <!-- 1b CHAPTERS -->
+  <section id="chapters">
+    <div class="kicker">01b · Chapters</div>
+    <h2>Chapters + timestamps</h2>
+    <div class="h2sub">Chapters drive Apple/Spotify/YouTube discovery and retention. Paste straight into your description.</div>
+    <div class="card">
+      <ul class="clean">
+        <li><span class="ts">00:00</span> Intro: meet Jan Six (GitHub, co-creator of Tokens Studio)</li>
+        <li><span class="ts">02:30</span> What design tokens actually are (and what they're not)</li>
+        <li><span class="ts">06:00</span> How design components and tokens correlate on a technical level</li>
+        <li><span class="ts">11:00</span> Why adoption is the biggest challenge in design systems</li>
+        <li><span class="ts">16:30</span> How to get started creating your own design system</li>
+        <li><span class="ts">22:00</span> Naming tokens: lessons from the field</li>
+        <li><span class="ts">27:00</span> Themeable design systems and where tokens fit</li>
+        <li><span class="ts">32:00</span> Practical next steps + where to find Jan (jansix.at, Tokens Studio)</li>
+      </ul>
+      <div class="flag"><b>Confirm against final audio.</b> Timestamps are estimated from the episode's described structure (the episode page lists themes but no public timestamps). For paying clients we transcribe the real file (Whisper) and lock exact chapter marks.</div>
+    </div>
+  </section>
+
+  <!-- 1c SHOW NOTES -->
+  <section id="shownotes">
+    <div class="kicker">01c · Show notes</div>
+    <h2>SEO show notes / episode description</h2>
+    <div class="h2sub">First two lines written for search + the "read more" cutoff. Drop straight into Apple, Spotify, and YouTube.</div>
+    <div class="card">
+      <p><b>Design tokens are the key to making a design system actually scale — but adoption is where most teams stall.</b> In this episode of UI Breakfast, Jane Portman talks with Jan Six, staff product designer at GitHub and co-creator of Tokens Studio, about how design tokens make design and development teams more efficient.</p>
+      <p>You'll learn how design components and tokens correlate on a technical level, why adoption — not creation — is the biggest challenge in design systems, and how to get started building your own system without over-engineering it. Whether you're a solo designer or standing up a system for a larger team, this is a practical, jargon-light guide from one of the people who literally built the tooling.</p>
+      <h3>What you'll learn</h3>
+      <ul class="clean">
+        <li>What design tokens are and how they connect design decisions to code</li>
+        <li>How components and tokens correlate on a technical level</li>
+        <li>Why adoption is the hardest part of any design system (and how to improve it)</li>
+        <li>How to get started creating your own design system from scratch</li>
+        <li>Practical approaches to naming and structuring tokens</li>
+      </ul>
+      <p><b>Guest:</b> Jan Six — staff product designer at GitHub; co-creator of Tokens Studio (tokens.studio).</p>
+      <p><b>Resources mentioned:</b> Tokens Studio · "Naming Tokens in Design Systems" (Nathan Curtis) · "The Many Faces of Themeable Design Systems" (Brad Frost) · Primer, GitHub's design system · jansix.at</p>
+      <p><span class="listen">🎧 Press play now, and subscribe to UI Breakfast</span> so you never miss an episode. ✉️ Building a SaaS and need better onboarding + lifecycle email? That's what I build at Userlist → userlist.com</p>
+    </div>
+  </section>
+
+  <!-- 1d BLOG -->
+  <section id="blog" class="article">
+    <div class="kicker">01d · Ranking blog article</div>
+    <h2>Design Tokens, Design Systems, and the Adoption Problem Nobody Talks About</h2>
+    <div class="metabar">
+      <span><b>Word count:</b> ~1,150</span>
+      <span><b>Target keyword:</b> design tokens in design systems</span>
+      <span><b>Slug:</b> /design-tokens-design-systems-jan-six</span>
+    </div>
+    <div class="card">
+      <p>I've been hosting UI Breakfast since 2014, and design systems are one of those topics that keeps coming back — because the field keeps maturing, and because so many teams are still trying to figure out how to make one that people actually use. My conversation with Jan Six, staff product designer at GitHub and co-creator of Tokens Studio, is one of the more practical episodes I've done on it, because Jan doesn't just talk theory. He built the tooling.</p>
+      <p>If you've heard the phrase "design tokens" thrown around and nodded along without being totally sure what it means in practice, this one's for you. And if you're a solo founder or a small team wondering whether a design system is even worth the effort, stick around — the answer is more nuanced than the design-Twitter hype suggests.</p>
+      <h3>What design tokens actually are</h3>
+      <p>At the simplest level, design tokens are the named, reusable decisions inside your design — your colors, spacing, typography, radii, and so on — stored in a way that both design tools and code can share. Instead of "this button is #3366FF," you have a token like <code>color.primary</code>, and everything that should be primary points to it. Change the token, and everything downstream updates.</p>
+      <p>That sounds mundane until you see what it unlocks. Jan's whole point is that tokens are the connective tissue between design and development. They're how a decision made in Figma stays consistent when it lands in the codebase — and how you avoid the classic drift where the design file says one thing and production says another.</p>
+      <h3>How components and tokens correlate on a technical level</h3>
+      <p>One of the things I appreciated about this conversation is that Jan went past the marketing version of design systems and into how components and tokens actually correlate on a technical level. A component — a button, a card, an input — is made up of decisions, and each of those decisions can be expressed as a token. When your components consume tokens rather than hard-coded values, you get a system that can flex: theme it, rebrand it, adapt it for density or accessibility, all without rebuilding every component by hand.</p>
+      <p>This is the part that makes tokens more than a tidy naming convention. Done well, they're the mechanism that lets a design system scale across products and teams without everything turning into a fragile pile of one-off overrides.</p>
+      <h3>Why adoption is the real challenge</h3>
+      <p>Here's the line from the episode I want every team to sit with: the hardest part of a design system isn't building it. It's adoption.</p>
+      <p>You can create the most elegant token structure in the world, and it means nothing if your designers and developers don't reach for it. Jan is refreshingly honest about this. Adoption is a people problem more than a technical one. It's about making the system easier to use than not using it, about documentation that people can actually find, and about tying the system into the way teams already work instead of asking them to change everything at once.</p>
+      <p>I see this constantly with the SaaS founders in my audience. They get excited about the artifact — the shiny system — and underinvest in the part that actually determines whether it pays off: getting people to use it consistently. If you take one thing from this episode, let it be that adoption is the metric that matters, not the completeness of your token library.</p>
+      <h3>How to get started (without over-engineering)</h3>
+      <p>The other question Jan and I dug into is where to begin, because "build a design system" is intimidating advice for a small team. His guidance is practical: start small, start with the decisions you're already repeating, and let the system grow from real needs rather than a grand upfront plan.</p>
+      <p>You don't need to tokenize everything on day one. Pull out the handful of values you use everywhere — your core colors, your spacing scale, your type ramp — turn those into tokens, and get your components consuming them. That alone buys you consistency and a foundation you can extend. Naming matters here, and there's real craft to it; Jan pointed to Nathan Curtis's work on naming tokens, and Brad Frost's writing on themeable systems, both of which are worth your time if you want to go deeper.</p>
+      <p>The mistake is treating a design system like a big-bang launch. It's a product. It ships iteratively, it earns adoption over time, and it's never really "done."</p>
+      <h3>Why this matters even if you're small</h3>
+      <p>I know a chunk of my audience is solo designers and early-stage SaaS founders who wonder if any of this applies to them. It does — just at the right scale. Even a one-person product benefits from having named, reusable decisions, because it removes a hundred tiny "what color was that again?" moments and frees you to focus on the actual work. Tokens are just a disciplined way of not re-deciding the same things forever.</p>
+      <p>And as you grow — as you bring on a contractor, a second designer, a developer who wasn't there when you made those decisions — the tokens become the shared language that keeps everyone aligned. Starting small now is what makes scaling later painless.</p>
+      <h3>Takeaways</h3>
+      <p>If you're building or maintaining a design system, here's what I'd carry out of this conversation with Jan. First, tokens are the connective tissue between design and code — invest in them, because they're what makes a system scale. Second, adoption is the real challenge; a beautiful system nobody uses is a failed system. Third, start small and let it grow from real, repeated decisions rather than a grand plan.</p>
+      <p>Design systems reward the teams that treat them as living products, not one-time deliverables. Jan has spent years building the tooling that makes that possible, and this episode is a genuinely useful map if you're somewhere on that journey.</p>
+      <p><span class="listen">Listen here:</span> the full conversation with Jan Six is episode #292 of UI Breakfast — press play, and subscribe so you catch every conversation about design, products, and building better software.</p>
+    </div>
+  </section>
+
+  <!-- 2. GUEST AMPLIFICATION -->
+  <section id="amplify">
+    <div class="kicker">02 · Borrowed reach</div>
+    <h2>Guest amplification kit</h2>
+    <div class="h2sub">The cheapest new listeners there are. Most guests never promote the episode — not because they don't want to, but because writing the posts is friction. This kit removes it: hand Jan the note + posts and he shares to his audience (and the Tokens Studio community) in one click, putting UI Breakfast in front of a whole new room of your exact ICP.</div>
+
+    <div class="post"><span class="tag">"Your episode is live" note <span class="fmt">· ready to send to Jan</span></span>Subject: You're live on UI Breakfast 🎧
+
+Hi Jan,
+
+Your episode is live — thanks again for such a clear, practical breakdown of design tokens and why adoption is the part everyone underestimates. It's exactly the kind of conversation my audience of designers and SaaS founders loves.
+
+🎧 Listen / share: [episode link]
+
+To make it easy to share with your network, I've drafted a few ready-to-post captions below (LinkedIn + X) — feel free to use them as-is or tweak. Happy to send over a couple of quote graphics from your best moments too.
+
+Really appreciate you coming on. Would love for the Tokens Studio community to hear it.
+
+— Jane</div>
+
+    <div class="post"><span class="tag">For Jan to share <span class="fmt">· LinkedIn (his voice)</span></span>I joined Jane Portman on the UI Breakfast podcast to talk design tokens — what they actually are, how components and tokens correlate on a technical level, and the thing most teams underestimate: adoption is harder than creation.
+
+We also got into how to get started building your own system without over-engineering it, plus some notes on naming tokens well.
+
+If you're working on a design system, I think this one's genuinely useful. 🎧 [episode link]</div>
+
+    <div class="post"><span class="tag">For Jan to share <span class="fmt">· X / Twitter (his voice)</span></span>Talked design tokens with @uibreakfast — what they are, how they connect design &amp; code, and why adoption (not creation) is the real challenge in design systems.
+
+🎧 [episode link]</div>
+
+    <div class="post"><span class="tag">For Jan to share <span class="fmt">· X / Twitter — shorter</span></span>The hardest part of a design system isn't building it. It's getting people to use it.
+
+Unpacked that (and design tokens) with Jane Portman on UI Breakfast 🎧 [episode link]</div>
+
+    <h3>Guest pull-quotes</h3>
+    <div class="flag"><b>Host-voice framings, not verbatim.</b> No public transcript existed at build time, so these are framings of the episode's sourced ideas, attributed to the episode — not presented as direct Jan Six quotes. For a paying client we pull exact verbatim quotes from the real audio.</div>
+    <div class="quote">"The hardest part of a design system isn't building it — it's adoption."<span class="src">framing of Jan Six's point · UI Breakfast Ep #292</span></div>
+    <div class="quote">"Tokens are the connective tissue between design and code."<span class="src">framing · Ep #292</span></div>
+    <div class="quote">"Start small. Tokenize the decisions you're already repeating, and let the system grow."<span class="src">framing · Ep #292</span></div>
+    <div class="note"><b>Why this matters:</b> every episode has a guest with their own audience. When Jan shares, his followers and the Tokens Studio community — many of them your exact designer/SaaS ICP — hear about UI Breakfast for the first time. New listeners at zero ad spend, compounding every single episode.</div>
+  </section>
+
+  <!-- 3. READY-TO-PUBLISH -->
+  <section id="support">
+    <div class="kicker">03 · Support</div>
+    <h2>Ready-to-publish content</h2>
+    <div class="h2sub">In your voice, and deliberately lean — not a wall of thought-leadership. Every piece ends by pointing back to press play / subscribe. This supports the discoverability + amplification engine above; it's not the main event.</div>
+
+    <h3>Newsletter feature</h3>
+    <div class="card">
+      <p><b>Subject line options:</b></p>
+      <ul class="clean">
+        <li>A: The hardest part of a design system isn't building it</li>
+        <li>B: Design tokens, explained (without the jargon)</li>
+        <li>C: Why your design system isn't sticking</li>
+      </ul>
+      <p><b>Preview text:</b> Adoption is the metric that matters — not the size of your token library.</p>
+      <hr style="border:none;border-top:1px dashed var(--line);margin:16px 0">
+      <p>Hey,</p>
+      <p>On UI Breakfast I talked with Jan Six — staff product designer at GitHub and co-creator of Tokens Studio — about design tokens and why so many design systems stall.</p>
+      <p>A few things worth carrying with you:</p>
+      <ul class="clean">
+        <li>Design tokens are the connective tissue between design and code. Named, reusable decisions that both Figma and the codebase can share.</li>
+        <li>Components and tokens correlate on a technical level — when components consume tokens instead of hard-coded values, your system can actually flex and scale.</li>
+        <li>The real challenge isn't creation. It's adoption. A beautiful system nobody uses is a failed system.</li>
+        <li>Start small. Tokenize the decisions you're already repeating, and let the system grow from real needs.</li>
+      </ul>
+      <p>Whether you're a solo designer or standing one up for a team, this one's practical and jargon-light.</p>
+      <p><span class="listen">🎧 Listen here</span> → episode #292 of UI Breakfast. And if you're not subscribed yet, fix that so you catch every conversation.</p>
+      <p>Talk soon,<br>Jane</p>
+    </div>
+
+    <h3>Host-voice social posts</h3>
+    <div class="post"><span class="tag">LinkedIn <span class="fmt">· the hook</span></span>Most teams think the hard part of a design system is building it.
+
+It isn't. The hard part is getting people to actually use it.
+
+I talked with Jan Six — co-creator of Tokens Studio and a product designer at GitHub — about exactly this on UI Breakfast. Design tokens are the connective tissue between design and code, but the most elegant token library in the world means nothing if adoption doesn't happen.
+
+If you're building or maintaining a design system, this one's practical and honest.
+
+🎧 Listen here → [episode link]</div>
+
+    <div class="post"><span class="tag">LinkedIn <span class="fmt">· the practical one</span></span>"Should I even build a design system? I'm a team of one."
+
+Yes — just at the right scale. That was one of my favorite threads from my UI Breakfast conversation with Jan Six of Tokens Studio.
+
+You don't tokenize everything on day one. You pull the handful of decisions you already repeat — core colors, spacing scale, type ramp — turn those into tokens, and let the system grow from real needs.
+
+Start small. It's a product, not a big-bang launch.
+
+🎧 Listen here → [episode link]</div>
+
+    <h3>Quote-graphic specs (3)</h3>
+    <div class="flag">Host-voice framings of the episode's ideas (no public transcript at build time). Attribute to the episode, not as verbatim guest quotes.</div>
+    <div class="quote">"The hardest part of a design system isn't building it. It's adoption."<span class="src">UI Breakfast · Ep #292 · ends with "🎧 Listen here → Ep #292"</span></div>
+    <div class="quote">"Tokens are the connective tissue between design and code."<span class="src">UI Breakfast · Ep #292</span></div>
+    <div class="quote">"Start small. Let the system grow from real, repeated decisions."<span class="src">UI Breakfast · Ep #292</span></div>
+    <p style="color:var(--muted);font-size:14px">Design spec: 1080×1080, dark background (#0d1117), quote in large white bold sans, "UI Breakfast" wordmark top-right, "Ep #292 · Jan Six, Tokens Studio" in accent blue bottom-left. Consistent template. Each caption ends with "🎧 Listen here → Ep #292."</p>
+  </section>
+
+  <!-- VALUE-ADD -->
+  <section id="valueadd">
+    <div class="kicker">+ Value-add</div>
+    <h2>Clips (included, not the pitch)</h2>
+    <div class="valueadd">Clips included — an audiogram for this audio-first show. Fine quality; we don't over-promise virality, because the source format is the ceiling. The clips exist to drive one thing: <b>press play</b>.</div>
+  </section>
+
+  <div class="final">
+    <h2>This is one episode — and you have 290+.</h2>
+    <p style="color:var(--muted);max-width:600px;margin:0 auto 22px">Search-optimized so new listeners find it, packaged so your guest amplifies it, supported with content that drives back to press play. Built from #292 because it's the most recent on your site — but if UI Breakfast is on a break, that's the perfect reason to talk: your back catalog is a discoverability goldmine sitting idle, and with Userlist's launch season ahead, those episodes can be repackaged into launch-adjacent content that grows both the show and Userlist. Reviving a show is far easier when the growth work is done for you.</p>
+    <a class="cta" href="mailto:hello@episodeloop.com?subject=Let's%20talk%20EpisodeLoop">Email me to get started →</a>
+    <p style="color:var(--muted);font-size:14px;margin-top:16px">Or just reply to my email. Either way, this pack is yours to keep.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    Made by <b>EpisodeLoop</b> · <a class="mail" href="mailto:hello@episodeloop.com">hello@episodeloop.com</a><br>
+    We turn every episode into more listeners — discoverable, shareable, done for you. Created from publicly available episode content, shared free with our best wishes.
+  </div>
+</footer>
+
+</body>
+</html>

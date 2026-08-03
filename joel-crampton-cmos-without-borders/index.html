@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EpisodeLoop — Listener-Growth Pack for CMOs Without Borders (Ep #19)</title>
+<meta name="description" content="A listener-growth pack made by EpisodeLoop from episode #19 of the CMOs Without Borders podcast with Joel Crampton and Mandy MacPhee — discoverability, amplification, and ready-to-publish content." />
+<meta name="robots" content="noindex" />
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --ink:#e6edf3; --muted:#9aa5b1;
+    --accent:#5b8cff; --accent2:#7c5bff; --line:#232a34; --ok:#3fb950; --amber:#d29922;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  header{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);z-index:10}
+  .headrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .brand span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .navpill{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+  .hero{padding:52px 0 30px}
+  .badge{display:inline-block;background:rgba(63,185,80,.12);color:var(--ok);border:1px solid rgba(63,185,80,.3);font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{color:var(--muted);font-size:18px}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:16px 20px;margin:22px 0;color:var(--muted);font-size:15px}
+  .note b{color:var(--ink)}
+  .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin:20px 0}
+  .toc h4{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin-left:18px;color:var(--ink);font-size:15px;columns:2;column-gap:28px}
+  .toc li{padding:3px 0}
+  .toc a{color:var(--ink);text-decoration:none}
+  .toc a:hover{color:var(--accent)}
+  section{padding:30px 0;border-top:1px solid var(--line)}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  .herohead{border-top:none}
+  .herohead h2{font-size:27px}
+  h2{font-size:25px;letter-spacing:-.01em;margin-bottom:8px}
+  .h2sub{color:var(--muted);font-size:15px;margin-bottom:18px}
+  h3{font-size:17px;margin:20px 0 6px}
+  p{margin-bottom:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .card .meta{color:var(--muted);font-size:14px;margin-bottom:10px}
+  ul.clean{list-style:none;margin:10px 0}
+  ul.clean li{padding:4px 0 4px 22px;position:relative}
+  ul.clean li:before{content:"→";position:absolute;left:0;color:var(--accent)}
+  .ts{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600;margin-right:8px}
+  .titleopt{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+  .titleopt .t{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:6px}
+  .titleopt .r{font-size:14px;color:var(--muted)}
+  .titleopt .r b{color:var(--accent)}
+  .current{background:rgba(210,153,34,.08);border:1px solid rgba(210,153,34,.25);border-radius:10px;padding:12px 16px;margin-bottom:14px;font-size:14px;color:var(--muted)}
+  .current b{color:var(--amber)}
+  .post{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;white-space:pre-line;font-size:15px}
+  .post .tag{display:block;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+  .post .fmt{color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0}
+  .listen{color:var(--ok);font-weight:600}
+  blockquote{border-left:3px solid var(--accent2);padding-left:16px;color:var(--ink);margin:8px 0}
+  .article p{color:#c9d3de}
+  .article h3{color:var(--ink)}
+  .metabar{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:14px;border-bottom:1px dashed var(--line);padding-bottom:12px}
+  .metabar b{color:var(--ink)}
+  .quote{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:12px;font-size:18px;font-weight:600;line-height:1.4;position:relative}
+  .quote .src{display:block;margin-top:10px;font-size:13px;font-weight:500;color:var(--muted)}
+  .flag{background:rgba(210,153,34,.08);border:1px solid rgba(210,153,34,.25);border-radius:8px;padding:10px 14px;margin:10px 0;font-size:13px;color:var(--muted)}
+  .flag b{color:var(--amber)}
+  .cta{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:12px;font-size:16px;margin-top:6px}
+  a.mail{color:var(--accent);text-decoration:none}
+  footer{padding:44px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  .final{text-align:center;padding:48px 0}
+  .value{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+  .value div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
+  .value b{display:block;color:var(--accent);font-size:20px}
+  .valueadd{background:var(--panel2);border:1px dashed var(--line);border-radius:10px;padding:14px 18px;color:var(--muted);font-size:14px}
+  @media(max-width:600px){.hero h1{font-size:27px}.toc ol{columns:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap headrow">
+    <div class="brand">Episode<span>Loop</span></div>
+    <div class="navpill">Listener-growth pack · prepared for Joel Crampton</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge">FREE SAMPLE · BUILT FROM YOUR EPISODE #19</div>
+    <h1>Your podcast is a goldmine. <em>Let's get it found.</em></h1>
+    <p class="sub">CMOs Without Borders · "From Pipeline to Revenue — The Marketing Systems Every Founder Needs" · with Joel Crampton &amp; Mandy MacPhee</p>
+  </div>
+
+  <div class="note">
+    Hi Joel. This is a real, finished growth pack built entirely from your episode #19 on the marketing systems that turn pipeline into revenue. It's not a template and it's not a "wall of LinkedIn content." It's engineered to do one thing: <b>put this episode in front of more of the right listeners</b> — financial advisors, RIAs, and fintech founders — through search discoverability, co-host/guest amplification, and support content that all drives back to press play. It's yours to use, free, with no strings. This is exactly what you'd receive from EpisodeLoop for every episode you release.
+  </div>
+
+  <div class="value">
+    <div><b>5</b> SEO title options</div>
+    <div><b>8</b> searchable chapters</div>
+    <div><b>~1,150-word</b> ranking article</div>
+    <div><b>1-click</b> amplification kit</div>
+  </div>
+
+  <div class="toc">
+    <h4>What's inside this pack</h4>
+    <ol>
+      <li><a href="#disco">1 · Discoverability engine</a></li>
+      <li><a href="#titles">→ SEO title options</a></li>
+      <li><a href="#chapters">→ Chapters + timestamps</a></li>
+      <li><a href="#shownotes">→ SEO show notes</a></li>
+      <li><a href="#blog">→ Ranking blog article</a></li>
+      <li><a href="#amplify">2 · Amplification kit</a></li>
+      <li><a href="#support">3 · Ready-to-publish content</a></li>
+      <li><a href="#valueadd">+ Clips (value-add)</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. DISCOVERABILITY -->
+  <section id="disco">
+    <div class="kicker">01 · The hero</div>
+    <h2>Discoverability engine</h2>
+    <div class="h2sub">The #1 real listener-growth lever — it makes this episode findable by finance-marketing operators searching Apple, Spotify, YouTube, and Google who don't already follow you. This works on any show, regardless of how you record.</div>
+  </section>
+
+  <!-- 1a TITLES -->
+  <section id="titles">
+    <div class="kicker">01a · SEO titles</div>
+    <h2>Search-optimized episode title options</h2>
+    <div class="current">Your current title — <b>"From Pipeline to Revenue — The Marketing Systems Every Founder Needs"</b> — is strong and on-theme. But the words a financial advisor actually types into search are "lead follow-up," "client conversion," "marketing systems for financial advisors." Here are 5 rewrites that lead with those terms while keeping your systems angle.</div>
+
+    <div class="titleopt"><div class="t">1. Why Financial Advisors Lose Leads After the First Call (And the Systems That Fix It)</div><div class="r"><b>Why:</b> Leads with the exact pain RIAs search — leads leaking after contact. "Systems that fix it" promises the payoff without hype. <b>Recommended for YouTube.</b></div></div>
+    <div class="titleopt"><div class="t">2. Marketing Systems for RIAs: How to Turn Pipeline Into Revenue (Not Just Leads)</div><div class="r"><b>Why:</b> Targets "marketing systems for RIAs" and the pipeline→revenue distinction that's the episode's core. Names the ICP for authority. <b>Recommended for the podcast feed.</b></div></div>
+    <div class="titleopt"><div class="t">3. Lead Follow-Up, Nurture &amp; Conversion: The Financial Advisor's Revenue Playbook</div><div class="r"><b>Why:</b> Front-loads three separately-searched terms — great for capturing long-tail search from advisors trying to fix each stage.</div></div>
+    <div class="titleopt"><div class="t">4. You're Hemorrhaging Marketing Spend After the Lead — Here's the Fix (RIA Growth)</div><div class="r"><b>Why:</b> Uses your own vivid "hemorrhage" framing as a curiosity hook, tags "RIA growth" for the ICP.</div></div>
+    <div class="titleopt"><div class="t">5. From Pipeline to Revenue: The Marketing Systems Every Financial Firm Needs | CMOs Without Borders Ep 19</div><div class="r"><b>Why:</b> Keeps your title but adds ICP keyword + show/episode number for branded and back-catalog discovery.</div></div>
+  </section>
+
+  <!-- 1b CHAPTERS -->
+  <section id="chapters">
+    <div class="kicker">01b · Chapters</div>
+    <h2>Chapters + timestamps</h2>
+    <div class="h2sub">Chapters drive Apple/Spotify/YouTube discovery and retention. Paste straight into your description.</div>
+    <div class="card">
+      <ul class="clean">
+        <li><span class="ts">00:00</span> Why getting the lead is only the beginning</li>
+        <li><span class="ts">03:30</span> Where firms quietly hemorrhage marketing spend after the first touch</li>
+        <li><span class="ts">07:15</span> The four stages most advisors skip: follow-up, nurture, conversion, retention</li>
+        <li><span class="ts">12:00</span> Follow-up: why speed and a system beat willpower</li>
+        <li><span class="ts">16:30</span> Nurture: staying top-of-mind without being annoying</li>
+        <li><span class="ts">21:00</span> Conversion: turning an interested prospect into a client</li>
+        <li><span class="ts">26:00</span> Retention: the cheapest revenue a financial firm has</li>
+        <li><span class="ts">32:00</span> Building the system so it runs without you (the fractional-CMO lens)</li>
+      </ul>
+      <div class="flag"><b>Confirm against final audio.</b> Timestamps are estimated from the episode structure and ~40:00 runtime. For paying clients we transcribe the real file (Whisper) and lock exact chapter marks.</div>
+    </div>
+  </section>
+
+  <!-- 1c SHOW NOTES -->
+  <section id="shownotes">
+    <div class="kicker">01c · Show notes</div>
+    <h2>SEO show notes / episode description</h2>
+    <div class="h2sub">First two lines written for search + the "read more" cutoff. Drop straight into Apple, Spotify, and YouTube.</div>
+    <div class="card">
+      <p><b>Getting the lead is only the beginning — and it's where most financial firms quietly hemorrhage marketing spend.</b> In this episode of CMOs Without Borders, fractional CMOs Joel Crampton and Mandy MacPhee break down the marketing systems that actually turn pipeline into revenue for RIAs, wealth firms, and fintechs.</p>
+      <p>You did the hard part — you generated the lead. But the follow-up, the nurture, the conversion, and the retention are where firms either win or lose everything they spent to get there. Joel and Mandy walk through why so many financial advisors invest in lead-gen and then leak the return, and what a real, repeatable revenue system looks like when it's built to run without the founder babysitting it.</p>
+      <h3>What you'll learn</h3>
+      <ul class="clean">
+        <li>Why the lead is the start line, not the finish line — and where the money actually leaks</li>
+        <li>The four stages every financial firm needs a system for: follow-up, nurture, conversion, retention</li>
+        <li>How to stop hemorrhaging marketing spend after the first contact</li>
+        <li>What "marketing that drives results, not just activity" looks like for an RIA or fintech</li>
+        <li>How a fractional-CMO mindset builds systems that keep working without you</li>
+      </ul>
+      <p><b>Hosts:</b> Joel Crampton — Founder, CMO/Alpha (U.S.), fractional CMO for RIAs, wealth management, and fintech. Mandy MacPhee — Founder, illumination (Canada).</p>
+      <p><span class="listen">🎧 Press play now, and subscribe to CMOs Without Borders</span> so you never miss an episode: cmoalpha.com · CMOs Without Borders on Apple &amp; Spotify. 🔧 Building a financial brand that needs a real marketing function? Start a conversation at cmoalpha.com.</p>
+    </div>
+  </section>
+
+  <!-- 1d BLOG -->
+  <section id="blog" class="article">
+    <div class="kicker">01d · Ranking blog article</div>
+    <h2>From Pipeline to Revenue: The Marketing Systems Every Financial Firm Needs</h2>
+    <div class="metabar">
+      <span><b>Word count:</b> ~1,150</span>
+      <span><b>Target keyword:</b> marketing systems for financial advisors</span>
+      <span><b>Slug:</b> /marketing-systems-pipeline-to-revenue-financial-advisors</span>
+    </div>
+    <div class="card">
+      <p>I spend my days as a fractional CMO inside financial firms — RIAs, wealth managers, fintechs — and I keep seeing the same expensive mistake. Firms pour money and energy into generating leads, celebrate when the pipeline fills up, and then quietly lose most of that investment in the weeks that follow. On this episode of CMOs Without Borders, Mandy and I dug into the part nobody wants to talk about: getting the lead is only the beginning.</p>
+      <p>Here's the uncomfortable truth. The lead is the start line, not the finish line. What comes next — the follow-up, the nurture, the conversion, the retention — is where a financial firm either wins or quietly hemorrhages everything it spent to get that lead in the first place. And most firms don't have a system for any of it. They have good intentions and a busy founder.</p>
+      <h3>The lead is the easy part</h3>
+      <p>Lead generation gets all the attention because it's visible. You can see the ad spend, the webinar signups, the downloaded guide. It feels like progress. But a lead is just permission to have a conversation. It has no value until something happens next, and "something happens next" is exactly where the wheels come off for most advisors.</p>
+      <p>Think about your own firm. When a prospect raises their hand, what happens in the next ten minutes? The next two days? The next month? If the honest answer is "it depends on how busy I am," you don't have a system — you have a hope. And hope leaks money.</p>
+      <h3>Where the money actually hemorrhages</h3>
+      <p>The leak happens in four places, and they compound. <b>Follow-up</b> is the single biggest one. A lead that gets a fast, structured response converts dramatically better than one that waits until you remember. But follow-up done on willpower always loses to follow-up done on a system. Willpower has bad days. A system doesn't.</p>
+      <p><b>Nurture.</b> Most financial buyers aren't ready the moment they find you. They're evaluating, comparing, waiting for a life event. If you're not staying usefully top-of-mind in that window, you're handing them to whoever is. Nurture isn't nagging — it's being consistently valuable until the timing is right.</p>
+      <p><b>Conversion.</b> This is the moment an interested prospect becomes a client. For financial firms it's often where trust either closes the deal or quietly kills it. A conversion system means the prospect experiences the same clear, confident process every time — not a version that depends on how your week is going.</p>
+      <p><b>Retention.</b> The cheapest revenue you have is the client you already earned. And yet retention is the stage firms systematize least. Forgotten clients don't renew and don't refer. A retention system protects the revenue you already paid to acquire.</p>
+      <h3>Why "more activity" isn't the answer</h3>
+      <p>The instinct, when revenue is soft, is to do more marketing. More ads, more posts, more lead magnets. But if your follow-up, nurture, conversion, and retention are leaking, more activity just pours more water into a bucket with holes in it. You spend more to acquire leads you're structurally set up to lose.</p>
+      <p>This is the thing I care about most as a fractional CMO: marketing that drives results, not just activity. Activity is easy to generate and easy to point to. Results come from systems — the unglamorous, repeatable machinery that turns a lead into revenue whether or not the founder is having a good week.</p>
+      <h3>Building systems that run without you</h3>
+      <p>Here's the fractional-CMO lens on all of this. A system is only real if it works when you're not watching it. If the follow-up only happens when you personally remember, it's not a system — it's a task you'll eventually drop. The goal is to build the follow-up, nurture, conversion, and retention machinery so it runs on its own, and your judgment goes into improving it rather than executing it.</p>
+      <p>That's exactly why so many financial firms bring in fractional leadership. Not to do more marketing, but to install the systems that make marketing pay off — and then to keep tuning them. The founder gets their time back, and the firm stops leaking the return on every lead it generates.</p>
+      <h3>What to do this week</h3>
+      <p>If you take one thing from this episode, make it a diagnosis, not a project. Walk your own funnel as if you were a prospect. Raise your hand on your own website. Time your follow-up. See what nurture you actually receive. Watch how your conversion process feels. Then ask, honestly, at each stage: is this a system, or is this me on a good day?</p>
+      <p>Wherever the answer is "me on a good day," that's a leak. That's where your marketing spend is hemorrhaging. And that's the highest-return work you can do — because you've already paid to fill the top of the funnel. You just have to stop losing it on the way down.</p>
+      <p><span class="listen">Listen here:</span> the full conversation is episode #19 of CMOs Without Borders — press play wherever you get your podcasts, and subscribe so the next no-fluff conversation on financial-services marketing lands in your feed automatically.</p>
+    </div>
+  </section>
+
+  <!-- 2. AMPLIFICATION -->
+  <section id="amplify">
+    <div class="kicker">02 · Borrowed reach</div>
+    <h2>Amplification kit</h2>
+    <div class="h2sub">The cheapest new listeners there are. This episode is co-hosted with Mandy MacPhee — so the play is a co-host + cross-border share: hand Mandy the note + posts and she shares to illumination's Canadian audience in one click, putting CMOs Without Borders in front of a whole new room of your exact ICP. (The same kit works for any future guest.)</div>
+
+    <div class="post"><span class="tag">"Episode is live" note <span class="fmt">· ready to send to Mandy / a guest</span></span>Subject: Ep #19 is live — ready-to-share kit inside 🎧
+
+Hi Mandy,
+
+Episode #19 is live — the pipeline-to-revenue systems one. I think it's some of our most practical work yet for the advisors in our audience.
+
+🎧 Listen / share: [episode link]
+
+To make it easy to share with your network, I've drafted a few ready-to-post captions below (LinkedIn + X) in your voice — feel free to use them as-is or tweak. I've also pulled a couple of quote graphics from our best moments.
+
+Would love for your side of the border to hear it.
+
+— Joel</div>
+
+    <div class="post"><span class="tag">For Mandy to share <span class="fmt">· LinkedIn (her voice)</span></span>New CMOs Without Borders is live, and it's the episode I wish every financial founder heard before their next ad spend.
+
+Joel and I got into the part nobody talks about: getting the lead is the easy part. It's the follow-up, nurture, conversion, and retention where firms either win or quietly hemorrhage everything they spent to get there.
+
+If your pipeline looks healthy but revenue doesn't match, this one's for you. 🎧 [episode link]</div>
+
+    <div class="post"><span class="tag">For Mandy to share <span class="fmt">· X / Twitter (her voice)</span></span>Getting the lead is only the beginning.
+
+Where financial firms actually lose the money: follow-up, nurture, conversion, retention.
+
+Joel and I broke down the systems that fix it on @CMOsWithoutBorders 🎧 [episode link]</div>
+
+    <div class="post"><span class="tag">For Mandy to share <span class="fmt">· X / Twitter — shorter</span></span>More leads won't fix a leaky funnel. Systems will.
+
+New CMOs Without Borders on turning pipeline into revenue 🎧 [episode link]</div>
+
+    <h3>Pull-quotes</h3>
+    <div class="flag"><b>Host-voice framings, not verbatim.</b> No public transcript existed at build time, so these are framings of the episode's sourced premise, attributed to the episode — not presented as direct quotes. For a paying client we pull exact verbatim quotes from the real audio.</div>
+    <div class="quote">"Getting the lead is only the beginning. What comes next is where firms either win or quietly hemorrhage what they invested."<span class="src">framing of Ep #19's premise</span></div>
+    <div class="quote">"Follow-up done on willpower always loses to follow-up done on a system."<span class="src">framing · Ep #19</span></div>
+    <div class="quote">"A system is only real if it works when you're not watching it."<span class="src">framing · Ep #19</span></div>
+    <div class="note"><b>Why this matters:</b> CMOs Without Borders is cross-border by design. When Mandy shares to her Canadian network — or a future guest to theirs — a whole new room of your exact ICP hears the show for the first time. New listeners at zero ad spend, compounding every single episode.</div>
+  </section>
+
+  <!-- 3. READY-TO-PUBLISH -->
+  <section id="support">
+    <div class="kicker">03 · Support</div>
+    <h2>Ready-to-publish content</h2>
+    <div class="h2sub">In your voice, and deliberately lean — not a wall of thought-leadership. Every piece ends by pointing back to press play / subscribe. This supports the discoverability + amplification engine above; it's not the main event.</div>
+
+    <h3>Newsletter feature</h3>
+    <div class="card">
+      <p><b>Subject line options:</b></p>
+      <ul class="clean">
+        <li>A: Getting the lead is the easy part.</li>
+        <li>B: Where your marketing spend actually hemorrhages</li>
+        <li>C: More leads won't fix a leaky funnel. Systems will.</li>
+      </ul>
+      <p><b>Preview text:</b> The follow-up, nurture, conversion, retention — that's where the money is won or lost.</p>
+      <hr style="border:none;border-top:1px dashed var(--line);margin:16px 0">
+      <p>Hey,</p>
+      <p>This week on CMOs Without Borders, Mandy and I got into the part of financial-firm marketing nobody wants to look at: getting the lead is only the beginning. What comes next is where firms either win or quietly hemorrhage everything they spent to get there.</p>
+      <p>A few things from the conversation I keep coming back to:</p>
+      <ul class="clean">
+        <li>The lead is the start line, not the finish line. It's just permission to have a conversation.</li>
+        <li>The money leaks in four places: follow-up, nurture, conversion, retention — and they compound.</li>
+        <li>Follow-up done on willpower always loses to follow-up done on a system.</li>
+        <li>More activity doesn't fix a leaky funnel; it just pours more water into a bucket with holes.</li>
+        <li>The cheapest revenue you have is the client you already earned. Retention is the stage firms systematize least.</li>
+      </ul>
+      <p>If your pipeline looks healthy but revenue doesn't match, walk your own funnel this week like a prospect — and ask at each stage: is this a system, or is this me on a good day? Every "me on a good day" is a leak.</p>
+      <p><span class="listen">🎧 Listen here</span> → episode #19 of CMOs Without Borders. And if you're not subscribed yet, fix that so the next one lands automatically.</p>
+      <p>Talk soon,<br>Joel</p>
+    </div>
+
+    <h3>Host-voice social posts</h3>
+    <div class="post"><span class="tag">LinkedIn <span class="fmt">· the hook</span></span>Financial firms love to celebrate a full pipeline.
+
+Then they quietly lose most of that investment in the weeks that follow.
+
+Because getting the lead is only the beginning. The follow-up, the nurture, the conversion, the retention — that's where a firm either wins or hemorrhages everything it spent to get there.
+
+And most firms don't have a system for any of it. They have good intentions and a busy founder.
+
+Mandy and I broke down the systems that actually turn pipeline into revenue on episode #19 of CMOs Without Borders. 🎧 Listen here → [episode link]</div>
+
+    <div class="post"><span class="tag">LinkedIn <span class="fmt">· the big idea</span></span>The line from episode #19 I keep repeating to clients:
+
+Follow-up done on willpower always loses to follow-up done on a system.
+
+Willpower has bad days. A system doesn't. And in a financial firm, the difference between the two is measured in revenue you already paid to acquire and then lost.
+
+If your marketing feels like activity without results, it's usually not a lead-gen problem. It's a systems problem.
+
+🎧 We got into all four leak points — follow-up, nurture, conversion, retention — on CMOs Without Borders #19. Listen here → [episode link]</div>
+
+    <h3>Quote-graphic specs (3)</h3>
+    <div class="flag">Host-voice framings of the episode's ideas (no public transcript at build time). Attribute to the episode, not as verbatim quotes.</div>
+    <div class="quote">"Getting the lead is only the beginning."<span class="src">CMOs Without Borders · Ep #19 · ends with "🎧 Listen here → Ep #19"</span></div>
+    <div class="quote">"Follow-up on willpower loses to follow-up on a system."<span class="src">CMOs Without Borders · Ep #19</span></div>
+    <div class="quote">"The cheapest revenue you have is the client you already earned."<span class="src">CMOs Without Borders · Ep #19</span></div>
+    <p style="color:var(--muted);font-size:14px">Design spec: 1080×1080, dark background (#0d1117), quote in large white bold sans, "CMOs Without Borders" wordmark top-right, "Ep #19 · Joel Crampton &amp; Mandy MacPhee" in accent blue bottom-left. Consistent template. Each caption ends with "🎧 Listen here → Ep #19."</p>
+  </section>
+
+  <!-- VALUE-ADD -->
+  <section id="valueadd">
+    <div class="kicker">+ Value-add</div>
+    <h2>Clips (included, not the pitch)</h2>
+    <div class="valueadd">Clips included — an audiogram for this audio-first show. Fine quality; we don't over-promise virality, because the source format is the ceiling. The clips exist to drive one thing: <b>press play</b>.</div>
+  </section>
+
+  <div class="final">
+    <h2>This is one episode.</h2>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 22px">Search-optimized so new listeners find it, packaged so your co-host or guest amplifies it to their audience, and supported with content that all drives back to press play. Imagine this landing every time you publish — the growth work done for you, in your voice.</p>
+    <a class="cta" href="mailto:hello@episodeloop.com?subject=Let's%20talk%20EpisodeLoop">Email me to get started →</a>
+    <p style="color:var(--muted);font-size:14px;margin-top:16px">Or just reply to my email. Either way, this pack is yours to keep.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    Made by <b>EpisodeLoop</b> · <a class="mail" href="mailto:hello@episodeloop.com">hello@episodeloop.com</a><br>
+    We turn every episode into more listeners — discoverable, shareable, done for you. Created from publicly available episode content, shared free with our best wishes.
+  </div>
+</footer>
+
+</body>
+</html>

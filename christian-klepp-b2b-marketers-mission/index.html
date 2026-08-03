@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EpisodeLoop — Listener-Growth Pack for B2B Marketers on a Mission (Ep #222)</title>
+<meta name="description" content="A listener-growth pack made by EpisodeLoop from episode #222 of the B2B Marketers on a Mission podcast with Christian Klepp and guest Molly Strawn-Carreño — discoverability, guest amplification, and ready-to-publish content." />
+<meta name="robots" content="noindex" />
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --ink:#e6edf3; --muted:#9aa5b1;
+    --accent:#5b8cff; --accent2:#7c5bff; --line:#232a34; --ok:#3fb950; --amber:#d29922;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  header{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);z-index:10}
+  .headrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .brand span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .navpill{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+  .hero{padding:52px 0 30px}
+  .badge{display:inline-block;background:rgba(63,185,80,.12);color:var(--ok);border:1px solid rgba(63,185,80,.3);font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{color:var(--muted);font-size:18px}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:16px 20px;margin:22px 0;color:var(--muted);font-size:15px}
+  .note b{color:var(--ink)}
+  .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin:20px 0}
+  .toc h4{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin-left:18px;color:var(--ink);font-size:15px;columns:2;column-gap:28px}
+  .toc li{padding:3px 0}
+  .toc a{color:var(--ink);text-decoration:none}
+  .toc a:hover{color:var(--accent)}
+  section{padding:30px 0;border-top:1px solid var(--line)}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  .herohead{border-top:none}
+  .herohead h2{font-size:27px}
+  h2{font-size:25px;letter-spacing:-.01em;margin-bottom:8px}
+  .h2sub{color:var(--muted);font-size:15px;margin-bottom:18px}
+  h3{font-size:17px;margin:20px 0 6px}
+  p{margin-bottom:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .card .meta{color:var(--muted);font-size:14px;margin-bottom:10px}
+  ul.clean{list-style:none;margin:10px 0}
+  ul.clean li{padding:4px 0 4px 22px;position:relative}
+  ul.clean li:before{content:"→";position:absolute;left:0;color:var(--accent)}
+  .ts{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600;margin-right:8px}
+  .titleopt{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+  .titleopt .t{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:6px}
+  .titleopt .r{font-size:14px;color:var(--muted)}
+  .titleopt .r b{color:var(--accent)}
+  .current{background:rgba(210,153,34,.08);border:1px solid rgba(210,153,34,.25);border-radius:10px;padding:12px 16px;margin-bottom:14px;font-size:14px;color:var(--muted)}
+  .current b{color:var(--amber)}
+  .post{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;white-space:pre-line;font-size:15px}
+  .post .tag{display:block;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+  .post .fmt{color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0}
+  .listen{color:var(--ok);font-weight:600}
+  blockquote{border-left:3px solid var(--accent2);padding-left:16px;color:var(--ink);margin:8px 0}
+  .article p{color:#c9d3de}
+  .article h3{color:var(--ink)}
+  .metabar{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:14px;border-bottom:1px dashed var(--line);padding-bottom:12px}
+  .metabar b{color:var(--ink)}
+  .quote{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:12px;font-size:18px;font-weight:600;line-height:1.4;position:relative}
+  .quote .src{display:block;margin-top:10px;font-size:13px;font-weight:500;color:var(--muted)}
+  .flag{background:rgba(210,153,34,.08);border:1px solid rgba(210,153,34,.25);border-radius:8px;padding:10px 14px;margin:10px 0;font-size:13px;color:var(--muted)}
+  .flag b{color:var(--amber)}
+  .verified{background:rgba(63,185,80,.08);border:1px solid rgba(63,185,80,.28);border-radius:8px;padding:10px 14px;margin:10px 0;font-size:13px;color:var(--muted)}
+  .verified b{color:var(--ok)}
+  .cta{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:12px;font-size:16px;margin-top:6px}
+  a.mail{color:var(--accent);text-decoration:none}
+  footer{padding:44px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  .final{text-align:center;padding:48px 0}
+  .value{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+  .value div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
+  .value b{display:block;color:var(--accent);font-size:20px}
+  .valueadd{background:var(--panel2);border:1px dashed var(--line);border-radius:10px;padding:14px 18px;color:var(--muted);font-size:14px}
+  @media(max-width:600px){.hero h1{font-size:27px}.toc ol{columns:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap headrow">
+    <div class="brand">Episode<span>Loop</span></div>
+    <div class="navpill">Listener-growth pack · prepared for Christian Klepp</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge">FREE SAMPLE · BUILT FROM YOUR EPISODE #222</div>
+    <h1>Your podcast is a goldmine. <em>Let's get it found.</em></h1>
+    <p class="sub">B2B Marketers on a Mission · "How to Turn 'Data Overload' into 'Decision Velocity' using Research" · with Molly Strawn-Carreño (AYTM)</p>
+  </div>
+
+  <div class="note">
+    Hi Christian. This is a real, finished growth pack built entirely from your episode #222 with Molly Strawn-Carreño. It's not a template and it's not a "wall of LinkedIn content." It's engineered to do one thing: <b>put this episode in front of more of the right listeners</b> — through search discoverability, guest amplification, and support content that all drives back to press play. Curious, mission-driven — in your voice. It's yours to use, free, with no strings. This is exactly what you'd receive from EpisodeLoop for every episode you release.
+  </div>
+
+  <div class="value">
+    <div><b>5</b> SEO title options</div>
+    <div><b>10</b> searchable chapters</div>
+    <div><b>~1,150-word</b> ranking article</div>
+    <div><b>1-click</b> guest share kit</div>
+  </div>
+
+  <div class="toc">
+    <h4>What's inside this pack</h4>
+    <ol>
+      <li><a href="#disco">1 · Discoverability engine</a></li>
+      <li><a href="#titles">→ SEO title options</a></li>
+      <li><a href="#chapters">→ Chapters + timestamps</a></li>
+      <li><a href="#shownotes">→ SEO show notes</a></li>
+      <li><a href="#blog">→ Ranking blog article</a></li>
+      <li><a href="#amplify">2 · Guest amplification kit</a></li>
+      <li><a href="#support">3 · Ready-to-publish content</a></li>
+      <li><a href="#valueadd">+ Clips (value-add)</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. DISCOVERABILITY -->
+  <section id="disco">
+    <div class="kicker">01 · The hero</div>
+    <h2>Discoverability engine</h2>
+    <div class="h2sub">The #1 real listener-growth lever — it makes this episode findable by the B2B marketers searching Apple, Spotify, YouTube, and Google who don't already follow you. This works on any show, regardless of how you record.</div>
+  </section>
+
+  <!-- 1a TITLES -->
+  <section id="titles">
+    <div class="kicker">01a · SEO titles</div>
+    <h2>Search-optimized episode title options</h2>
+    <div class="current">Your current title — <b>"How to Turn 'Data Overload' into 'Decision Velocity' using Research"</b> — captures the idea beautifully, but "decision velocity" isn't yet a term people search. Here are 5 rewrites that lead with terms B2B marketers actually type, while keeping your signature framing.</div>
+
+    <div class="titleopt"><div class="t">1. Market Research for Marketers: How to Turn Data Overload into Faster Decisions (AYTM's Molly Strawn-Carreño)</div><div class="r"><b>Why:</b> Leads with "market research for marketers" (a real high-intent search), keeps your "data overload" idea, names the recognizable guest + company for authority.</div></div>
+    <div class="titleopt"><div class="t">2. Will AI Take Your Marketing Job? "Someone Who Uses AI Will" — Molly Strawn-Carreño (AYTM)</div><div class="r"><b>Why:</b> Targets the exact fear people search ("will AI take my marketing job") and uses Molly's own sharp line as the hook — curiosity + substance. <b>Recommended for YouTube.</b></div></div>
+    <div class="titleopt"><div class="t">3. Why B2B Marketers Skip Market Research (And the Simple Fix)</div><div class="r"><b>Why:</b> "B2B market research" is a core term for your ICP; "the simple fix" mirrors what a busy marketer types when they know they're skipping it.</div></div>
+    <div class="titleopt"><div class="t">4. AI Won't Replace Marketers — But It Will Replace This One Habit</div><div class="r"><b>Why:</b> Front-loads the AI-and-marketing angle everyone's searching, and the curiosity gap ("this one habit") earns the click without clickbait.</div></div>
+    <div class="titleopt"><div class="t">5. Data Overload to Decision Velocity: Modern Market Research for B2B | B2B Marketers on a Mission Ep 222</div><div class="r"><b>Why:</b> Captures your signature phrase, adds the searchable "market research for B2B," and includes show + episode number for branded and back-catalog discovery. <b>Recommended for the podcast feed.</b></div></div>
+  </section>
+
+  <!-- 1b CHAPTERS -->
+  <section id="chapters">
+    <div class="kicker">01b · Chapters</div>
+    <h2>Chapters + timestamps</h2>
+    <div class="h2sub">Chapters drive Apple/Spotify/YouTube discovery and retention. Paste straight into your description.</div>
+    <div class="card">
+      <ul class="clean">
+        <li><span class="ts">00:00</span> Cold open: "Someone who uses AI is going to be the person that takes your job"</li>
+        <li><span class="ts">00:27</span> Christian's framing: modern B2B marketing starts with curiosity</li>
+        <li><span class="ts">01:15</span> Meet Molly Strawn-Carreño: Brand Growth at AYTM, co-host of Curiosity Current</li>
+        <li><span class="ts">02:56</span> What marketers wish they understood about market research — and where they struggle</li>
+        <li><span class="ts">06:13</span> Why teams hesitate: time, skills, and outsourcing the "why"</li>
+        <li><span class="ts">07:00</span> The "Don't be like Tom" story: tools vs. toys in the early internet</li>
+        <li><span class="ts">10:33</span> Market research as a skill marketers now have to own</li>
+        <li><span class="ts">13:00</span> AI for lean startups vs. big B2B brands: where the line is</li>
+        <li><span class="ts">15:00</span> Why AI is always looking backwards — and humans stay essential</li>
+        <li><span class="ts">15:14</span> What the best B2B brands have in common: customer-centricity backed by data</li>
+      </ul>
+      <div class="flag"><b>Confirm against final audio.</b> Timestamps are estimated and partly anchored to the published transcript. For paying clients we transcribe the real file (Whisper) and lock exact chapter marks.</div>
+    </div>
+  </section>
+
+  <!-- 1c SHOW NOTES -->
+  <section id="shownotes">
+    <div class="kicker">01c · Show notes</div>
+    <h2>SEO show notes / episode description</h2>
+    <div class="h2sub">First two lines written for search + the "read more" cutoff. Drop straight into Apple, Spotify, and YouTube.</div>
+    <div class="card">
+      <p><b>Will AI take your marketing job? "Someone who uses AI will," says AYTM's Molly Strawn-Carreño — and the habit that saves you is market research.</b> In this episode of B2B Marketers on a Mission, Christian Klepp and Molly Strawn-Carreño unpack how to modernize market research and turn "data overload" into "decision velocity."</p>
+      <p>Modern B2B marketing starts with curiosity. Molly makes the case that market research shouldn't be an afterthought you get to "eventually" — it should be the underpinning of your entire strategy, because you can't claim to be a client-obsessed organization if you never actually talk to your clients. We get into why teams skip research (time, skills, outsourcing the "why" to an insights team), the trap of one-off A/B tests that never become a strategy, and where AI genuinely helps versus where it hits a wall — because AI is always looking backwards, and humans do off-the-wall things no model can predict.</p>
+      <h3>What you'll learn</h3>
+      <ul class="clean">
+        <li>Why market research should be the underpinning of your strategy, not a box you check</li>
+        <li>The "Don't be like Tom" story — and why refusing to adopt new tools ends careers</li>
+        <li>Why "someone who uses AI will take your job," but AI alone won't</li>
+        <li>The A/B-testing trap: doing the motions of research without a real strategy</li>
+        <li>What the best B2B brands share: customer-centricity backed by data, and a champion cohort of customers you can ask</li>
+      </ul>
+      <p><b>Guest:</b> Molly Strawn-Carreño — Director of Brand Growth at AYTM and co-host of the Curiosity Current podcast; passionate about helping marketers stay ahead in the evolving world of market research.</p>
+      <p><span class="listen">🎧 Press play now, and subscribe to B2B Marketers on a Mission</span> — new episodes every Wednesday: einblick.co · YouTube · LinkedIn.</p>
+    </div>
+  </section>
+
+  <!-- 1d BLOG -->
+  <section id="blog" class="article">
+    <div class="kicker">01d · Ranking blog article</div>
+    <h2>From Data Overload to Decision Velocity: What Modern Market Research Really Looks Like</h2>
+    <div class="metabar">
+      <span><b>Word count:</b> ~1,150</span>
+      <span><b>Target keyword:</b> market research for B2B marketers</span>
+      <span><b>Slug:</b> /market-research-decision-velocity-molly-strawn</span>
+    </div>
+    <div class="card">
+      <p>Modern B2B marketing starts with curiosity. I say that a lot on this show, because I believe the marketers who win are the ones who stay curious about their customers instead of assuming they already have the answers. So when I sat down with Molly Strawn-Carreño — Director of Brand Growth at AYTM and co-host of the Curiosity Current podcast — I wanted to unpack a question a lot of teams are quietly wrestling with: how do you modernize market research so that data overload turns into decision velocity, rather than paralysis?</p>
+      <p>What she said stuck with me, and I think it will stick with you too.</p>
+      <h3>Market research isn't an extra. It's the underpinning.</h3>
+      <p>The first thing Molly named is a mindset problem I see constantly. Marketers treat research as "some extra thing that we need, and we'll get to it eventually." And eventually never comes, because there's always a deadline, always an event, always someone asking "can you promote this?"</p>
+      <p>Her reframe is sharp: research "really should be the underpinning of your entire strategy, because you can't say that you're a client-obsessed organization if you don't regularly speak to your clients." That line is worth sitting with. So many B2B teams describe themselves as customer-obsessed. But obsession without conversation is just assumption wearing a nicer word. If you're not regularly asking your customers and prospects what they actually struggle with, you don't have customer-centricity — you have a story you tell yourself.</p>
+      <h3>The A/B-testing trap</h3>
+      <p>Molly was honest about something a lot of teams do to feel like they're doing research without actually doing it. They'll "send two different types of emails and determine which one works better" — and then stop. It's a data point, not a strategy. As she put it, they're "just doing it to check a box."</p>
+      <p>This is the difference between activity and insight. Running a test tells you which subject line won today. It doesn't tell you why your audience is unengaged, what they're afraid of, or what job they're hiring you to do. Real research — honing individual data points into a decision-backed strategy — is a different discipline, and it's the one that compounds.</p>
+      <h3>"Don't be like Tom"</h3>
+      <p>My favorite part of the conversation was a story Molly borrowed from AYTM's CRO. Back in the early days of the internet, he had a sales manager named Tom. Clients were starting to ask, "how can I reach you by email? What's this World Wide Web thing?" The team kept asking Tom for email addresses and computers. Finally Tom called a meeting, held up a rotary phone and said, "This is a tool." Then he held up a computer and said, "This is a toy. Stop playing with toys. Utilize your tools, and do your job."</p>
+      <p>You know how that ended. Tom didn't progress, and, in Molly's words, "retired into obscurity."</p>
+      <p>The reason this matters is that we are living through the exact same moment with AI. The instinct to dismiss the new thing as a toy — to protect the way you've always worked — is comfortable and career-ending. The marketers who treat AI as a serious tool, learn it, and fold it into how they work will pull away from the ones who wait for it to blow over.</p>
+      <h3>"Someone who uses AI will take your job"</h3>
+      <p>This is the line I'll be repeating. Molly is blunt about it: "AI is not going to take your job. Someone who knows how to use AI is going to take your job." Staying stagnant, she says, is the single biggest mistake a marketer can make right now.</p>
+      <p>But — and this is the part I love — she's equally clear that this is not a story about humans becoming obsolete. "We're not selling to AI robots," she said. "We're selling to people." AI can gather data, brainstorm, and speed up the grunt work, but it can't do your actual job, because your job is to create messages and brands that resonate with human beings. Her advice for making yourself indispensable is to be able to say, honestly: "here's how I'm utilizing AI, so you get more bang for your buck with me — and here's why you still need a human in the process."</p>
+      <h3>Why AI is always looking backwards</h3>
+      <p>The deepest point she made was about the limits of the technology itself. "AI in the way that it's built will always be historical. It will always be looking backwards." It can try to predict trends, the same way marketers do, but it can't account for the fact that "humans are bizarre, and we do off-the-wall things when we're presented with off-the-wall challenges." Her example was perfect: no model would have predicted a global pandemic causing people to hoard toilet paper and refined beans.</p>
+      <p>That's exactly why market research — real, forward-facing, ask-the-humans research — is not something AI replaces. It's the thing that keeps you connected to the messy, unpredictable reality of the people you serve.</p>
+      <h3>What the best B2B brands actually do</h3>
+      <p>So what separates the brands that get this right? Molly's answer came back to customer-centricity backed by data. The best teams keep asking: what is actually keeping our customer up at night right now? What are they afraid of, especially with everything changing around AI? What's making them unable to switch off from work at the end of the day? "You're not going to know," she said, "unless you ask them."</p>
+      <p>And you don't have to understand every technical detail of how research gets done. As we joked in the episode, you don't need to know exactly how the sausage is made — you just need to know where the sausage is going, and how to use the tools available to get there.</p>
+      <p>That's decision velocity. Not more data. Better questions, asked of real people, turned into strategy fast enough to matter.</p>
+      <p><span class="listen">Listen here:</span> the full conversation with Molly Strawn-Carreño is episode #222 of B2B Marketers on a Mission — press play at einblick.co, and subscribe so the next mission-driven conversation lands in your feed every Wednesday.</p>
+    </div>
+  </section>
+
+  <!-- 2. GUEST AMPLIFICATION -->
+  <section id="amplify">
+    <div class="kicker">02 · Borrowed reach</div>
+    <h2>Guest amplification kit</h2>
+    <div class="h2sub">The cheapest new listeners there are. Most guests never promote the episode — not because they don't want to, but because writing the posts is friction. This kit removes it: hand Molly the note + posts and she shares to AYTM's and her own audience in one click, putting B2B Marketers on a Mission in front of a whole new room of your exact ICP.</div>
+
+    <div class="post"><span class="tag">"Your episode is live" note <span class="fmt">· ready to send to Molly</span></span>Subject: You're live on B2B Marketers on a Mission 🎧
+
+Hi Molly,
+
+Your episode is officially live — thank you again for such a generous, candid conversation. The "Don't be like Tom" story and your line about "someone who uses AI will take your job" are already two of my favorite moments on the show this year.
+
+🎧 Listen / share: [episode link]
+
+To make it easy to share with your network, I've drafted a few ready-to-post captions below (LinkedIn + X) — feel free to use them as-is or tweak. I've also pulled a couple of quote graphics from your best moments; happy to send those over.
+
+Really appreciate you coming on. Would love for your team at AYTM and your Curiosity Current audience to hear it.
+
+— Christian</div>
+
+    <div class="post"><span class="tag">For Molly to share <span class="fmt">· LinkedIn (her voice)</span></span>I joined Christian Klepp on the B2B Marketers on a Mission podcast to talk about something I care about deeply: turning "data overload" into decision velocity through real market research.
+
+We got into why research should be the underpinning of your whole strategy (not a box you check), the trap of one-off A/B tests, and my honest take on AI: it won't take your job — but someone who knows how to use it will. AI is always looking backwards. Humans are gloriously unpredictable, and that's exactly why you still have to ask real people what keeps them up at night.
+
+If you do B2B marketing, I think this one's worth a listen. 🎧 [episode link]</div>
+
+    <div class="post"><span class="tag">For Molly to share <span class="fmt">· X / Twitter (her voice)</span></span>I went on @einblick's B2B Marketers on a Mission podcast to talk market research and AI.
+
+My take: AI won't take your job — someone who knows how to use it will. And AI is always looking backwards, which is why you still have to ask real people. 🎧 [episode link]</div>
+
+    <div class="post"><span class="tag">For Molly to share <span class="fmt">· X / Twitter — shorter</span></span>"You can't say you're a client-obsessed organization if you don't regularly speak to your clients."
+
+Talked market research + AI with @einblick on B2B Marketers on a Mission 🎧 [episode link]</div>
+
+    <h3>Guest pull-quotes</h3>
+    <div class="verified"><b>✅ Verified from the episode's published transcript</b> (lightly tightened for length). These are Molly Strawn-Carreño's actual words from Ep #222.</div>
+    <div class="quote">"AI is not going to take your job. Someone who knows how to use AI is going to take your job. Staying stagnant is the biggest mistake."<span class="src">Molly Strawn-Carreño · Ep #222</span></div>
+    <div class="quote">"You can't say that you're a client-obsessed organization if you don't regularly speak to your clients."<span class="src">Molly Strawn-Carreño · Ep #222</span></div>
+    <div class="quote">"AI will always be historical. It will always be looking backwards — but humans are bizarre, and we do off-the-wall things when we're presented with off-the-wall challenges."<span class="src">Molly Strawn-Carreño · Ep #222</span></div>
+    <div class="note"><b>Why this matters:</b> every episode has a guest with their own audience. When Molly shares, her AYTM and Curiosity Current followers — many of them your exact ICP — hear about B2B Marketers on a Mission for the first time. New listeners at zero ad spend, compounding every single episode.</div>
+  </section>
+
+  <!-- 3. READY-TO-PUBLISH -->
+  <section id="support">
+    <div class="kicker">03 · Support</div>
+    <h2>Ready-to-publish content</h2>
+    <div class="h2sub">In your voice — curious, warm, mission-driven. Every piece ends by pointing back to press play / subscribe. This supports the discoverability + amplification engine above; it's not the main event.</div>
+
+    <h3>Newsletter feature</h3>
+    <div class="card">
+      <p><b>Subject line options:</b></p>
+      <ul class="clean">
+        <li>A: "Don't be like Tom" — a market research story worth your 20 minutes</li>
+        <li>B: AI won't take your marketing job. Someone who uses AI will.</li>
+        <li>C: You're not client-obsessed if you never talk to your clients</li>
+      </ul>
+      <p><b>Preview text:</b> Modern B2B marketing starts with curiosity. This week's episode is a masterclass in it.</p>
+      <hr style="border:none;border-top:1px dashed var(--line);margin:16px 0">
+      <p>Hey,</p>
+      <p>This week on B2B Marketers on a Mission I talked with Molly Strawn-Carreño, Director of Brand Growth at AYTM, about turning data overload into decision velocity through market research. It was one of my favorite conversations this year.</p>
+      <p>A few things I keep coming back to:</p>
+      <ul class="clean">
+        <li>Research shouldn't be the thing you get to "eventually." As Molly put it, it should be the underpinning of your whole strategy — because you can't claim to be client-obsessed if you never actually talk to your clients.</li>
+        <li>The A/B-testing trap: running a test tells you which email won today. It doesn't become a strategy unless you hone those data points into real decisions.</li>
+        <li>"Don't be like Tom" — the sales manager who called computers "toys" in the early internet days and retired into obscurity. We're living the exact same moment with AI right now.</li>
+        <li>The line I'll repeat all year: AI won't take your job — someone who knows how to use AI will. AI is always looking backwards; humans are gloriously unpredictable, which is exactly why you still have to ask real people what keeps them up at night.</li>
+      </ul>
+      <p><span class="listen">🎧 Listen here</span> → episode #222 of B2B Marketers on a Mission. New episodes every Wednesday — subscribe so you never miss one.</p>
+      <p>Talk soon,<br>Christian</p>
+    </div>
+
+    <h3>Host-voice social posts</h3>
+    <div class="post"><span class="tag">LinkedIn <span class="fmt">· the hook</span></span>"Don't be like Tom."
+
+On this week's episode, Molly Strawn-Carreño (AYTM) told me a story about a sales manager in the early internet days. His team kept asking for email addresses. He held up a rotary phone — "this is a tool" — then a computer — "this is a toy. Stop playing with toys and do your job."
+
+Tom didn't progress. He retired into obscurity.
+
+We are living the exact same moment with AI right now. The instinct to dismiss the new thing to protect the way you've always worked is comfortable — and career-ending.
+
+Modern B2B marketing starts with curiosity. Episode #222 is a masterclass in it. 🎧 Listen here → [episode link]</div>
+
+    <div class="post"><span class="tag">LinkedIn <span class="fmt">· the big idea</span></span>The line from episode #222 I'll be repeating all year, from Molly Strawn-Carreño of AYTM:
+
+"AI is not going to take your job. Someone who knows how to use AI is going to take your job."
+
+But here's the part I love: she's equally clear that humans stay essential. AI is always looking backwards. Humans do off-the-wall things no model can predict. That's exactly why real market research — asking real people what keeps them up at night — is the one thing AI can't replace.
+
+🎧 If you do B2B marketing, this one's a gut-check. Listen here → [episode link]</div>
+
+    <h3>Quote-graphic specs (3)</h3>
+    <div class="verified"><b>✅ Verified from the episode's published transcript</b> (lightly tightened). Molly Strawn-Carreño's actual words, Ep #222.</div>
+    <div class="quote">"AI won't take your job. Someone who knows how to use AI will."<span class="src">B2B Marketers on a Mission · Ep #222 · ends with "🎧 Listen here → Ep #222"</span></div>
+    <div class="quote">"You can't say you're client-obsessed if you don't regularly speak to your clients."<span class="src">B2B Marketers on a Mission · Ep #222</span></div>
+    <div class="quote">"AI will always be looking backwards. Humans are gloriously unpredictable."<span class="src">B2B Marketers on a Mission · Ep #222</span></div>
+    <p style="color:var(--muted);font-size:14px">Design spec: 1080×1080, dark background (#0d1117), quote in large white bold sans, "B2B Marketers on a Mission" wordmark top-right, "Ep #222 · Molly Strawn-Carreño, AYTM" in accent blue bottom-left. Consistent template. Each caption ends with "🎧 Listen here → Ep #222."</p>
+  </section>
+
+  <!-- VALUE-ADD -->
+  <section id="valueadd">
+    <div class="kicker">+ Value-add</div>
+    <h2>Clips (included, not the pitch)</h2>
+    <div class="valueadd">Clips included — an audiogram for this audio-first show (vertical video clips if you record clean video). Fine quality; we don't over-promise virality, because the source format is the ceiling. The clips exist to drive one thing: <b>press play</b>.</div>
+  </section>
+
+  <div class="final">
+    <h2>This is one episode.</h2>
+    <p style="color:var(--muted);max-width:580px;margin:0 auto 22px">Search-optimized so new listeners find it, packaged so your guest amplifies it to their audience, and supported with content that all drives back to press play. Imagine this landing every time you publish — the growth work done for you, in your voice.</p>
+    <a class="cta" href="mailto:hello@episodeloop.com?subject=Let's%20talk%20EpisodeLoop">Email me to get started →</a>
+    <p style="color:var(--muted);font-size:14px;margin-top:16px">Or just reply to my email. Either way, this pack is yours to keep.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    Made by <b>EpisodeLoop</b> · <a class="mail" href="mailto:hello@episodeloop.com">hello@episodeloop.com</a><br>
+    We turn every episode into more listeners — discoverable, shareable, done for you. Created from publicly available episode content, shared free with our best wishes.
+  </div>
+</footer>
+
+</body>
+</html>
