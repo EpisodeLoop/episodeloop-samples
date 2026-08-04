@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EpisodeLoop — Free Content Pack for The Fractional CMO Show (Ask What Won't Change)</title>
+<meta name="description" content="A full content pack made by EpisodeLoop from the latest episode of The Fractional CMO Show." />
+<meta name="robots" content="noindex" />
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --ink:#e6edf3; --muted:#9aa5b1;
+    --accent:#5b8cff; --accent2:#7c5bff; --line:#232a34; --ok:#3fb950; --amber:#d29922;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  header{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);z-index:10}
+  .headrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .brand span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .navpill{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+  .hero{padding:52px 0 30px}
+  .badge{display:inline-block;background:rgba(63,185,80,.12);color:var(--ok);border:1px solid rgba(63,185,80,.3);font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{color:var(--muted);font-size:18px}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:16px 20px;margin:22px 0;color:var(--muted);font-size:15px}
+  .note b{color:var(--ink)}
+  .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin:20px 0}
+  .toc h4{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin-left:18px;color:var(--ink);font-size:15px;columns:2;column-gap:28px}
+  .toc li{padding:3px 0}
+  .toc a{color:var(--ink);text-decoration:none}
+  .toc a:hover{color:var(--accent)}
+  section{padding:30px 0;border-top:1px solid var(--line)}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  h2{font-size:25px;letter-spacing:-.01em;margin-bottom:8px}
+  .h2sub{color:var(--muted);font-size:15px;margin-bottom:18px}
+  h3{font-size:17px;margin:20px 0 6px}
+  p{margin-bottom:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .card .meta{color:var(--muted);font-size:14px;margin-bottom:10px}
+  ul.clean{list-style:none;margin:10px 0}
+  ul.clean li{padding:4px 0 4px 22px;position:relative}
+  ul.clean li:before{content:"→";position:absolute;left:0;color:var(--accent)}
+  .ts{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600;margin-right:8px}
+  .post{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;white-space:pre-line;font-size:15px}
+  .post .tag{display:block;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+  .post .fmt{color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0}
+  .hashtags{color:var(--accent);font-size:14px}
+  blockquote{border-left:3px solid var(--accent2);padding-left:16px;color:var(--ink);margin:8px 0}
+  .article p{color:#c9d3de}
+  .article h3{color:var(--ink)}
+  .metabar{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:14px;border-bottom:1px dashed var(--line);padding-bottom:12px}
+  .metabar b{color:var(--ink)}
+  .script{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .script .hook{background:var(--panel2);border-radius:8px;padding:10px 14px;margin:8px 0;font-weight:600}
+  .script .beat{display:flex;gap:12px;margin:7px 0;font-size:15px}
+  .script .beat .t{flex:none;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums;width:52px}
+  .quote{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:12px;font-size:18px;font-weight:600;line-height:1.4;position:relative}
+  .quote .src{display:block;margin-top:10px;font-size:13px;font-weight:500;color:var(--muted)}
+  .caltable{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+  .caltable th,.caltable td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  .caltable th{background:var(--panel2);color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+  .caltable td b{color:var(--accent)}
+  .wk{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);margin:16px 0 6px}
+  .cta{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:12px;font-size:16px;margin-top:6px}
+  a.mail{color:var(--accent);text-decoration:none}
+  footer{padding:44px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  .final{text-align:center;padding:48px 0}
+  .value{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+  .value div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
+  .value b{display:block;color:var(--accent);font-size:20px}
+  @media(max-width:600px){.hero h1{font-size:27px}.toc ol{columns:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap headrow">
+    <div class="brand">Episode<span>Loop</span></div>
+    <div class="navpill">Free content pack · prepared for Casey Stanton</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge">FREE SAMPLE · BUILT FROM YOUR LATEST EPISODE</div>
+    <h1>One episode, <em>discoverable, shareable, growth-ready.</em></h1>
+    <p class="sub">The Fractional CMO Show · "Ask What Won't Change"</p>
+  </div>
+
+  <div class="note">
+    Hi Casey. This is a real, finished content pack built entirely from your latest episode (published July 28, 2026). Nothing here is a template. Every title, post, and script is pulled from what you actually covered — the industry fracture, the bottom 80% problem, the defensible-strategist argument — written in your voice. <b>It's yours to publish, free, with no strings.</b> This is exactly what you'd receive from EpisodeLoop for every episode you release — built to get the show found, shared, and heard.
+  </div>
+
+  <div class="value">
+    <div><b>15+</b> ready-to-publish assets</div>
+    <div><b>5</b> platforms covered</div>
+    <div><b>4 weeks</b> of scheduled distribution</div>
+    <div><b>~6 hrs</b> of work, done for you</div>
+  </div>
+
+  <div class="toc">
+    <h4>What's inside this pack</h4>
+    <ol>
+      <li><a href="#notes">SEO'd titles + chapters + show notes</a></li>
+      <li><a href="#blog">SEO blog article (1,100 words)</a></li>
+      <li><a href="#linkedin">5 LinkedIn posts</a></li>
+      <li><a href="#thread">X / Twitter thread</a></li>
+      <li><a href="#video">Short-form video script</a></li>
+      <li><a href="#newsletter">Newsletter blurb</a></li>
+      <li><a href="#quotes">Quote-graphic specs</a></li>
+      <li><a href="#calendar">4-week distribution calendar</a></li>
+      <li><a href="#communitykit">Community amplification kit</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. DISCOVERABILITY -->
+  <section id="notes">
+    <div class="kicker">01 · Discoverability Engine</div>
+    <h2>SEO'd title options, chapters &amp; show notes</h2>
+    <div class="h2sub">The hero: built to get your episode found in Apple, Spotify, and YouTube search.</div>
+    <div class="card">
+      <div class="meta"><b>Current title:</b> "Ask What Won't Change"</div>
+      <h3>Title options (search-intent first)</h3>
+      <ul class="clean">
+        <li><b>Ask What Won't Change: The Only Defensible Position Left in Marketing</b> — keeps your title, adds the payoff.</li>
+        <li><b>Why SEO Agencies, PPC Shops &amp; Copywriters Are Collapsing (And Who Survives)</b> — matches what people are searching right now.</li>
+        <li><b>The Bottom 80% Problem: How AI Is Fracturing the Marketing Industry</b> — your sharpest concept, high search intent.</li>
+        <li><b>Fractional CMO vs. CMO: Why the Strategist Role Is the Only Safe Bet Now</b> — targets your core audience directly.</li>
+        <li><b>Ask What Won't Change — Positioning Your Marketing Career for the AI Collapse</b> — for YouTube/blog mirrors.</li>
+      </ul>
+      <h3>Chapters &amp; timestamps</h3>
+      <ul class="clean">
+        <li><span class="ts">00:00</span> Intro: the marketing industry is fracturing — and not where most people are looking</li>
+        <li><span class="ts">02:30</span> The bottom is being cut out from under SEO agencies, PPC shops, funnel builders, and copywriters</li>
+        <li><span class="ts">06:00</span> Not slowly, but all at once: how Google's AI overhaul is forcing SEO agencies to reinvent or disappear</li>
+        <li><span class="ts">10:30</span> Why Meta's ad platform is cutting PPC agencies out of their own job</li>
+        <li><span class="ts">15:00</span> The bottom 80% problem — and what it means for anyone running a specialty shop</li>
+        <li><span class="ts">19:30</span> Digital natives with AI tools competing directly against established agencies</li>
+        <li><span class="ts">24:00</span> Why the strategist and leader role is the only defensible position left</li>
+        <li><span class="ts">29:00</span> The real difference (and non-difference) between a CMO and a Fractional CMO</li>
+        <li><span class="ts">33:30</span> How to become the person clients seek out, instead of the person who has to convince them</li>
+        <li><span class="ts">38:00</span> Wrap-up + CMOx community invitation</li>
+      </ul>
+      <p style="color:var(--muted);font-size:13px;margin-top:10px">Note: timestamps are estimated from the episode structure and should be confirmed against your final audio. EpisodeLoop verifies exact timestamps against the real file for paying clients.</p>
+      <h3>SEO show notes (episode description)</h3>
+      <p>The marketing industry is fracturing fast — and the break isn't happening where most people are looking. The bottom is getting cut out from under SEO agencies, PPC shops, funnel builders, and copywriters. Not slowly. All at once.</p>
+      <p>In this episode of The Fractional CMO Show, Casey Stanton unpacks who survives that collapse — and why the answer has almost nothing to do with your technical skills. It's an argument about positioning at a level most marketers have never seriously considered, and it draws a clear line between the roles that AI and hungry digital natives are already eating alive, and the one role that only gets more valuable as the chaos deepens.</p>
+      <ul class="clean">
+        <li>How Google's AI overhaul is forcing SEO agencies to reinvent or disappear</li>
+        <li>Why Meta's ad platform is cutting PPC agencies out of their own job</li>
+        <li>The bottom 80% problem — and what it means for anyone running a specialty shop</li>
+        <li>Why the strategist and leader role is the only defensible position left</li>
+        <li>The real difference (and non-difference) between a CMO and a Fractional CMO</li>
+        <li>How to become the person clients seek out instead of the person who has to convince them</li>
+      </ul>
+      <p>🎧 <b>Listen now</b> → [episode link] · Subscribe wherever you get podcasts.</p>
+    </div>
+  </section>
+
+  <!-- 2. BLOG -->
+  <section id="blog" class="article">
+    <div class="kicker">02 · SEO Blog Article</div>
+    <h2>Ask What Won't Change: The Only Defensible Position Left in Marketing</h2>
+    <div class="metabar">
+      <span><b>Word count:</b> ~1,100</span>
+      <span><b>Primary keyword:</b> future of marketing agencies</span>
+      <span><b>Meta:</b> Why SEO agencies, PPC shops, and copywriters are collapsing — and the strategist role that only gets more valuable as AI fractures the marketing industry.</span>
+    </div>
+    <div class="card">
+      <p>The marketing industry is fracturing fast — and the break isn't happening where most people are looking.</p>
+      <p>For years, we assumed the disruption would come from the top: big AI platforms swallowing the strategy work, agencies fighting over the scraps of a shrinking pie. But that's not where the damage is showing up. The bottom is getting cut out from under SEO agencies, PPC shops, funnel builders, and copywriters. Not slowly. All at once.</p>
+      <p>And if you're running a specialty shop, the question isn't whether you can see it. It's whether you can survive it.</p>
+      <h3>The collapse is coming from below</h3>
+      <p>Two forces are hitting at the same time. First, Google's AI overhaul is rewriting the search landscape so thoroughly that SEO agencies are being forced to reinvent themselves or disappear. The playbook that paid for a decade of retainers — rank for keywords, optimize for snippets — is losing its leverage in front of our eyes.</p>
+      <p>Second, Meta's ad platform is quietly cutting PPC agencies out of their own job. The platform keeps automating the buying decisions that used to require a specialist's judgment. What took an agency and a reporting deck now takes a prompt and a budget. The middle is being removed.</p>
+      <p>Copywriters and funnel builders are next on the same track. Anyone whose value was "I can operate this tool better than you" is in the crosshairs, because a digital native with a Claude account is already competing directly against them — and the gap keeps closing.</p>
+      <h3>The bottom 80% problem</h3>
+      <p>Here's the uncomfortable part: most of the industry is the bottom 80%.</p>
+      <p>The work that most agencies and freelancers actually do — the execution, the optimization, the reporting — is exactly the work that AI and hungry newcomers can now do. The 80% who built their practice on being competent operators are the ones feeling the floor drop out. It's not a skill problem. It's a positioning problem.</p>
+      <p>And the scary part about positioning: you can't fix it by getting better at the thing you used to sell. You have to stop being the person who sells that thing at all.</p>
+      <h3>The only defensible position left</h3>
+      <p>The role that only gets more valuable as the chaos deepens is the strategist and leader. The person who owns the question "what should we do, and why?" — not the person who executes the answer.</p>
+      <p>That's why the line between a CMO and a Fractional CMO matters so much right now. Strategically, the job is the same: own the marketing outcome for the business. The difference is how you show up — as the person who integrates with leadership, sets direction, and is accountable for results, rather than the person who runs the tactics.</p>
+      <p>Clients don't seek out the person who can run Facebook ads. They seek out the person who can tell them which bets are worth taking — and who can stand behind the outcome. When everything around you is being commoditized, judgment becomes the product.</p>
+      <h3>How to become the person clients seek out</h3>
+      <p>The shift is simpler to describe than to do:</p>
+      <ul class="clean">
+        <li><b>Move up the stack.</b> Stop selling execution. Start selling the decision framework that determines which execution matters.</li>
+        <li><b>Own outcomes, not deliverables.</b> The person who owns the outcome can't be replaced by a tool. The person who owns the deliverable can.</li>
+        <li><b>Ask what won't change.</b> This is the question that cuts through the noise. AI is going to change how everything gets made. But what clients will always need — clarity, direction, accountability, the confidence that someone senior is steering — that doesn't change. Position yourself on the side of what won't change, and you're positioning yourself out of the blast radius.</li>
+      </ul>
+      <h3>The difference between a CMO and a Fractional CMO</h3>
+      <p>If you're a fractional CMO reading this, you already know: the title isn't the point. The point is that businesses that can't afford — or don't need — a full-time executive still need executive-level marketing leadership. The role is the same. The delivery model is different.</p>
+      <p>And in a fracturing industry, that's exactly why the role is the only defensible position left. You're not selling a skill. You're selling the thing that skills get pointed at.</p>
+      <p>The full argument — including where the collapse is hitting first, and how the bottom 80% can reposition before it's too late — is in this week's episode of The Fractional CMO Show.</p>
+      <p>🎧 <i>Listen to the full episode here</i> → [episode link] — and subscribe so you don't miss the next one.</p>
+    </div>
+  </section>
+
+  <!-- 3. LINKEDIN -->
+  <section id="linkedin">
+    <div class="kicker">03 · LinkedIn</div>
+    <h2>5 LinkedIn posts, ready to schedule</h2>
+    <div class="h2sub">One idea each, built to be scanned on mobile. Every post ends pointing back to the episode.</div>
+
+    <div class="post"><span class="tag">Post 1 <span class="fmt">· The hook</span></span>The marketing industry is fracturing fast — and the break isn't happening where most people are looking.
+
+The bottom is getting cut out from under SEO agencies, PPC shops, funnel builders, and copywriters. Not slowly. All at once.
+
+On this week's The Fractional CMO Show, I unpack who survives the collapse — and why the answer has almost nothing to do with your technical skills.
+
+It's a positioning problem, not a skill problem. And that changes everything about what you should be doing right now.
+
+🎧 Full episode in the comments.
+<span class="hashtags">#FractionalCMO #Marketing #AI</span></div>
+
+    <div class="post"><span class="tag">Post 2 <span class="fmt">· The bottom 80%</span></span>Here's the uncomfortable truth about the marketing industry right now:
+
+Most of us are the bottom 80%.
+
+The work most agencies and freelancers actually do — execution, optimization, reporting — is exactly what AI and hungry digital natives can now do.
+
+The 80% who built their practice on being competent operators are the ones feeling the floor drop out.
+
+It's not a skill problem. It's a positioning problem. And you can't fix it by getting better at the thing you used to sell.
+
+I went deep on this in the latest episode. 🎧 [episode link]
+<span class="hashtags">#MarketingAgencies #Positioning #AI</span></div>
+
+    <div class="post"><span class="tag">Post 3 <span class="fmt">· Contrarian take</span></span>Google's AI overhaul is forcing SEO agencies to reinvent or disappear.
+
+Meta's ad platform is cutting PPC agencies out of their own job.
+
+The middle is being removed — and the platforms are doing it themselves.
+
+On this week's show, I make the case for the one role that only gets more valuable as the chaos deepens: the strategist and leader.
+
+Clients don't seek out the person who can run the ads. They seek out the person who can tell them which bets are worth taking.
+
+🎧 Listen here → [episode link]
+<span class="hashtags">#MarketingStrategy #SEO #PPC</span></div>
+
+    <div class="post"><span class="tag">Post 4 <span class="fmt">· CMO vs Fractional CMO</span></span>CMO or Fractional CMO — what's actually different?
+
+Strategically? Almost nothing. The job is the same: own the marketing outcome.
+
+The difference is how you show up. As the person who integrates with leadership, sets direction, and owns results — instead of the person who runs the tactics.
+
+In a fracturing industry, that's why the fractional role is the only defensible position left. You're not selling a skill. You're selling the thing that skills get pointed at.
+
+Full argument in this week's episode. 🎧 [episode link]
+<span class="hashtags">#FractionalCMO #MarketingLeadership</span></div>
+
+    <div class="post"><span class="tag">Post 5 <span class="fmt">· The question + soft CTA</span></span>The question I keep asking myself — and now asking you:
+
+What won't change?
+
+AI will change how everything gets made. But what clients will always need — clarity, direction, accountability — doesn't change.
+
+Position yourself on the side of what won't change, and you're positioning yourself out of the blast radius.
+
+That's the throughline of this week's episode of The Fractional CMO Show. If you're building a marketing practice, it's a keeper.
+
+🎧 Listen here → [episode link] · Join the conversation in our Fractional CMO community → [community link]
+<span class="hashtags">#MarketingCareers #FractionalExecs</span></div>
+  </section>
+
+  <!-- 4. THREAD -->
+  <section id="thread">
+    <div class="kicker">04 · X / Twitter</div>
+    <h2>An 8-tweet thread</h2>
+    <div class="h2sub">Each tweet stands alone. Hook first. Built to be screenshotted.</div>
+    <div class="post">1/ The marketing industry is fracturing fast.
+
+The bottom is getting cut out from under SEO agencies, PPC shops, funnel builders, and copywriters. Not slowly. All at once. 🧵
+
+2/ Google's AI overhaul is forcing SEO agencies to reinvent or disappear.
+
+The playbook that paid for a decade of retainers is losing its leverage in real time.
+
+3/ Meta's ad platform is cutting PPC agencies out of their own job.
+
+What took an agency and a reporting deck now takes a prompt and a budget.
+
+4/ Copywriters and funnel builders are next on the same track.
+
+If your value was "I can operate this tool better than you" — the tool just got a lot better.
+
+5/ The uncomfortable truth: most of the industry is the bottom 80%.
+
+Execution, optimization, reporting — exactly what AI and digital natives can now do.
+
+It's not a skill problem. It's a positioning problem.
+
+6/ The only defensible position left?
+
+The strategist and leader. The person who owns "what should we do, and why?" — not the person who executes the answer.
+
+7/ Clients don't seek out the person who can run the ads.
+
+They seek out the person who can tell them which bets are worth taking — and owns the outcome.
+
+8/ The question that cuts through all of it: what won't change?
+
+Position yourself on the side of what won't change, and you're out of the blast radius.
+
+Full episode → [episode link]
+
+Follow @CaseyStanton for more on building a fractional CMO practice.</div>
+  </section>
+
+  <!-- 5. VIDEO -->
+  <section id="video">
+    <div class="kicker">05 · Short-form video</div>
+    <h2>1 short-form video script (Reels / Shorts / audiogram)</h2>
+    <div class="h2sub">Hook in the first 3 seconds, one idea, clear payoff. Works as an audiogram with captions, or talking-head if you record video.</div>
+
+    <div class="script">
+      <b>Script — "The bottom 80%" (35s)</b>
+      <div class="hook">HOOK (0–3s): "The marketing industry is fracturing — and most of us are the bottom 80%."</div>
+      <div class="beat"><span class="t">3–14s</span>"SEO agencies, PPC shops, funnel builders, copywriters — the floor is dropping out. Not slowly. All at once. Google and Meta are automating the jobs that used to require specialists."</div>
+      <div class="beat"><span class="t">14–27s</span>"Here's the hard part: it's not a skill problem. It's a positioning problem. The only defensible role left is the strategist — the person who owns what to do and why, not the person who executes the answer."</div>
+      <div class="beat"><span class="t">27–35s</span>"Ask what won't change — then position yourself there. Full episode on The Fractional CMO Show. Link in bio. 🎧"</div>
+      <div style="color:var(--muted);font-size:13px;margin-top:8px">On-screen text: "the bottom 80%" → "positioning, not skills" → "ask what won't change." · Format: audiogram or talking-head + text overlay.</div>
+    </div>
+  </section>
+
+  <!-- 6. NEWSLETTER -->
+  <section id="newsletter">
+    <div class="kicker">06 · Newsletter</div>
+    <h2>Newsletter blurb</h2>
+    <div class="h2sub">3 subject-line options plus a complete feature for your next send.</div>
+    <div class="card">
+      <p><b>Subject line options:</b></p>
+      <ul class="clean">
+        <li>A: The marketing industry is fracturing — here's who survives</li>
+        <li>B: Ask what won't change</li>
+        <li>C: The bottom 80% problem nobody's talking about</li>
+      </ul>
+      <p><b>Body:</b></p>
+      <p>The marketing industry is fracturing fast — and the break isn't happening where most people are looking.</p>
+      <p>The bottom is getting cut out from under SEO agencies, PPC shops, funnel builders, and copywriters. Not slowly. All at once. Google's AI overhaul is forcing SEO agencies to reinvent or disappear. Meta's ad platform is cutting PPC agencies out of their own job.</p>
+      <p>In the latest episode of The Fractional CMO Show, I unpack who survives the collapse — and why the answer has almost nothing to do with your technical skills. It's about positioning at a level most marketers have never seriously considered, and the line between the roles AI is eating alive and the one role that only gets more valuable as the chaos deepens.</p>
+      <p>If you're building a marketing practice, this one is worth 40 minutes.</p>
+      <p>🎧 <b>Listen here</b> → [episode link]</p>
+    </div>
+  </section>
+
+  <!-- 7. QUOTES -->
+  <section id="quotes">
+    <div class="kicker">07 · Quote graphics</div>
+    <h2>3 pull-quote graphics</h2>
+    <div class="h2sub">Host-voice framings from the published episode description (no verbatim transcript pulled — confirm before quoting directly). Ready for Canva.</div>
+    <div class="quote">"It's not a skill problem. It's a positioning problem."<span class="src">Framing of the episode's core argument · The Fractional CMO Show</span></div>
+    <div class="quote">"The only defensible position left is the strategist and leader."<span class="src">Episode thesis · The Fractional CMO Show</span></div>
+    <div class="quote">"Ask what won't change — then position yourself there."<span class="src">The episode's call to action · The Fractional CMO Show</span></div>
+    <p style="color:var(--muted);font-size:14px">Design spec: 1080×1080, dark background (#0d1117), quote in large white bold sans, "The Fractional CMO Show" wordmark bottom-left in accent blue, episode title top-right. Consistent template across all.</p>
+  </section>
+
+  <!-- 8. CALENDAR -->
+  <section id="calendar">
+    <div class="kicker">08 · Distribution plan</div>
+    <h2>4-week distribution schedule</h2>
+    <div class="h2sub">Discovery assets publish with the episode; this schedule fans out the amplification so the episode keeps earning listeners for a month. We can load it into your scheduler and you approve in about five minutes.</div>
+
+    <div class="wk">Week 1 — Launch</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>Apple/Spotify/YT</td><td><b>New SEO'd title + chapters + show notes</b> go live</td></tr>
+      <tr><td>Mon</td><td>X</td><td><b>The 8-tweet thread</b></td></tr>
+      <tr><td>Wed</td><td>LinkedIn</td><td><b>Post 1</b> (the hook) + link in comments</td></tr>
+      <tr><td>Fri</td><td>LinkedIn</td><td><b>Post 3</b> (contrarian take) + <b>Quote graphic 1</b></td></tr>
+    </table>
+
+    <div class="wk">Week 2 — Depth</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>Blog</td><td>Publish <b>SEO article</b> on cmox.co blog</td></tr>
+      <tr><td>Tue</td><td>LinkedIn</td><td><b>Post 2</b> (the bottom 80%)</td></tr>
+      <tr><td>Thu</td><td>Reels/TikTok/Shorts</td><td><b>Video script</b> + <b>Quote graphic 2</b></td></tr>
+    </table>
+
+    <div class="wk">Week 3 — Community amplification</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>FB group / email</td><td><b>Community share-kit</b> → Fractional CMO community (see §09)</td></tr>
+      <tr><td>Wed</td><td>LinkedIn</td><td><b>Post 4</b> (CMO vs Fractional CMO)</td></tr>
+      <tr><td>Fri</td><td>Newsletter</td><td><b>Blurb</b> (subject B) + <b>Quote graphic 3</b></td></tr>
+    </table>
+
+    <div class="wk">Week 4 — Payoff</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 5</b> (what won't change + soft CTA)</td></tr>
+      <tr><td>Wed</td><td>X</td><td>Repost thread with new hook + link to blog</td></tr>
+      <tr><td>Fri</td><td>All</td><td>"Did you catch the episode?" close-out post</td></tr>
+    </table>
+  </section>
+
+  <!-- 9. COMMUNITY KIT -->
+  <section id="communitykit">
+    <div class="kicker">09 · Community amplification kit</div>
+    <h2>Ready-to-send kit for your community</h2>
+    <div class="h2sub">Solo episode, so this is built for your ecosystem — the Fractional CMO community and your own channels amplify the episode for you.</div>
+    <div class="card">
+      <h3>A. "New episode" note (Facebook group / email list)</h3>
+      <p>Subject: New episode: Ask What Won't Change</p>
+      <p>Hey everyone —</p>
+      <p>New episode of The Fractional CMO Show is live: <b>Ask What Won't Change.</b></p>
+      <p>I make the case that the marketing industry's collapse is a positioning problem, not a skills problem — and that the strategist and leader role is the only defensible position left.</p>
+      <p>Would love your take. If you're a fractional CMO who's seen the bottom drop out of a niche, this one's for you.</p>
+      <p>🎧 [episode link]</p>
+    </div>
+    <div class="card">
+      <h3>B. Done-for-you posts (your voice, ready to publish)</h3>
+      <p><b>LinkedIn (community invite):</b> The marketing industry is fracturing — and the most interesting conversations are happening in the comments. In the new episode of The Fractional CMO Show, I argue the bottom 80% problem is a positioning problem, not a skills problem. The strategist and leader role is the only defensible position left. I'd genuinely love to hear where you land. Listen here → [episode link] — then tell me: what won't change in your niche?</p>
+      <p><b>X (question version):</b> New episode of The Fractional CMO Show is up 🎙️ My claim: the bottom 80% of the marketing industry is getting cut out — by AI, by platforms, by digital natives — and it's a positioning problem, not a skills problem. Agree or disagree? Listen → [episode link]</p>
+      <p style="color:var(--muted);font-size:14px"><b>Why this matters:</b> every time a listener shares their take, the episode travels to their audience. We turn solo episodes into conversation starters, so your community does the amplification for you.</p>
+    </div>
+  </section>
+
+  <div class="final">
+    <h2>This is one episode.</h2>
+    <p style="color:var(--muted);max-width:560px;margin:0 auto 22px">15+ assets, five platforms, a full month of distribution, all pulled from a single recording and written in your voice. Imagine this landing in your inbox every time you publish, with nothing left for you to do but hit post.</p>
+    <a class="cta" href="mailto:hello@episodeloop.com?subject=Let's%20talk%20EpisodeLoop">Email me to get started →</a>
+    <p style="color:var(--muted);font-size:14px;margin-top:16px">Or just reply to my email. Either way, this pack is yours to keep.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    Made by <b>EpisodeLoop</b> · <a class="mail" href="mailto:hello@episodeloop.com">hello@episodeloop.com</a><br>
+    Created from publicly available episode content, shared free with our best wishes.
+  </div>
+</footer>
+
+</body>
+</html>

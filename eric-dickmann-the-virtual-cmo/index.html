@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EpisodeLoop — Free Content Pack for The Virtual CMO (w/ Dana Marxer)</title>
+<meta name="description" content="A full listener-growth pack made by EpisodeLoop from The Virtual CMO episode with Dana Marxer." />
+<meta name="robots" content="noindex" />
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --ink:#e6edf3; --muted:#9aa5b1;
+    --accent:#5b8cff; --accent2:#7c5bff; --line:#232a34; --ok:#3fb950; --amber:#d29922;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  header{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);z-index:10}
+  .headrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .brand span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .navpill{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+  .hero{padding:52px 0 30px}
+  .badge{display:inline-block;background:rgba(63,185,80,.12);color:var(--ok);border:1px solid rgba(63,185,80,.3);font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{color:var(--muted);font-size:18px}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:16px 20px;margin:22px 0;color:var(--muted);font-size:15px}
+  .note b{color:var(--ink)}
+  .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin:20px 0}
+  .toc h4{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin-left:18px;color:var(--ink);font-size:15px;columns:2;column-gap:28px}
+  .toc li{padding:3px 0}
+  .toc a{color:var(--ink);text-decoration:none}
+  .toc a:hover{color:var(--accent)}
+  section{padding:30px 0;border-top:1px solid var(--line)}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  h2{font-size:25px;letter-spacing:-.01em;margin-bottom:8px}
+  .h2sub{color:var(--muted);font-size:15px;margin-bottom:18px}
+  h3{font-size:17px;margin:20px 0 6px}
+  p{margin-bottom:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .card .meta{color:var(--muted);font-size:14px;margin-bottom:10px}
+  ul.clean{list-style:none;margin:10px 0}
+  ul.clean li{padding:4px 0 4px 22px;position:relative}
+  ul.clean li:before{content:"→";position:absolute;left:0;color:var(--accent)}
+  .ts{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600;margin-right:8px}
+  .post{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;white-space:pre-line;font-size:15px}
+  .post .tag{display:block;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+  .post .fmt{color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0}
+  .hashtags{color:var(--accent);font-size:14px}
+  blockquote{border-left:3px solid var(--accent2);padding-left:16px;color:var(--ink);margin:8px 0}
+  .article p{color:#c9d3de}
+  .article h3{color:var(--ink)}
+  .metabar{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:14px;border-bottom:1px dashed var(--line);padding-bottom:12px}
+  .metabar b{color:var(--ink)}
+  .script{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .script .hook{background:var(--panel2);border-radius:8px;padding:10px 14px;margin:8px 0;font-weight:600}
+  .script .beat{display:flex;gap:12px;margin:7px 0;font-size:15px}
+  .script .beat .t{flex:none;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums;width:52px}
+  .quote{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:12px;font-size:18px;font-weight:600;line-height:1.4;position:relative}
+  .quote .src{display:block;margin-top:10px;font-size:13px;font-weight:500;color:var(--muted)}
+  .caltable{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+  .caltable th,.caltable td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  .caltable th{background:var(--panel2);color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+  .caltable td b{color:var(--accent)}
+  .wk{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);margin:16px 0 6px}
+  .cta{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:12px;font-size:16px;margin-top:6px}
+  a.mail{color:var(--accent);text-decoration:none}
+  footer{padding:44px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  .final{text-align:center;padding:48px 0}
+  .value{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+  .value div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
+  .value b{display:block;color:var(--accent);font-size:20px}
+  @media(max-width:600px){.hero h1{font-size:27px}.toc ol{columns:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap headrow">
+    <div class="brand">Episode<span>Loop</span></div>
+    <div class="navpill">Free growth pack · prepared for Eric Dickmann</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge">FREE SAMPLE · BUILT FROM YOUR EPISODE WITH DANA MARXER</div>
+    <h1>One episode, <em>a month of listener growth.</em></h1>
+    <p class="sub">The Virtual CMO · "Marketing Earns Its Seat At The Table When It Speaks Revenue"</p>
+  </div>
+
+  <div class="note">
+    Hi Eric. This is a real, finished listener-growth pack built entirely from your episode with Dana Marxer. Nothing here is a template. Every title, chapter, post, and script is written in your voice from what you actually published. <b>It's yours to use, free, with no strings.</b> This is exactly what you'd receive from EpisodeLoop for every episode you release.
+  </div>
+
+  <div class="value">
+    <div><b>18+</b> ready-to-publish assets</div>
+    <div><b>5</b> platforms covered</div>
+    <div><b>4 weeks</b> of scheduled content</div>
+    <div><b>~34 min</b> episode, fully repurposed</div>
+  </div>
+
+  <div class="toc">
+    <h4>What's inside this pack</h4>
+    <ol>
+      <li><a href="#notes">SEO title options + chapters + show notes</a></li>
+      <li><a href="#blog">SEO blog article (~1,050 words)</a></li>
+      <li><a href="#guest">Guest amplification kit</a></li>
+      <li><a href="#linkedin">5 LinkedIn posts</a></li>
+      <li><a href="#thread">X / Twitter thread</a></li>
+      <li><a href="#video">2 short-form video scripts</a></li>
+      <li><a href="#newsletter">Newsletter edition</a></li>
+      <li><a href="#quotes">Quote graphics</a></li>
+      <li><a href="#calendar">4-week content calendar</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. DISCOVERABILITY -->
+  <section id="notes">
+    <div class="kicker">01 · Discoverability</div>
+    <h2>SEO'd title, chapters &amp; show notes</h2>
+    <div class="h2sub">Built to get this episode found in Apple, Spotify, and Google search — not just heard by subscribers.</div>
+    <div class="card">
+      <div class="meta"><b>SEO title options</b> (search-intent up front)</div>
+      <ul class="clean">
+        <li><b>How Marketing Proves Revenue Impact: Attribution, Pipeline &amp; Bookings (with Dana Marxer, ayeQ) — The Virtual CMO</b> — "marketing revenue attribution" is high-intent CMO search; adds guest + company.</li>
+        <li><b>Marketing Earns Its Seat at the Table When It Speaks Revenue — CMO Attribution with Dana Marxer</b> — keeps your original hook, adds "CMO attribution" keywords.</li>
+        <li><b>B2B Marketing Attribution: Why Black-Box Models Fail &amp; What to Do Instead (w/ Dana Marxer)</b> — the contrarian angle; strong Google/YouTube play.</li>
+        <li><b>The Metrics CMOs Should Present to CEOs: Bookings, Pipeline &amp; Sales Velocity (Ep. with Dana Marxer)</b> — matches the exact metric-search your audience does before budget reviews.</li>
+      </ul>
+      <h3>Chapters + timestamps (~34 min)</h3>
+      <p style="color:var(--muted);font-size:13px">Estimated from the episode structure and duration (33:59) — confirm against final audio. EpisodeLoop verifies exact timestamps for paying clients.</p>
+      <ul class="clean">
+        <li><span class="ts">00:00</span> Intro — why vanity metrics don't earn a seat at the table</li>
+        <li><span class="ts">02:00</span> Meet Dana Marxer, CEO of ayeQ</li>
+        <li><span class="ts">04:00</span> The language shift: leading indicators internally, outcomes externally</li>
+        <li><span class="ts">07:30</span> The metrics that matter: bookings contribution, pipeline impact, spending efficiency, conversion efficiency, sales velocity</li>
+        <li><span class="ts">11:00</span> Why brand investment can lift lead conversion</li>
+        <li><span class="ts">14:30</span> Data-backed proof: winning support outside the marketing team</li>
+        <li><span class="ts">17:30</span> The hard part: B2B marketing attribution — long cycles, many stakeholders</li>
+        <li><span class="ts">21:30</span> Why black-box models fall apart</li>
+        <li><span class="ts">25:00</span> The fix: unified data model + time-based business logic</li>
+        <li><span class="ts">29:00</span> Connecting marketing activity to the sales pipeline</li>
+        <li><span class="ts">31:00</span> Designing a revenue engine marketing and sales own together</li>
+        <li><span class="ts">33:00</span> Final takeaways — the one metric to start with</li>
+      </ul>
+      <h3>Paste-ready description</h3>
+      <p><b>How marketing proves revenue impact — and earns its seat at the table.</b> Followers, clicks, open rates, and impressions can make a marketing dashboard look busy, but they rarely answer the question your CEO and CFO actually ask: how much revenue did marketing influence? Eric Dickmann sits down with Dana Marxer, CEO of RevOps automation company ayeQ, to unpack what it really takes for CMOs to align marketing to pipeline, bookings, and predictable growth. In this episode: the language shift CMOs must make (leading indicators internally, outcomes externally), the five metrics that matter (bookings contribution, pipeline impact, spending efficiency, conversion efficiency, sales velocity), why brand investment can lift lead conversion, why black-box attribution models fall apart in B2B, and the fix — connecting marketing activity to the sales pipeline through a unified data model and time-based business logic. 🎧 Listen now → [episode link] · Subscribe on Apple, Spotify, or your favorite player.</p>
+    </div>
+  </section>
+
+  <!-- 2. BLOG -->
+  <section id="blog" class="article">
+    <div class="kicker">02 · SEO Blog Article</div>
+    <h2>Marketing Earns Its Seat at the Table When It Speaks Revenue</h2>
+    <div class="metabar">
+      <span><b>Word count:</b> ~1,050</span>
+      <span><b>Primary keyword:</b> B2B marketing attribution</span>
+      <span><b>Meta:</b> Why black-box attribution fails, the five outcome metrics CMOs should present, and the unified data model that connects marketing to revenue.</span>
+    </div>
+    <div class="card">
+      <p>Somewhere in the last decade, marketing dashboards got beautiful and useless at the same time. Followers, clicks, open rates, impressions — a full screen of numbers that look like progress and answer none of the questions the people signing the checks are actually asking.</p>
+      <p>The question is always the same: how much revenue did marketing influence?</p>
+      <p>That's the conversation I had with Dana Marxer, CEO of the RevOps automation company ayeQ, on The Virtual CMO. If you're a CMO who has ever sat in a budget review and watched a CFO squint at a dashboard of vanity metrics, this episode is for you. Here's the playbook we walked through.</p>
+      <h3>The language shift that changes everything</h3>
+      <p>The first thing Dana and I landed on: CMOs are allowed to track leading indicators internally. In fact, they should. Engagement, reach, conversion rates — these tell you whether your engine is warming up.</p>
+      <p>The problem is presenting them externally. To the CEO and CFO, those numbers don't answer the only question that matters. So the discipline is simple to state, hard to maintain: <b>track leading indicators internally, present outcomes externally.</b></p>
+      <p>Outcomes, in the language of revenue: bookings contribution, pipeline impact, spending efficiency, conversion efficiency, and sales velocity. If you can't speak in those five terms, you're not speaking the language of the table.</p>
+      <h3>Why brand investment lifts conversion</h3>
+      <p>One of the more interesting threads in the conversation was brand. In a world obsessed with performance marketing, Dana's point was that brand investment doesn't just build awareness — it can measurably lift lead conversion. Familiarity reduces friction at every stage of a B2B deal. The data-backed marketing org treats brand as part of the revenue engine, not as the "fluffy" line item.</p>
+      <h3>The hard part: attribution in B2B</h3>
+      <p>Then we got to the honest part of the episode: B2B marketing attribution is genuinely hard, and pretending otherwise is why so many models fail.</p>
+      <p>Think about what you're actually tracking. Long sales cycles measured in months. Multiple stakeholders in every deal, each one touched by different channels. Marketing automation and CRM that don't talk to each other. In that environment, any attribution model that claims clean, single-touch answers is lying to you.</p>
+      <p>Dana's critique of black-box models is worth the listen by itself. When you can't explain why a deal got attributed the way it did, you can't act on it, you can't defend it, and you certainly can't scale it. A model you can't interrogate is a cost center with a fancy dashboard.</p>
+      <h3>The fix: a unified data model with time-based logic</h3>
+      <p>So what actually works? The answer from the episode is less glamorous than AI attribution hype and far more reliable: connect marketing activity to the sales pipeline through a <b>unified data model and time-based business logic</b>.</p>
+      <p>Instead of asking "which touch gets the credit," you ask: what happened in the pipeline, in what sequence, over what window, and how did marketing activity correlate with movement? When marketing and sales data live in one model, you can see which channels drive closed bookings, where the funnel breaks, and what actually moved deals forward — defensibly, explainably, repeatably.</p>
+      <h3>The result: a revenue engine both teams own</h3>
+      <p>The payoff isn't a better attribution report. It's a revenue engine that marketing and sales own together. Marketing stops defending its existence with impressions and starts steering spend based on pipeline contribution. Sales stops blaming marketing for bad leads and starts seeing the system that feeds it.</p>
+      <p>That's the seat at the table — not a bigger dashboard, but a shared revenue number with marketing's name on it.</p>
+      <h3>Start with one metric</h3>
+      <p>If you're a CMO reading this, don't try to rebuild everything at once. Pick one outcome metric — pipeline impact is usually the easiest to get buy-in on — and present it externally in every review. Let the leading indicators stay internal, where they belong. Let the revenue language do the talking.</p>
+      <p><em>🎧 Listen to the full conversation with Dana Marxer → [episode link] · Subscribe to The Virtual CMO for more practical marketing leadership.</em></p>
+    </div>
+  </section>
+
+  <!-- 3. GUEST KIT -->
+  <section id="guest">
+    <div class="kicker">03 · Guest Amplification</div>
+    <h2>Guest kit: make it one-click for Dana</h2>
+    <div class="h2sub">Most guests never promote their episode — not because they don't care, but because nobody hands them something ready. This makes it one click.</div>
+    <div class="post"><span class="tag">"Your episode is live" note <span class="fmt">· forward to Dana Marxer</span></span>Subject: Your episode is live 🎉
+
+Hi Dana,
+
+The episode is live: "Marketing Earns Its Seat At The Table When It Speaks Revenue" — and thank you for being so direct about why black-box attribution models fall apart. That segment is going to save a lot of CMOs from expensive dashboards.
+
+You're flagged in the show notes, and I've quoted your points in the blog article too.
+
+If you want to share it with your audience, I've made it one-click — a ready-to-post note below plus a pull-quote. No work required, just copy-paste.
+
+🎧 Listen here: [episode link]
+
+Thanks again,
+Eric</div>
+    <div class="post"><span class="tag">Done-for-the-guest · LinkedIn <span class="fmt">· guest's POV</span></span>New episode of The Virtual CMO — I joined Eric Dickmann to talk about how marketing earns its seat at the table.
+
+We got specific: the language shift CMOs need (leading indicators internally, outcomes externally), why black-box attribution models fall apart, and how a unified data model + time-based logic connects marketing to pipeline and bookings.
+
+If you're a CMO or revenue leader, this one's for you. 🎧 [episode link]</div>
+    <div class="post"><span class="tag">Done-for-the-guest · X <span class="fmt">· guest's POV</span></span>Joined @[eric-handle] on The Virtual CMO to talk marketing attribution:
+→ present outcomes, not impressions
+→ why black-box models fall apart
+→ unified data model + time-based logic
+
+Marketing earns its seat when it speaks revenue. 🎧 [episode link]</div>
+    <div class="card">
+      <div class="meta"><b>Pull-quotes</b> (host-voice framings — not verbatim transcript; swap in exact audio lines if available)</div>
+      <blockquote>"Track leading indicators internally. Present outcomes externally." <span style="color:var(--muted)">— The language shift for CMOs</span></blockquote>
+      <blockquote>"A black-box attribution model you can't interrogate is a cost center with a fancy dashboard." <span style="color:var(--muted)">— Ep. with Dana Marxer</span></blockquote>
+      <blockquote>"Bookings contribution, pipeline impact, spending efficiency, conversion efficiency, sales velocity — that's the language of the table." <span style="color:var(--muted)">— Ep. with Dana Marxer</span></blockquote>
+      <blockquote>"Brand isn't the fluffy line item — it measurably lifts conversion." <span style="color:var(--muted)">— Ep. with Dana Marxer</span></blockquote>
+    </div>
+  </section>
+
+  <!-- 4. LINKEDIN -->
+  <section id="linkedin">
+    <div class="kicker">04 · LinkedIn</div>
+    <h2>5 LinkedIn posts, ready to schedule</h2>
+    <div class="h2sub">Hook, five metrics, black-box takedown, brand point, action + soft CTA. One idea each, every one ending in "listen here."</div>
+
+    <div class="post"><span class="tag">Post 1 <span class="fmt">· The hook</span></span>Your marketing dashboard can be beautiful and useless at the same time.
+
+Followers. Clicks. Open rates. Impressions.
+
+None of them answer the question your CEO and CFO are actually asking: how much revenue did marketing influence?
+
+That's the conversation I had with Dana Marxer (CEO of ayeQ) on this week's The Virtual CMO — and the fix is a language shift, not a new tool.
+
+Full episode in the link. 🎧
+<span class="hashtags">#CMO #MarketingAttribution #RevenueMarketing</span></div>
+
+    <div class="post"><span class="tag">Post 2 <span class="fmt">· The five metrics</span></span>CMOs: stop presenting impressions to the CEO.
+
+Present these five instead:
+→ Bookings contribution
+→ Pipeline impact
+→ Spending efficiency
+→ Conversion efficiency
+→ Sales velocity
+
+That's the language of the table.
+
+Dana Marxer and I broke down exactly how to make the shift on The Virtual CMO. 🎧 [episode link]
+<span class="hashtags">#CMO #B2BMarketing #GTM</span></div>
+
+    <div class="post"><span class="tag">Post 3 <span class="fmt">· Black-box takedown</span></span>"Black-box attribution models are a cost center with a fancy dashboard."
+
+If you can't explain why a deal got attributed the way it did, you can't act on it, you can't defend it, and you can't scale it.
+
+Dana Marxer's take on why B2B attribution models fail — and what to do instead — is the sharpest 10 minutes I've published this year. 🎧 [episode link]
+<span class="hashtags">#MarketingAttribution #RevOps #B2BMarketing</span></div>
+
+    <div class="post"><span class="tag">Post 4 <span class="fmt">· The brand point</span></span>Brand isn't the fluffy line item.
+
+In a world obsessed with performance marketing, Dana Marxer made the point that brand investment measurably lifts lead conversion — familiarity reduces friction at every stage of a B2B deal.
+
+The data-backed marketing org treats brand as part of the revenue engine.
+
+Full breakdown with Dana on The Virtual CMO. 🎧 [episode link]
+<span class="hashtags">#BrandStrategy #B2B #Marketing</span></div>
+
+    <div class="post"><span class="tag">Post 5 <span class="fmt">· Action + soft CTA</span></span>If you're a CMO reading this, don't try to rebuild your entire attribution stack this quarter.
+
+Start with one outcome metric — pipeline impact is usually the easiest to get buy-in on — and present it externally at every review.
+
+Let the leading indicators stay internal. Let the revenue language do the talking.
+
+That's the practical takeaway from my conversation with Dana Marxer. 🎧 [episode link]
+<span class="hashtags">#CMO #MarketingLeadership #SaaS</span></div>
+  </section>
+
+  <!-- 5. THREAD -->
+  <section id="thread">
+    <div class="kicker">05 · X / Twitter</div>
+    <h2>A 9-tweet thread</h2>
+    <div class="h2sub">Each tweet stands alone. Hook first. Built to be screenshotted.</div>
+    <div class="post">1/ Marketing earns its seat at the table when it speaks revenue. 🧵
+Full breakdown from this week's The Virtual CMO with Dana Marxer (CEO, ayeQ):
+
+2/ The problem:
+Followers, clicks, open rates, impressions — a dashboard that looks busy and answers none of the questions that matter.
+
+3/ The question that matters:
+"How much revenue did marketing influence?"
+
+4/ The language shift:
+Track leading indicators internally. Present outcomes externally.
+Outcomes = bookings contribution, pipeline impact, spending efficiency, conversion efficiency, sales velocity.
+
+5/ The brand surprise:
+Brand isn't the fluffy line item. It measurably lifts lead conversion — familiarity reduces friction at every stage of a B2B deal.
+
+6/ The hard truth:
+B2B attribution is genuinely hard. Long cycles. Multiple stakeholders. Marketing automation and CRM that don't talk.
+
+7/ Why black-box models fail:
+If you can't explain why a deal got attributed the way it did, you can't act on it, defend it, or scale it.
+
+8/ The fix:
+A unified data model + time-based business logic.
+See which channels drive closed bookings, where the funnel breaks, what actually moves deals — explainably.
+
+9/ The payoff: a revenue engine marketing and sales own together.
+🎧 Full episode → [episode link]
+Follow @[eric-handle] for practical CMO thinking.</div>
+  </section>
+
+  <!-- 6. VIDEO -->
+  <section id="video">
+    <div class="kicker">06 · Short-form video</div>
+    <h2>2 audiogram / vertical scripts</h2>
+    <div class="h2sub">Value-add (audio-first show): text-on-screen/audiogram ready.</div>
+
+    <div class="script">
+      <b>Script 1 — "The five metrics" (32s)</b>
+      <div class="hook">HOOK (0–3s): "CMOs, stop presenting impressions to your CEO."</div>
+      <div class="beat"><span class="t">3–12s</span>"Present these five instead: bookings contribution, pipeline impact, spending efficiency, conversion efficiency, sales velocity."</div>
+      <div class="beat"><span class="t">12–26s</span>"That's the language of the table. Track your leading indicators internally — but externally, speak outcomes. Revenue."</div>
+      <div class="beat"><span class="t">26–32s</span>"Full breakdown with Dana Marxer on The Virtual CMO. Press play → [link]"</div>
+    </div>
+
+    <div class="script">
+      <b>Script 2 — "Black-box takedown" (30s)</b>
+      <div class="hook">HOOK (0–3s): "Black-box attribution is a cost center with a fancy dashboard."</div>
+      <div class="beat"><span class="t">3–12s</span>"If you can't explain why a deal got attributed the way it did, you can't act on it, you can't defend it, you can't scale it."</div>
+      <div class="beat"><span class="t">12–26s</span>"The fix isn't a fancier model — it's a unified data model with time-based logic that connects marketing to pipeline."</div>
+      <div class="beat"><span class="t">26–30s</span>"The sharpest 10 minutes I've published this year. → [link]"</div>
+    </div>
+  </section>
+
+  <!-- 7. NEWSLETTER -->
+  <section id="newsletter">
+    <div class="kicker">07 · Newsletter</div>
+    <h2>Newsletter edition</h2>
+    <div class="h2sub">3 subject-line options, preview text, and a complete send.</div>
+    <div class="card">
+      <p><b>Subject line options:</b></p>
+      <ul class="clean">
+        <li>A: The dashboard that's beautiful and useless</li>
+        <li>B: The 5 metrics CMOs should present instead of impressions</li>
+        <li>C: Why black-box attribution models fail</li>
+      </ul>
+      <p><b>Preview text:</b> Followers, clicks, open rates — none of them answer the question your CEO asks. Here's the fix.</p>
+      <hr style="border:none;border-top:1px dashed var(--line);margin:16px 0">
+      <p>This week on The Virtual CMO, Dana Marxer (CEO of ayeQ) and I got specific about the problem every CMO feels but few can name: marketing dashboards are full of numbers that don't answer the revenue question.</p>
+      <p>Three things worth stealing from the conversation:</p>
+      <ul class="clean">
+        <li>The language shift: track leading indicators internally, present outcomes externally.</li>
+        <li>The five outcome metrics: bookings contribution, pipeline impact, spending efficiency, conversion efficiency, sales velocity.</li>
+        <li>Why black-box attribution models fail — and the unified-data-model fix that actually survives contact with a CFO.</li>
+      </ul>
+      <p>Plus: the counterintuitive case that brand investment measurably lifts lead conversion.</p>
+      <p>🎧 Listen here → [episode link]</p>
+      <p>Reply and tell me: what's the one metric you wish your company could agree on?</p>
+    </div>
+  </section>
+
+  <!-- 8. QUOTE GRAPHICS -->
+  <section id="quotes">
+    <div class="kicker">08 · Quote graphics</div>
+    <h2>3 pull-quote graphics</h2>
+    <div class="h2sub">Ready for Canva. Design spec below.</div>
+    <div class="quote">"Track leading indicators internally. Present outcomes externally."<span class="src">Ep. with Dana Marxer · The Virtual CMO</span></div>
+    <div class="quote">"A black-box attribution model you can't interrogate is a cost center with a fancy dashboard."<span class="src">Ep. with Dana Marxer · The Virtual CMO</span></div>
+    <div class="quote">"Marketing earns its seat at the table when it speaks revenue."<span class="src">The Virtual CMO</span></div>
+    <p style="color:var(--muted);font-size:14px">Design spec: 1080×1080, dark background (#0d1117), quote in large white bold sans, host + episode in accent blue bottom-left, "The Virtual CMO" wordmark top-right. Consistent template across all.</p>
+  </section>
+
+  <!-- 9. CALENDAR -->
+  <section id="calendar">
+    <div class="kicker">09 · Distribution plan</div>
+    <h2>4-week distribution plan, scheduled for you</h2>
+    <div class="h2sub">Here's the part that matters: <b>you don't post any of this.</b> We map every asset across four weeks, load it into your scheduler, and you approve the whole batch in about five minutes. The mix follows a founder-optimized ratio: 40% education, 30% story, 20% POV, 10% offer. Every asset ends in a "listen here" CTA.</div>
+
+    <div class="wk">Week 1 — Launch</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>Episode</td><td><b>Publish with new SEO title + show notes</b> · Post 1 (hook) · X thread</td></tr>
+      <tr><td>Tue</td><td>Newsletter</td><td><b>Full edition</b> (subject A)</td></tr>
+      <tr><td>Wed</td><td>Reels/TikTok</td><td><b>Audiogram Script 1</b> + Quote graphic 1</td></tr>
+      <tr><td>Thu</td><td>Email → guest</td><td><b>Send "your episode is live" note</b> to Dana · Post 2 (five metrics)</td></tr>
+      <tr><td>Fri</td><td>X + IG</td><td>Quote graphics 2–3</td></tr>
+    </table>
+
+    <div class="wk">Week 2 — Depth</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 3</b> (black-box takedown) · Publish <b>SEO article</b>, link to episode</td></tr>
+      <tr><td>Wed</td><td>Reels/TikTok</td><td><b>Audiogram Script 2</b> · Repost thread with new hook</td></tr>
+      <tr><td>Fri</td><td>LinkedIn</td><td><b>Post 4</b> (brand lifts conversion)</td></tr>
+    </table>
+
+    <div class="wk">Week 3 — Engagement</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 5</b> (action + soft CTA) · Guest repost wave (Dana's RevOps/CRO audience)</td></tr>
+      <tr><td>Wed</td><td>Newsletter</td><td>Follow-up: "the one metric to start with"</td></tr>
+      <tr><td>Fri</td><td>X</td><td><b>Poll:</b> "Which metric does your org actually trust?" — drives comments</td></tr>
+    </table>
+
+    <div class="wk">Week 4 — Payoff</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>Distribution</td><td>Cross-post the blog article (LinkedIn Articles)</td></tr>
+      <tr><td>Wed</td><td>X</td><td>Top-quote graphic from the episode</td></tr>
+      <tr><td>Fri</td><td>X + LinkedIn</td><td>Share episode stats + thank Dana publicly (tag → more sharing)</td></tr>
+    </table>
+  </section>
+
+  <div class="final">
+    <h2>This is one episode.</h2>
+    <p style="color:var(--muted);max-width:560px;margin:0 auto 22px">18+ assets, five platforms, a full month of distribution — all pulled from a single episode and written in your voice. Imagine this landing in your inbox every time you publish, with nothing left for you to do but hit post.</p>
+    <a class="cta" href="mailto:hello@episodeloop.com?subject=Let's%20talk%20EpisodeLoop">Email me to get started →</a>
+    <p style="color:var(--muted);font-size:14px;margin-top:16px">Or just reply to my email. Either way, this pack is yours to keep.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    Made by <b>EpisodeLoop</b> · <a class="mail" href="mailto:hello@episodeloop.com">hello@episodeloop.com</a><br>
+    Created from publicly available episode content, shared free with our best wishes.
+  </div>
+</footer>
+
+</body>
+</html>

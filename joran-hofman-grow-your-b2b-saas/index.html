@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EpisodeLoop — Free Content Pack for Grow Your B2B SaaS (S7E23)</title>
+<meta name="description" content="A full listener-growth pack made by EpisodeLoop from S7E23 of the Grow Your B2B SaaS Podcast." />
+<meta name="robots" content="noindex" />
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --ink:#e6edf3; --muted:#9aa5b1;
+    --accent:#5b8cff; --accent2:#7c5bff; --line:#232a34; --ok:#3fb950; --amber:#d29922;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  header{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);z-index:10}
+  .headrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .brand span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .navpill{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+  .hero{padding:52px 0 30px}
+  .badge{display:inline-block;background:rgba(63,185,80,.12);color:var(--ok);border:1px solid rgba(63,185,80,.3);font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{color:var(--muted);font-size:18px}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:16px 20px;margin:22px 0;color:var(--muted);font-size:15px}
+  .note b{color:var(--ink)}
+  .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin:20px 0}
+  .toc h4{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin-left:18px;color:var(--ink);font-size:15px;columns:2;column-gap:28px}
+  .toc li{padding:3px 0}
+  .toc a{color:var(--ink);text-decoration:none}
+  .toc a:hover{color:var(--accent)}
+  section{padding:30px 0;border-top:1px solid var(--line)}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  h2{font-size:25px;letter-spacing:-.01em;margin-bottom:8px}
+  .h2sub{color:var(--muted);font-size:15px;margin-bottom:18px}
+  h3{font-size:17px;margin:20px 0 6px}
+  p{margin-bottom:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .card .meta{color:var(--muted);font-size:14px;margin-bottom:10px}
+  ul.clean{list-style:none;margin:10px 0}
+  ul.clean li{padding:4px 0 4px 22px;position:relative}
+  ul.clean li:before{content:"→";position:absolute;left:0;color:var(--accent)}
+  .ts{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600;margin-right:8px}
+  .post{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;white-space:pre-line;font-size:15px}
+  .post .tag{display:block;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+  .post .fmt{color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0}
+  .hashtags{color:var(--accent);font-size:14px}
+  blockquote{border-left:3px solid var(--accent2);padding-left:16px;color:var(--ink);margin:8px 0}
+  .article p{color:#c9d3de}
+  .article h3{color:var(--ink)}
+  .metabar{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:14px;border-bottom:1px dashed var(--line);padding-bottom:12px}
+  .metabar b{color:var(--ink)}
+  .script{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .script .hook{background:var(--panel2);border-radius:8px;padding:10px 14px;margin:8px 0;font-weight:600}
+  .script .beat{display:flex;gap:12px;margin:7px 0;font-size:15px}
+  .script .beat .t{flex:none;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums;width:52px}
+  .quote{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:12px;font-size:18px;font-weight:600;line-height:1.4;position:relative}
+  .quote .src{display:block;margin-top:10px;font-size:13px;font-weight:500;color:var(--muted)}
+  .caltable{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+  .caltable th,.caltable td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  .caltable th{background:var(--panel2);color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+  .caltable td b{color:var(--accent)}
+  .wk{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);margin:16px 0 6px}
+  .cta{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:12px;font-size:16px;margin-top:6px}
+  a.mail{color:var(--accent);text-decoration:none}
+  footer{padding:44px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  .final{text-align:center;padding:48px 0}
+  .value{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+  .value div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
+  .value b{display:block;color:var(--accent);font-size:20px}
+  @media(max-width:600px){.hero h1{font-size:27px}.toc ol{columns:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap headrow">
+    <div class="brand">Episode<span>Loop</span></div>
+    <div class="navpill">Free growth pack · prepared for Joran Hofman</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge">FREE SAMPLE · BUILT FROM YOUR EPISODE S7E23</div>
+    <h1>One episode, <em>a month of listener growth.</em></h1>
+    <p class="sub">Grow Your B2B SaaS · "How to grow your B2B SaaS to 10M ARR? Advice from 21 experts"</p>
+  </div>
+
+  <div class="note">
+    Hi Joran. This is a real, finished listener-growth pack built entirely from your Season 7 finale. Nothing here is a template. Every title, chapter, post, and script is written in your voice from what you actually published. <b>It's yours to use, free, with no strings.</b> This is exactly what you'd receive from EpisodeLoop for every episode you release.
+  </div>
+
+  <div class="value">
+    <div><b>18+</b> ready-to-publish assets</div>
+    <div><b>5</b> platforms covered</div>
+    <div><b>4 weeks</b> of scheduled content</div>
+    <div><b>21</b> guest audiences reached</div>
+  </div>
+
+  <div class="toc">
+    <h4>What's inside this pack</h4>
+    <ol>
+      <li><a href="#notes">SEO title options + chapters + show notes</a></li>
+      <li><a href="#blog">SEO blog article (~1,050 words)</a></li>
+      <li><a href="#guest">Guest amplification kit (21 experts)</a></li>
+      <li><a href="#linkedin">5 LinkedIn posts</a></li>
+      <li><a href="#thread">X / Twitter thread</a></li>
+      <li><a href="#video">2 short-form video scripts</a></li>
+      <li><a href="#newsletter">Newsletter edition</a></li>
+      <li><a href="#quotes">Quote graphics</a></li>
+      <li><a href="#calendar">4-week content calendar</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. DISCOVERABILITY -->
+  <section id="notes">
+    <div class="kicker">01 · Discoverability</div>
+    <h2>SEO'd title, chapters &amp; show notes</h2>
+    <div class="h2sub">Built to get this episode found in Apple, Spotify, and Google search — not just heard by subscribers.</div>
+    <div class="card">
+      <div class="meta"><b>SEO title options</b> (search-intent up front)</div>
+      <ul class="clean">
+        <li><b>How to Grow Your B2B SaaS to $10M ARR: Advice from 21 Experts (Season 7 Recap)</b> — leads with the exact search phrase + the number hook.</li>
+        <li><b>From $10K MRR to $10M ARR: The Playbook 21 SaaS Founders &amp; Operators Agree On</b> — targets founders searching for scaling frameworks.</li>
+        <li><b>B2B SaaS Growth Strategy 2026: 21 Experts on Scaling Past $10M ARR</b> — year-stamped, trend-search friendly.</li>
+        <li><b>How SaaS Companies Actually Scale to $10M ARR (21 Expert Lessons, One Episode)</b> — curiosity + specificity, great for YouTube suggestions.</li>
+      </ul>
+      <h3>Chapters + timestamps (31:05)</h3>
+      <p style="color:var(--muted);font-size:13px">Estimated from the episode structure — confirm against final audio. EpisodeLoop verifies exact timestamps for paying clients.</p>
+      <ul class="clean">
+        <li><span class="ts">00:00</span> Intro — one question for Season 7: $10K MRR → $10M ARR</li>
+        <li><span class="ts">02:10</span> The season's thesis: focus, alignment, ICP clarity, systems</li>
+        <li><span class="ts">05:30</span> Stage 1 — product-market fit, ICP clarity, segmentation</li>
+        <li><span class="ts">09:00</span> Stage 2 — GTM: why 80% of outbound fails, signal-based selling</li>
+        <li><span class="ts">13:00</span> Stage 3 — partnerships, community-led growth, content authority</li>
+        <li><span class="ts">17:30</span> Stage 4 — pricing: tiering, usage-based models, AI add-ons</li>
+        <li><span class="ts">21:00</span> Stage 5 — 2026 lens: AI agents, hybrid GTM, global expansion</li>
+        <li><span class="ts">24:30</span> Stage 6 — hiring for stage-fit, RevOps, people operations</li>
+        <li><span class="ts">27:00</span> Where experts disagreed — stage and context matter</li>
+        <li><span class="ts">28:30</span> The thread through all 21 conversations</li>
+      </ul>
+      <h3>Paste-ready description</h3>
+      <p><b>How to grow your B2B SaaS to $10M ARR? 21 founders, operators, and leaders — one season, one roadmap.</b> Season 7 of the Grow Your B2B SaaS Podcast was built around a single ambition: growing from early validation at $10K MRR to meaningful scale at $10M ARR. In this finale, Joran Hofman distills the season's 21 conversations into one coherent playbook — product-market fit, ICP clarity, go-to-market systems, partnerships, pricing, revenue operations, community, expansion revenue, and hiring for stage-fit. Featured across the season: KaraLynn Lewis, Besnik Vrellaku, Hugo Pereira, Garrath Robinson, Joey Gilkey, Maja Voje, Desiree-Jessica Pely, Michelle Goodall, Tommy Walker, Kevin "KD" Dorsey, Shoaib G.M., Tjitte Joosten, Varun Thamba, Romy Kotler-de Groot, Krzysztof Szyszkiewicz, Richard Schenzel, Roelof Otten, René de Jong, Glenn Miseroy, Koen Stam, Jacco van der Kooij. 🎧 Listen now → [episode link] · Subscribe on Apple/Spotify/YouTube.</p>
+    </div>
+  </section>
+
+  <!-- 2. BLOG -->
+  <section id="blog" class="article">
+    <div class="kicker">02 · SEO Blog Article</div>
+    <h2>How to Grow Your B2B SaaS to $10M ARR: 21 Experts, One Roadmap</h2>
+    <div class="metabar">
+      <span><b>Word count:</b> ~1,050</span>
+      <span><b>Primary keyword:</b> how to grow a B2B SaaS to 10M ARR</span>
+      <span><b>Meta:</b> 21 B2B SaaS experts, one roadmap from $10K MRR to $10M ARR — focus, alignment, stage-fit hiring, and systems that compound.</span>
+    </div>
+    <div class="card">
+      <p>Season 7 of the Grow Your B2B SaaS Podcast started with one question. Not "what's the latest growth hack" — the question that actually keeps founders up at night: <em>how do you get from early validation at $10K MRR to meaningful scale at $10M ARR?</em></p>
+      <p>For 21 episodes, I sat with founders, operators, and leaders who have run this exact climb — in partnerships, outbound, community, pricing, RevOps, and AI-driven GTM. Then I went back through all 21 conversations and pulled out the patterns, the disagreements, and the advice that actually survived contact with reality.</p>
+      <h3>The patterns that repeated in every conversation</h3>
+      <p>Almost nobody answered with a tactic. Episode after episode, the same five threads came back.</p>
+      <p><b>Focus.</b> The operators who scale pick one ICP and one motion and get brutally specific about both. Segmentation isn't a marketing exercise — it's how you stop spreading a small team across a huge market.</p>
+      <p><b>Alignment.</b> Multiple guests described the same failure: sales and marketing and product all "working hard" in different directions. The fix is rarely more effort. It's a shared definition of a good outcome.</p>
+      <p><b>Hiring for stage-fit.</b> A team that's right at $10K MRR is often actively wrong at $1M ARR. Hire for the stage you're entering, not the stage you're leaving.</p>
+      <p><b>Community and systems.</b> Growth that compounds is built into systems and audiences, not one-off campaigns.</p>
+      <h3>Where the season got specific</h3>
+      <p>Besnik Vrellaku's episode on outbound opened with a brutal stat: <b>80% of outbound sales fails</b>. The rest of the conversation was about what separates the 20% — and it wasn't more volume. It was signal, sequencing, and timing. Shoaib G.M. went deeper on signal-based selling as the efficient alternative to spray-and-pray.</p>
+      <p>Pricing came up three times, and the direction was consistent. Tjitte Joosten walked through hybrid models and AI-cost-aware pricing; Krzysztof Szyszkiewicz covered tiering, usage-based models, and AI add-ons; Romy Kotler-de Groot tied pricing shifts into AI adoption and efficient growth. The throughline: <b>pricing is a product decision now, not a spreadsheet one.</b></p>
+      <p>And the AI conversation evolved across the season. Maja Voje asked how AI transforms GTM; by the end, Jacco van der Kooij was describing AI-native sales organizations, and Richard Schenzel had a name for what works: high-performance revenue engines — hybrid human/AI motions where intent signals feed the right rep at the right moment.</p>
+      <h3>Where the experts disagreed</h3>
+      <p>The roadmap would be dishonest without the friction points. On outbound: some guests argued it's dead in an AI-filtered world; others — including those actively doing it — said cold outreach still works when it's surgically targeted. Both are right, at different stages and different price points. On PLG: Roelof Otten asked how product-led growth changes with AI agents and hybrid GTM — and the honest answer is that the classic "product as the only motion" play is getting harder. On content: Tommy Walker made the case for personal branding and AI-assisted authority; the counterweight, from the community episode: authority without community converts worse. Build both.</p>
+      <h3>The thread that runs through all 21</h3>
+      <p>If I had to compress the season into one line: <b>focus, align, systematize — then let AI and your community amplify it.</b></p>
+      <p>Nobody in 21 episodes said "raise more and hire faster." The operators who've been to $10M ARR talked about doing fewer things with more discipline, aligning the team on the same outcome, building systems that compound, and using the 2026 toolset — AI agents, intent signals, hybrid revenue engines — to execute the fundamentals faster.</p>
+      <p>That's the whole roadmap. The details are in the episodes, and this finale pulls the best of all 21 into one sitting.</p>
+      <p><em>🎧 Listen to the full season recap → [episode link] · Subscribe on Apple, Spotify, or YouTube so you don't miss Season 8.</em></p>
+    </div>
+  </section>
+
+  <!-- 3. GUEST KIT -->
+  <section id="guest">
+    <div class="kicker">03 · Guest Amplification</div>
+    <h2>Guest kit: 21 experts = 21 new audiences</h2>
+    <div class="h2sub">Most guests never promote their episode — not because they don't care, but because nobody hands them something ready. This makes it one click for all 21.</div>
+    <div class="post"><span class="tag">"Your episode is live" note <span class="fmt">· forward to each featured guest</span></span>Subject: You're in the Season 7 finale 🎉
+
+Hi [First name],
+
+Season 7 wrapped, and the finale episode is live: "How to Grow Your B2B SaaS to $10M ARR — Advice from 21 Experts."
+
+I pulled the single sharpest insight from each of the 21 conversations this season and wove them into one 31-minute roadmap. Your segment is in there, and I flagged you in the show notes.
+
+If you want to share it with your audience, I've made it easy — a ready-to-post note below, plus a pull-quote. No work required, just copy-paste.
+
+🎧 Listen here: [episode link]
+
+Thanks again — you were one of the best conversations of the season.
+Joran</div>
+    <div class="post"><span class="tag">Done-for-the-guest · LinkedIn <span class="fmt">· guest's POV</span></span>I joined 20 other founders and operators on the Grow Your B2B SaaS Podcast's Season 7 finale — a 31-minute roadmap on scaling from $10K MRR to $10M ARR.
+
+[Your name]'s segment on [your topic] sits alongside advice from [2-3 names] on pricing, community, outbound, and AI-driven GTM.
+
+If you're scaling a B2B SaaS, this is the most useful 31 minutes I've heard this season. 🎧 [episode link]</div>
+    <div class="post"><span class="tag">Done-for-the-guest · X <span class="fmt">· guest's POV</span></span>I'm in the @GrowB2BSaaS Season 7 finale — 21 experts, one roadmap: $10K MRR → $10M ARR.
+
+My take on [topic]: [one-line summary].
+
+Great company: [@guest1 @guest2 @guest3].
+
+31 minutes, worth it → [episode link]</div>
+    <div class="card">
+      <div class="meta"><b>Pull-quotes</b> (host-voice framings — not verbatim transcript; swap in exact audio lines if you have them)</div>
+      <blockquote>"80% of outbound fails — the fix isn't more volume, it's signal." <span style="color:var(--muted)">— S7E2 with Besnik Vrellaku</span></blockquote>
+      <blockquote>"Hire for the stage you're entering, not the stage you're leaving." <span style="color:var(--muted)">— S7E13 on people operations</span></blockquote>
+      <blockquote>"Pricing is a product decision now, not a spreadsheet one." <span style="color:var(--muted)">— S7E12 &amp; S7E15</span></blockquote>
+      <blockquote>"Authority without community converts worse. Build both." <span style="color:var(--muted)">— S7E8 &amp; S7E9</span></blockquote>
+    </div>
+  </section>
+
+  <!-- 4. LINKEDIN -->
+  <section id="linkedin">
+    <div class="kicker">04 · LinkedIn</div>
+    <h2>5 LinkedIn posts, ready to schedule</h2>
+    <div class="h2sub">Milestone hook, stat hook, pricing take, 2026 lens, personal reflection. One idea each, built to be scanned on mobile, every one ending in "listen here."</div>
+
+    <div class="post"><span class="tag">Post 1 <span class="fmt">· Milestone hook</span></span>Season 7 of the Grow Your B2B SaaS Podcast is a wrap.
+
+21 episodes. One question: how do you go from $10K MRR to $10M ARR?
+
+For the finale, I didn't just do a recap. I pulled the sharpest insight from each of the 21 conversations and built a single roadmap — the patterns that repeated, the numbers that surprised me, and the points where experts genuinely disagreed.
+
+The verdict: nobody said "raise more and hire faster."
+
+The operators who've actually made the climb talked about focus, alignment, stage-fit hiring, and systems that compound.
+
+Full 31-minute roadmap below. 🎧
+<span class="hashtags">#B2BSaaS #SaaSGrowth #10MARR</span></div>
+
+    <div class="post"><span class="tag">Post 2 <span class="fmt">· Stat hook</span></span>80% of outbound sales fails.
+
+That stat opened one of my favorite conversations this season — with Besnik Vrellaku (S7E2).
+
+The useful part was what came next: the 20% that works isn't louder, it's more signal-driven. Sequencing, timing, and intent beat volume in an AI-filtered world.
+
+That conversation is one of 21 distilled into a single roadmap episode on scaling to $10M ARR. 🎧 Link below.
+<span class="hashtags">#B2BSaaS #Outbound #SalesStrategy</span></div>
+
+    <div class="post"><span class="tag">Post 3 <span class="fmt">· Pricing take</span></span>Pricing is a product decision now. Not a spreadsheet one.
+
+Across three conversations this season (Tjitte Joosten, Krzysztof Szyszkiewicz, Romy Kotler-de Groot), the direction was consistent:
+
+→ Tiering is getting smarter
+→ Usage-based models are winning more seats
+→ AI add-ons are becoming a pricing lever of their own
+→ And AI costs need to be priced in, not absorbed
+
+If your pricing page hasn't changed in a year, that's the first thing to fix.
+
+All three conversations are summarized in the Season 7 finale. 🎧 [link]
+<span class="hashtags">#SaaS #PricingStrategy #Monetization</span></div>
+
+    <div class="post"><span class="tag">Post 4 <span class="fmt">· The 2026 lens</span></span>Ask 21 SaaS operators what changes in 2026 and one answer keeps coming back: AI didn't replace GTM — it rewired it.
+
+Hybrid sales motions. Intent signals feeding the right rep at the right moment. Revenue engines instead of growth hacks. That's what Jacco van der Kooij, Richard Schenzel, and Maja Voje walked us through this season.
+
+The finale stitches all of it into one roadmap: $10K MRR → $10M ARR. 🎧 Listen here: [episode link]
+<span class="hashtags">#AI #GTM #B2BSaaS</span></div>
+
+    <div class="post"><span class="tag">Post 5 <span class="fmt">· Personal reflection + soft CTA</span></span>21 episodes ago, I asked a question at the start of Season 7: what does it actually take to go from $10K MRR to $10M ARR?
+
+I didn't know the answer. I knew who to ask.
+
+21 conversations later, the answer isn't one thing — it's a sequence: focus, align, systematize, then amplify with AI and community.
+
+That's the Season 7 finale. 31 minutes, every lesson, one roadmap. If you're scaling a B2B SaaS, it's the episode I'd start with. 🎧 [episode link]
+<span class="hashtags">#Podcast #SaaSFounders #Scaling</span></div>
+  </section>
+
+  <!-- 5. THREAD -->
+  <section id="thread">
+    <div class="kicker">05 · X / Twitter</div>
+    <h2>A 9-tweet thread</h2>
+    <div class="h2sub">Each tweet stands alone. Hook first. Built to be screenshotted.</div>
+    <div class="post">1/ 21 experts. One question. One roadmap. 🧵
+How to grow your B2B SaaS to $10M ARR — distilled from every episode of Season 7:
+
+2/ The question that started the season:
+"How do you get from early validation at $10K MRR to meaningful scale at $10M ARR?"
+
+Nobody answered with a tactic.
+
+3/ The patterns that repeated:
+→ Focus (one ICP, one motion)
+→ Alignment (one definition of a good outcome)
+→ Stage-fit hiring
+→ Systems & community that compound
+
+4/ The stat that stopped me:
+80% of outbound sales fails (S7E2, Besnik Vrellaku).
+The 20% that works isn't louder — it's more signal-driven.
+
+5/ Pricing's 2026 shift (S7E12, S7E14, S7E15):
+Smarter tiering. Usage-based models. AI add-ons.
+Pricing is a product decision, not a spreadsheet one.
+
+6/ The AI throughline (S7E6, S7E16, S7E21):
+AI didn't replace GTM — it rewired it.
+Intent signals → the right rep at the right moment. Revenue engines, not growth hacks.
+
+7/ Where experts disagreed:
+→ Outbound: dead in an AI-filtered world, or just needs surgical targeting?
+→ PLG: still the play, or does hybrid GTM win 2026?
+Both answers are right — at different stages.
+
+8/ The whole season in one line:
+Focus, align, systematize — then let AI and your community amplify it.
+
+9/ The full roadmap is live — 31 minutes, 21 experts, one episode.
+🎧 → [episode link]
+Follow @[joran-handle] for the SaaS scaling conversation.</div>
+  </section>
+
+  <!-- 6. VIDEO -->
+  <section id="video">
+    <div class="kicker">06 · Short-form video</div>
+    <h2>2 audiogram / vertical scripts</h2>
+    <div class="h2sub">Value-add (your show is audio-first): text-on-screen/audiogram ready. If you record video in a future season, we upgrade these to full vertical clips.</div>
+
+    <div class="script">
+      <b>Script 1 — "80% fails" (32s)</b>
+      <div class="hook">HOOK (0–3s): "80% of outbound sales fails. Here's what the 20% does differently."</div>
+      <div class="beat"><span class="t">3–12s</span>"That stat opened my conversation with Besnik Vrellaku on the podcast this season."</div>
+      <div class="beat"><span class="t">12–26s</span>"The 20% that works isn't louder or faster. It's more signal-driven — the right person, the right moment, the right sequence. Volume is the old game."</div>
+      <div class="beat"><span class="t">26–32s</span>"Full breakdown in the Season 7 finale. Link in comments — press play."</div>
+    </div>
+
+    <div class="script">
+      <b>Script 2 — "The pricing page is a product decision" (30s)</b>
+      <div class="hook">HOOK (0–3s): "If your SaaS pricing page hasn't changed in a year, start here."</div>
+      <div class="beat"><span class="t">3–12s</span>"Across three pricing conversations this season, the direction was consistent: smarter tiering, usage-based models, AI add-ons."</div>
+      <div class="beat"><span class="t">12–26s</span>"And AI costs? They're not an expense line anymore — they're a pricing lever. Price them in."</div>
+      <div class="beat"><span class="t">26–30s</span>"One 31-minute episode, 21 experts. Press play → [link]"</div>
+    </div>
+  </section>
+
+  <!-- 7. NEWSLETTER -->
+  <section id="newsletter">
+    <div class="kicker">07 · Newsletter</div>
+    <h2>Newsletter edition</h2>
+    <div class="h2sub">3 subject-line options, preview text, and a complete send.</div>
+    <div class="card">
+      <p><b>Subject line options:</b></p>
+      <ul class="clean">
+        <li>A: 21 experts, one roadmap to $10M ARR</li>
+        <li>B: The Season 7 finale is the episode to start with</li>
+        <li>C: What 21 SaaS operators actually said about scaling</li>
+      </ul>
+      <p><b>Preview text:</b> I distilled 21 conversations into one 31-minute roadmap. Nobody said "raise more."</p>
+      <hr style="border:none;border-top:1px dashed var(--line);margin:16px 0">
+      <p>Season 7 of the Grow Your B2B SaaS Podcast wrapped this week — and I did something I've wanted to do all year. Instead of another interview, I went back through all 21 conversations and pulled the sharpest insight from each one.</p>
+      <p>The result is the Season 7 finale: one 31-minute roadmap from $10K MRR to $10M ARR.</p>
+      <p>Three things that surprised me:</p>
+      <ul class="clean">
+        <li>The stat that opened the outbound episode: 80% of outbound fails. The fix isn't volume — it's signal.</li>
+        <li>Every pricing guest said the same thing in different words: pricing is a product decision now.</li>
+        <li>The AI story isn't "AI replaces sales" — it's "AI rewires the revenue engine."</li>
+      </ul>
+      <p>And the single thread through all 21 conversations? Focus, alignment, and systems that compound. Nobody said "hire faster."</p>
+      <p>🎧 Listen to the finale here → [episode link]</p>
+      <p>Season 8 is coming — reply and tell me which topic you want covered.</p>
+    </div>
+  </section>
+
+  <!-- 8. QUOTE GRAPHICS -->
+  <section id="quotes">
+    <div class="kicker">08 · Quote graphics</div>
+    <h2>3 pull-quote graphics</h2>
+    <div class="h2sub">Ready for Canva. Design spec below.</div>
+    <div class="quote">"80% of outbound fails — the fix isn't more volume, it's signal."<span class="src">Season 7, S7E2 with Besnik Vrellaku</span></div>
+    <div class="quote">"Hire for the stage you're entering, not the stage you're leaving."<span class="src">S7E13 · People operations</span></div>
+    <div class="quote">"Focus, align, systematize — then amplify."<span class="src">Season 7 finale · 21 experts</span></div>
+    <p style="color:var(--muted);font-size:14px">Design spec: 1080×1080, dark background (#0d1117), quote in large white bold sans, host + episode in accent blue bottom-left, "Grow Your B2B SaaS" wordmark top-right. Consistent template across all.</p>
+  </section>
+
+  <!-- 9. CALENDAR -->
+  <section id="calendar">
+    <div class="kicker">09 · Distribution plan</div>
+    <h2>4-week distribution plan, scheduled for you</h2>
+    <div class="h2sub">Here's the part that matters: <b>you don't post any of this.</b> We map every asset across four weeks, load it into your scheduler, and you approve the whole batch in about five minutes. The mix follows a founder-optimized ratio: 40% education, 30% story, 20% POV, 10% offer. Every asset ends in a "listen here" CTA.</div>
+
+    <div class="wk">Week 1 — Launch</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>Episode</td><td><b>Publish with new SEO title + show notes</b> · Post 1 (milestone) · X thread</td></tr>
+      <tr><td>Tue</td><td>Newsletter</td><td><b>Full edition</b> (subject A)</td></tr>
+      <tr><td>Wed</td><td>Reels/TikTok</td><td><b>Audiogram Script 1</b> + Quote graphic 1</td></tr>
+      <tr><td>Thu</td><td>Email → guests</td><td><b>Send "your episode is live" notes</b> to all 21 featured guests · Post 2 (stat hook)</td></tr>
+      <tr><td>Fri</td><td>X + IG</td><td>Quote graphics 2–3</td></tr>
+    </table>
+
+    <div class="wk">Week 2 — Depth</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>Blog</td><td><b>Publish SEO article</b> on getreditus.com, link to episode · Post 3 (pricing)</td></tr>
+      <tr><td>Wed</td><td>Reels/TikTok</td><td><b>Audiogram Script 2</b> · Repost thread with new hook</td></tr>
+      <tr><td>Fri</td><td>LinkedIn</td><td><b>Post 4</b> (2026 AI lens)</td></tr>
+    </table>
+
+    <div class="wk">Week 3 — Engagement</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 5</b> (personal reflection) · Guest repost wave begins</td></tr>
+      <tr><td>Wed</td><td>Newsletter</td><td>Follow-up: "the one lesson that stuck"</td></tr>
+      <tr><td>Fri</td><td>X</td><td><b>Poll:</b> "Outbound: dead or just needs targeting?" — drives comments</td></tr>
+    </table>
+
+    <div class="wk">Week 4 — Payoff</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>Distribution</td><td>Cross-post the blog article (LinkedIn Articles / Medium)</td></tr>
+      <tr><td>Wed</td><td>X</td><td>Top-quote graphic from the finale</td></tr>
+      <tr><td>Fri</td><td>X + LinkedIn</td><td>Share episode stats + publicly thank the 21 guests (tag them → more sharing)</td></tr>
+    </table>
+  </section>
+
+  <div class="final">
+    <h2>This is one episode.</h2>
+    <p style="color:var(--muted);max-width:560px;margin:0 auto 22px">18+ assets, five platforms, a full month of distribution, 21 guest audiences to tap — all pulled from a single episode and written in your voice. Imagine this landing in your inbox every time you publish, with nothing left for you to do but hit post.</p>
+    <a class="cta" href="mailto:hello@episodeloop.com?subject=Let's%20talk%20EpisodeLoop">Email me to get started →</a>
+    <p style="color:var(--muted);font-size:14px;margin-top:16px">Or just reply to my email. Either way, this pack is yours to keep.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    Made by <b>EpisodeLoop</b> · <a class="mail" href="mailto:hello@episodeloop.com">hello@episodeloop.com</a><br>
+    Created from publicly available episode content, shared free with our best wishes.
+  </div>
+</footer>
+
+</body>
+</html>

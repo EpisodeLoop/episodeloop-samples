@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EpisodeLoop — Free Content Pack for The Fractional Operator (Ep #8)</title>
+<meta name="description" content="A full listener-growth pack made by EpisodeLoop from episode #8 of The Fractional Operator Podcast." />
+<meta name="robots" content="noindex" />
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --ink:#e6edf3; --muted:#9aa5b1;
+    --accent:#5b8cff; --accent2:#7c5bff; --line:#232a34; --ok:#3fb950; --amber:#d29922;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  header{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);z-index:10}
+  .headrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .brand span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .navpill{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+  .hero{padding:52px 0 30px}
+  .badge{display:inline-block;background:rgba(63,185,80,.12);color:var(--ok);border:1px solid rgba(63,185,80,.3);font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{color:var(--muted);font-size:18px}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:16px 20px;margin:22px 0;color:var(--muted);font-size:15px}
+  .note b{color:var(--ink)}
+  .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin:20px 0}
+  .toc h4{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin-left:18px;color:var(--ink);font-size:15px;columns:2;column-gap:28px}
+  .toc li{padding:3px 0}
+  .toc a{color:var(--ink);text-decoration:none}
+  .toc a:hover{color:var(--accent)}
+  section{padding:30px 0;border-top:1px solid var(--line)}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  h2{font-size:25px;letter-spacing:-.01em;margin-bottom:8px}
+  .h2sub{color:var(--muted);font-size:15px;margin-bottom:18px}
+  h3{font-size:17px;margin:20px 0 6px}
+  p{margin-bottom:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .card .meta{color:var(--muted);font-size:14px;margin-bottom:10px}
+  ul.clean{list-style:none;margin:10px 0}
+  ul.clean li{padding:4px 0 4px 22px;position:relative}
+  ul.clean li:before{content:"→";position:absolute;left:0;color:var(--accent)}
+  .ts{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600;margin-right:8px}
+  .post{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;white-space:pre-line;font-size:15px}
+  .post .tag{display:block;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+  .post .fmt{color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0}
+  .hashtags{color:var(--accent);font-size:14px}
+  blockquote{border-left:3px solid var(--accent2);padding-left:16px;color:var(--ink);margin:8px 0}
+  .article p{color:#c9d3de}
+  .article h3{color:var(--ink)}
+  .metabar{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:14px;border-bottom:1px dashed var(--line);padding-bottom:12px}
+  .metabar b{color:var(--ink)}
+  .script{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .script .hook{background:var(--panel2);border-radius:8px;padding:10px 14px;margin:8px 0;font-weight:600}
+  .script .beat{display:flex;gap:12px;margin:7px 0;font-size:15px}
+  .script .beat .t{flex:none;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums;width:52px}
+  .quote{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:12px;font-size:18px;font-weight:600;line-height:1.4;position:relative}
+  .quote .src{display:block;margin-top:10px;font-size:13px;font-weight:500;color:var(--muted)}
+  .caltable{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+  .caltable th,.caltable td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  .caltable th{background:var(--panel2);color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+  .caltable td b{color:var(--accent)}
+  .wk{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);margin:16px 0 6px}
+  .cta{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:12px;font-size:16px;margin-top:6px}
+  a.mail{color:var(--accent);text-decoration:none}
+  footer{padding:44px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  .final{text-align:center;padding:48px 0}
+  .value{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+  .value div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
+  .value b{display:block;color:var(--accent);font-size:20px}
+  @media(max-width:600px){.hero h1{font-size:27px}.toc ol{columns:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap headrow">
+    <div class="brand">Episode<span>Loop</span></div>
+    <div class="navpill">Free growth pack · prepared for Mike Nelson</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge">FREE SAMPLE · BUILT FROM YOUR EPISODE #8</div>
+    <h1>One episode, <em>a month of listener growth.</em></h1>
+    <p class="sub">The Fractional Operator · "Fractional Client Success: Retention That Drives Growth"</p>
+  </div>
+
+  <div class="note">
+    Hi Mike. This is a real, finished listener-growth pack built entirely from your episode #8 with Timothy Judson. Nothing here is a template. Every title, chapter, post, and script is written in your voice from what you actually published. <b>It's yours to use, free, with no strings.</b> This is exactly what you'd receive from EpisodeLoop for every episode you release.
+  </div>
+
+  <div class="value">
+    <div><b>18+</b> ready-to-publish assets</div>
+    <div><b>5</b> platforms covered</div>
+    <div><b>4 weeks</b> of scheduled content</div>
+    <div><b>19</b> timestamped chapters</div>
+  </div>
+
+  <div class="toc">
+    <h4>What's inside this pack</h4>
+    <ol>
+      <li><a href="#notes">SEO title options + chapters + show notes</a></li>
+      <li><a href="#blog">SEO blog article (~1,050 words)</a></li>
+      <li><a href="#guest">Guest amplification kit</a></li>
+      <li><a href="#linkedin">5 LinkedIn posts</a></li>
+      <li><a href="#thread">X / Twitter thread</a></li>
+      <li><a href="#video">2 short-form video scripts</a></li>
+      <li><a href="#newsletter">Newsletter edition</a></li>
+      <li><a href="#quotes">Quote graphics</a></li>
+      <li><a href="#calendar">4-week content calendar</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. DISCOVERABILITY -->
+  <section id="notes">
+    <div class="kicker">01 · Discoverability</div>
+    <h2>SEO'd title, chapters &amp; show notes</h2>
+    <div class="h2sub">Built to get this episode found in Apple, Spotify, and Google search — not just heard by subscribers.</div>
+    <div class="card">
+      <div class="meta"><b>SEO title options</b> (search-intent up front)</div>
+      <ul class="clean">
+        <li><b>How Fractional Client Success Drives Growth &amp; Retention (with Timothy Judson) — The Fractional Operator #8</b> — leads with the search phrase, adds guest search demand.</li>
+        <li><b>Fractional Client Success: Why Serving Existing Customers Is the Fastest Path to Growth — Ep #8</b> — the episode's core claim as a CTR hook.</li>
+        <li><b>Client Success for Fractional Leaders: Retention, Onboarding &amp; Expansion Revenue (Ep #8)</b> — matches how fractional operators search topics.</li>
+        <li><b>Why Your Business Needs a Client Success Leader (Even Fractionally) — Ep #8 with Timothy Judson</b> — question-form hook for Google/YouTube.</li>
+      </ul>
+      <h3>Chapters + timestamps (50:42) — real, from the published description</h3>
+      <ul class="clean">
+        <li><span class="ts">00:00</span> Introduction &amp; Hourglass SaaS</li>
+        <li><span class="ts">00:49</span> Meet Timothy Judson</li>
+        <li><span class="ts">02:02</span> What "Fractional" Really Means</li>
+        <li><span class="ts">02:53</span> What Is Client Success?</li>
+        <li><span class="ts">05:36</span> Signs Your Company Needs a Client Success Leader</li>
+        <li><span class="ts">07:58</span> Growing Revenue Through Existing Customers</li>
+        <li><span class="ts">08:29</span> Customer Success Beyond Retention</li>
+        <li><span class="ts">12:03</span> How Timothy Structures Fractional Engagements</li>
+        <li><span class="ts">15:10</span> The Client Onboarding Process</li>
+        <li><span class="ts">19:38</span> Working Yourself Out of a Job</li>
+        <li><span class="ts">21:14</span> Measuring Business Gaps &amp; ROI</li>
+        <li><span class="ts">24:23</span> How Timothy Finds Clients</li>
+        <li><span class="ts">26:44</span> The Fractional Sales &amp; Marketing Roller Coaster</li>
+        <li><span class="ts">31:55</span> Why Cold Calling Still Works</li>
+        <li><span class="ts">36:38</span> Trends Driving Fractional Leadership</li>
+        <li><span class="ts">42:14</span> Enterprise vs. Small Business Challenges</li>
+        <li><span class="ts">44:36</span> Timothy's Best Advice for Fractional Operators</li>
+        <li><span class="ts">47:40</span> Where AI Fits into Customer Success</li>
+        <li><span class="ts">50:07</span> Final Thoughts &amp; Resources</li>
+      </ul>
+      <h3>Paste-ready description</h3>
+      <p><b>How fractional client success drives retention — and why serving existing customers is the fastest path to growth.</b> Timothy Judson, Principal and Fractional Client Success Leader at Client Success Advisor, joins Mike Nelson on The Fractional Operator to explain how strategic client success improves retention, uncovers new revenue opportunities, and helps businesses scale sustainably. In this episode: the 5 signs you need a client success leader, why the fastest path to growth is serving existing customers better, how Timothy structures fractional engagements (including working himself out of a job), the onboarding process that sets retention up from day one, why cold calling still works, where AI fits into client success, and the real enterprise vs. small-business differences. 🎧 Listen now → [episode link] · Subscribe on Apple, Spotify, or YouTube · New episodes every Thursday.</p>
+    </div>
+  </section>
+
+  <!-- 2. BLOG -->
+  <section id="blog" class="article">
+    <div class="kicker">02 · SEO Blog Article</div>
+    <h2>Fractional Client Success: Why Retention Is the Fastest Path to Growth</h2>
+    <div class="metabar">
+      <span><b>Word count:</b> ~1,050</span>
+      <span><b>Primary keyword:</b> fractional client success</span>
+      <span><b>Meta:</b> Why the fastest path to growth is serving existing customers better — fractional client success, retention systems, and expansion revenue.</span>
+    </div>
+    <div class="card">
+      <p>Every fractional operator I know is out there chasing the same thing: more clients. New logos, new retainers, new inbound. And every single one of them is leaving money sitting in the accounts they already have.</p>
+      <p>That's the conversation I wanted to have on this episode of The Fractional Operator. Timothy Judson — Principal and Fractional Client Success Leader at Client Success Advisor — has spent his career showing companies that their existing customers are the most underused growth asset they own. Here's what that actually looks like in practice.</p>
+      <h3>First, what does "fractional client success" even mean?</h3>
+      <p>Before we get into tactics, Timothy and I nailed down the term itself. Client success is the discipline of making sure customers actually get the outcome they hired you for — and that the business proves it. Do it fractionally and you get exactly what you'd expect from fractional leadership: senior-level expertise, on a schedule and scope you can afford, without a full-time hire you can't justify yet.</p>
+      <p>The key distinction we kept coming back to: <b>client success is not customer support.</b> Support answers tickets. Client success owns outcomes. If a client churns because nobody tracked whether they got value, that's not a support failure — that's a missing client success function.</p>
+      <h3>The five signs you need a client success leader</h3>
+      <p>One of the most practical stretches of the conversation was Timothy's list of signs that a company needs this function — even on a fractional basis:</p>
+      <ul class="clean">
+        <li>Retention is slipping and you don't know why</li>
+        <li>You keep winning new logos but revenue isn't compounding</li>
+        <li>Nobody can articulate, with data, whether customers get value</li>
+        <li>Expansion revenue is an accident, not a system</li>
+        <li>Your "customer health" is vibes, not metrics</li>
+      </ul>
+      <p>If more than two of those sound familiar, the episode walks through exactly how Timothy diagnoses the gap and where he starts.</p>
+      <h3>The fastest path to growth is serving existing customers better</h3>
+      <p>This was the line I kept coming back to after we recorded. The fastest path to growth isn't a bigger pipeline — it's the customers you already have, served better, expanded systematically.</p>
+      <p>Here's the mechanism. Existing customers are the cheapest revenue you'll ever get: no CAC, already trust you, already integrated. Retention compounds. A small lift in retention plus a small lift in expansion revenue changes the math of an entire business — and it's almost always easier than winning the same revenue in new logos.</p>
+      <p>The catch, and Timothy said this bluntly: it requires a structure. Renewals, onboarding, health checks, expansion plays — each one a system, not a hope. That's the difference between retention as a byproduct and retention as a strategy.</p>
+      <h3>The onboarding moment that decides everything</h3>
+      <p>We spent real time on onboarding, because that's where retention is actually won. Timothy's approach starts the moment the contract signs: a defined onboarding process, clear milestones, and an explicit conversation about what success looks like — measured, not assumed.</p>
+      <p>And here's the counterintuitive part of his model: he works to make himself unnecessary. The segment is literally called "working yourself out of a job." A fractional engagement done right leaves the client with the systems, so the value outlives the contract. That's how you turn a retainer into a referral engine.</p>
+      <h3>Why cold calling still works</h3>
+      <p>We also talked about the side most operators avoid: finding clients. Timothy runs on the fractional sales and marketing roller coaster like everyone else, but he's clear that cold outreach still works — when it's targeted, consistent, and built around a specific outcome you can prove. The episode digs into how he positions client success as an ROI conversation, not a nice-to-have.</p>
+      <h3>Where AI fits (and where it doesn't)</h3>
+      <p>We closed on AI. Timothy's take is practical: AI can systematize the tracking — health scores, churn signals, expansion triggers — but the judgment about what a customer actually needs still comes from a human who understands outcomes. Use the tools to spot the risk; keep the relationship human.</p>
+      <h3>The bottom line</h3>
+      <p>If you're a fractional operator or an agency owner, the lesson from this episode is simple: your existing customers are your best growth channel, and you're probably leaving it untapped. Retention isn't a support function — it's a growth strategy. Build the systems, prove the outcomes, and the expansion revenue follows.</p>
+      <p><em>🎧 Listen to the full conversation with Timothy Judson → [episode link] · Subscribe to The Fractional Operator so you don't miss an episode.</em></p>
+    </div>
+  </section>
+
+  <!-- 3. GUEST KIT -->
+  <section id="guest">
+    <div class="kicker">03 · Guest Amplification</div>
+    <h2>Guest kit: make it one-click for Timothy</h2>
+    <div class="h2sub">Most guests never promote their episode — not because they don't care, but because nobody hands them something ready. This makes it one click.</div>
+    <div class="post"><span class="tag">"Your episode is live" note <span class="fmt">· forward to Timothy Judson</span></span>Subject: Your episode is live 🎉
+
+Hi Timothy,
+
+The episode is live: "Fractional Client Success: Retention That Drives Growth" — The Fractional Operator #8.
+
+I really appreciate you being so open about how you structure engagements — the "working yourself out of a job" segment is going to hit home for a lot of operators. You're flagged in the show notes and I've quoted you in the blog article too.
+
+If you want to share it with your audience, I've made it one-click — a ready-to-post note below plus a pull-quote. No work required, just copy-paste.
+
+🎧 Listen here: [episode link]
+
+Thanks again,
+Mike</div>
+    <div class="post"><span class="tag">Done-for-the-guest · LinkedIn <span class="fmt">· guest's POV</span></span>New episode of The Fractional Operator — I joined Mike Nelson to talk about why client success is the fastest path to growth.
+
+We covered the signs you need a client success leader, why onboarding decides retention, and how I structure fractional engagements (including working myself out of a job).
+
+If you're a fractional operator or agency owner leaving revenue in existing accounts, this one's for you. 🎧 [episode link]</div>
+    <div class="post"><span class="tag">Done-for-the-guest · X <span class="fmt">· guest's POV</span></span>Joined @[mike-handle] on The Fractional Operator to talk client success:
+→ 5 signs you need a CS leader
+→ why onboarding decides retention
+→ expansion revenue as a system, not an accident
+
+The fastest path to growth is serving existing customers better. 🎧 [episode link]</div>
+    <div class="card">
+      <div class="meta"><b>Pull-quotes</b> (host-voice framings — not verbatim transcript; swap in exact audio lines if available)</div>
+      <blockquote>"The fastest path to growth is serving your existing customers better." <span style="color:var(--muted)">— Timothy Judson</span></blockquote>
+      <blockquote>"Support answers tickets. Client success owns outcomes." <span style="color:var(--muted)">— Ep #8</span></blockquote>
+      <blockquote>"A fractional engagement done right leaves the client with the systems." <span style="color:var(--muted)">— Timothy Judson, on working yourself out of a job</span></blockquote>
+      <blockquote>"Retention isn't a support function — it's a growth strategy." <span style="color:var(--muted)">— Ep #8</span></blockquote>
+    </div>
+  </section>
+
+  <!-- 4. LINKEDIN -->
+  <section id="linkedin">
+    <div class="kicker">04 · LinkedIn</div>
+    <h2>5 LinkedIn posts, ready to schedule</h2>
+    <div class="h2sub">Core claim, distinction, listicle, counterintuitive, AI + reflection. One idea each, every one ending in "listen here."</div>
+
+    <div class="post"><span class="tag">Post 1 <span class="fmt">· Core claim hook</span></span>The fastest path to growth isn't a bigger pipeline.
+
+It's the customers you already have — served better, expanded systematically.
+
+That's the case Timothy Judson made on this week's The Fractional Operator, and it's the most useful 50 minutes I've recorded this year.
+
+Existing customers are the cheapest revenue you'll ever get: no CAC, already trust you, already integrated. Retention compounds.
+
+The catch? It requires systems — not hopes.
+
+Full conversation in the link. 🎧
+<span class="hashtags">#FractionalExec #ClientSuccess #CustomerRetention</span></div>
+
+    <div class="post"><span class="tag">Post 2 <span class="fmt">· The distinction</span></span>Client success is not customer support.
+
+Support answers tickets. Client success owns outcomes.
+
+If a client churns because nobody tracked whether they got value, that's not a support failure — it's a missing client success function.
+
+Most businesses don't have that function. Most can't justify a full-time hire for it. That's exactly what fractional client success is for.
+
+Timothy Judson walked us through the signs you need it — and where to start. 🎧 [episode link]
+<span class="hashtags">#FractionalLeadership #SaaS #CustomerSuccess</span></div>
+
+    <div class="post"><span class="tag">Post 3 <span class="fmt">· Listicle</span></span>5 signs your business needs a client success leader:
+
+1. Retention is slipping and you don't know why
+2. You keep winning new logos but revenue isn't compounding
+3. Nobody can prove, with data, that customers get value
+4. Expansion revenue is an accident, not a system
+5. "Customer health" is vibes, not metrics
+
+If two of these sound familiar, this episode is for you — Timothy Judson breaks down exactly how he diagnoses the gap. 🎧 [episode link]
+<span class="hashtags">#ClientSuccess #FractionalExec #AgencyOwner</span></div>
+
+    <div class="post"><span class="tag">Post 4 <span class="fmt">· Counterintuitive</span></span>The most counterintuitive thing Timothy Judson said this week:
+
+He works to make himself unnecessary.
+
+A fractional client success engagement done right leaves the client with the systems — so the value outlives the contract.
+
+That's how you turn a retainer into a referral engine.
+
+The whole model, in our latest episode. 🎧 [episode link]
+<span class="hashtags">#Fractional #Consulting #Referrals</span></div>
+
+    <div class="post"><span class="tag">Post 5 <span class="fmt">· AI + reflection + soft CTA</span></span>I asked Timothy Judson where AI fits into client success.
+
+His answer was refreshingly practical: AI can track the health scores, churn signals, and expansion triggers — but the judgment about what a customer actually needs still comes from a human who understands outcomes.
+
+Use the tools to spot the risk. Keep the relationship human.
+
+That conversation — plus cold calling, onboarding, and the fractional sales roller coaster — is live now. 🎧 [episode link]
+<span class="hashtags">#AI #ClientSuccess #FractionalOperator</span></div>
+  </section>
+
+  <!-- 5. THREAD -->
+  <section id="thread">
+    <div class="kicker">05 · X / Twitter</div>
+    <h2>A 9-tweet thread</h2>
+    <div class="h2sub">Each tweet stands alone. Hook first. Built to be screenshotted.</div>
+    <div class="post">1/ The fastest path to growth isn't a bigger pipeline. 🧵
+It's the customers you already have, served better and expanded systematically.
+Full breakdown from this week's episode with Timothy Judson:
+
+2/ First, the distinction that matters:
+Client success is NOT customer support.
+Support answers tickets. Client success owns outcomes.
+
+3/ 5 signs you need a client success leader:
+→ Retention slipping with no explanation
+→ New logos but revenue not compounding
+→ Nobody can prove customers get value
+→ Expansion revenue is an accident
+→ "Customer health" = vibes
+
+4/ The core claim:
+Existing customers are the cheapest revenue you'll ever get.
+No CAC. Already trust you. Already integrated.
+Retention compounds.
+
+5/ Where retention is actually won: onboarding.
+A defined process, clear milestones, and an explicit conversation about what success looks like — measured, not assumed.
+
+6/ The counterintuitive part:
+Timothy works to make himself unnecessary.
+Done right, a fractional engagement leaves the client with the systems.
+Retainer → referral engine.
+
+7/ The sales side:
+The fractional sales & marketing roller coaster is real. And cold calling still works — when it's targeted, consistent, and built around an outcome you can prove.
+
+8/ AI's role:
+AI tracks the health scores and churn signals.
+Humans make the judgment about what a customer needs.
+Use tools to spot risk. Keep relationships human.
+
+9/ Full episode: "Fractional Client Success: Retention That Drives Growth" — The Fractional Operator #8.
+🎧 → [episode link]
+Follow @[mike-handle] for practical fractional business conversations.</div>
+  </section>
+
+  <!-- 6. VIDEO -->
+  <section id="video">
+    <div class="kicker">06 · Short-form video</div>
+    <h2>2 audiogram / vertical scripts</h2>
+    <div class="h2sub">Value-add (your show is audio-first): text-on-screen/audiogram ready.</div>
+
+    <div class="script">
+      <b>Script 1 — "The fastest path to growth" (30s)</b>
+      <div class="hook">HOOK (0–3s): "The fastest path to growth isn't a bigger pipeline."</div>
+      <div class="beat"><span class="t">3–12s</span>"It's the customers you already have. No acquisition cost, already trust you, already integrated."</div>
+      <div class="beat"><span class="t">12–24s</span>"A small lift in retention plus a small lift in expansion changes the math of your whole business. And it's easier than winning the same revenue in new logos."</div>
+      <div class="beat"><span class="t">24–30s</span>"Full breakdown with Timothy Judson on The Fractional Operator. Press play → [link]"</div>
+    </div>
+
+    <div class="script">
+      <b>Script 2 — "Support vs. client success" (28s)</b>
+      <div class="hook">HOOK (0–3s): "Client success is not customer support."</div>
+      <div class="beat"><span class="t">3–12s</span>"Support answers tickets. Client success owns outcomes. If a client churns because nobody tracked value, that's not support's fault."</div>
+      <div class="beat"><span class="t">12–24s</span>"Most businesses don't have this function — and can't justify a full-time hire. That's exactly what fractional client success is for."</div>
+      <div class="beat"><span class="t">24–28s</span>"The 5 signs you need it are in this episode. → [link]"</div>
+    </div>
+  </section>
+
+  <!-- 7. NEWSLETTER -->
+  <section id="newsletter">
+    <div class="kicker">07 · Newsletter</div>
+    <h2>Newsletter edition</h2>
+    <div class="h2sub">3 subject-line options, preview text, and a complete send.</div>
+    <div class="card">
+      <p><b>Subject line options:</b></p>
+      <ul class="clean">
+        <li>A: The fastest path to growth isn't a bigger pipeline</li>
+        <li>B: Why retention is a growth strategy, not a support function</li>
+        <li>C: New episode: fractional client success with Timothy Judson</li>
+      </ul>
+      <p><b>Preview text:</b> The cheapest revenue you'll ever get is already paying you. Here's how to actually capture it.</p>
+      <hr style="border:none;border-top:1px dashed var(--line);margin:16px 0">
+      <p>This week on The Fractional Operator, Timothy Judson made a case that I keep replaying: the fastest path to growth isn't a bigger pipeline — it's the customers you already have, served better, expanded systematically.</p>
+      <p>Three things that stuck with me:</p>
+      <ul class="clean">
+        <li>Client success isn't support. Support answers tickets; client success owns outcomes.</li>
+        <li>The five signs you need a client success leader — if two fit, listen to this episode.</li>
+        <li>The counterintuitive model: Timothy works to make himself unnecessary, leaving the client with systems. That's how a retainer becomes a referral engine.</li>
+      </ul>
+      <p>Also on the episode: why cold calling still works, and where AI fits into client success (spoiler: tools spot the risk, humans keep the relationship).</p>
+      <p>🎧 Listen here → [episode link]</p>
+      <p>New episodes every Thursday. Reply and tell me what you want covered next.</p>
+    </div>
+  </section>
+
+  <!-- 8. QUOTE GRAPHICS -->
+  <section id="quotes">
+    <div class="kicker">08 · Quote graphics</div>
+    <h2>3 pull-quote graphics</h2>
+    <div class="h2sub">Ready for Canva. Design spec below.</div>
+    <div class="quote">"The fastest path to growth is serving your existing customers better."<span class="src">Timothy Judson · Ep #8</span></div>
+    <div class="quote">"Support answers tickets. Client success owns outcomes."<span class="src">The Fractional Operator · Ep #8</span></div>
+    <div class="quote">"Retention isn't a support function — it's a growth strategy."<span class="src">The Fractional Operator · Ep #8</span></div>
+    <p style="color:var(--muted);font-size:14px">Design spec: 1080×1080, dark background (#0d1117), quote in large white bold sans, host + episode in accent blue bottom-left, "The Fractional Operator" wordmark top-right. Consistent template across all.</p>
+  </section>
+
+  <!-- 9. CALENDAR -->
+  <section id="calendar">
+    <div class="kicker">09 · Distribution plan</div>
+    <h2>4-week distribution plan, scheduled for you</h2>
+    <div class="h2sub">Here's the part that matters: <b>you don't post any of this.</b> We map every asset across four weeks, load it into your scheduler, and you approve the whole batch in about five minutes. The mix follows a founder-optimized ratio: 40% education, 30% story, 20% POV, 10% offer. Every asset ends in a "listen here" CTA.</div>
+
+    <div class="wk">Week 1 — Launch</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Thu</td><td>Episode</td><td><b>Publish with new SEO title + show notes</b> · Post 1 (core claim) · X thread</td></tr>
+      <tr><td>Fri</td><td>Newsletter</td><td><b>Full edition</b> (subject A) · Audiogram Script 1 + Quote graphic 1</td></tr>
+      <tr><td>Sat</td><td>Email → guest</td><td><b>Send "your episode is live" note</b> to Timothy + done-for-guest posts</td></tr>
+    </table>
+
+    <div class="wk">Week 2 — Depth</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 2</b> (support vs. client success) · Publish <b>SEO article</b> on hourglasssaas.com</td></tr>
+      <tr><td>Thu</td><td>Reels/TikTok</td><td><b>Audiogram Script 2</b> · Post 3 (5 signs listicle)</td></tr>
+      <tr><td>Fri</td><td>X + IG</td><td>Quote graphics 2–3</td></tr>
+    </table>
+
+    <div class="wk">Week 3 — Engagement</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 4</b> (working yourself out of a job) · Guest repost wave begins</td></tr>
+      <tr><td>Wed</td><td>Newsletter</td><td>Follow-up: "the one lesson that stuck"</td></tr>
+      <tr><td>Fri</td><td>X</td><td><b>Poll:</b> "Where does client success live in your business?" — drives comments</td></tr>
+    </table>
+
+    <div class="wk">Week 4 — Payoff</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 5</b> (AI + reflection) · Cross-post blog article (LinkedIn Articles)</td></tr>
+      <tr><td>Wed</td><td>X</td><td>Top-quote graphic from the episode</td></tr>
+      <tr><td>Fri</td><td>X + LinkedIn</td><td>Share episode stats + thank Timothy publicly (tag → more sharing)</td></tr>
+    </table>
+  </section>
+
+  <div class="final">
+    <h2>This is one episode.</h2>
+    <p style="color:var(--muted);max-width:560px;margin:0 auto 22px">18+ assets, five platforms, a full month of distribution — all pulled from a single episode and written in your voice. Imagine this landing in your inbox every time you publish, with nothing left for you to do but hit post.</p>
+    <a class="cta" href="mailto:hello@episodeloop.com?subject=Let's%20talk%20EpisodeLoop">Email me to get started →</a>
+    <p style="color:var(--muted);font-size:14px;margin-top:16px">Or just reply to my email. Either way, this pack is yours to keep.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    Made by <b>EpisodeLoop</b> · <a class="mail" href="mailto:hello@episodeloop.com">hello@episodeloop.com</a><br>
+    Created from publicly available episode content, shared free with our best wishes.
+  </div>
+</footer>
+
+</body>
+</html>

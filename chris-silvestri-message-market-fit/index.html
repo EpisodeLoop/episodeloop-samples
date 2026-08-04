@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EpisodeLoop — Free Content Pack for The Message-Market Fit Podcast (Ep #048)</title>
+<meta name="description" content="A full content pack made by EpisodeLoop from episode #048 of The Message-Market Fit Podcast with Justin Blackman." />
+<meta name="robots" content="noindex" />
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --ink:#e6edf3; --muted:#9aa5b1;
+    --accent:#5b8cff; --accent2:#7c5bff; --line:#232a34; --ok:#3fb950; --amber:#d29922;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  header{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);z-index:10}
+  .headrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .brand span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .navpill{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+  .hero{padding:52px 0 30px}
+  .badge{display:inline-block;background:rgba(63,185,80,.12);color:var(--ok);border:1px solid rgba(63,185,80,.3);font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{color:var(--muted);font-size:18px}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:16px 20px;margin:22px 0;color:var(--muted);font-size:15px}
+  .note b{color:var(--ink)}
+  .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin:20px 0}
+  .toc h4{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin-left:18px;color:var(--ink);font-size:15px;columns:2;column-gap:28px}
+  .toc li{padding:3px 0}
+  .toc a{color:var(--ink);text-decoration:none}
+  .toc a:hover{color:var(--accent)}
+  section{padding:30px 0;border-top:1px solid var(--line)}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  h2{font-size:25px;letter-spacing:-.01em;margin-bottom:8px}
+  .h2sub{color:var(--muted);font-size:15px;margin-bottom:18px}
+  h3{font-size:17px;margin:20px 0 6px}
+  p{margin-bottom:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .card .meta{color:var(--muted);font-size:14px;margin-bottom:10px}
+  ul.clean{list-style:none;margin:10px 0}
+  ul.clean li{padding:4px 0 4px 22px;position:relative}
+  ul.clean li:before{content:"→";position:absolute;left:0;color:var(--accent)}
+  .ts{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600;margin-right:8px}
+  .post{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;white-space:pre-line;font-size:15px}
+  .post .tag{display:block;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+  .post .fmt{color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0}
+  .hashtags{color:var(--accent);font-size:14px}
+  blockquote{border-left:3px solid var(--accent2);padding-left:16px;color:var(--ink);margin:8px 0}
+  .article p{color:#c9d3de}
+  .article h3{color:var(--ink)}
+  .metabar{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:14px;border-bottom:1px dashed var(--line);padding-bottom:12px}
+  .metabar b{color:var(--ink)}
+  .script{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .script .hook{background:var(--panel2);border-radius:8px;padding:10px 14px;margin:8px 0;font-weight:600}
+  .script .beat{display:flex;gap:12px;margin:7px 0;font-size:15px}
+  .script .beat .t{flex:none;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums;width:52px}
+  .quote{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:12px;font-size:18px;font-weight:600;line-height:1.4;position:relative}
+  .quote .src{display:block;margin-top:10px;font-size:13px;font-weight:500;color:var(--muted)}
+  .caltable{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+  .caltable th,.caltable td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  .caltable th{background:var(--panel2);color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+  .caltable td b{color:var(--accent)}
+  .wk{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);margin:16px 0 6px}
+  .cta{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:12px;font-size:16px;margin-top:6px}
+  a.mail{color:var(--accent);text-decoration:none}
+  footer{padding:44px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  .final{text-align:center;padding:48px 0}
+  .value{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+  .value div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
+  .value b{display:block;color:var(--accent);font-size:20px}
+  @media(max-width:600px){.hero h1{font-size:27px}.toc ol{columns:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap headrow">
+    <div class="brand">Episode<span>Loop</span></div>
+    <div class="navpill">Free content pack · prepared for Chris Silvestri</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge">FREE SAMPLE · BUILT FROM YOUR EPISODE #048</div>
+    <h1>One episode, <em>discoverable, shareable, growth-ready.</em></h1>
+    <p class="sub">The Message-Market Fit Podcast · "Brand Voice Is Not a Feeling: Brand Ventriloquism &amp; Why 'Friendly' Means Nothing" (with Justin Blackman)</p>
+  </div>
+
+  <div class="note">
+    Hi Chris. This is a real, finished content pack built entirely from your episode #048. Nothing here is a template. Every title, post, and script is pulled from what you and Justin actually covered — vocabulary, tone, cadence, the Trifecta of Nothingness, VOC in the editing stage — written in your voice. <b>It's yours to publish, free, with no strings.</b> This is exactly what you'd receive from EpisodeLoop for every episode you release — built to get the show found, shared, and heard.
+  </div>
+
+  <div class="value">
+    <div><b>15+</b> ready-to-publish assets</div>
+    <div><b>5</b> platforms covered</div>
+    <div><b>4 weeks</b> of scheduled distribution</div>
+    <div><b>~6 hrs</b> of work, done for you</div>
+  </div>
+
+  <div class="toc">
+    <h4>What's inside this pack</h4>
+    <ol>
+      <li><a href="#notes">SEO'd titles + chapters + show notes</a></li>
+      <li><a href="#blog">SEO blog article (1,100 words)</a></li>
+      <li><a href="#linkedin">5 LinkedIn posts</a></li>
+      <li><a href="#thread">X / Twitter thread</a></li>
+      <li><a href="#video">Short-form video script</a></li>
+      <li><a href="#newsletter">Newsletter blurb</a></li>
+      <li><a href="#quotes">Quote-graphic specs</a></li>
+      <li><a href="#calendar">4-week distribution calendar</a></li>
+      <li><a href="#guestkit">Guest amplification kit (for Justin)</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. DISCOVERABILITY -->
+  <section id="notes">
+    <div class="kicker">01 · Discoverability Engine</div>
+    <h2>SEO'd title options, chapters &amp; show notes</h2>
+    <div class="h2sub">The hero: built to get your episode found in Apple, Spotify, and YouTube search.</div>
+    <div class="card">
+      <div class="meta"><b>Current title:</b> "#048 - Justin Blackman – Brand Voice Is Not a Feeling: Brand Ventriloquism &amp; Why 'Friendly' Means Nothing"</div>
+      <h3>Title options (search-intent first)</h3>
+      <ul class="clean">
+        <li><b>How to Define Your Brand Voice: Vocabulary, Tone &amp; Cadence (Justin Blackman)</b> — leads with the high-volume search phrase + the framework the episode teaches.</li>
+        <li><b>Brand Voice Isn't a Feeling: The 3 Measurable Components (w/ Justin Blackman)</b> — keeps your contrarian claim, adds click-through.</li>
+        <li><b>Why "Friendly, Human, Casual" Is Ruining Your Brand Voice — Justin Blackman</b> — targets the mistake searches; high intent for founders and copywriters.</li>
+        <li><b>Brand Voice Guide: Vocabulary, Tone &amp; Cadence, with Justin Blackman (TMMF #048)</b> — for YouTube/blog mirrors; adds "brand voice guide" keyword.</li>
+        <li><b>#048: Brand Ventriloquism — How to Sound Exactly Like Your Brand (Justin Blackman)</b> — for loyal listeners who love the coined concept.</li>
+      </ul>
+      <h3>Chapters &amp; timestamps (real, from your published show notes)</h3>
+      <ul class="clean">
+        <li><span class="ts">00:00</span> Intro &amp; welcome</li>
+        <li><span class="ts">02:44</span> Headline Project Lessons (100 headlines in 100 days)</li>
+        <li><span class="ts">06:07</span> Formulas To Intuition</li>
+        <li><span class="ts">07:45</span> AI And Mastery</li>
+        <li><span class="ts">10:04</span> Field Marketing Roots (Red Bull, Five Hour Energy)</li>
+        <li><span class="ts">12:45</span> Brand Ventriloquism</li>
+        <li><span class="ts">14:57</span> Defining Brand Voice</li>
+        <li><span class="ts">17:49</span> Measuring Voice Consistency</li>
+        <li><span class="ts">21:09</span> Voice Vs Personality</li>
+        <li><span class="ts">24:12</span> Inside Out Voice</li>
+        <li><span class="ts">26:03</span> Editing With Voice (VOC in editing, not writing)</li>
+        <li><span class="ts">27:19</span> B2B Clarity And Personality</li>
+        <li><span class="ts">28:28</span> Scaling And Evolving Voice</li>
+        <li><span class="ts">31:28</span> Building Voice Guidelines</li>
+        <li><span class="ts">34:35</span> Voice In Messaging Workflow</li>
+        <li><span class="ts">36:02</span> Using AI With Voice</li>
+        <li><span class="ts">38:42</span> Selling Voice To Stakeholders</li>
+        <li><span class="ts">40:21</span> Unmistakably Yourself Brands</li>
+        <li><span class="ts">43:05</span> Writing Like You Talk Myth</li>
+        <li><span class="ts">44:54</span> Learning Beyond Echo Chambers</li>
+        <li><span class="ts">47:10</span> Handwriting And Meditation</li>
+        <li><span class="ts">49:40</span> Wrap Up And Resources</li>
+      </ul>
+      <h3>SEO show notes (episode description)</h3>
+      <p>Brand voice is not a feeling — it's a system. In this episode of The Message-Market Fit Podcast, Chris Silvestri talks with Justin Blackman about his unconventional path to copywriting mastery: writing 100 headlines a day for 100 days, spending years doing face-to-face consumer sampling for Red Bull and Five Hour Energy (learning to read rooms in real-time), and eventually developing a mathematical approach to brand voice with three measurable components: <b>vocabulary, tone, and cadence</b>.</p>
+      <ul class="clean">
+        <li>Why "friendly, human, casual" is the worst way to define your brand (the Trifecta of Nothingness)</li>
+        <li>Why voice of customer belongs in the editing stage, not the writing stage</li>
+        <li>How to scale voice across a growing team — and across AI</li>
+        <li>What to include in voice guides (up to 100 pages for personal brands)</li>
+        <li>How to give your brand's voice room to evolve without losing what makes it distinct</li>
+        <li>Brand Ventriloquism: throwing your voice to sound exactly like the brand</li>
+      </ul>
+      <p>Whether you're a marketing leader trying to get stakeholders aligned on voice, a founder who's been told to "just be yourself," or a copywriter who keeps getting feedback that copy "doesn't sound right" without knowing why — this episode gives you the frameworks to fix it.</p>
+      <p>🎧 <b>Listen now</b> → [episode link] · Subscribe wherever you get podcasts.</p>
+    </div>
+  </section>
+
+  <!-- 2. BLOG -->
+  <section id="blog" class="article">
+    <div class="kicker">02 · SEO Blog Article</div>
+    <h2>Brand Voice Is Not a Feeling: How to Define Yours in 3 Measurable Parts</h2>
+    <div class="metabar">
+      <span><b>Word count:</b> ~1,100</span>
+      <span><b>Primary keyword:</b> how to define your brand voice</span>
+      <span><b>Meta:</b> Brand voice isn't "friendly, human, casual" — it's vocabulary, tone, and cadence. Justin Blackman's framework for defining and scaling a brand voice.</span>
+    </div>
+    <div class="card">
+      <p>Ask most founders to describe their brand voice and you'll get the same four words: friendly, human, casual.</p>
+      <p>Ask them what those words mean — what their brand would actually say, or never say, in a given situation — and the answer evaporates. "Friendly" describes a vibe, not a voice. It's a feeling, and you can't brief a writer with a feeling.</p>
+      <p>Justin Blackman calls this the Trifecta of Nothingness, and on episode #048 of The Message-Market Fit Podcast, he offers the antidote: a brand voice you can actually measure.</p>
+      <h3>Voice is a system, not a vibe</h3>
+      <p>Justin's path to this framework is as unconventional as the idea itself. He spent years doing face-to-face consumer sampling for Red Bull and Five Hour Energy, learning to read rooms in real-time — if your pitch doesn't land in three seconds on a street corner, you find out immediately. He built his portfolio by writing 100 headlines a day for 100 days.</p>
+      <p>That's the background that produced the core insight of this episode: brand voice breaks down into three measurable components.</p>
+      <ul class="clean">
+        <li><b>Vocabulary</b> — the words you use, and just as importantly, the words you refuse to use.</li>
+        <li><b>Tone</b> — the attitude you take toward the reader, the emotional register of the sentence.</li>
+        <li><b>Cadence</b> — the rhythm: sentence length, punctuation, the beat of the copy.</li>
+      </ul>
+      <p>When you can describe your voice in those three terms, you can brief it, test it, and scale it. When you can't, you're stuck with "friendly, human, casual" — and hoping everyone interprets it the same way. They won't.</p>
+      <h3>The Trifecta of Nothingness</h3>
+      <p>Here's why "friendly, human, casual" is worse than useless: it's undefinable, untestable, and unenforceable. Three different writers will produce three different voices from the same three adjectives, and none of them will be wrong — which means none of them is right.</p>
+      <p>What actually distinguishes brands is what they say and how they say it, specifically. A brand voice that sounds like the brand — not like a generic friendly company — is what Justin calls Brand Ventriloquism: throwing your voice so it sounds exactly like the brand, consistently, whoever's writing.</p>
+      <h3>Why voice of customer belongs in editing, not writing</h3>
+      <p>One of the sharpest points in the conversation: voice of customer (VOC) is an editing tool, not a writing engine.</p>
+      <p>If you write directly from customer language, you get a transcript, not a voice. But when you use VOC as the lens you edit through — checking whether the copy sounds like the person you're writing for would actually hear themselves in it — it becomes powerful.</p>
+      <p>The distinction matters more as AI tools get better at generating copy on demand. The people who can catch whether the output is on-voice are the ones who own the process. The people who can't are the ones who get "doesn't sound right" feedback forever.</p>
+      <h3>Scaling voice across a team — and across AI</h3>
+      <p>The episode also covers the practical question: once you've defined the voice, how do you keep it consistent as you scale?</p>
+      <p>Voice guidelines, done properly, are more than a mood board — for personal brands, Justin's guides run up to 100 pages, covering vocabulary, tone, cadence, examples, and anti-examples. The goal isn't a rulebook for its own sake; it's that every writer, every contractor, every AI prompt gets pointed at the same target.</p>
+      <p>And crucially: the voice needs room to evolve without losing what makes it distinct. A voice that can't change is a voice that's already outdated. The tension isn't between consistency and growth — it's between a defined system and an undefined vibe. One evolves deliberately. The other just drifts.</p>
+      <h3>What to do this week</h3>
+      <p>If you're a founder or marketing leader who's been told to "just be yourself" — or a copywriter drowning in "it doesn't sound right" feedback — start here:</p>
+      <ul class="clean">
+        <li>Write down the words your brand uses, and the words it never would. That's vocabulary.</li>
+        <li>Describe the attitude your brand takes toward the reader — not your company's personality, but how the copy feels. That's tone.</li>
+        <li>Look at your best-performing piece. Now look at its rhythm: sentence lengths, punctuation, pacing. That's cadence.</li>
+      </ul>
+      <p>Three columns on one page beats four adjectives every time.</p>
+      <p>This is exactly what Justin Blackman and I unpack on episode #048 of The Message-Market Fit Podcast — including how to scale voice across teams and AI, and why writing like you talk is a myth worth dropping.</p>
+      <p>🎧 <i>Listen to the full episode here</i> → [episode link] — and subscribe so you don't miss the next one.</p>
+    </div>
+  </section>
+
+  <!-- 3. LINKEDIN -->
+  <section id="linkedin">
+    <div class="kicker">03 · LinkedIn</div>
+    <h2>5 LinkedIn posts, ready to schedule</h2>
+    <div class="h2sub">One idea each, built to be scanned on mobile. Every post ends pointing back to the episode.</div>
+
+    <div class="post"><span class="tag">Post 1 <span class="fmt">· Contrarian hook</span></span>"Friendly. Human. Casual."
+
+If that's how you define your brand voice, you don't have a brand voice. You have the Trifecta of Nothingness.
+
+Justin Blackman's framework on this week's The Message-Market Fit Podcast breaks voice into three things you can actually measure:
+
+1. Vocabulary — the words you use, and refuse to use
+2. Tone — the attitude you take toward the reader
+3. Cadence — the rhythm of the copy
+
+You can brief a writer on those. You can't brief a writer on "friendly."
+
+Full episode in the comments. 🎧
+<span class="hashtags">#BrandVoice #Copywriting #Branding</span></div>
+
+    <div class="post"><span class="tag">Post 2 <span class="fmt">· The 100-headlines story</span></span>Justin Blackman wrote 100 headlines a day for 100 days to build his portfolio.
+
+Then he spent years doing face-to-face sampling for Red Bull and Five Hour Energy — learning to read rooms in real time, where a pitch either lands in three seconds or it doesn't.
+
+That's the training behind his brand voice framework: vocabulary, tone, and cadence. Three measurable components instead of three vague adjectives.
+
+We unpacked all of it on this week's episode. 🎧 [episode link]
+<span class="hashtags">#Copywriting #BrandVoice #Marketing</span></div>
+
+    <div class="post"><span class="tag">Post 3 <span class="fmt">· The VOC insight (for copywriters)</span></span>The voice of customer problem nobody talks about:
+
+VOC belongs in the editing stage — not the writing stage.
+
+Write from customer language and you get a transcript, not a voice. But edit through it — checking whether the copy sounds like the reader would hear themselves in it — and it becomes a superpower.
+
+That's from my conversation with Justin Blackman, and it's the kind of line that changes how you work.
+
+🎧 Listen here → [episode link]
+<span class="hashtags">#Copywriting #VoiceOfCustomer #B2BMarketing</span></div>
+
+    <div class="post"><span class="tag">Post 4 <span class="fmt">· The AI angle</span></span>Here's the uncomfortable part of AI copywriting:
+
+The gap that matters isn't who can generate copy. It's who can tell whether the copy is on-voice.
+
+When a brand voice is defined as vocabulary + tone + cadence, you can test the output — by hand or by AI. When it's defined as "friendly," nobody can, and the feedback loop is "it doesn't sound right" forever.
+
+Justin Blackman and I covered exactly this on the latest episode. 🎧 [episode link]
+<span class="hashtags">#AI #Copywriting #BrandVoice</span></div>
+
+    <div class="post"><span class="tag">Post 5 <span class="fmt">· Soft CTA</span></span>If you've ever been told to "just be yourself" with your brand — or you keep getting copy back that "doesn't sound right" — this episode is for you.
+
+Justin Blackman breaks brand voice into three measurable parts, shows why voice of customer is an editing tool, and how to scale voice across a team and AI.
+
+One episode, the frameworks to fix it.
+
+🎧 Listen here → [episode link] · Subscribe so you never miss an episode.
+<span class="hashtags">#BrandVoice #Marketing #Podcast</span></div>
+  </section>
+
+  <!-- 4. THREAD -->
+  <section id="thread">
+    <div class="kicker">04 · X / Twitter</div>
+    <h2>An 8-tweet thread</h2>
+    <div class="h2sub">Each tweet stands alone. Hook first. Built to be screenshotted.</div>
+    <div class="post">1/ "Friendly. Human. Casual."
+
+If that's your brand voice, you don't have one. You have the Trifecta of Nothingness.
+
+Justin Blackman broke brand voice into 3 measurable parts on TMMF #048 🧵
+
+2/ Brand voice = Vocabulary + Tone + Cadence.
+
+The words you use (and refuse to use).
+The attitude you take toward the reader.
+The rhythm of the copy.
+
+You can brief a writer on those. You can't brief a writer on "friendly."
+
+3/ How Justin built his voice:
+
+100 headlines a day, for 100 days.
+
+Then years doing face-to-face sampling for Red Bull and Five Hour Energy — where a pitch either lands in 3 seconds or it doesn't.
+
+4/ Brand Ventriloquism: throwing your voice so it sounds exactly like the brand — consistently, whoever's writing.
+
+The goal isn't a vibe. It's a system anyone can hit.
+
+5/ The VOC insight:
+
+Voice of customer belongs in the EDITING stage, not the writing stage.
+
+Write from customer language and you get a transcript, not a voice.
+
+6/ As AI gets better at generating copy, the gap that matters is who can catch whether output is on-voice.
+
+A measurable voice = testable output.
+A vibe = "doesn't sound right" forever.
+
+7/ Voice guides done right aren't mood boards — personal brands run up to 100 pages.
+
+Vocabulary, tone, cadence, examples, anti-examples. Every writer and every AI prompt pointed at the same target.
+
+8/ And the myth worth dropping: writing like you talk.
+
+We don't write like we talk. And once you accept that, defining the voice gets a lot easier.
+
+Full episode → [episode link]
+
+Follow @ChrisSilvestri for more on message-market fit.</div>
+  </section>
+
+  <!-- 5. VIDEO -->
+  <section id="video">
+    <div class="kicker">05 · Short-form video</div>
+    <h2>1 short-form video script (Reels / Shorts / audiogram)</h2>
+    <div class="h2sub">Hook in the first 3 seconds, one idea, clear payoff. Works as an audiogram with captions, or talking-head if you record video.</div>
+
+    <div class="script">
+      <b>Script — "The Trifecta of Nothingness" (35s)</b>
+      <div class="hook">HOOK (0–3s): "If your brand voice is 'friendly, human, casual' — you don't have one."</div>
+      <div class="beat"><span class="t">3–14s</span>"Justin Blackman calls those words the Trifecta of Nothingness. Three writers will produce three different voices from the same three adjectives — and none of them will be wrong, which means none is right."</div>
+      <div class="beat"><span class="t">14–28s</span>"The fix: break voice into what you can measure. Vocabulary — the words you use and refuse to use. Tone — the attitude toward the reader. Cadence — the rhythm of the copy."</div>
+      <div class="beat"><span class="t">28–35s</span>"Now you can brief it, test it, and scale it. Full framework on episode #048 of The Message-Market Fit Podcast. Link in bio. 🎧"</div>
+      <div style="color:var(--muted);font-size:13px;margin-top:8px">On-screen text: "friendly/human/casual = nothing" → "vocabulary + tone + cadence" → "measurable voice, not a vibe." · Format: audiogram or talking-head + text overlay.</div>
+    </div>
+  </section>
+
+  <!-- 6. NEWSLETTER -->
+  <section id="newsletter">
+    <div class="kicker">06 · Newsletter</div>
+    <h2>Newsletter blurb</h2>
+    <div class="h2sub">3 subject-line options plus a complete feature for your next send.</div>
+    <div class="card">
+      <p><b>Subject line options:</b></p>
+      <ul class="clean">
+        <li>A: Your brand voice isn't "friendly, human, casual"</li>
+        <li>B: Brand voice in 3 measurable parts (with Justin Blackman)</li>
+        <li>C: The Trifecta of Nothingness</li>
+      </ul>
+      <p><b>Body:</b></p>
+      <p>This week on The Message-Market Fit Podcast, I talked with Justin Blackman about why brand voice is not a feeling — and how to define it in three measurable components: vocabulary, tone, and cadence.</p>
+      <p>The trigger for the conversation: "friendly, human, casual" — what Justin calls the Trifecta of Nothingness. You can't brief a writer with a vibe. You can brief them with vocabulary, tone, and cadence.</p>
+      <p>We also covered why voice of customer belongs in the editing stage, not the writing stage, how to scale voice across a team and across AI, and why voice guides for personal brands can run up to 100 pages.</p>
+      <p>If you've ever been told to "just be yourself" — or keep getting copy back that "doesn't sound right" — this one gives you the frameworks to fix it.</p>
+      <p>🎧 <b>Listen here</b> → [episode link]</p>
+    </div>
+  </section>
+
+  <!-- 7. QUOTES -->
+  <section id="quotes">
+    <div class="kicker">07 · Quote graphics</div>
+    <h2>3 pull-quote graphics</h2>
+    <div class="h2sub">Host-voice framings from the published episode description (no verbatim transcript pulled — confirm before quoting directly). Ready for Canva.</div>
+    <div class="quote">"Brand voice = vocabulary + tone + cadence."<span class="src">The episode's core framework · TMMF #048</span></div>
+    <div class="quote">"Voice of customer belongs in the editing stage, not the writing stage."<span class="src">Key takeaway · TMMF #048</span></div>
+    <div class="quote">"Friendly, human, casual: the Trifecta of Nothingness."<span class="src">The episode's sharpest line · TMMF #048</span></div>
+    <p style="color:var(--muted);font-size:14px">Design spec: 1080×1080, dark background (#0d1117), quote in large white bold sans, "The Message-Market Fit Podcast" wordmark bottom-left in accent blue, episode number top-right. Consistent template across all.</p>
+  </section>
+
+  <!-- 8. CALENDAR -->
+  <section id="calendar">
+    <div class="kicker">08 · Distribution plan</div>
+    <h2>4-week distribution schedule</h2>
+    <div class="h2sub">Discovery assets publish with the episode; this schedule fans out the amplification so the episode keeps earning listeners for a month. We can load it into your scheduler and you approve in about five minutes.</div>
+
+    <div class="wk">Week 1 — Launch</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>Apple/Spotify/YT</td><td><b>New SEO'd title + chapters + show notes</b> go live</td></tr>
+      <tr><td>Mon</td><td>X</td><td><b>The 8-tweet thread</b></td></tr>
+      <tr><td>Wed</td><td>LinkedIn</td><td><b>Post 1</b> (contrarian hook) + link in comments</td></tr>
+      <tr><td>Fri</td><td>LinkedIn</td><td><b>Post 3</b> (VOC insight) + <b>Quote graphic 1</b></td></tr>
+    </table>
+
+    <div class="wk">Week 2 — Depth</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>Blog</td><td>Publish <b>SEO article</b> on conversionalchemy.net</td></tr>
+      <tr><td>Tue</td><td>LinkedIn</td><td><b>Post 2</b> (100-headlines story)</td></tr>
+      <tr><td>Thu</td><td>Reels/TikTok/Shorts</td><td><b>Video script</b> + <b>Quote graphic 2</b></td></tr>
+    </table>
+
+    <div class="wk">Week 3 — Guest amplification</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>Email</td><td><b>Guest share-kit</b> sent to Justin (see §09)</td></tr>
+      <tr><td>Wed</td><td>LinkedIn</td><td><b>Post 4</b> (AI angle)</td></tr>
+      <tr><td>Fri</td><td>Newsletter</td><td><b>Blurb</b> (subject B) + <b>Quote graphic 3</b></td></tr>
+    </table>
+
+    <div class="wk">Week 4 — Payoff</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 5</b> (soft CTA)</td></tr>
+      <tr><td>Wed</td><td>X</td><td>Repost thread with new hook + link to blog</td></tr>
+      <tr><td>Fri</td><td>All</td><td>"Did you catch #048?" close-out post</td></tr>
+    </table>
+  </section>
+
+  <!-- 9. GUEST KIT -->
+  <section id="guestkit">
+    <div class="kicker">09 · Guest amplification kit</div>
+    <h2>Ready-to-send kit for Justin Blackman</h2>
+    <div class="h2sub">Most guests never promote their appearance. This makes it one-click for Justin — so you reach his audience for free.</div>
+    <div class="card">
+      <h3>A. "Your episode is live" email (forward to Justin)</h3>
+      <p>Subject: Your TMMF episode is live 🎉</p>
+      <p>Hi Justin,</p>
+      <p>Episode #048 is live! 🎧 [episode link]</p>
+      <p>The vocabulary-tone-cadence framework was so clear that it's now how I'd define brand voice to anyone. I've pulled together a couple of ready-to-share posts for you below — feel free to post as-is or remix.</p>
+      <p>Thanks again for the conversation — and for the 100-headlines story, which I haven't stopped thinking about.</p>
+      <p>Best,<br>Chris</p>
+    </div>
+    <div class="card">
+      <h3>B. Done-for-the-guest posts (Justin's POV)</h3>
+      <p><b>LinkedIn:</b> I joined Chris Silvestri on The Message-Market Fit Podcast to talk about why brand voice is not a feeling. We broke it into three measurable components — vocabulary, tone, and cadence — and covered why "friendly, human, casual" is the worst way to define a brand, why voice of customer belongs in the editing stage, and how to scale voice across teams and AI. If you've ever gotten the feedback that copy "doesn't sound right," this one's for you. 🎧 Listen here → [episode link]</p>
+      <p><b>X:</b> New episode with @ChrisSilvestri on The Message-Market Fit Podcast 🎙️ We unpacked brand ventriloquism — why voice = vocabulary + tone + cadence, and why "friendly" means nothing. If you write copy or brief writers, this one's worth your commute. 🎧 [episode link]</p>
+      <p style="color:var(--muted);font-size:14px"><b>Why this matters:</b> every time a guest shares, you borrow their audience — the cheapest new listeners a show can get. We make it effortless so it actually happens.</p>
+    </div>
+  </section>
+
+  <div class="final">
+    <h2>This is one episode.</h2>
+    <p style="color:var(--muted);max-width:560px;margin:0 auto 22px">15+ assets, five platforms, a full month of distribution, all pulled from a single recording and written in your voice. Imagine this landing in your inbox every time you publish, with nothing left for you to do but hit post.</p>
+    <a class="cta" href="mailto:hello@episodeloop.com?subject=Let's%20talk%20EpisodeLoop">Email me to get started →</a>
+    <p style="color:var(--muted);font-size:14px;margin-top:16px">Or just reply to my email. Either way, this pack is yours to keep.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    Made by <b>EpisodeLoop</b> · <a class="mail" href="mailto:hello@episodeloop.com">hello@episodeloop.com</a><br>
+    Created from publicly available episode content, shared free with our best wishes.
+  </div>
+</footer>
+
+</body>
+</html>
