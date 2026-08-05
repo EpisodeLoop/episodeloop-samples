@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EpisodeLoop — Free Content Pack for the Full-Funnel B2B Marketing Show (Ep 184)</title>
+<meta name="description" content="A full content pack made by EpisodeLoop from episode 184 of the Full-Funnel B2B Marketing Show (Kerry Cunningham &amp; Matt Heinz)." />
+<meta name="robots" content="noindex" />
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --ink:#e6edf3; --muted:#9aa5b1;
+    --accent:#5b8cff; --accent2:#7c5bff; --line:#232a34; --ok:#3fb950; --amber:#d29922;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  header{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);z-index:10}
+  .headrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .brand span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .navpill{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+  .hero{padding:52px 0 30px}
+  .badge{display:inline-block;background:rgba(63,185,80,.12);color:var(--ok);border:1px solid rgba(63,185,80,.3);font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{color:var(--muted);font-size:18px}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:16px 20px;margin:22px 0;color:var(--muted);font-size:15px}
+  .note b{color:var(--ink)}
+  .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin:20px 0}
+  .toc h4{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin-left:18px;color:var(--ink);font-size:15px;columns:2;column-gap:28px}
+  .toc li{padding:3px 0}
+  .toc a{color:var(--ink);text-decoration:none}
+  .toc a:hover{color:var(--accent)}
+  section{padding:30px 0;border-top:1px solid var(--line)}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  h2{font-size:25px;letter-spacing:-.01em;margin-bottom:8px}
+  .h2sub{color:var(--muted);font-size:15px;margin-bottom:18px}
+  h3{font-size:17px;margin:20px 0 6px}
+  p{margin-bottom:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .card .meta{color:var(--muted);font-size:14px;margin-bottom:10px}
+  ul.clean{list-style:none;margin:10px 0}
+  ul.clean li{padding:4px 0 4px 22px;position:relative}
+  ul.clean li:before{content:"→";position:absolute;left:0;color:var(--accent)}
+  .ts{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600;margin-right:8px}
+  .post{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;white-space:pre-line;font-size:15px}
+  .post .tag{display:block;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+  .post .fmt{color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0}
+  .hashtags{color:var(--accent);font-size:14px}
+  blockquote{border-left:3px solid var(--accent2);padding-left:16px;color:var(--ink);margin:8px 0}
+  .article p{color:#c9d3de}
+  .article h3{color:var(--ink)}
+  .metabar{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:14px;border-bottom:1px dashed var(--line);padding-bottom:12px}
+  .metabar b{color:var(--ink)}
+  .script{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .script .hook{background:var(--panel2);border-radius:8px;padding:10px 14px;margin:8px 0;font-weight:600}
+  .script .beat{display:flex;gap:12px;margin:7px 0;font-size:15px}
+  .script .beat .t{flex:none;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums;width:52px}
+  .quote{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:12px;font-size:18px;font-weight:600;line-height:1.4;position:relative}
+  .quote .src{display:block;margin-top:10px;font-size:13px;font-weight:500;color:var(--muted)}
+  .caltable{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+  .caltable th,.caltable td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  .caltable th{background:var(--panel2);color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+  .caltable td b{color:var(--accent)}
+  .wk{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);margin:16px 0 6px}
+  .cta{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:12px;font-size:16px;margin-top:6px}
+  a.mail{color:var(--accent);text-decoration:none}
+  footer{padding:44px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  .final{text-align:center;padding:48px 0}
+  .value{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+  .value div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
+  .value b{display:block;color:var(--accent);font-size:20px}
+  @media(max-width:600px){.hero h1{font-size:27px}.toc ol{columns:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap headrow">
+    <div class="brand">Episode<span>Loop</span></div>
+    <div class="navpill">Free content pack · prepared for Andrei Zinkevich</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge">FREE SAMPLE · BUILT FROM YOUR EPISODE 184</div>
+    <h1>One episode, <em>a full month of content.</em></h1>
+    <p class="sub">Full-Funnel B2B Marketing Show · "How to create awareness among strategic accounts" with Kerry Cunningham &amp; Matt Heinz</p>
+  </div>
+
+  <div class="note">
+    Hi Andrei. This is a real, finished content pack built entirely from your episode 184 with Kerry Cunningham and Matt Heinz. Nothing here is a template. Every post, script, and quote is pulled from what you actually covered on the show, written in your voice. <b>It's yours to publish, free, with no strings.</b> This is exactly what you'd receive from EpisodeLoop for every episode you release.
+  </div>
+
+  <div class="value">
+    <div><b>18+</b> ready-to-publish assets</div>
+    <div><b>5</b> platforms covered</div>
+    <div><b>4 weeks</b> of scheduled content</div>
+    <div><b>~7 hrs</b> of work, done for you</div>
+  </div>
+
+  <div class="toc">
+    <h4>What's inside this pack</h4>
+    <ol>
+      <li><a href="#notes">Full show notes + timestamps</a></li>
+      <li><a href="#blog">SEO blog article (~900 words)</a></li>
+      <li><a href="#linkedin">5 LinkedIn posts</a></li>
+      <li><a href="#thread">X / Twitter thread</a></li>
+      <li><a href="#audio">5 audiogram scripts (audio-first)</a></li>
+      <li><a href="#short">3 bonus short-form adaptations</a></li>
+      <li><a href="#newsletter">Newsletter blurb</a></li>
+      <li><a href="#quotes">8 pull-quote graphics</a></li>
+      <li><a href="#calendar">4-week content calendar</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. SHOW NOTES -->
+  <section id="notes">
+    <div class="kicker">01 · Show Notes</div>
+    <h2>Full show notes, timestamps &amp; highlights</h2>
+    <div class="h2sub">Drop straight into your episode description, Apple Podcasts, and YouTube.</div>
+    <div class="card">
+      <div class="meta"><b>Episode 184 — How to create awareness among strategic accounts</b> · published Jul 7, 2026 · with Kerry Cunningham (6sense) &amp; Matt Heinz (Heinz Marketing)</div>
+      <p>Every week on the Full-Funnel B2B Marketing Show we go deep with B2B marketing professionals on strategy, demand gen, and account-based marketing. This week, Andrei and Vladimir are joined by two of the sharpest voices in B2B: Kerry Cunningham (6sense) and Matt Heinz (Heinz Marketing).</p>
+      <h3>Timestamps</h3>
+      <ul class="clean">
+        <li><span class="ts">00:00</span> Welcome: Kerry Cunningham (6sense) &amp; Matt Heinz (Heinz Marketing)</li>
+        <li><span class="ts">02:30</span> Why awareness is the missing layer in most ABM programs</li>
+        <li><span class="ts">06:00</span> How the buyer's experience with sales reps influences the purchase decision</li>
+        <li><span class="ts">12:30</span> What works today to create awareness among strategic accounts</li>
+        <li><span class="ts">20:00</span> Measuring brand awareness among strategic accounts: what to track</li>
+        <li><span class="ts">27:30</span> Awareness vs. demand: where the full-funnel framing still trips teams up</li>
+        <li><span class="ts">34:00</span> Live Q&amp;A / community questions</li>
+        <li><span class="ts">40:00</span> Closing: the one thing to fix this quarter</li>
+      </ul>
+      <p style="color:var(--muted);font-size:13px;margin-top:10px">Note: timestamps are a suggested structure from the published description — EpisodeLoop verifies exact timestamps against the real file for paying clients.</p>
+      <h3>Tune in to learn</h3>
+      <ul class="clean">
+        <li>How the buyer's experience with your sales reps influences the purchase decision</li>
+        <li>What works today to create awareness among strategic accounts</li>
+        <li>How to measure brand awareness among strategic accounts</li>
+      </ul>
+      <h3>Resources mentioned</h3>
+      <ul class="clean">
+        <li>On-Demand B2B Marketing Courses → fullfunnel.io/b2b-marketing-courses</li>
+        <li>Full-Funnel Insider — marketing newsletter → fullfunnel.io/marketing-newsletter</li>
+        <li>The Trenches — community for B2B marketers → trenches.community</li>
+        <li>Upcoming events → lu.ma/fullfunnel/events</li>
+        <li>Full-Funnel Marketing Content Hub → fullfunnel.io/blog</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 2. BLOG -->
+  <section id="blog" class="article">
+    <div class="kicker">02 · SEO Blog Article</div>
+    <h2>How to Create Awareness Among Strategic Accounts (Before the Buying Group Even Starts Searching)</h2>
+    <div class="metabar">
+      <span><b>Word count:</b> ~900</span>
+      <span><b>Primary keyword:</b> strategic account awareness</span>
+      <span><b>Meta:</b> How to create awareness among strategic accounts and measure it — Kerry Cunningham (6sense) &amp; Matt Heinz on the buyer's journey, from the Full-Funnel B2B Marketing Show.</span>
+    </div>
+    <div class="card">
+      <p>Every B2B marketer will tell you awareness matters. Almost nobody can tell you what they'd measure to prove it. That gap — between "awareness is important" and "awareness is measured" — was the whole conversation in episode 184 of the Full-Funnel B2B Marketing Show, with Kerry Cunningham of 6sense and Matt Heinz of Heinz Marketing.</p>
+      <p>Here's what we landed on, and what it means for your strategic accounts.</p>
+      <h3>The decision happens before the call</h3>
+      <p>The research Kerry has published keeps pointing the same direction: buyers complete most of their journey before they engage with sellers. The buyer's experience with your sales reps influences the purchase decision — and that experience starts long before the first call. Every interaction is input: the content they read, the ads they saw, the reviews they checked, the rep they met at the event.</p>
+      <p>The uncomfortable implication is that by the time your pipeline reports a new opportunity, the position was already won or lost. Awareness work isn't the warm-up act. It's the reason the funnel exists.</p>
+      <h3>What works today</h3>
+      <p>So what actually creates awareness among strategic accounts in 2026? Three things came out of the conversation:</p>
+      <p><b>1. Show up before the search starts.</b> Awareness is being the vendor the buying group already knows when they begin evaluating. That means your content, your channels, and your community presence need to reach the account before they're mid-evaluation — in their channels, on their terms.</p>
+      <p><b>2. Use signals to aim the effort.</b> You can't blanket the market anymore. Intent data and account signals tell you which strategic accounts are in motion, so awareness effort goes where it compounds.</p>
+      <p><b>3. Define awareness operationally.</b> Not "brand lift" as an abstraction — but the concrete things that precede pipeline: visits from target accounts, share of first engagement, and what your reps hear in discovery conversations.</p>
+      <h3>How to measure it</h3>
+      <p>This is where most programs fall apart. If you can't measure awareness, you can't improve it — and in B2B, awareness is improvable. It just has to be designed.</p>
+      <p>The practical measurement stack: track intent-signal coverage on your target account list, measure share of first engagement (are you the first vendor they engaged with?), and build a lightweight rep-reporting loop so discovery calls feed back what the market actually thinks of you. None of it is perfect. All of it beats "we feel like our brand is getting stronger."</p>
+      <h3>The full-funnel trap</h3>
+      <p>The easiest way to sabotage this work is the classic funnel fiction: awareness at the top, demand at the bottom, sequential. Full-funnel marketing means awareness keeps working while demand converts. They're not phases — they're simultaneous layers. The teams that win understand that the top of the funnel isn't a stage; it's a constant.</p>
+      <p>That's the practical throughline of episode 184, and it's why we brought in guests who think about this for a living. Kerry's research on the buyer journey and Matt's decades in B2B demand together give you the why and the how.</p>
+      <p>If you're trying to grow pipeline from strategic accounts — and who isn't — start with the measurement question. Answer it, and the awareness work stops being a vibe and starts being a system.</p>
+      <p><em>Listen to the full episode at fullfunnel.io/podcast, and join the conversation in The Trenches.</em></p>
+    </div>
+  </section>
+
+  <!-- 3. LINKEDIN -->
+  <section id="linkedin">
+    <div class="kicker">03 · LinkedIn</div>
+    <h2>5 LinkedIn posts, ready to schedule</h2>
+    <div class="h2sub">Episode hook, contrarian take, listicle, measurement angle, and a community closer. One idea each, built to be scanned on mobile.</div>
+
+    <div class="post"><span class="tag">Post 1 <span class="fmt">· Episode hook</span></span>Episode 184 of the Full-Funnel B2B Marketing Show.
+
+This week we had two guests who think about awareness for a living: Kerry Cunningham (6sense) and Matt Heinz (Heinz Marketing).
+
+The question on the table: how do you create awareness among strategic accounts — and how do you actually measure it?
+
+Spoiler: most teams can't answer the second half.
+
+Full episode in comments.
+<span class="hashtags">#B2BMarketing #ABM #Awareness</span></div>
+
+    <div class="post"><span class="tag">Post 2 <span class="fmt">· Contrarian</span></span>By the time a buyer calls you, the decision is mostly made.
+
+That's the reality Kerry Cunningham's research keeps confirming: the buyer's experience with your reps shapes the purchase decision — and most of the journey happens before a rep is even in the room.
+
+So if awareness happens before the call, and most ABM programs only turn on after the call... where's the gap?
+
+We mapped it on episode 184. Link in comments.
+<span class="hashtags">#B2BMarketing #BuyerJourney #DemandGen</span></div>
+
+    <div class="post"><span class="tag">Post 3 <span class="fmt">· Listicle</span></span>3 things that actually create awareness among strategic accounts:
+
+1. Content that shows up before the buying group starts searching — in their channels, not yours
+2. Signals that tell you which accounts are in motion, so awareness effort goes where it compounds
+3. A definition of "awareness" your team can measure — visits, share of search, rep-reported recall — instead of a vibe
+
+Kerry Cunningham and Matt Heinz went deeper on all three on episode 184. 🎧 Link in comments.
+<span class="hashtags">#B2BMarketing #ABM #FullFunnel</span></div>
+
+    <div class="post"><span class="tag">Post 4 <span class="fmt">· Measurement</span></span>"How do you measure brand awareness among strategic accounts?"
+
+It's the question every B2B marketer dodges, because awareness feels unmeasurable.
+
+The practical answer from episode 184: measure the things that precede the pipeline — intent signal coverage on target accounts, share of first-engagement, and what your reps hear when they finally get in the room.
+
+What you can't measure, you can't improve. And in B2B, awareness is improvable.
+<span class="hashtags">#B2BMarketing #Measurement #Growth</span></div>
+
+    <div class="post"><span class="tag">Post 5 <span class="fmt">· Community + soft CTA</span></span>Every week we go live with the B2B marketing community — this time with Kerry Cunningham and Matt Heinz — and the best part is always the questions from The Trenches.
+
+Episode 184 covered awareness, strategic accounts, and the 70% of the buying journey that happens before sellers show up.
+
+If you're trying to grow pipeline at scale, this one's a keeper. 🎧 Listen here: [episode link]
+<span class="hashtags">#B2BMarketing #Podcast #Community</span></div>
+  </section>
+
+  <!-- 4. THREAD -->
+  <section id="thread">
+    <div class="kicker">04 · X / Twitter</div>
+    <h2>A 10-tweet thread</h2>
+    <div class="h2sub">Each tweet stands alone. Hook first. Built to be screenshotted.</div>
+    <div class="post">1/ Kerry Cunningham researches when B2B buyers actually decide.
+
+His finding: most of the journey is over before sellers are in the room.
+
+So we put account-based awareness against that reality with Matt Heinz. Full thread 🧵
+
+2/ The question: how do you create awareness among strategic accounts — and how do you measure it?
+
+Most teams can't answer the second half. That's the problem.
+
+3/ First: the buyer's experience with your sales reps influences the purchase decision.
+
+Every interaction before, during, and after the call is input. Awareness isn't just pre-call — it's every touch.
+
+4/ What works today to create awareness among strategic accounts?
+
+Show up before the buying group starts searching. In their channels. On their terms.
+
+5/ Awareness ≠ impressions. Awareness is being the vendor the buying group already knows when the search starts.
+
+6/ And because 70%+ of the journey can happen before sellers enter, that "already knows you" position is the whole ballgame.
+
+7/ How do you measure it? Pick the things that precede pipeline:
+
+→ intent coverage on target accounts
+→ share of first engagement
+→ what reps hear in discovery
+
+8/ If you can't measure it, you can't improve it. And in B2B, awareness is improvable — it just has to be designed.
+
+9/ The trap: treating awareness as "top of funnel" and demand as "bottom." Full-funnel means awareness keeps working while demand converts.
+
+10/ Full episode with Kerry Cunningham & Matt Heinz → [episode link]
+
+Follow @FullFunnel for weekly B2B marketing deep dives.</div>
+  </section>
+
+  <!-- 5. AUDIOGRAM SCRIPTS -->
+  <section id="audio">
+    <div class="kicker">05 · Audiograms (audio-first)</div>
+    <h2>5 audiogram scripts</h2>
+    <div class="h2sub">The show is audio-first, so these are built as audiograms: 30–60s audio clips with waveform + captions for LinkedIn/X/Instagram. Hook in the first 3 seconds, one idea, "listen here" CTA. These grow listeners, not just views.</div>
+
+    <div class="script">
+      <b>Audiogram 1 — "Decided before the call" (40s)</b>
+      <div class="hook">HOOK (0–3s): "Most of the B2B buying journey happens before a seller is even in the room."</div>
+      <div class="beat"><span class="t">3–14s</span>"Kerry Cunningham's research keeps confirming it: the buyer's experience with your reps shapes the purchase decision — and it starts long before the call."</div>
+      <div class="beat"><span class="t">14–34s</span>"So the job isn't just pipeline. It's being the vendor the buying group already knows when they start searching. That's what awareness means in practice."</div>
+      <div class="beat"><span class="t">34–40s</span>"Full conversation on episode 184. Listen: fullfunnel.io/podcast"</div>
+    </div>
+
+    <div class="script">
+      <b>Audiogram 2 — "What works today" (35s)</b>
+      <div class="hook">HOOK (0–3s): "What actually creates awareness among strategic accounts in 2026?"</div>
+      <div class="beat"><span class="t">3–15s</span>"Show up before the buying group starts searching. In their channels, on their terms — not after they're already mid-evaluation."</div>
+      <div class="beat"><span class="t">15–30s</span>"That's the practical takeaway from this week's conversation with Kerry Cunningham and Matt Heinz."</div>
+      <div class="beat"><span class="t">30–35s</span>"Episode 184. Listen: fullfunnel.io/podcast"</div>
+    </div>
+
+    <div class="script">
+      <b>Audiogram 3 — "The measurement question" (40s)</b>
+      <div class="hook">HOOK (0–3s): "'How do you measure brand awareness among strategic accounts?' — nobody answers this."</div>
+      <div class="beat"><span class="t">3–16s</span>"The practical version: measure the things that precede pipeline. Intent coverage on target accounts, share of first engagement, what reps hear in discovery."</div>
+      <div class="beat"><span class="t">16–34s</span>"You can't improve what you can't measure. And awareness is improvable — it just has to be designed."</div>
+      <div class="beat"><span class="t">34–40s</span>"Full breakdown, episode 184. Listen: fullfunnel.io/podcast"</div>
+    </div>
+
+    <div class="script">
+      <b>Audiogram 4 — "The reps' influence" (35s)</b>
+      <div class="hook">HOOK (0–3s): "Your sales reps are a marketing channel. Whether you manage it or not."</div>
+      <div class="beat"><span class="t">3–16s</span>"The buyer's experience with reps influences the purchase decision — every touch, before and after the call."</div>
+      <div class="beat"><span class="t">16–30s</span>"That's why awareness work can't stop when the meeting gets booked."</div>
+      <div class="beat"><span class="t">30–35s</span>"Kerry Cunningham and Matt Heinz on ep 184. Listen: fullfunnel.io/podcast"</div>
+    </div>
+
+    <div class="script">
+      <b>Audiogram 5 — "The trap" (38s)</b>
+      <div class="hook">HOOK (0–3s): "Calling awareness 'top of funnel' is a mistake."</div>
+      <div class="beat"><span class="t">3–15s</span>"Full-funnel means awareness keeps working while demand converts. They're not sequential — they're simultaneous."</div>
+      <div class="beat"><span class="t">15–32s</span>"The teams that win understand awareness isn't the warm-up act. It's the reason the funnel exists."</div>
+      <div class="beat"><span class="t">32–38s</span>"Episode 184 with Kerry Cunningham &amp; Matt Heinz. Listen: fullfunnel.io/podcast"</div>
+    </div>
+  </section>
+
+  <!-- 6. SHORT-FORM ADAPTATIONS -->
+  <section id="short">
+    <div class="kicker">06 · Bonus short-form</div>
+    <h2>3 bonus short-form adaptations (optional)</h2>
+    <div class="h2sub">For when you record video — live stream captures, Zoom panels, or YouTube. Same ideas, tightened for vertical video. No viral promises; every one still ends in "listen here."</div>
+
+    <div class="script">
+      <b>Adaptation 1 — "The 70% problem" (35s)</b>
+      <div class="hook">HOOK (0–3s): "70% of the buying journey is over before sellers are in the room."</div>
+      <div class="beat"><span class="t">3–15s</span>"That's Kerry Cunningham's research — and it means awareness isn't the warm-up act. It's the reason the funnel exists."</div>
+      <div class="beat"><span class="t">15–30s</span>"If buyers decide before they call, the job is being the vendor they already know when the search starts."</div>
+      <div class="beat"><span class="t">30–35s</span>"Full episode with Kerry and Matt. Link in the caption."</div>
+    </div>
+
+    <div class="script">
+      <b>Adaptation 2 — "Measure it or it's a vibe" (30s)</b>
+      <div class="hook">HOOK (0–3s): "Awareness is a vibe in most companies. Here's how to make it a system."</div>
+      <div class="beat"><span class="t">3–14s</span>"Track what precedes pipeline: intent coverage on target accounts, share of first engagement, what reps hear in discovery."</div>
+      <div class="beat"><span class="t">14–26s</span>"You can't improve what you can't measure — and in B2B, awareness is improvable."</div>
+      <div class="beat"><span class="t">26–30s</span>"Episode 184. Link in the caption."</div>
+    </div>
+
+    <div class="script">
+      <b>Adaptation 3 — "Your reps are a channel" (32s)</b>
+      <div class="hook">HOOK (0–3s): "Your sales reps are a marketing channel. Whether you manage it or not."</div>
+      <div class="beat"><span class="t">3–14s</span>"The buyer's experience with reps influences the purchase decision — every touch, before and after the call."</div>
+      <div class="beat"><span class="t">14–28s</span>"That's why awareness work can't stop when the meeting gets booked."</div>
+      <div class="beat"><span class="t">28–32s</span>"Kerry Cunningham and Matt Heinz on ep 184. Link in the caption."</div>
+    </div>
+  </section>
+
+  <!-- 7. NEWSLETTER -->
+  <section id="newsletter">
+    <div class="kicker">07 · Newsletter</div>
+    <h2>Newsletter blurb</h2>
+    <div class="h2sub">3 subject-line options, preview text, and a complete send-ready section for Full-Funnel Insider.</div>
+    <div class="card">
+      <p><b>Subject line options:</b></p>
+      <ul class="clean">
+        <li>A: Awareness is the layer most ABM programs skip</li>
+        <li>B: Buyers decide before they call — here's what to do about it</li>
+        <li>C: Ep 184: Kerry Cunningham &amp; Matt Heinz on measuring awareness</li>
+      </ul>
+      <p><b>Preview text:</b> How do you create awareness among strategic accounts — and how do you actually measure it? Two of B2B's sharpest voices answered.</p>
+      <hr style="border:none;border-top:1px dashed var(--line);margin:16px 0">
+      <p>Hey,</p>
+      <p>This week on the Full-Funnel B2B Marketing Show, Andrei and Vladimir were joined by Kerry Cunningham (6sense) and Matt Heinz (Heinz Marketing) to answer the question every B2B team dodges: how do you create awareness among strategic accounts — and how do you actually measure it?</p>
+      <p>Three things worth stealing from the episode:</p>
+      <ul class="clean">
+        <li>The buyer's experience with your reps influences the purchase decision — awareness is every touch, not just the pre-call phase.</li>
+        <li>What works today: show up before the buying group starts searching, in their channels, on their terms.</li>
+        <li>Measurement: track what precedes pipeline — intent coverage on target accounts, share of first engagement, and what reps hear in discovery.</li>
+      </ul>
+      <p>If you can't measure it, you can't improve it. And in B2B, awareness is improvable.</p>
+      <p>🎧 Listen here → [episode link]</p>
+      <p>Talk soon,<br>Andrei</p>
+    </div>
+  </section>
+
+  <!-- 8. QUOTE GRAPHICS -->
+  <section id="quotes">
+    <div class="kicker">08 · Quote graphics</div>
+    <h2>8 pull-quote graphics</h2>
+    <div class="h2sub">Each under 20 words, ready to drop into Canva. Design spec below. Research line is from Kerry Cunningham's published 6sense buyer-journey research; the rest are framings drawn from the published episode description — confirm exact wording against the final audio.</div>
+    <div class="quote">"The buyer's experience with your sales reps influences the purchase decision."<span class="src">Ep 184 · Full-Funnel B2B Marketing Show</span></div>
+    <div class="quote">"Most of the buying journey is over before sellers are in the room."<span class="src">Kerry Cunningham · 6sense buyer-journey research</span></div>
+    <div class="quote">"Awareness is being the vendor the buying group already knows when the search starts."<span class="src">Ep 184 · Full-Funnel B2B Marketing Show</span></div>
+    <div class="quote">"If you can't measure it, you can't improve it."<span class="src">Ep 184 · Full-Funnel B2B Marketing Show</span></div>
+    <div class="quote">"Measure what precedes pipeline: intent coverage, share of first engagement, what reps hear in discovery."<span class="src">Ep 184 · Full-Funnel B2B Marketing Show</span></div>
+    <div class="quote">"Awareness isn't the warm-up act. It's the reason the funnel exists."<span class="src">Ep 184 · Full-Funnel B2B Marketing Show</span></div>
+    <div class="quote">"Full-funnel means awareness keeps working while demand converts."<span class="src">Ep 184 · Full-Funnel B2B Marketing Show</span></div>
+    <div class="quote">"Show up before the buying group starts searching."<span class="src">Ep 184 · Full-Funnel B2B Marketing Show</span></div>
+    <p style="color:var(--muted);font-size:14px">Design spec: 1080×1080, dark background (#0d1117), quote in large white bold sans, attribution in accent blue bottom-left, "Full-Funnel B2B Marketing Show" wordmark top-right, "Ep 184" watermark. Consistent template across all 8.</p>
+  </section>
+
+  <!-- 9. CALENDAR -->
+  <section id="calendar">
+    <div class="kicker">09 · Distribution plan</div>
+    <h2>4-week distribution plan, scheduled for you</h2>
+    <div class="h2sub">Here's the part that matters: <b>you don't post any of this.</b> We map every asset across four weeks, load it into your scheduler, and you approve the whole batch in about five minutes. Then it publishes itself while you focus on client work. The mix follows a B2B-marketer-optimized ratio: 40% education, 30% story, 20% POV, 10% offer.</div>
+    <div class="note" style="margin-top:0">
+      <b>How the hands-off part works:</b> You record. We create the pack, schedule everything into your posting tool, and send you one approval link. One click and a month of content goes live on autopilot. Add a second show later and we fold it into the same managed queue, so it never becomes more work for you, no matter how many episodes you run.
+    </div>
+
+    <div class="wk">Week 1 — Launch</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 1</b> (episode hook) + link in comments</td></tr>
+      <tr><td>Mon</td><td>X</td><td><b>The 10-tweet thread</b></td></tr>
+      <tr><td>Tue</td><td>Newsletter</td><td><b>Blurb</b> in Full-Funnel Insider (subject A)</td></tr>
+      <tr><td>Wed</td><td>LinkedIn + X</td><td><b>Audiogram 1</b> ("Decided before the call")</td></tr>
+      <tr><td>Thu</td><td>LinkedIn</td><td><b>Post 2</b> (contrarian: decided before the call)</td></tr>
+      <tr><td>Fri</td><td>LinkedIn</td><td><b>Post 4</b> (measurement) + <b>Quote graphics 1 &amp; 2</b></td></tr>
+    </table>
+
+    <div class="wk">Week 2 — Depth</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn + X</td><td><b>Audiogram 2</b> ("What works today")</td></tr>
+      <tr><td>Tue</td><td>LinkedIn</td><td><b>Post 3</b> (listicle: 3 things that create awareness)</td></tr>
+      <tr><td>Wed</td><td>Blog</td><td>Publish <b>SEO article</b> on fullfunnel.io/blog</td></tr>
+      <tr><td>Thu</td><td>X</td><td>Repost thread w/ new hook + <b>Quote graphic 3</b></td></tr>
+      <tr><td>Fri</td><td>Email</td><td>Send <b>guest kit</b> to Kerry &amp; Matt (Post A)</td></tr>
+    </table>
+
+    <div class="wk">Week 3 — Engagement</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn + X</td><td><b>Audiogram 3</b> ("The measurement question")</td></tr>
+      <tr><td>Wed</td><td>LinkedIn</td><td><b>Post 5</b> (community + CTA)</td></tr>
+      <tr><td>Thu</td><td>LinkedIn</td><td><b>Quote graphics 4 &amp; 5</b></td></tr>
+      <tr><td>Fri</td><td>Email</td><td>Guest <b>Post B</b> goes out to Kerry &amp; Matt</td></tr>
+    </table>
+
+    <div class="wk">Week 4 — Payoff</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn + X</td><td><b>Audiogram 4</b> ("The reps' influence")</td></tr>
+      <tr><td>Wed</td><td>LinkedIn + X</td><td><b>Audiogram 5</b> ("The trap")</td></tr>
+      <tr><td>Thu</td><td>Newsletter</td><td>Follow-up: "the one question to fix awareness this quarter"</td></tr>
+      <tr><td>Fri</td><td>IG + X</td><td><b>Quote graphics 6, 7 &amp; 8</b> to close the cycle</td></tr>
+    </table>
+  </section>
+
+  <div class="final">
+    <h2>This is one episode.</h2>
+    <p style="color:var(--muted);max-width:560px;margin:0 auto 22px">18+ assets, five platforms, a full month of distribution, all pulled from a single recording and written in your voice. Imagine this landing in your inbox every time you publish, with nothing left for you to do but hit post.</p>
+    <a class="cta" href="mailto:hello@episodeloop.com?subject=Let's%20talk%20EpisodeLoop">Email me to get started →</a>
+    <p style="color:var(--muted);font-size:14px;margin-top:16px">Or just reply to my email. Either way, this pack is yours to keep.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    Made by <b>EpisodeLoop</b> · <a class="mail" href="mailto:hello@episodeloop.com">hello@episodeloop.com</a><br>
+    Created from publicly available episode content, shared free with our best wishes.
+  </div>
+</footer>
+
+</body>
+</html>

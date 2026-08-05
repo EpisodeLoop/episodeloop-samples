@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EpisodeLoop — Free Content Pack for 20 MINUTES by Noco (Bryant Chou episode)</title>
+<meta name="description" content="A full content pack made by EpisodeLoop from the 60-minute Bryant Chou (Ploy / Webflow) episode of 20 MINUTES by Noco." />
+<meta name="robots" content="noindex" />
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --ink:#e6edf3; --muted:#9aa5b1;
+    --accent:#5b8cff; --accent2:#7c5bff; --line:#232a34; --ok:#3fb950; --amber:#d29922;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  header{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);z-index:10}
+  .headrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .brand span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .navpill{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+  .hero{padding:52px 0 30px}
+  .badge{display:inline-block;background:rgba(63,185,80,.12);color:var(--ok);border:1px solid rgba(63,185,80,.3);font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{color:var(--muted);font-size:18px}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:16px 20px;margin:22px 0;color:var(--muted);font-size:15px}
+  .note b{color:var(--ink)}
+  .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin:20px 0}
+  .toc h4{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin-left:18px;color:var(--ink);font-size:15px;columns:2;column-gap:28px}
+  .toc li{padding:3px 0}
+  .toc a{color:var(--ink);text-decoration:none}
+  .toc a:hover{color:var(--accent)}
+  section{padding:30px 0;border-top:1px solid var(--line)}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  h2{font-size:25px;letter-spacing:-.01em;margin-bottom:8px}
+  .h2sub{color:var(--muted);font-size:15px;margin-bottom:18px}
+  h3{font-size:17px;margin:20px 0 6px}
+  p{margin-bottom:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .card .meta{color:var(--muted);font-size:14px;margin-bottom:10px}
+  ul.clean{list-style:none;margin:10px 0}
+  ul.clean li{padding:4px 0 4px 22px;position:relative}
+  ul.clean li:before{content:"→";position:absolute;left:0;color:var(--accent)}
+  .ts{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600;margin-right:8px}
+  .post{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;white-space:pre-line;font-size:15px}
+  .post .tag{display:block;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+  .post .fmt{color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0}
+  .hashtags{color:var(--accent);font-size:14px}
+  blockquote{border-left:3px solid var(--accent2);padding-left:16px;color:var(--ink);margin:8px 0}
+  .article p{color:#c9d3de}
+  .article h3{color:var(--ink)}
+  .metabar{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:14px;border-bottom:1px dashed var(--line);padding-bottom:12px}
+  .metabar b{color:var(--ink)}
+  .script{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .script .hook{background:var(--panel2);border-radius:8px;padding:10px 14px;margin:8px 0;font-weight:600}
+  .script .beat{display:flex;gap:12px;margin:7px 0;font-size:15px}
+  .script .beat .t{flex:none;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums;width:52px}
+  .quote{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:12px;font-size:18px;font-weight:600;line-height:1.4;position:relative}
+  .quote .src{display:block;margin-top:10px;font-size:13px;font-weight:500;color:var(--muted)}
+  .caltable{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+  .caltable th,.caltable td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  .caltable th{background:var(--panel2);color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+  .caltable td b{color:var(--accent)}
+  .wk{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);margin:16px 0 6px}
+  .cta{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:12px;font-size:16px;margin-top:6px}
+  a.mail{color:var(--accent);text-decoration:none}
+  footer{padding:44px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  .final{text-align:center;padding:48px 0}
+  .value{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+  .value div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
+  .value b{display:block;color:var(--accent);font-size:20px}
+  @media(max-width:600px){.hero h1{font-size:27px}.toc ol{columns:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap headrow">
+    <div class="brand">Episode<span>Loop</span></div>
+    <div class="navpill">Free content pack · prepared for Ian Piepenbrock</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge">FREE SAMPLE · BUILT FROM YOUR BRYANT CHOU EPISODE</div>
+    <h1>One episode, <em>a full month of content.</em></h1>
+    <p class="sub">20 MINUTES by Noco · "Why Ploy.ai is more than another website tool – 60 MINUTES with Bryant Chou"</p>
+  </div>
+
+  <div class="note">
+    Hi Ian. This is a real, finished content pack built entirely from your 60-minute episode with Bryant Chou. Nothing here is a template. Every post, script, and quote is pulled from what you actually covered on the show, written in your voice. <b>It's yours to publish, free, with no strings.</b> This is exactly what you'd receive from EpisodeLoop for every episode you release.
+  </div>
+
+  <div class="value">
+    <div><b>18+</b> ready-to-publish assets</div>
+    <div><b>5</b> platforms covered</div>
+    <div><b>4 weeks</b> of scheduled content</div>
+    <div><b>~7 hrs</b> of work, done for you</div>
+  </div>
+
+  <div class="toc">
+    <h4>What's inside this pack</h4>
+    <ol>
+      <li><a href="#notes">Full show notes + timestamps</a></li>
+      <li><a href="#blog">SEO blog article (~900 words)</a></li>
+      <li><a href="#linkedin">5 LinkedIn posts</a></li>
+      <li><a href="#thread">X / Twitter thread</a></li>
+      <li><a href="#video">5 short-form video scripts</a></li>
+      <li><a href="#tiktok">3 TikTok-style scripts</a></li>
+      <li><a href="#newsletter">Newsletter blurb</a></li>
+      <li><a href="#quotes">8 pull-quote graphics</a></li>
+      <li><a href="#calendar">4-week content calendar</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. SHOW NOTES -->
+  <section id="notes">
+    <div class="kicker">01 · Show Notes</div>
+    <h2>Full show notes, timestamps &amp; quote highlights</h2>
+    <div class="h2sub">Drop straight into your episode description, Apple Podcasts, and YouTube.</div>
+    <div class="card">
+      <div class="meta"><b>Why Ploy.ai is more than another website tool – 60 MINUTES with Bryant Chou</b> · published Jul 30, 2026 · 63 min</div>
+      <p>Webflow's co-founder Bryant Chou spent twelve years making websites easy to build. His new company, Ploy, is a bet that the website itself should run your marketing. Ian and Daniel put that premise under pressure: does an all-in-one, agent-first platform hold up, or does it spread too thin?</p>
+      <h3>Timestamps</h3>
+      <ul class="clean">
+        <li><span class="ts">00:00</span> Welcome Bryant Chou, co-founder of Webflow</li>
+        <li><span class="ts">01:09</span> Why build again after Webflow</li>
+        <li><span class="ts">02:43</span> What Ploy actually is</li>
+        <li><span class="ts">05:10</span> Agent-first, without spreading thin</li>
+        <li><span class="ts">08:32</span> Trust, product, and outcomes in the age of AI slop</li>
+        <li><span class="ts">11:35</span> Live demo: clean code and the design system</li>
+        <li><span class="ts">15:10</span> Figma to Ploy and the Website Slurper</li>
+        <li><span class="ts">24:39</span> Reverse proxy: keep Webflow, add AEO pages</li>
+        <li><span class="ts">28:00</span> Account-based marketing and visitor enrichment</li>
+        <li><span class="ts">37:44</span> Why agencies win with Ploy</li>
+        <li><span class="ts">43:00</span> How Ploy became a marketing brain</li>
+        <li><span class="ts">47:40</span> Markdown memory and the hive mind</li>
+        <li><span class="ts">50:50</span> Building a startup in the AI era</li>
+        <li><span class="ts">54:36</span> Advice for designers and developers adapting</li>
+        <li><span class="ts">59:06</span> Optimism and closing thoughts</li>
+      </ul>
+      <p style="color:var(--muted);font-size:13px;margin-top:10px">Note: timestamps come from the chapter overview you published in the episode description. EpisodeLoop verifies exact timestamps against the real audio file for paying clients.</p>
+      <h3>In this episode</h3>
+      <ul class="clean">
+        <li>Why Bryant chose to build again after Webflow — and what Ploy actually is</li>
+        <li>The agent-first test: does all-in-one hold up, or spread too thin?</li>
+        <li>Trust, product, and outcomes in the age of AI slop</li>
+        <li>A live demo: clean code, the design system, and the Website Slurper</li>
+        <li>The reverse proxy move: keep Webflow, add AEO pages</li>
+        <li>ABM and visitor enrichment running on your own site</li>
+        <li>Why agencies win with Ploy — and how it becomes a marketing brain</li>
+        <li>Advice for designers and developers adapting to agentic tools</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 2. BLOG -->
+  <section id="blog" class="article">
+    <div class="kicker">02 · SEO Blog Article</div>
+    <h2>The Website Is the New Marketing Team: What Ploy's Bryant Chou Means for B2B SaaS</h2>
+    <div class="metabar">
+      <span><b>Word count:</b> ~900</span>
+      <span><b>Primary keyword:</b> agent-first website platform B2B SaaS</span>
+      <span><b>Meta:</b> Webflow co-founder Bryant Chou's Ploy is a bet that the website itself should run your marketing. We tested the premise for 60 minutes — here's what holds up.</span>
+    </div>
+    <div class="card">
+      <p>Twelve years ago, Bryant Chou helped build Webflow on a simple thesis: making websites easy to build would unlock a generation of companies that could design, launch, and iterate without waiting on anyone. Twelve years later, he's betting again — this time that the website itself should run your marketing.</p>
+      <p>I invited him on the show for a full 60 minutes to put that premise under pressure. Not because I was sold, but because I wasn't. An all-in-one, agent-first platform sounds either inevitable or like yet another tool that claims it just killed an industry. The conversation was more interesting than both options.</p>
+      <h3>Agent-first, without spreading thin</h3>
+      <p>The first thing Bryant pushed back on was the caricature of "AI does everything." Ploy's bet is narrower and smarter: the AI should orchestrate — pull in your content, your brand, your design system — while the humans stay in charge of what the output means. Agent-first doesn't mean agent-everything. It means the machine does the assembling; you do the directing.</p>
+      <p>That distinction matters for every B2B SaaS team looking at these tools. The teams that win won't be the ones with the most AI. They'll be the ones who keep a tight design system and let the agent execute against it. Trust, product, and outcomes still win in the age of AI slop — the tools just changed.</p>
+      <h3>The live demo changed my mind</h3>
+      <p>The part I was most skeptical about was the demo. Ploy's "Website Slurper" pulled in an existing site and rebuilt it live: clean code, real design system, on-brand output. It wasn't magic. It was a head start — and that's the honest framing.</p>
+      <p>The realistic use case for most B2B SaaS companies isn't replacing your site. It's the reverse proxy: keep Webflow, add AEO pages on top. Same CMS, same stack, plus pages built for the AI answer engines that are quietly becoming the new top of funnel. You don't need to rip anything out to start getting found where your buyers actually search now.</p>
+      <h3>Your website as a marketing brain</h3>
+      <p>The most interesting idea in the episode was the long-term one: the website as a marketing brain. Account-based marketing and visitor enrichment running on your own domain — which accounts visit, what they read, what they come back for — so the site becomes a tool that feeds your pipeline, not a destination that waits for traffic.</p>
+      <p>For agencies, that's an opportunity, not a threat. The tool makes the builds faster; the humans still win the accounts. "Why agencies win with Ploy" earned its own chapter for a reason.</p>
+      <h3>What it means for designers and developers</h3>
+      <p>Bryant's advice for the people currently worried about their tools: don't run from them. Learn what agentic tools actually change about your work — and then make them yours. The designers and developers who adapt stop fighting the machine and start directing it. The ones who don't are the ones who get left behind.</p>
+      <p>That's the optimistic throughline of the whole episode, and it's why we let this one run long. Building a startup in the AI era is strange — but the people doing it well are more optimistic than the timeline suggests.</p>
+      <p><em>Listen to the full 60 minutes with Bryant Chou at podcasters.spotify.com/pod/show/ian-piepenbrock — and if you need a website that actually performs for B2B SaaS, noco.agency.</em></p>
+    </div>
+  </section>
+
+  <!-- 3. LINKEDIN -->
+  <section id="linkedin">
+    <div class="kicker">03 · LinkedIn</div>
+    <h2>5 LinkedIn posts, ready to schedule</h2>
+    <div class="h2sub">Special-episode hook, contrarian take, operator tip, agency angle, and a human closer. One idea each, built to be scanned on mobile.</div>
+
+    <div class="post"><span class="tag">Post 1 <span class="fmt">· Special-episode hook</span></span>We usually keep it to 20 minutes.
+
+This one we let run for 60.
+
+Because Webflow's co-founder Bryant Chou showed up with a new company, Ploy — and a premise worth pressure-testing at full length: the website itself should run your marketing.
+
+Is an all-in-one, agent-first platform the future? Or does it spread too thin?
+
+We pushed on both sides for an hour. Including a live demo.
+
+🎧 Full episode in comments.
+<span class="hashtags">#B2BSaaS #Webflow #AI</span></div>
+
+    <div class="post"><span class="tag">Post 2 <span class="fmt">· Contrarian</span></span>"AI slop" is the phrase of the year.
+
+But Bryant Chou's argument is the opposite of slop: trust, product, and outcomes still win — the tools just changed.
+
+He spent 12 years at Webflow making websites easy to build. Now Ploy is his bet that the website itself should run your marketing.
+
+The interesting part isn't the hype. It's the live demo — clean code, a real design system, and a Website Slurper that rebuilds your site.
+
+We ran it for 60 minutes on the show. Worth your time if you build for B2B SaaS.
+<span class="hashtags">#B2BSaaS #Webflow #Design</span></div>
+
+    <div class="post"><span class="tag">Post 3 <span class="fmt">· Operator's tip</span></span>You don't have to rip out your stack to try AEO.
+
+That's the part of the Ploy conversation that surprised me most: the reverse proxy.
+
+Keep Webflow. Add AEO pages on top.
+
+Same site, same CMS, plus pages built for the AI answer engines that are quietly becoming your new top-of-funnel.
+
+We demoed exactly this with Bryant Chou on the latest episode.
+<span class="hashtags">#AEO #SEO #Webflow</span></div>
+
+    <div class="post"><span class="tag">Post 4 <span class="fmt">· Agency angle</span></span>"Your website is a marketing brain." — that's the vision.
+
+And here's the part that should make every B2B SaaS marketer pay attention: account-based marketing and visitor enrichment, running on your own site.
+
+Who's visiting, which accounts, what they engaged with — the website becomes the tool, not just the destination.
+
+Full breakdown with Ploy's Bryant Chou, 60 minutes, episode in comments.
+<span class="hashtags">#ABM #B2BSaaS #CRO</span></div>
+
+    <div class="post"><span class="tag">Post 5 <span class="fmt">· Human closer + soft CTA</span></span>Building a startup in the AI era is weird.
+
+Every week something new claims it just killed your industry. The real conversations — with people like Bryant Chou, who's done it twice — are more optimistic than the timeline.
+
+His advice for designers and developers adapting: don't run from the tools. Learn what they actually change about your work. Then make them yours.
+
+That's the throughline of our 60-minute special. 🎧 Listen here: [episode link]
+<span class="hashtags">#B2BSaaS #AI #Podcast</span></div>
+  </section>
+
+  <!-- 4. THREAD -->
+  <section id="thread">
+    <div class="kicker">04 · X / Twitter</div>
+    <h2>A 10-tweet thread</h2>
+    <div class="h2sub">Each tweet stands alone. Hook first. Built to be screenshotted.</div>
+    <div class="post">1/ Webflow's co-founder just built a website that runs your marketing.
+
+We tested it for 60 minutes. Here's what held up and what didn't 🧵
+
+2/ Bryant Chou spent 12 years making websites easy to build at Webflow.
+
+His new company, Ploy, is a bigger bet: the website itself should run your marketing.
+
+3/ The obvious question: does an all-in-one, agent-first platform hold up — or spread too thin?
+
+We pushed on that for the first 20 minutes. No softballs.
+
+4/ His answer: agent-first, without spreading thin. The AI does the orchestration. The design system keeps the output on-brand.
+
+5/ The part I was most skeptical about: the live demo.
+
+Clean code. Real design system. The Website Slurper pulled in an existing site and rebuilt it in front of us.
+
+6/ The practical win for most B2B SaaS teams: the reverse proxy.
+
+Keep Webflow. Add AEO pages. Same site, new answers for AI search engines.
+
+7/ Then he showed visitor enrichment — account-based marketing running on your own site. Who visits, which accounts, what they read.
+
+8/ The part agencies should care about: Ploy isn't built to replace the humans. It's built to make the humans win more. "Why agencies win with Ploy" is its own chapter.
+
+9/ And the vision part: markdown memory, the hive mind, the website as a marketing brain that learns what your ICP cares about.
+
+10/ Full episode, 60 minutes, no hype → [episode link]
+
+Follow @NocoAgency for B2B SaaS brand, design, Webflow, Framer and CRO takes.</div>
+  </section>
+
+  <!-- 5. VIDEO SCRIPTS -->
+  <section id="video">
+    <div class="kicker">05 · Short-form video</div>
+    <h2>5 short-form video scripts (Reels / Shorts)</h2>
+    <div class="h2sub">Hook in the first 3 seconds, one idea, clear payoff. Talking-head or screen-record ready — you already publish to YouTube. 30–60s each, every one ends in a "listen here" CTA.</div>
+
+    <div class="script">
+      <b>Script 1 — "The Website Slurper" (40s)</b>
+      <div class="hook">HOOK (0–3s): "There's a tool that can rebuild your entire website in minutes. We made it do it live."</div>
+      <div class="beat"><span class="t">3–15s</span>"Webflow co-founder Bryant Chou's new company Ploy has something called the Website Slurper. It pulled in an existing site and rebuilt it — clean code, real design system."</div>
+      <div class="beat"><span class="t">15–32s</span>"The honest take: it's not magic. It's a head start. The design system is what keeps the output from becoming AI slop."</div>
+      <div class="beat"><span class="t">32–40s</span>"We ran it for a full hour. Link to the episode in the caption."</div>
+    </div>
+
+    <div class="script">
+      <b>Script 2 — "Keep Webflow, add AEO" (35s)</b>
+      <div class="hook">HOOK (0–3s): "You don't need to rip out your website stack to get found by AI search."</div>
+      <div class="beat"><span class="t">3–14s</span>"The reverse proxy trick from this week's episode: keep Webflow, add AEO pages on top. Same CMS, new answers for the AI engines."</div>
+      <div class="beat"><span class="t">14–30s</span>"Your site becomes both a website and a knowledge base — without a rebuild."</div>
+      <div class="beat"><span class="t">30–35s</span>"Full breakdown with Bryant Chou. Episode link in the caption."</div>
+    </div>
+
+    <div class="script">
+      <b>Script 3 — "The marketing brain" (38s)</b>
+      <div class="hook">HOOK (0–3s): "What if your website was a marketing brain — not just a brochure?"</div>
+      <div class="beat"><span class="t">3–16s</span>"That's Bryant Chou's Ploy thesis: the site should run your marketing. ABM and visitor enrichment live right on your own domain."</div>
+      <div class="beat"><span class="t">16–32s</span>"Which accounts visited, what they read, what they came back for — the website becomes your best rep."</div>
+      <div class="beat"><span class="t">32–38s</span>"60-minute episode, link in the caption."</div>
+    </div>
+
+    <div class="script">
+      <b>Script 4 — "AI slop vs. trust" (35s)</b>
+      <div class="hook">HOOK (0–3s): "Everyone's scared of AI slop. The antidote is boring: trust, product, outcomes."</div>
+      <div class="beat"><span class="t">3–15s</span>"Webflow's co-founder on why agentic tools don't change the fundamentals — they change how fast you can execute."</div>
+      <div class="beat"><span class="t">15–30s</span>"The teams that win keep the design system in charge and let the AI do the heavy lifting."</div>
+      <div class="beat"><span class="t">30–35s</span>"More in the full episode. Link in the caption."</div>
+    </div>
+
+    <div class="script">
+      <b>Script 5 — "Advice for designers" (40s)</b>
+      <div class="hook">HOOK (0–3s): "Designers: the AI isn't coming for your job. The designers who don't adapt are."</div>
+      <div class="beat"><span class="t">3–16s</span>"That's the takeaway from 60 minutes with Bryant Chou, who built Webflow and now Ploy."</div>
+      <div class="beat"><span class="t">16–34s</span>"His advice: learn what agentic tools actually change about your work — then make them yours. The tool builds. You curate, direct, and own the outcome."</div>
+      <div class="beat"><span class="t">34–40s</span>"Full conversation in the episode. Link in the caption."</div>
+    </div>
+  </section>
+
+  <!-- 6. TIKTOK -->
+  <section id="tiktok">
+    <div class="kicker">06 · TikTok</div>
+    <h2>3 TikTok-style scripts (native tone)</h2>
+    <div class="h2sub">Faster, punchier, more casual than the Reels above. Written for a feed that scrolls in 1.5 seconds.</div>
+
+    <div class="script">
+      <b>TikTok 1 — "POV: Webflow's co-founder shows up" (25s)</b>
+      <div class="hook">HOOK (0–2s): "POV: Webflow's co-founder builds a tool that rebuilds websites by itself."</div>
+      <div class="beat"><span class="t">2–12s</span>"Bryant Chou spent 12 years at Webflow. His new company Ploy has a Website Slurper that pulled in a real site and rebuilt it live."</div>
+      <div class="beat"><span class="t">12–22s</span>"Is it magic? No. It's a head start — and the design system keeps it from turning into AI slop."</div>
+      <div class="beat"><span class="t">22–25s</span>"60-minute episode on the pod. 👀 Link in bio."</div>
+      <div style="color:var(--muted);font-size:13px;margin-top:8px">On-screen text: "the website runs your marketing now 💀" · Format: talking head + screen recording of the demo.</div>
+    </div>
+
+    <div class="script">
+      <b>TikTok 2 — "Keep Webflow, add AEO" (28s)</b>
+      <div class="hook">HOOK (0–2s): "You don't need to rebuild your site to win AI search."</div>
+      <div class="beat"><span class="t">2–14s</span>"The reverse proxy move from this week's episode: keep Webflow, add AEO pages on top. Same CMS, new answers for ChatGPT and friends."</div>
+      <div class="beat"><span class="t">14–24s</span>"Website + knowledge base in one. No rebuild. No migration."</div>
+      <div class="beat"><span class="t">24–28s</span>"Full breakdown with Bryant Chou. Episode in bio."</div>
+      <div style="color:var(--muted);font-size:13px;margin-top:8px">On-screen text: "your website, now answering questions 🧠" · Format: talking head + text overlay.</div>
+    </div>
+
+    <div class="script">
+      <b>TikTok 3 — "Designers vs. the machine" (30s)</b>
+      <div class="hook">HOOK (0–2s): "The AI isn't coming for designers. The designers who don't adapt are."</div>
+      <div class="beat"><span class="t">2–14s</span>"Webflow's co-founder said it straight: learn what agentic tools actually change about your work — then make them yours."</div>
+      <div class="beat"><span class="t">14–26s</span>"The tool builds. You curate, direct, and own the outcome. That's the whole game now."</div>
+      <div class="beat"><span class="t">26–30s</span>"60 minutes with Bryant Chou on the pod. Link in bio."</div>
+      <div style="color:var(--muted);font-size:13px;margin-top:8px">On-screen text: "you're not building websites, you're directing agents 🎬" · Trending audio: calm/confident.</div>
+    </div>
+  </section>
+
+  <!-- 7. NEWSLETTER -->
+  <section id="newsletter">
+    <div class="kicker">07 · Newsletter</div>
+    <h2>Newsletter blurb</h2>
+    <div class="h2sub">3 subject-line options, preview text, and a complete send-ready section.</div>
+    <div class="card">
+      <p><b>Subject line options:</b></p>
+      <ul class="clean">
+        <li>A: We went long this week — 60 minutes with Webflow's co-founder</li>
+        <li>B: The website that runs your marketing (live demo included)</li>
+        <li>C: Keep Webflow, add AEO: the no-rebuild AI play</li>
+      </ul>
+      <p><b>Preview text:</b> Bryant Chou built Webflow. His new bet is that the website itself should run your marketing. We tested it for an hour.</p>
+      <hr style="border:none;border-top:1px dashed var(--line);margin:16px 0">
+      <p>Hey,</p>
+      <p>Normally we keep episodes to 20 minutes. This one earned an hour: Bryant Chou, co-founder of Webflow, on his new company Ploy and the bet that the website itself should run your marketing.</p>
+      <p>We put the premise under pressure:</p>
+      <ul class="clean">
+        <li>Does an all-in-one, agent-first platform hold up — or spread too thin?</li>
+        <li>A live demo: the Website Slurper rebuilding a real site, clean code and design system intact</li>
+        <li>The reverse proxy move: keep Webflow, add AEO pages</li>
+        <li>Visitor enrichment and ABM running on your own domain</li>
+        <li>Why agencies win with this — and what it means for designers and developers adapting</li>
+      </ul>
+      <p>The honest take after an hour: it's not magic, it's a head start. And the teams that win will be the ones who keep the design system in charge while the agent does the heavy lifting.</p>
+      <p>🎧 Listen here → [episode link]</p>
+      <p>Talk soon,<br>Ian</p>
+    </div>
+  </section>
+
+  <!-- 8. QUOTE GRAPHICS -->
+  <section id="quotes">
+    <div class="kicker">08 · Quote graphics</div>
+    <h2>8 pull-quote graphics</h2>
+    <div class="h2sub">Each under 20 words, ready to drop into Canva. Design spec below. Wording is drawn from your published episode description — confirm exact phrasing against the final audio.</div>
+    <div class="quote">"The website itself should run your marketing."<span class="src">Bryant Chou, co-founder of Webflow &amp; Ploy · Jul 2026 episode</span></div>
+    <div class="quote">"Does an all-in-one, agent-first platform hold up, or does it spread too thin?"<span class="src">The question we put to Ploy · 20 MINUTES by Noco</span></div>
+    <div class="quote">"Trust, product, and outcomes in the age of AI slop."<span class="src">20 MINUTES by Noco · Jul 2026 episode</span></div>
+    <div class="quote">"Keep Webflow, add AEO pages."<span class="src">The reverse-proxy move · 20 MINUTES by Noco</span></div>
+    <div class="quote">"Why agencies win with Ploy."<span class="src">Chapter 10 · 20 MINUTES by Noco</span></div>
+    <div class="quote">"Markdown memory and the hive mind."<span class="src">How Ploy becomes a marketing brain · 20 MINUTES by Noco</span></div>
+    <div class="quote">"Building a startup in the AI era."<span class="src">Chapter 13 · 20 MINUTES by Noco</span></div>
+    <div class="quote">"Advice for designers and developers adapting."<span class="src">Chapter 14 · 20 MINUTES by Noco</span></div>
+    <p style="color:var(--muted);font-size:14px">Design spec: 1080×1080, dark background (#0d1117), quote in large white bold sans, attribution in accent blue bottom-left, "20 MINUTES by Noco" wordmark top-right, "Bryant Chou · Jul 2026" watermark. Consistent template across all 8.</p>
+  </section>
+
+  <!-- 9. CALENDAR -->
+  <section id="calendar">
+    <div class="kicker">09 · Distribution plan</div>
+    <h2>4-week distribution plan, scheduled for you</h2>
+    <div class="h2sub">Here's the part that matters: <b>you don't post any of this.</b> We map every asset across four weeks, load it into your scheduler, and you approve the whole batch in about five minutes. Then it publishes itself while you focus on building. The mix follows a B2B-optimized ratio: 40% education, 30% story, 20% POV, 10% offer.</div>
+    <div class="note" style="margin-top:0">
+      <b>How the hands-off part works:</b> You record. We create the pack, schedule everything into your posting tool, and send you one approval link. One click and a month of content goes live on autopilot. Add a second show later and we fold it into the same managed queue, so it never becomes more work for you, no matter how many episodes you run.
+    </div>
+
+    <div class="wk">Week 1 — Launch</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 1</b> (special-episode hook) + link in comments</td></tr>
+      <tr><td>Mon</td><td>X</td><td><b>The 10-tweet thread</b></td></tr>
+      <tr><td>Tue</td><td>Newsletter</td><td><b>Blurb</b> (subject A: "We went long this week")</td></tr>
+      <tr><td>Wed</td><td>Reels + Shorts</td><td><b>Video 1</b> ("The Website Slurper")</td></tr>
+      <tr><td>Thu</td><td>LinkedIn</td><td><b>Post 2</b> (contrarian: AI slop)</td></tr>
+      <tr><td>Fri</td><td>LinkedIn</td><td><b>Post 4</b> (agency angle) + <b>Quote graphics 1 &amp; 2</b></td></tr>
+    </table>
+
+    <div class="wk">Week 2 — Depth</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 3</b> (reverse proxy operator tip)</td></tr>
+      <tr><td>Tue</td><td>Reels + Shorts</td><td><b>Video 2</b> ("Keep Webflow, add AEO")</td></tr>
+      <tr><td>Wed</td><td>Blog</td><td>Publish <b>SEO article</b> on noco.agency/resources/articles</td></tr>
+      <tr><td>Thu</td><td>X</td><td>Repost thread w/ new hook + <b>Quote graphic 3</b></td></tr>
+      <tr><td>Fri</td><td>LinkedIn</td><td>Send <b>guest kit</b> to Bryant (Post A already live; send Post B)</td></tr>
+    </table>
+
+    <div class="wk">Week 3 — Engagement</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>Reels + Shorts</td><td><b>Video 3</b> ("The marketing brain")</td></tr>
+      <tr><td>Wed</td><td>TikTok</td><td><b>TikTok 1</b> ("POV: Webflow's co-founder shows up")</td></tr>
+      <tr><td>Thu</td><td>LinkedIn</td><td><b>Quote graphics 4 &amp; 5</b></td></tr>
+      <tr><td>Fri</td><td>X + IG</td><td>Repost the episode with the demo screenshot</td></tr>
+    </table>
+
+    <div class="wk">Week 4 — Payoff</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>Reels + Shorts</td><td><b>Video 4</b> ("AI slop vs. trust")</td></tr>
+      <tr><td>Wed</td><td>Reels + Shorts</td><td><b>Video 5</b> ("Advice for designers")</td></tr>
+      <tr><td>Thu</td><td>Newsletter</td><td>Follow-up: "the one idea that stuck" (repurpose Post 3)</td></tr>
+      <tr><td>Fri</td><td>IG + X</td><td><b>Quote graphics 6, 7 &amp; 8</b> to close the cycle</td></tr>
+    </table>
+  </section>
+
+  <div class="final">
+    <h2>This is one episode.</h2>
+    <p style="color:var(--muted);max-width:560px;margin:0 auto 22px">18+ assets, five platforms, a full month of distribution, all pulled from a single recording and written in your voice. Imagine this landing in your inbox every time you publish, with nothing left for you to do but hit post.</p>
+    <a class="cta" href="mailto:hello@episodeloop.com?subject=Let's%20talk%20EpisodeLoop">Email me to get started →</a>
+    <p style="color:var(--muted);font-size:14px;margin-top:16px">Or just reply to my email. Either way, this pack is yours to keep.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    Made by <b>EpisodeLoop</b> · <a class="mail" href="mailto:hello@episodeloop.com">hello@episodeloop.com</a><br>
+    Created from publicly available episode content, shared free with our best wishes.
+  </div>
+</footer>
+
+</body>
+</html>

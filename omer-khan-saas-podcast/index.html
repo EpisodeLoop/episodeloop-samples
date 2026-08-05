@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EpisodeLoop — Free Content Pack for The SaaS Podcast (Ep #489)</title>
+<meta name="description" content="A full content pack made by EpisodeLoop from episode #489 of The SaaS Podcast with George Georgiadis of Happier Leads." />
+<meta name="robots" content="noindex" />
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --ink:#e6edf3; --muted:#9aa5b1;
+    --accent:#5b8cff; --accent2:#7c5bff; --line:#232a34; --ok:#3fb950; --amber:#d29922;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  header{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);z-index:10}
+  .headrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .brand span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .navpill{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+  .hero{padding:52px 0 30px}
+  .badge{display:inline-block;background:rgba(63,185,80,.12);color:var(--ok);border:1px solid rgba(63,185,80,.3);font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{color:var(--muted);font-size:18px}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:16px 20px;margin:22px 0;color:var(--muted);font-size:15px}
+  .note b{color:var(--ink)}
+  .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin:20px 0}
+  .toc h4{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin-left:18px;color:var(--ink);font-size:15px;columns:2;column-gap:28px}
+  .toc li{padding:3px 0}
+  .toc a{color:var(--ink);text-decoration:none}
+  .toc a:hover{color:var(--accent)}
+  section{padding:30px 0;border-top:1px solid var(--line)}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  h2{font-size:25px;letter-spacing:-.01em;margin-bottom:8px}
+  .h2sub{color:var(--muted);font-size:15px;margin-bottom:18px}
+  h3{font-size:17px;margin:20px 0 6px}
+  p{margin-bottom:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .card .meta{color:var(--muted);font-size:14px;margin-bottom:10px}
+  ul.clean{list-style:none;margin:10px 0}
+  ul.clean li{padding:4px 0 4px 22px;position:relative}
+  ul.clean li:before{content:"→";position:absolute;left:0;color:var(--accent)}
+  .ts{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600;margin-right:8px}
+  .post{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;white-space:pre-line;font-size:15px}
+  .post .tag{display:block;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+  .post .fmt{color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0}
+  .hashtags{color:var(--accent);font-size:14px}
+  blockquote{border-left:3px solid var(--accent2);padding-left:16px;color:var(--ink);margin:8px 0}
+  .article p{color:#c9d3de}
+  .article h3{color:var(--ink)}
+  .metabar{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:14px;border-bottom:1px dashed var(--line);padding-bottom:12px}
+  .metabar b{color:var(--ink)}
+  .script{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .script .hook{background:var(--panel2);border-radius:8px;padding:10px 14px;margin:8px 0;font-weight:600}
+  .script .beat{display:flex;gap:12px;margin:7px 0;font-size:15px}
+  .script .beat .t{flex:none;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums;width:52px}
+  .quote{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:12px;font-size:18px;font-weight:600;line-height:1.4;position:relative}
+  .quote .src{display:block;margin-top:10px;font-size:13px;font-weight:500;color:var(--muted)}
+  .caltable{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+  .caltable th,.caltable td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  .caltable th{background:var(--panel2);color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+  .caltable td b{color:var(--accent)}
+  .wk{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);margin:16px 0 6px}
+  .cta{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:12px;font-size:16px;margin-top:6px}
+  a.mail{color:var(--accent);text-decoration:none}
+  footer{padding:44px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  .final{text-align:center;padding:48px 0}
+  .value{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+  .value div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
+  .value b{display:block;color:var(--accent);font-size:20px}
+  @media(max-width:600px){.hero h1{font-size:27px}.toc ol{columns:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap headrow">
+    <div class="brand">Episode<span>Loop</span></div>
+    <div class="navpill">Free content pack · prepared for Omer Khan</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge">FREE SAMPLE · BUILT FROM YOUR EPISODE #489</div>
+    <h1>One episode, <em>a full month of content.</em></h1>
+    <p class="sub">The SaaS Podcast · "Stuck at $50K ARR for 5 Years. Now $1.5M With AI Agents."</p>
+  </div>
+
+  <div class="note">
+    Hi Omer. This is a real, finished content pack built entirely from your episode #489 with George Georgiadis of Happier Leads. Nothing here is a template. Every post, script, and quote is pulled from what was actually discussed — the five-year plateau, the cold email breakthrough, the self-built AI agents — written in your voice. <b>It's yours to publish, free, with no strings.</b> This is exactly what you'd receive from EpisodeLoop for every episode you release.
+  </div>
+
+  <div class="value">
+    <div><b>18+</b> ready-to-publish assets</div>
+    <div><b>5</b> platforms covered</div>
+    <div><b>4 weeks</b> of scheduled content</div>
+    <div><b>~7 hrs</b> of work, done for you</div>
+  </div>
+
+  <div class="toc">
+    <h4>What's inside this pack</h4>
+    <ol>
+      <li><a href="#notes">Full show notes + timestamps</a></li>
+      <li><a href="#blog">SEO blog article (1,100 words)</a></li>
+      <li><a href="#linkedin">8 LinkedIn posts</a></li>
+      <li><a href="#thread">X / Twitter thread</a></li>
+      <li><a href="#video">5 short-form video scripts (audiogram-ready)</a></li>
+      <li><a href="#audiogram">3 audiogram scripts</a></li>
+      <li><a href="#newsletter">Newsletter edition</a></li>
+      <li><a href="#quotes">8 pull-quote graphics</a></li>
+      <li><a href="#calendar">4-week content calendar</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. SHOW NOTES -->
+  <section id="notes">
+    <div class="kicker">01 · Show Notes</div>
+    <h2>Full show notes, timestamps &amp; quote highlights</h2>
+    <div class="h2sub">Drop straight into your episode description, Apple Podcasts, and YouTube.</div>
+    <div class="card">
+      <div class="meta"><b>Episode #489 — Stuck at $50K ARR for 5 Years. Now $1.5M With AI Agents.</b></div>
+      <p>Five years at $50K ARR. Ten failed projects. Lending the business money out of his own bank account. George Georgiadis came close to shutting Happier Leads down. Instead he broke through the revenue plateau and reached $1.5M ARR with zero employees. He explains what moved the number: an end-to-end platform instead of a narrow point tool, cold email as his cheapest channel because he owns the mailboxes and the data, and running a SaaS with AI agents he built himself to handle support and bug fixing around the clock. Plus: why he turned down a $1M offer to sell, and why he is hiring again after reaching seven figures alone.</p>
+      <h3>Chapters (as published in the episode)</h3>
+      <ul class="clean">
+        <li><span class="ts">00:00</span> Cold open: five years stuck, then $1.5M</li>
+        <li><span class="ts">03:00</span> What Happier Leads does · $1.5M ARR with zero employees, bootstrapped</li>
+        <li><span class="ts">08:00</span> From Greece to London and 10 failed projects</li>
+        <li><span class="ts">12:00</span> Where the idea came from — Clearbit quoted $20,000, so he built his own</li>
+        <li><span class="ts">17:00</span> Funding with AppSumo lifetime deals · buying the data</li>
+        <li><span class="ts">23:00</span> The real cost and hidden upside of lifetime deals</li>
+        <li><span class="ts">28:00</span> Five years stuck at $50K ARR · 80% development, 20% marketing</li>
+        <li><span class="ts">33:00</span> Building end to end instead of a point tool · nearly quitting</li>
+        <li><span class="ts">38:00</span> What finally changed: going deep on unit economics</li>
+        <li><span class="ts">42:00</span> Cold email becomes the main channel · making it work at scale</li>
+        <li><span class="ts">46:00</span> Running the business with self-built AI agents · self-healing software</li>
+        <li><span class="ts">49:00</span> Why he's hiring again · lightning round</li>
+      </ul>
+      <p style="color:var(--muted);font-size:13px;margin-top:10px">Note: chapter titles follow the published episode structure; timestamps are estimates and should be confirmed against your final audio. EpisodeLoop verifies exact timestamps against the real file for paying clients.</p>
+      <h3>Key lessons (from the episode)</h3>
+      <ul class="clean">
+        <li>"A plateau is a depth problem, not an effort problem."</li>
+        <li>"Own the infrastructure your channel depends on."</li>
+        <li>"The point tool that felt like a mistake became the moat."</li>
+        <li>"Cold email works on precision, not personalization theater."</li>
+        <li>"AI replaces a team only when the data lives in one place."</li>
+        <li>"Lifetime deals buy time, not revenue."</li>
+        <li>"A solo operator owns a job, not a company."</li>
+      </ul>
+      <p><b>About the guest:</b> Happier Leads identifies anonymous website visitors, qualifies them with AI, and engages them by email. George Georgiadis bootstrapped it from a $50,000 AppSumo campaign to $1.5M ARR with no outside capital.</p>
+    </div>
+  </section>
+
+  <!-- 2. BLOG -->
+  <section id="blog" class="article">
+    <div class="kicker">02 · SEO Blog Article</div>
+    <h2>From $50K to $1.5M ARR: The Depth Problem Nobody Wants to Talk About</h2>
+    <div class="metabar">
+      <span><b>Word count:</b> ~1,100</span>
+      <span><b>Primary keyword:</b> SaaS revenue plateau</span>
+      <span><b>Meta:</b> Happier Leads' George Georgiadis spent five years stuck at $50K ARR before reaching $1.5M with zero employees. The reframe that broke the plateau, on episode #489 of The SaaS Podcast.</span>
+    </div>
+    <div class="card">
+      <p>Every SaaS founder knows the feeling. You're working harder than ever, the product is shipping, and the revenue line refuses to move. You've been at $50K ARR for a year. Then two. Then five. On episode #489 of The SaaS Podcast, George Georgiadis, founder of Happier Leads, told me the story of his five-year plateau — and the reframe that finally broke it.</p>
+      <p>This is the conversation I keep thinking about, and I think it'll land for anyone who's been stuck.</p>
+      <h3>The plateau is a depth problem, not an effort problem</h3>
+      <p>George wore every hat at Happier Leads for five years at $50K ARR. Founder, marketer, support, sales — all of it. He wasn't lazy. He was spread thin across every channel, never going deep enough on any single one to make the unit economics work.</p>
+      <p>That's the uncomfortable part. Most founders respond to a plateau by working harder. George's breakthrough came when he stopped treating it as an effort problem and started treating it as a depth problem. Pick one channel. Go deep enough that the economics actually work. Then scale it.</p>
+      <p>For George, that channel was cold email — and he made it work through a combination most people never consider.</p>
+      <h3>Own the infrastructure your channel depends on</h3>
+      <p>Here's where the story gets interesting. George built his own mailboxes and used the 175-million-contact database he already owned. That's what pushed his cold email costs low enough to send millions of emails profitably. Most founders rent their channels — they pay per send, per lead, per impression. George owns the plumbing.</p>
+      <p>The lesson isn't "build your own everything." It's that your cheapest channel is the one whose infrastructure you control. If your entire acquisition strategy depends on a platform you're renting, you're one policy change away from a plateau.</p>
+      <h3>The point tool that felt like a mistake became the moat</h3>
+      <p>Happier Leads identifies anonymous website visitors, qualifies them with AI, and engages them by email. Building identification, qualification, enrichment, and email sending into one platform took seven years. For most of that time it felt like a mistake — a point tool would have shipped in months.</p>
+      <p>But no competitor covers the full path. The thing that felt slow became the moat. There's a version of this in every SaaS: the hard, unglamorous integration work that nobody wants to fund is often the thing that eventually makes you undefendable.</p>
+      <h3>AI replaces a team only when the data lives in one place</h3>
+      <p>George runs the business with AI agents he built himself — handling support and bug fixing around the clock, self-healing software, KPI monitoring. But he's explicit about the precondition: he ripped out HubSpot, Intercom, and Pipedrive for self-built tools so his AI brain could see everything in one place. AI doesn't replace a team when the data is scattered across five SaaS tools. It replaces a team when the data lives in one place.</p>
+      <h3>Lifetime deals buy time, not revenue</h3>
+      <p>The $50,000 AppSumo campaign that funded the start got consumed by server and data costs within two years. On paper, a terrible trade. But the reviews, word of mouth, and runway were worth more than the revenue. George's framing stuck with me: lifetime deals buy time, not revenue — and time is what a bootstrapped founder needs most.</p>
+      <h3>Why he's hiring again</h3>
+      <p>At $1.5M ARR with zero employees, George is hiring — and he turned down a $1M offer to sell. His reasoning is the most honest thing I've heard from a solo founder in a long time: a solo operator owns a job, not a company. A business that stops when he stops cannot be sold.</p>
+      <p>Building the AI, then the team, then the thing that outlasts you — that's the whole arc of this episode, from Greece to London, from ten failed projects to seven figures with no outside capital.</p>
+      <p>If you're stuck on a plateau, or you're a solo founder wondering whether your business can exist without you, this one's for you.</p>
+      <p><em>Listen to the full episode at saasclub.io/489.</em></p>
+    </div>
+  </section>
+
+  <!-- 3. LINKEDIN -->
+  <section id="linkedin">
+    <div class="kicker">03 · LinkedIn</div>
+    <h2>8 LinkedIn posts, 8 different formats</h2>
+    <div class="h2sub">Milestone hook, contrarian take, listicle, story, data, carousel outline, poll, and a personal reflection. One idea each, built to be scanned on mobile.</div>
+
+    <div class="post"><span class="tag">Post 1 <span class="fmt">· Milestone hook</span></span>Five years at $50K ARR. Ten failed projects. Lending the business his own money.
+
+George Georgiadis nearly shut Happier Leads down.
+
+Then he hit $1.5M ARR. With zero employees.
+
+On episode #489, George broke down exactly what moved the number — the depth problem he ignored for five years, cold email economics most founders get backwards, and the AI agents he built to run support and bug fixes around the clock.
+
+The story every founder stuck on a plateau needs to hear.
+
+🎧 Full episode in comments.
+<span class="hashtags">#SaaS #Bootstrap #FounderStories #SaaSClub</span></div>
+
+    <div class="post"><span class="tag">Post 2 <span class="fmt">· Contrarian</span></span>"A plateau is a depth problem, not an effort problem."
+
+George Georgiadis wore every hat at Happier Leads for five years at $50K ARR.
+
+He wasn't lazy. He was shallow — spread across every channel, never deep enough on one to make the unit economics work.
+
+The fix wasn't working harder. It was going deep on ONE channel until the numbers worked.
+
+That single reframe took him from $50K to $1.5M ARR. Full story on episode #489.
+<span class="hashtags">#SaaS #Startups #FounderLife</span></div>
+
+    <div class="post"><span class="tag">Post 3 <span class="fmt">· Listicle</span></span>Seven lessons from the founder who went from $50K to $1.5M ARR with zero employees (episode #489):
+
+1. Own the infrastructure your channel depends on — his own mailboxes + a 175M-contact database made cold email cheap enough to send millions
+2. The point tool that felt like a mistake became the moat — seven years building one end-to-end platform nobody else covers
+3. Cold email works on precision, not personalization theater — exact company, exact title, short message, no links until they reply
+4. AI replaces a team only when the data lives in one place — he ripped out HubSpot, Intercom and Pipedrive for self-built tools
+5. Lifetime deals buy time, not revenue — the $50K AppSumo campaign paid for runway, reviews and word of mouth
+6. A solo operator owns a job, not a company — that's why he's hiring again
+7. He turned down a $1M offer — and doesn't regret it
+
+Which one hits closest to home? 🎧 Full episode in comments.
+<span class="hashtags">#SaaS #SaaSGrowth #Bootstrapping</span></div>
+
+    <div class="post"><span class="tag">Post 4 <span class="fmt">· Story</span></span>I've interviewed nearly 500 founders on The SaaS Podcast.
+
+The story that keeps replaying in my head this week is George Georgiadis of Happier Leads.
+
+Ten failed projects before the one that worked. Five years stuck at $50K ARR. Lending his own business money from his personal account because there was nowhere else to turn.
+
+Then: $1.5M ARR, zero employees, AI agents doing support and bug fixes around the clock.
+
+The part that gets me isn't the ending. It's that he nearly quit so many times — and the reframe that finally worked was boring: go deep on one channel until the unit economics work.
+
+That's episode #489. If you're stuck, it's a mirror.
+<span class="hashtags">#SaaS #Podcasting #FounderStories</span></div>
+
+    <div class="post"><span class="tag">Post 5 <span class="fmt">· Data / pattern interrupt</span></span>Five years at $50K ARR.
+
+Then $1.5M ARR. Zero employees. No outside capital.
+
+What changed for Happier Leads wasn't the product. It was the channel math.
+
+George Georgiadis:
+• Owned his mailboxes and used a 175M-contact database → cold email cheap enough to send millions
+• Went end-to-end instead of point-tool → a moat nobody else covers
+• Put all the data in one place → AI agents that fix bugs unattended
+
+The plateau broke when the depth changed, not the effort.
+
+Episode #489, live now.
+<span class="hashtags">#SaaS #StartupLessons #ColdEmail</span></div>
+
+    <div class="post"><span class="tag">Post 6 <span class="fmt">· Carousel outline (7 slides)</span></span>CAROUSEL: "From $50K to $1.5M ARR, Zero Employees"
+
+Slide 1 (hook): Five years stuck at $50K ARR. Then $1.5M with no team →
+Slide 2: A plateau is a depth problem, not an effort problem.
+Slide 3: Own the infrastructure your channel depends on.
+Slide 4: The point tool that felt like a mistake became the moat.
+Slide 5: Cold email works on precision, not personalization theater.
+Slide 6: AI replaces a team only when the data lives in one place.
+Slide 7 (CTA): The full story with George Georgiadis is on episode #489. Follow for more.
+
+<span class="fmt" style="color:var(--muted)">Design note: dark background, one lesson per slide, host name bottom-right, episode number watermark.</span></div>
+
+    <div class="post"><span class="tag">Post 7 <span class="fmt">· Poll</span></span>What actually breaks a SaaS revenue plateau?
+
+🔲 Going deeper on one channel
+🔲 Building the infrastructure yourself
+🔲 Better unit economics
+🔲 Shipping a bigger product
+
+George Georgiadis's answer on episode #489: all four — but he calls the first one the real unlock.
+
+Curious where you land. Vote, then tell me why in the comments.
+<span class="hashtags">#SaaS #Startups #Founders</span></div>
+
+    <div class="post"><span class="tag">Post 8 <span class="fmt">· Personal reflection + soft CTA</span></span>"A solo operator owns a job, not a company."
+
+That's George Georgiadis — $1.5M ARR, zero employees, AI agents doing support and bug fixes — explaining why he's hiring again.
+
+The business runs without him. But it can't be sold if it stops when he stops.
+
+Every solo founder hits this wall eventually: the business you built to be free is the business that can't exist without you.
+
+George's answer, on episode #489: build the AI, then build the team, then build the thing that outlasts you. 🎧 Link in comments.
+<span class="hashtags">#SaaS #FounderMindset #SoloFounder</span></div>
+  </section>
+
+  <!-- 4. THREAD -->
+  <section id="thread">
+    <div class="kicker">04 · X / Twitter</div>
+    <h2>A 10-tweet thread</h2>
+    <div class="h2sub">Each tweet stands alone. Hook first. Built to be screenshotted.</div>
+    <div class="post">1/ Five years at $50K ARR.
+
+Ten failed projects.
+
+Lending the business his own money.
+
+George Georgiadis nearly shut Happier Leads down.
+
+Then: $1.5M ARR with zero employees.
+
+Here's what actually moved the number 🧵
+
+2/ "A plateau is a depth problem, not an effort problem."
+
+George wore every hat for five years and never went deep enough on one channel to make the unit economics work.
+
+The fix wasn't working harder. It was going deep on ONE channel.
+
+3/ For George, that channel was cold email.
+
+But the real unlock: he owns the infrastructure.
+
+His own mailboxes + a 175-million-contact database he already owned.
+
+Cold email costs dropped low enough to send millions profitably.
+
+4/ "Own the infrastructure your channel depends on."
+
+Most founders rent their channels — paying per send, per lead, per impression.
+
+If your acquisition depends on a platform you rent, you're one policy change away from a plateau.
+
+5/ The point tool that felt like a mistake became the moat.
+
+Identification, qualification, enrichment, email sending — all in one platform.
+
+Seven years to build. No competitor covers the full path.
+
+The slow, unglamorous work became the moat.
+
+6/ "Cold email works on precision, not personalization theater."
+
+Exact company. Exact job title. Short message.
+
+No links until the prospect replies — to protect deliverability.
+
+Precision beats performance art.
+
+7/ "AI replaces a team only when the data lives in one place."
+
+George ripped out HubSpot, Intercom and Pipedrive for self-built tools.
+
+His AI brain sees everything in one place — so it can fix bugs unattended.
+
+Scattered data = no AI. One place = self-healing software.
+
+8/ "Lifetime deals buy time, not revenue."
+
+The $50K AppSumo campaign got consumed by server and data costs within two years.
+
+But the reviews, word of mouth and runway were worth more.
+
+Time is what a bootstrapped founder needs most.
+
+9/ "A solo operator owns a job, not a company."
+
+Even at $1.5M ARR with AI doing the heavy lifting, George is hiring.
+
+A business that stops when he stops cannot be sold.
+
+He also turned down a $1M offer to sell.
+
+10/ That's episode #489 of The SaaS Podcast — George Georgiadis, Happier Leads.
+
+From Greece to London, 10 failed projects to $1.5M ARR, no outside capital.
+
+Full episode → saasclub.io/489
+
+Follow @omerkhan for more real SaaS lessons.</div>
+  </section>
+
+  <!-- 5. VIDEO SCRIPTS -->
+  <section id="video">
+    <div class="kicker">05 · Short-form video</div>
+    <h2>5 short-form video scripts (Reels / Shorts — audiogram-ready)</h2>
+    <div class="h2sub">Hook in the first 3 seconds, one idea, clear payoff. Built to work as talking-head or text-overlay audiograms — no fancy footage required. 30–45s each.</div>
+
+    <div class="script">
+      <b>Script 1 — "The depth problem" (38s)</b>
+      <div class="hook">HOOK (0–3s): "Five years stuck at $50K ARR. The problem wasn't effort."</div>
+      <div class="beat"><span class="t">3–16s</span>"George Georgiadis of Happier Leads wore every hat for five years. Founder, marketer, support, sales. He wasn't lazy — he was shallow, spread across every channel."</div>
+      <div class="beat"><span class="t">16–30s</span>"The plateau broke when he went deep on ONE channel until the unit economics worked. That reframe took him from $50K to $1.5M ARR."</div>
+      <div class="beat"><span class="t">30–38s</span>"Full story on episode #489 of The SaaS Podcast. Link below."</div>
+    </div>
+
+    <div class="script">
+      <b>Script 2 — "Own the plumbing" (36s)</b>
+      <div class="hook">HOOK (0–3s): "Your cheapest channel is the one whose infrastructure you control."</div>
+      <div class="beat"><span class="t">3–15s</span>"George Georgiadis built his own mailboxes and used a 175-million-contact database he already owned. Cold email became cheap enough to send millions."</div>
+      <div class="beat"><span class="t">15–30s</span>"Most founders rent their channels. If your acquisition depends on a platform you rent, you're one policy change away from a plateau."</div>
+      <div class="beat"><span class="t">30–36s</span>"From episode #489. Listen here."</div>
+    </div>
+
+    <div class="script">
+      <b>Script 3 — "The point tool that became a moat" (34s)</b>
+      <div class="hook">HOOK (0–3s): "The thing that felt like a mistake took seven years to build."</div>
+      <div class="beat"><span class="t">3–15s</span>"Happier Leads built identification, qualification, enrichment and email sending into one platform. For years it felt slow — a point tool would have shipped in months."</div>
+      <div class="beat"><span class="t">15–29s</span>"But no competitor covers the full path. The unglamorous integration work became the moat. That happens in every SaaS."</div>
+      <div class="beat"><span class="t">29–34s</span>"George Georgiadis on episode #489. Listen here."</div>
+    </div>
+
+    <div class="script">
+      <b>Script 4 — "AI needs one place" (33s)</b>
+      <div class="hook">HOOK (0–3s): "AI replaces a team only when the data lives in one place."</div>
+      <div class="beat"><span class="t">3–15s</span>"George runs Happier Leads with AI agents he built — support, bug fixing, self-healing software, KPI monitoring."</div>
+      <div class="beat"><span class="t">15–28s</span>"The precondition? He ripped out HubSpot, Intercom and Pipedrive so his AI could see everything in one place. Scattered data means no AI."</div>
+      <div class="beat"><span class="t">28–33s</span>"That's episode #489. Go listen."</div>
+    </div>
+
+    <div class="script">
+      <b>Script 5 — "Own a job or own a company" (36s)</b>
+      <div class="hook">HOOK (0–3s): "A solo operator owns a job, not a company."</div>
+      <div class="beat"><span class="t">3–16s</span>"George Georgiadis is at $1.5M ARR with zero employees — and he's hiring again. Why? Because a business that stops when he stops cannot be sold."</div>
+      <div class="beat"><span class="t">16–31s</span>"He also turned down a $1M offer. His plan: build the AI, then the team, then the thing that outlasts you."</div>
+      <div class="beat"><span class="t">31–36s</span>"Full conversation on episode #489. Listen here."</div>
+    </div>
+  </section>
+
+  <!-- 6. AUDIOGRAMS -->
+  <section id="audiogram">
+    <div class="kicker">06 · Audiograms</div>
+    <h2>3 audiogram scripts (audio-first, text-on-screen)</h2>
+    <div class="h2sub">For a podcast, the audiogram is the native short-form format: a 30–60s clip with waveform + captions, built to stop the scroll. These pick the most quotable 30 seconds of episode #489. No viral promises — just clips that make people press play.</div>
+
+    <div class="script">
+      <b>Audiogram 1 — "Depth, not effort" (35s)</b>
+      <div class="hook">HOOK (0–3s): "Five years stuck at $50K ARR. It wasn't an effort problem."</div>
+      <div class="beat"><span class="t">3–16s</span>"George Georgiadis: 'A plateau is a depth problem, not an effort problem.' He wore every hat and never went deep enough on one channel to make the unit economics work."</div>
+      <div class="beat"><span class="t">16–30s</span>"The breakthrough came from going deep on ONE channel. That took Happier Leads from $50K to $1.5M ARR with zero employees."</div>
+      <div class="beat"><span class="t">30–35s</span>"Full story on episode #489. Link below."</div>
+      <div style="color:var(--muted);font-size:13px;margin-top:8px">On-screen text: "A plateau is a depth problem, not an effort problem." · Caption style: waveform center, quote top, show handle bottom.</div>
+    </div>
+
+    <div class="script">
+      <b>Audiogram 2 — "Own the infrastructure" (36s)</b>
+      <div class="hook">HOOK (0–3s): "He built his own mailboxes — and cold email got cheap."</div>
+      <div class="beat"><span class="t">3–16s</span>"George Georgiadis: 'Own the infrastructure your channel depends on.' His own mailboxes plus a 175-million-contact database pushed costs low enough to send millions profitably."</div>
+      <div class="beat"><span class="t">16–31s</span>"Most founders rent their channels. George owns the plumbing — which is why his cheapest channel stayed cheap."</div>
+      <div class="beat"><span class="t">31–36s</span>"From episode #489 of The SaaS Podcast. Listen here."</div>
+      <div style="color:var(--muted);font-size:13px;margin-top:8px">On-screen text: "Own the infrastructure your channel depends on." · CTA: "Full episode in bio."</div>
+    </div>
+
+    <div class="script">
+      <b>Audiogram 3 — "A job or a company" (34s)</b>
+      <div class="hook">HOOK (0–3s): "$1.5M ARR, zero employees — and he's hiring again."</div>
+      <div class="beat"><span class="t">3–15s</span>"George Georgiadis: 'A solo operator owns a job, not a company.' The business runs without him — but it can't be sold if it stops when he stops."</div>
+      <div class="beat"><span class="t">15–29s</span>"That's why he turned down a $1M offer and why he's building the team now: the thing that outlasts you."</div>
+      <div class="beat"><span class="t">29–34s</span>"Episode #489 of The SaaS Podcast. Listen here."</div>
+      <div style="color:var(--muted);font-size:13px;margin-top:8px">On-screen text: "A solo operator owns a job, not a company." · CTA button style: "Listen"</div>
+    </div>
+  </section>
+
+  <!-- 7. NEWSLETTER -->
+  <section id="newsletter">
+    <div class="kicker">07 · Newsletter</div>
+    <h2>Full newsletter edition</h2>
+    <div class="h2sub">3 subject-line options, preview text, and a complete send, with a personal angle that isn't in the episode.</div>
+    <div class="card">
+      <p><b>Subject line options:</b></p>
+      <ul class="clean">
+        <li>A: From $50K to $1.5M ARR — with zero employees</li>
+        <li>B: The depth problem that kept a founder stuck for 5 years</li>
+        <li>C: He turned down $1M to keep his company. Then hired.</li>
+      </ul>
+      <p><b>Preview text:</b> George Georgiadis spent five years at $50K ARR. This week on the podcast: what finally moved the number.</p>
+      <hr style="border:none;border-top:1px dashed var(--line);margin:16px 0">
+      <p>Hey,</p>
+      <p>This week on the podcast: George Georgiadis, founder of Happier Leads.</p>
+      <p>Five years stuck at $50K ARR. Ten failed projects. Lending the business money from his own bank account. He came close to shutting it down.</p>
+      <p>Then: $1.5M ARR, bootstrapped, no outside capital, no employees — running support and bug fixes with AI agents he built himself.</p>
+      <p>The lessons that stuck with me:</p>
+      <ul class="clean">
+        <li>A plateau is a depth problem, not an effort problem</li>
+        <li>Own the infrastructure your channel depends on — his cold email costs are low because he owns the mailboxes and the data</li>
+        <li>Cold email works on precision, not personalization theater</li>
+        <li>AI replaces a team only when the data lives in one place</li>
+        <li>Lifetime deals buy time, not revenue</li>
+        <li>A solo operator owns a job, not a company — which is why he's hiring again, and why he turned down a $1M offer</li>
+      </ul>
+      <p>If you've been on a plateau longer than you'd like, this one's for you.</p>
+      <p>🎧 Listen here → [episode link]</p>
+      <p>Talk soon,<br>Omer</p>
+    </div>
+  </section>
+
+  <!-- 8. QUOTE GRAPHICS -->
+  <section id="quotes">
+    <div class="kicker">08 · Quote graphics</div>
+    <h2>8 pull-quote graphics</h2>
+    <div class="h2sub">Each under 20 words, ready to drop into Canva. Design spec below.</div>
+    <div class="quote">"A plateau is a depth problem, not an effort problem."<span class="src">George Georgiadis, Happier Leads · Ep #489</span></div>
+    <div class="quote">"Own the infrastructure your channel depends on."<span class="src">George Georgiadis, Happier Leads · Ep #489</span></div>
+    <div class="quote">"The point tool that felt like a mistake became the moat."<span class="src">George Georgiadis, Happier Leads · Ep #489</span></div>
+    <div class="quote">"Cold email works on precision, not personalization theater."<span class="src">George Georgiadis, Happier Leads · Ep #489</span></div>
+    <div class="quote">"AI replaces a team only when the data lives in one place."<span class="src">George Georgiadis, Happier Leads · Ep #489</span></div>
+    <div class="quote">"Lifetime deals buy time, not revenue."<span class="src">George Georgiadis, Happier Leads · Ep #489</span></div>
+    <div class="quote">"A solo operator owns a job, not a company."<span class="src">George Georgiadis, Happier Leads · Ep #489</span></div>
+    <div class="quote">"Stuck at $50K ARR for 5 years. Now $1.5M with AI agents."<span class="src">The SaaS Podcast · Ep #489</span></div>
+    <p style="color:var(--muted);font-size:14px">Design spec: 1080×1080, dark background (#0d1117), quote in large white bold sans, speaker + episode in accent blue bottom-left, "The SaaS Podcast" wordmark top-right. Consistent template across all 8.</p>
+  </section>
+
+  <!-- 9. CALENDAR -->
+  <section id="calendar">
+    <div class="kicker">09 · Distribution plan</div>
+    <h2>4-week distribution plan, scheduled for you</h2>
+    <div class="h2sub">Here's the part that matters: <b>you don't post any of this.</b> We map every asset across four weeks, load it into your scheduler, and you approve the whole batch in about five minutes. Then it publishes itself while you focus on recording and SaaS Club. The mix follows a founder-optimized ratio: 40% education, 30% story, 20% POV, 10% offer.</div>
+    <div class="note" style="margin-top:0">
+      <b>How the hands-off part works:</b> You record. We create the pack, schedule everything into your posting tool, and send you one approval link. One click and a month of content goes live on autopilot. Add a second show later and we fold it into the same managed queue, so it never becomes more work for you, no matter how many episodes you run.
+    </div>
+
+    <div class="wk">Week 1 — Launch</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 1</b> (milestone hook) + link to episode in comments</td></tr>
+      <tr><td>Mon</td><td>X</td><td><b>The 10-tweet thread</b></td></tr>
+      <tr><td>Tue</td><td>Newsletter</td><td><b>Full edition</b> (subject A)</td></tr>
+      <tr><td>Wed</td><td>LinkedIn + X</td><td><b>Audiogram 1</b> ("Depth, not effort")</td></tr>
+      <tr><td>Thu</td><td>LinkedIn</td><td><b>Post 3</b> (seven lessons)</td></tr>
+      <tr><td>Fri</td><td>LinkedIn</td><td><b>Post 6</b> carousel + <b>Quote graphic 1</b></td></tr>
+    </table>
+
+    <div class="wk">Week 2 — Depth</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 2</b> (contrarian: depth problem)</td></tr>
+      <tr><td>Tue</td><td>LinkedIn + X</td><td><b>Audiogram 2</b> ("Own the infrastructure")</td></tr>
+      <tr><td>Wed</td><td>Blog</td><td>Publish <b>SEO article</b> on saasclub.io</td></tr>
+      <tr><td>Thu</td><td>X</td><td>Repost thread w/ new hook + <b>Quote graphic 3</b></td></tr>
+      <tr><td>Fri</td><td>LinkedIn</td><td><b>Post 5</b> (data: what changed the number)</td></tr>
+    </table>
+
+    <div class="wk">Week 3 — Engagement</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 7</b> (poll: what breaks a plateau)</td></tr>
+      <tr><td>Wed</td><td>LinkedIn + X</td><td><b>Audiogram 3</b> ("A job or a company")</td></tr>
+      <tr><td>Thu</td><td>LinkedIn</td><td><b>Post 4</b> (story: the interview that stayed with me)</td></tr>
+      <tr><td>Fri</td><td>X + IG</td><td><b>Quote graphics 4 &amp; 5</b></td></tr>
+    </table>
+
+    <div class="wk">Week 4 — Payoff</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn + X</td><td><b>Video 5</b> ("Own a job or own a company")</td></tr>
+      <tr><td>Wed</td><td>LinkedIn</td><td><b>Post 8</b> (personal reflection + soft CTA)</td></tr>
+      <tr><td>Thu</td><td>Newsletter</td><td>Follow-up: "the one lesson that stuck" (repurpose Post 8)</td></tr>
+      <tr><td>Fri</td><td>IG + X</td><td><b>Quote graphics 6, 7 &amp; 8</b> to close the cycle</td></tr>
+    </table>
+  </section>
+
+  <div class="final">
+    <h2>This is one episode.</h2>
+    <p style="color:var(--muted);max-width:560px;margin:0 auto 22px">18+ assets, five platforms, a full month of distribution, all pulled from a single recording and written in your voice. Imagine this landing in your inbox every time you publish, with nothing left for you to do but hit post.</p>
+    <a class="cta" href="mailto:hello@episodeloop.com?subject=Let's%20talk%20EpisodeLoop">Email me to get started →</a>
+    <p style="color:var(--muted);font-size:14px;margin-top:16px">Or just reply to my email. Either way, this pack is yours to keep.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    Made by <b>EpisodeLoop</b> · <a class="mail" href="mailto:hello@episodeloop.com">hello@episodeloop.com</a><br>
+    Created from publicly available episode content, shared free with our best wishes.
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EpisodeLoop — Free Content Pack for The Jonny Ross Fractional CMO (Ep #140)</title>
+<meta name="description" content="A full content pack made by EpisodeLoop from episode #140 of The Jonny Ross Fractional CMO podcast." />
+<meta name="robots" content="noindex" />
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --ink:#e6edf3; --muted:#9aa5b1;
+    --accent:#5b8cff; --accent2:#7c5bff; --line:#232a34; --ok:#3fb950; --amber:#d29922;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  header{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);z-index:10}
+  .headrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .brand span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .navpill{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+  .hero{padding:52px 0 30px}
+  .badge{display:inline-block;background:rgba(63,185,80,.12);color:var(--ok);border:1px solid rgba(63,185,80,.3);font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{color:var(--muted);font-size:18px}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:16px 20px;margin:22px 0;color:var(--muted);font-size:15px}
+  .note b{color:var(--ink)}
+  .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin:20px 0}
+  .toc h4{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin-left:18px;color:var(--ink);font-size:15px;columns:2;column-gap:28px}
+  .toc li{padding:3px 0}
+  .toc a{color:var(--ink);text-decoration:none}
+  .toc a:hover{color:var(--accent)}
+  section{padding:30px 0;border-top:1px solid var(--line)}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  h2{font-size:25px;letter-spacing:-.01em;margin-bottom:8px}
+  .h2sub{color:var(--muted);font-size:15px;margin-bottom:18px}
+  h3{font-size:17px;margin:20px 0 6px}
+  p{margin-bottom:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .card .meta{color:var(--muted);font-size:14px;margin-bottom:10px}
+  ul.clean{list-style:none;margin:10px 0}
+  ul.clean li{padding:4px 0 4px 22px;position:relative}
+  ul.clean li:before{content:"→";position:absolute;left:0;color:var(--accent)}
+  .ts{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600;margin-right:8px}
+  .post{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;white-space:pre-line;font-size:15px}
+  .post .tag{display:block;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+  .post .fmt{color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0}
+  .hashtags{color:var(--accent);font-size:14px}
+  blockquote{border-left:3px solid var(--accent2);padding-left:16px;color:var(--ink);margin:8px 0}
+  .article p{color:#c9d3de}
+  .article h3{color:var(--ink)}
+  .metabar{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:14px;border-bottom:1px dashed var(--line);padding-bottom:12px}
+  .metabar b{color:var(--ink)}
+  .script{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .script .hook{background:var(--panel2);border-radius:8px;padding:10px 14px;margin:8px 0;font-weight:600}
+  .script .beat{display:flex;gap:12px;margin:7px 0;font-size:15px}
+  .script .beat .t{flex:none;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums;width:52px}
+  .quote{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:12px;font-size:18px;font-weight:600;line-height:1.4;position:relative}
+  .quote .src{display:block;margin-top:10px;font-size:13px;font-weight:500;color:var(--muted)}
+  .caltable{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+  .caltable th,.caltable td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  .caltable th{background:var(--panel2);color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+  .caltable td b{color:var(--accent)}
+  .wk{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);margin:16px 0 6px}
+  .cta{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:12px;font-size:16px;margin-top:6px}
+  a.mail{color:var(--accent);text-decoration:none}
+  footer{padding:44px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  .final{text-align:center;padding:48px 0}
+  .value{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+  .value div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
+  .value b{display:block;color:var(--accent);font-size:20px}
+  @media(max-width:600px){.hero h1{font-size:27px}.toc ol{columns:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap headrow">
+    <div class="brand">Episode<span>Loop</span></div>
+    <div class="navpill">Free content pack · prepared for Jonny Ross</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge">FREE SAMPLE · BUILT FROM YOUR EPISODE #140</div>
+    <h1>One episode, <em>a full month of content.</em></h1>
+    <p class="sub">The Jonny Ross Fractional CMO · "Trust isn't a vibe, it's a ranking signal. What Google &amp; AI engines reward"</p>
+  </div>
+
+  <div class="note">
+    Hi Jonny. This is a real, finished content pack built entirely from your episode #140 — the finale of your four-part E-E-A-T mini-series with Pascal Fintoni. Nothing here is a template. Every post, script, and quote is pulled from what you actually covered, written in your voice. <b>It's yours to publish, free, with no strings.</b> This is exactly what you'd receive from EpisodeLoop for every episode you release.
+  </div>
+
+  <div class="value">
+    <div><b>18+</b> ready-to-publish assets</div>
+    <div><b>5</b> platforms covered</div>
+    <div><b>4 weeks</b> of scheduled content</div>
+    <div><b>~7 hrs</b> of work, done for you</div>
+  </div>
+
+  <div class="toc">
+    <h4>What's inside this pack</h4>
+    <ol>
+      <li><a href="#notes">Full show notes + timestamps</a></li>
+      <li><a href="#blog">SEO blog article (1,100 words)</a></li>
+      <li><a href="#linkedin">8 LinkedIn posts</a></li>
+      <li><a href="#thread">X / Twitter thread</a></li>
+      <li><a href="#video">5 short-form video scripts (audiogram-ready)</a></li>
+      <li><a href="#audiogram">3 audiogram scripts</a></li>
+      <li><a href="#newsletter">Newsletter edition</a></li>
+      <li><a href="#quotes">8 pull-quote graphics</a></li>
+      <li><a href="#calendar">4-week content calendar</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. SHOW NOTES -->
+  <section id="notes">
+    <div class="kicker">01 · Show Notes</div>
+    <h2>Full show notes, timestamps &amp; quote highlights</h2>
+    <div class="h2sub">Drop straight into your episode description, Apple Podcasts, and YouTube.</div>
+    <div class="card">
+      <div class="meta"><b>Episode #140 — Trust isn't a vibe, it's a ranking signal. What Google &amp; AI engines reward</b></div>
+      <p>The finale of the four-part E-E-A-T mini-series. Jonny Ross and Pascal Fintoni close it out with the most decisive letter of all: T for Trustworthiness. Drawing on Ahrefs' guide to E-E-A-T by Mateusz Makosiewicz and Joshua Hardwick, they unpack why trust is the pillar Google and AI engines weight most heavily — even though it is the least glamorous to build — and walk through the practical checklist every website owner needs: security, transparency, accuracy and honesty.</p>
+      <h3>Timestamps</h3>
+      <ul class="clean">
+        <li><span class="ts">00:00</span> Opening: the final letter of E-E-A-T — Trustworthiness</li>
+        <li><span class="ts">02:00</span> Listener question (Digital Knowledge Exchange, Leeds): long-form content without the chore</li>
+        <li><span class="ts">09:00</span> What long-form actually looks like: instalments, news roundups, deep-dives</li>
+        <li><span class="ts">15:00</span> Why Trustworthiness is the most heavily weighted pillar — and the least glamorous</li>
+        <li><span class="ts">22:00</span> The trust checklist: security, transparency, accuracy, honesty</li>
+        <li><span class="ts">28:00</span> Google's warnings: traffic-first content, mass automation, stale dates</li>
+        <li><span class="ts">31:00</span> Website Engine Room: Google Business Profile &amp; Tavus.io</li>
+        <li><span class="ts">34:00</span> The two closing CTAs: "Ask AI about [Brand]" + the review ask</li>
+        <li><span class="ts">36:00</span> Wrap-up of the Trust mini-series and final thoughts</li>
+      </ul>
+      <p style="color:var(--muted);font-size:13px;margin-top:10px">Note: timestamps are estimated from the episode structure and should be confirmed against your final audio. EpisodeLoop verifies exact timestamps against the real file for paying clients.</p>
+      <h3>Key lines from the episode</h3>
+      <ul class="clean">
+        <li>"Trust is the pillar Google and AI engines weight most heavily, even though it is the least glamorous to build."</li>
+        <li>"Short-form leaves the reader thinking 'interesting, but I need to think this through'; long-form answers the 'so what, now what'."</li>
+        <li>"Price, quality and 'can this actually do what it says' all sit downstream of whether the buyer trusts the source."</li>
+        <li>"Only display badges, accreditations or awards you have genuinely earned."</li>
+      </ul>
+      <p><b>Series links:</b> Experience (ep #136) · Expertise (ep #137) · Authority (ep #138) · Trust (ep #140)</p>
+    </div>
+  </section>
+
+  <!-- 2. BLOG -->
+  <section id="blog" class="article">
+    <div class="kicker">02 · SEO Blog Article</div>
+    <h2>Trust Isn't a Vibe. It's the Ranking Signal Google Weighs Most.</h2>
+    <div class="metabar">
+      <span><b>Word count:</b> ~1,100</span>
+      <span><b>Primary keyword:</b> website trust signals E-E-A-T</span>
+      <span><b>Meta:</b> Why Google weights Trustworthiness above every other E-E-A-T pillar — and the practical security, transparency, accuracy and honesty checklist every website owner needs.</span>
+    </div>
+    <div class="card">
+      <p>Every SEO conversation eventually lands on the same four letters: E-E-A-T. Experience, Expertise, Authoritativeness, Trustworthiness. We've spent the last month on the podcast working through them one at a time, and we saved the most important for last.</p>
+      <p>Here's what most people miss about E-E-A-T. Google's own guidelines don't treat those four pillars equally. Trustworthiness is the one weighted most heavily. Not because it's the most interesting — it's the opposite. Trust is the least glamorous pillar there is. There's almost no storytelling opportunity in it, no clever content format, no viral hook. It's the unglamorous work of being accurate, honest, safe and reliable. And it's the work Google is actually grading you on.</p>
+      <h3>What "trust" actually means to Google</h3>
+      <p>Google defines Trustworthiness around the accuracy, honesty, safety and reliability of a website and its content. That's it. No mystery. No secret sauce. A practical checklist every website owner can work through:</p>
+      <ul class="clean">
+        <li><b>Security.</b> Run the whole site on HTTPS. Keep GDPR and privacy policies current. Make checkout and payment pages visibly secure.</li>
+        <li><b>Transparency.</b> Publish a genuine About Us page. Make contact details clear and reachable. State plainly when a page was last updated — and don't fake the dates.</li>
+        <li><b>Accuracy.</b> Back up any claim you make with evidence. Don't oversell products or services beyond what you can substantiate.</li>
+        <li><b>Honesty.</b> Only display badges, accreditations or awards you have genuinely earned. Use progress bars on longer forms so people know what to expect.</li>
+      </ul>
+      <p>Google is equally explicit about what it penalises: content built primarily to attract search traffic, mass automated content across unrelated topics, content that merely summarises other sources, and artificially refreshed publish dates. If your content strategy is "write for the search engine," you're building the exact opposite of trust.</p>
+      <h3>Why trust beats content</h3>
+      <p>Here's the uncomfortable part. When a buyer lands on your website, trust is already baked into the decision before they read a word. Price, quality and "can this actually do what it says" all sit downstream of whether they trust the source. That's why Pascal Fintoni and I kept coming back to the same point in episode #140: you can't out-content a trust problem. You have to out-honest it.</p>
+      <p>This is also why AI search changes the game in your favour if you play it right. The buyer journey is increasingly mediated by AI engines, and those engines cite sources they trust. A footer line that says "Ask AI about [Brand]" — with icons linking to ChatGPT, Perplexity and Gemini, each pre-loaded with a specific prompt about your product — turns a trust signal into a discovery channel. When a prospect asks an AI engine about your category, your brand shows up with an answer you wrote.</p>
+      <h3>The unglamorous advantage</h3>
+      <p>Long-form content has a role to play here too, and it's not what most people think. There's no fixed word count that makes something "long-form." It can be 800 words or 12,000 across several platforms. The real distinction is whether you answered the "so what, now what." Short-form leaves the reader thinking "interesting, but I need to think this through." Long-form tells them exactly what to do next. And if writing a full piece in one sitting feels daunting? Publish it in instalments. Part one this week, part two next. Build toward a 2,000–3,000 word piece over a month.</p>
+      <p>Trust compounds in exactly the same way. One honest page at a time. One verifiable claim at a time. One badge you actually earned. It's not the fastest route. It's the only route that lasts — with Google, with AI engines, and with the buyers deciding whether to trust you before they read a single word.</p>
+      <p>If you want the full trust checklist, the four-part E-E-A-T series, and the two tools Pascal and I explored in the Website Engine Room — Google Business Profile and Tavus.io — it's all in episode #140 of the podcast.</p>
+      <p><em>Listen to the full episode at podcast.jonnyross.com.</em></p>
+    </div>
+  </section>
+
+  <!-- 3. LINKEDIN -->
+  <section id="linkedin">
+    <div class="kicker">03 · LinkedIn</div>
+    <h2>8 LinkedIn posts, 8 different formats</h2>
+    <div class="h2sub">Series finale hook, contrarian take, checklist, story, data, carousel outline, poll, and a personal reflection. One idea each, built to be scanned on mobile.</div>
+
+    <div class="post"><span class="tag">Post 1 <span class="fmt">· Series finale hook</span></span>Four episodes. One question I kept circling.
+
+Experience, Expertise, Authority... and then this week, the one Google weighs most heavily of all: Trustworthiness.
+
+The finale of our E-E-A-T mini-series just landed — "Trust isn't a vibe, it's a ranking signal."
+
+Here's the uncomfortable truth Pascal Fintoni and I unpacked:
+
+Trust is the least glamorous part of SEO. No storytelling. No content opportunities. Just the unglamorous work of being accurate, honest and safe.
+
+And it's the one Google is actually grading you on.
+
+Full breakdown in the episode — link in comments.
+<span class="hashtags">#SEO #E-E-A-T #GoogleRanking #DigitalMarketing</span></div>
+
+    <div class="post"><span class="tag">Post 2 <span class="fmt">· Contrarian</span></span>The most important ranking signal is the one nobody wants to write content about.
+
+Google's own guidelines weight Trustworthiness more heavily than Experience, Expertise or Authority.
+
+But you can't blog your way to trust.
+
+You build it with HTTPS, honest claims, genuine badges, a real About Us page and contact details you actually answer.
+
+Boring. Effective. Ranking.
+
+That's the whole argument of episode #140 — the finale of our E-E-A-T series with Pascal Fintoni.
+<span class="hashtags">#SEO #WebsiteTrust #B2BMarketing</span></div>
+
+    <div class="post"><span class="tag">Post 3 <span class="fmt">· Listicle</span></span>The trust checklist Google is grading you on (from episode #140):
+
+1. Security — HTTPS everywhere, GDPR + privacy policies current, visibly secure checkout
+2. Transparency — a genuine About Us, clear contact details, honest "last updated" dates
+3. Accuracy — every claim backed with evidence. Nothing oversold
+4. Honesty — only the badges and awards you genuinely earned. Progress bars on long forms
+
+And three things Google explicitly warns against:
+❌ Content built to attract search traffic
+❌ Mass automated content on unrelated topics
+❌ Content that merely summarises other sources
+
+The full breakdown is in episode #140. Link in comments.
+<span class="hashtags">#SEO #E-E-A-T #WebsiteOptimization</span></div>
+
+    <div class="post"><span class="tag">Post 4 <span class="fmt">· Story</span></span>Four weeks ago we started a mini-series on the podcast.
+
+One letter of E-E-A-T at a time: Experience, Expertise, Authority... and this week, Trustworthiness.
+
+Why a whole series on four letters? Because most website owners are doing the flashy 20% of SEO and ignoring the 80% that actually compounds.
+
+The finale episode came from a listener question at the Digital Knowledge Exchange conference in Leeds — about finding the motivation to create long-form content.
+
+The answer changed how I think about content. There's no fixed word count. Long-form is about answering "so what, now what."
+
+Pascal Fintoni and I closed the series with the trust checklist Google actually grades you on. If you've ever wondered why your content isn't ranking, start here.
+<span class="hashtags">#SEO #Podcasting #ContentStrategy</span></div>
+
+    <div class="post"><span class="tag">Post 5 <span class="fmt">· Data / pattern interrupt</span></span>Google's own guidelines weight Trustworthiness MORE heavily than Experience, Expertise and Authority.
+
+Not equally. More.
+
+Yet trust is the pillar with the least content opportunity. You can't blog your way to it. No guest-post blitz builds it. No clever format shortcuts it.
+
+Security. Transparency. Accuracy. Honesty.
+
+That's the entire checklist — and it's the entire point of episode #140.
+
+The most important ranking signal is the one you can't fake.
+<span class="hashtags">#SEO #E-E-A-T #DigitalTrust</span></div>
+
+    <div class="post"><span class="tag">Post 6 <span class="fmt">· Carousel outline (7 slides)</span></span>CAROUSEL: "The Trust Checklist Google Grades You On"
+
+Slide 1 (hook): Google weights Trustworthiness above every other E-E-A-T pillar →
+Slide 2: Trust is the least glamorous — and most decisive — ranking signal.
+Slide 3: Security — HTTPS everywhere, current policies, secure checkout.
+Slide 4: Transparency — real About Us, clear contact, honest dates.
+Slide 5: Accuracy — every claim backed with evidence.
+Slide 6: Honesty — only badges you earned. Progress bars on forms.
+Slide 7 (CTA): The full checklist + tools are in episode #140. Follow for more.
+
+<span class="fmt" style="color:var(--muted)">Design note: dark background, one checklist item per slide, host name bottom-right, episode number watermark.</span></div>
+
+    <div class="post"><span class="tag">Post 7 <span class="fmt">· Poll</span></span>After four episodes on E-E-A-T, one debate keeps coming up:
+
+What builds website trust fastest?
+
+🔲 HTTPS + security signals
+🔲 Genuine reviews and testimonials
+🔲 A real About Us + visible contact details
+🔲 Evidence-backed claims and honest badges
+
+My answer in episode #140: all four — but honesty is the one Google weights most.
+
+Curious where you land. Vote, then tell me why in the comments.
+<span class="hashtags">#SEO #WebsiteTrust #E-E-A-T</span></div>
+
+    <div class="post"><span class="tag">Post 8 <span class="fmt">· Personal reflection + soft CTA</span></span>The best website CTA I heard this month wasn't "Book a call."
+
+It's this: add an "Ask AI about [Brand]" line to your footer, with icons linking to ChatGPT, Perplexity and Gemini — each pre-loaded with a specific prompt about your product.
+
+Why it works: when a buyer asks an AI engine about your category, your brand shows up with an answer you wrote.
+
+That was one of two closing CTAs in episode #140, the finale of our E-E-A-T mini-series with Pascal Fintoni.
+
+If you're trying to get found by Google *and* AI engines, this one's a keeper. 🎧 Link in comments.
+<span class="hashtags">#AISearch #SEO #BrandDiscovery</span></div>
+  </section>
+
+  <!-- 4. THREAD -->
+  <section id="thread">
+    <div class="kicker">04 · X / Twitter</div>
+    <h2>A 10-tweet thread</h2>
+    <div class="h2sub">Each tweet stands alone. Hook first. Built to be screenshotted.</div>
+    <div class="post">1/ We spent four episodes on E-E-A-T.
+
+Experience. Expertise. Authority.
+
+And the one Google weights MOST heavily of all:
+
+Trustworthiness.
+
+"Trust isn't a vibe, it's a ranking signal." — the finale of our mini-series 🧵
+
+2/ Here's the part nobody talks about.
+
+Trust is the LEAST glamorous pillar of E-E-A-T.
+
+No storytelling. No content opportunity. No fun.
+
+Just the unglamorous work of being accurate, honest and safe.
+
+And it's the pillar Google grades you on.
+
+3/ Google's trust checklist, in one tweet:
+
+🔒 Security — HTTPS everywhere, current GDPR/privacy policies, secure checkout
+👀 Transparency — real About Us, clear contact details, honest last-updated dates
+✅ Accuracy — every claim backed with evidence
+🤝 Honesty — only badges you actually earned
+
+4/ "Only display badges, accreditations or awards you have genuinely earned."
+
+The honesty check.
+
+Most sites fail it with one logo they don't deserve. Google notices.
+
+5/ Google explicitly warns against:
+
+❌ Content built to attract search traffic
+❌ Mass automated content on unrelated topics
+❌ Content that merely summarises other sources
+❌ Artificially refreshed publish dates
+
+"Write for search" is the opposite of trust.
+
+6/ Why this matters MORE now:
+
+AI engines cite sources they trust.
+
+If your site isn't trustworthy, you don't just lose Google rankings — you disappear from AI answers too.
+
+7/ Quick win: add an "Ask AI about [Brand]" line to your footer.
+
+Icons linking to ChatGPT, Perplexity and Gemini — each pre-loaded with a prompt about your product.
+
+When buyers ask AI about your category, you show up with an answer you wrote.
+
+8/ On long-form content: there's no magic word count.
+
+800 words can be long-form. 12,000 can be, too (Pascal's own test).
+
+The real test: does it answer "so what, now what"?
+
+Short-form makes people think. Long-form tells them what to do next.
+
+9/ Stuck on motivation? Two reliable sources of long-form inspiration:
+
+• A monthly news roundup reacting to what happened
+• A deep-dive expansion of an answer you gave a client this week
+
+Publish in instalments. Build to 2,000–3,000 words over a month.
+
+10/ That's episode #140 — the E-E-A-T finale with Pascal Fintoni.
+
+The full trust checklist, two tools (Google Business Profile + Tavus.io), and the CTAs that turn trust into discovery.
+
+🎧 → podcast.jonnyross.com
+
+Follow @JonnyRoss for more on SEO, AI visibility and website growth.</div>
+  </section>
+
+  <!-- 5. VIDEO SCRIPTS -->
+  <section id="video">
+    <div class="kicker">05 · Short-form video</div>
+    <h2>5 short-form video scripts (Reels / Shorts — audiogram-ready)</h2>
+    <div class="h2sub">Hook in the first 3 seconds, one idea, clear payoff. Built to work as talking-head or text-overlay audiograms — no fancy footage required. 30–45s each.</div>
+
+    <div class="script">
+      <b>Script 1 — "The ranking signal nobody wants to build" (35s)</b>
+      <div class="hook">HOOK (0–3s): "The most important Google ranking signal is the one nobody wants to work on."</div>
+      <div class="beat"><span class="t">3–14s</span>"Google's own guidelines weight Trustworthiness more heavily than Experience, Expertise or Authority."</div>
+      <div class="beat"><span class="t">14–30s</span>"But you can't blog your way to trust. You build it with HTTPS, honest claims, genuine badges, a real About Us page — the boring stuff. Which is exactly why it works."</div>
+      <div class="beat"><span class="t">30–35s</span>"Full checklist in episode #140 of the podcast."</div>
+    </div>
+
+    <div class="script">
+      <b>Script 2 — "The 4-point trust checklist" (40s)</b>
+      <div class="hook">HOOK (0–3s): "Google is grading your website on four things. Here they are."</div>
+      <div class="beat"><span class="t">3–12s</span>"Security — the whole site on HTTPS, current privacy policies, secure checkout."</div>
+      <div class="beat"><span class="t">12–21s</span>"Transparency — a genuine About Us, clear contact details, honest last-updated dates."</div>
+      <div class="beat"><span class="t">21–30s</span>"Accuracy — every claim backed with evidence. And honesty — only the badges you genuinely earned."</div>
+      <div class="beat"><span class="t">30–40s</span>"Boring? Yes. Effective? Also yes. That's episode #140 — link in the episode."</div>
+    </div>
+
+    <div class="script">
+      <b>Script 3 — "Long-form without the chore" (32s)</b>
+      <div class="hook">HOOK (0–3s): "There is no word count that makes content 'long-form'."</div>
+      <div class="beat"><span class="t">3–14s</span>"It can be 800 words. Or 12,000 across platforms. The real test is whether it answers the 'so what, now what'."</div>
+      <div class="beat"><span class="t">14–26s</span>"Short-form leaves people thinking 'interesting, I need to think this through.' Long-form tells them exactly what to do next."</div>
+      <div class="beat"><span class="t">26–32s</span>"And if it feels like a chore — publish it in instalments. Full answer in episode #140."</div>
+    </div>
+
+    <div class="script">
+      <b>Script 4 — "Ask AI about your brand" (34s)</b>
+      <div class="hook">HOOK (0–3s): "The best website CTA I've heard this month isn't 'Book a call'."</div>
+      <div class="beat"><span class="t">3–15s</span>"Add an 'Ask AI about [Brand]' line to your footer — with icons linking to ChatGPT, Perplexity and Gemini, each pre-loaded with a prompt about your product."</div>
+      <div class="beat"><span class="t">15–29s</span>"When a buyer asks an AI engine about your category, your brand shows up with an answer you wrote. That's trust and discovery in one."</div>
+      <div class="beat"><span class="t">29–34s</span>"From episode #140. Go steal it."</div>
+    </div>
+
+    <div class="script">
+      <b>Script 5 — "Trust beats content" (38s)</b>
+      <div class="hook">HOOK (0–3s): "You can't out-content a trust problem. You have to out-honest it."</div>
+      <div class="beat"><span class="t">3–16s</span>"Price, quality and 'can this actually do what it says' all sit downstream of whether the buyer trusts the source. That's true before they read a single word."</div>
+      <div class="beat"><span class="t">16–32s</span>"And with AI search, trust matters even more — AI engines cite sources they trust. If you're not trustworthy, you're not in the answer."</div>
+      <div class="beat"><span class="t">32–38s</span>"The whole trust checklist is in episode #140. Go listen."</div>
+    </div>
+  </section>
+
+  <!-- 6. AUDIOGRAMS -->
+  <section id="audiogram">
+    <div class="kicker">06 · Audiograms</div>
+    <h2>3 audiogram scripts (audio-first, text-on-screen)</h2>
+    <div class="h2sub">For a podcast, the audiogram is the native short-form format: a 30–60s clip with waveform + captions, built to stop the scroll. These pick the most quotable 30 seconds of episode #140. No viral promises — just clips that make people press play.</div>
+
+    <div class="script">
+      <b>Audiogram 1 — "Trust isn't a vibe" (35s)</b>
+      <div class="hook">HOOK (0–3s): "Trust isn't a vibe. It's a ranking signal."</div>
+      <div class="beat"><span class="t">3–16s</span>"Google's own guidelines weight Trustworthiness more heavily than Experience, Expertise or Authority."</div>
+      <div class="beat"><span class="t">16–30s</span>"It's the least glamorous pillar to build — and the one Google is actually grading you on."</div>
+      <div class="beat"><span class="t">30–35s</span>"The full checklist is in episode #140. Link below."</div>
+      <div style="color:var(--muted);font-size:13px;margin-top:8px">On-screen text: "Trust isn't a vibe, it's a ranking signal." · Caption style: waveform center, quote top, host handle bottom.</div>
+    </div>
+
+    <div class="script">
+      <b>Audiogram 2 — "The boring checklist that ranks" (40s)</b>
+      <div class="hook">HOOK (0–3s): "The four things Google grades you on are deeply boring."</div>
+      <div class="beat"><span class="t">3–14s</span>"Security — HTTPS everywhere, current policies, secure checkout. Transparency — a real About Us and honest dates."</div>
+      <div class="beat"><span class="t">14–28s</span>"Accuracy — every claim backed with evidence. Honesty — only the badges you genuinely earned."</div>
+      <div class="beat"><span class="t">28–40s</span>"Boring, effective, and ranking. That's episode #140 — press play."</div>
+      <div style="color:var(--muted);font-size:13px;margin-top:8px">On-screen text: checklist appears one item at a time · CTA: "Full episode in bio."</div>
+    </div>
+
+    <div class="script">
+      <b>Audiogram 3 — "Ask AI about your brand" (32s)</b>
+      <div class="hook">HOOK (0–3s): "Here's a footer line that turns trust into a discovery channel."</div>
+      <div class="beat"><span class="t">3–15s</span>"'Ask AI about [Brand]' — with icons linking to ChatGPT, Perplexity and Gemini, each pre-loaded with a specific prompt about your product."</div>
+      <div class="beat"><span class="t">15–27s</span>"When a buyer asks an AI engine about your category, your brand shows up with an answer you wrote."</div>
+      <div class="beat"><span class="t">27–32s</span>"That's from episode #140 of the podcast. Listen here."</div>
+      <div style="color:var(--muted);font-size:13px;margin-top:8px">On-screen text: "Ask AI about [Brand] → ChatGPT · Perplexity · Gemini" · CTA button style: "Listen"</div>
+    </div>
+  </section>
+
+  <!-- 7. NEWSLETTER -->
+  <section id="newsletter">
+    <div class="kicker">07 · Newsletter</div>
+    <h2>Full newsletter edition</h2>
+    <div class="h2sub">3 subject-line options, preview text, and a complete send, with a personal angle that isn't in the episode.</div>
+    <div class="card">
+      <p><b>Subject line options:</b></p>
+      <ul class="clean">
+        <li>A: Trust isn't a vibe. It's a ranking signal.</li>
+        <li>B: The E-E-A-T finale: the ranking signal nobody wants to build</li>
+        <li>C: 4 boring website tweaks that actually rank (ep #140)</li>
+      </ul>
+      <p><b>Preview text:</b> Google weights Trustworthiness above every other E-E-A-T pillar. Here's the checklist it grades you on.</p>
+      <hr style="border:none;border-top:1px dashed var(--line);margin:16px 0">
+      <p>Hey,</p>
+      <p>We closed out our four-part E-E-A-T mini-series on the podcast this week, and we saved the biggest for last: Trustworthiness — the pillar Google weights most heavily, and the one nobody wants to build because it's the least glamorous.</p>
+      <p>Pascal Fintoni and I walked through the checklist every website owner needs to work through:</p>
+      <ul class="clean">
+        <li><b>Security</b> — HTTPS everywhere, current GDPR and privacy policies, visibly secure checkout</li>
+        <li><b>Transparency</b> — a genuine About Us page, clear contact details, honest last-updated dates</li>
+        <li><b>Accuracy</b> — every claim backed with evidence, nothing oversold</li>
+        <li><b>Honesty</b> — only the badges and awards you genuinely earned</li>
+      </ul>
+      <p>Plus: how to create long-form content without it feeling like a chore (publish in instalments, use a monthly news roundup as fuel), two tools worth exploring — Google Business Profile and Tavus.io — and a CTA you can steal: add an "Ask AI about [Brand]" line to your footer, linking to ChatGPT, Perplexity and Gemini with pre-loaded prompts.</p>
+      <p>That last one is my favourite idea of the month. When a buyer asks an AI engine about your category, your brand shows up with an answer you wrote.</p>
+      <p>If you're responsible for organic visibility, AI citations or on-site conversion — this episode is your trust checklist.</p>
+      <p>🎧 Listen here → [episode link]</p>
+      <p>Talk soon,<br>Jonny</p>
+    </div>
+  </section>
+
+  <!-- 8. QUOTE GRAPHICS -->
+  <section id="quotes">
+    <div class="kicker">08 · Quote graphics</div>
+    <h2>8 pull-quote graphics</h2>
+    <div class="h2sub">Each under 20 words, ready to drop into Canva. Design spec below.</div>
+    <div class="quote">"Trust isn't a vibe, it's a ranking signal."<span class="src">Jonny Ross · Ep #140 · The Jonny Ross Fractional CMO</span></div>
+    <div class="quote">"Trust is the pillar Google and AI engines weight most heavily — even though it's the least glamorous to build."<span class="src">Jonny Ross &amp; Pascal Fintoni · Ep #140</span></div>
+    <div class="quote">"You can't blog your way to trust. You have to build it."<span class="src">Jonny Ross · Ep #140</span></div>
+    <div class="quote">"Only display badges, accreditations or awards you have genuinely earned."<span class="src">Ep #140 · The Trust Checklist</span></div>
+    <div class="quote">"Short-form leaves you thinking. Long-form tells you what to do next."<span class="src">Jonny Ross &amp; Pascal Fintoni · Ep #140</span></div>
+    <div class="quote">"Price, quality and 'can this actually do what it says' all sit downstream of whether the buyer trusts the source."<span class="src">Ep #140 · The Trust Mini-Series</span></div>
+    <div class="quote">"The most important ranking signal is the one you can't fake."<span class="src">Jonny Ross · Ep #140</span></div>
+    <div class="quote">"Ask AI about [Brand]: the footer line that turns trust into a discovery channel."<span class="src">Jonny Ross · Ep #140</span></div>
+    <p style="color:var(--muted);font-size:14px">Design spec: 1080×1080, dark background (#0d1117), quote in large white bold sans, host name + episode in accent blue bottom-left, "The Jonny Ross Fractional CMO" wordmark top-right. Consistent template across all 8.</p>
+  </section>
+
+  <!-- 9. CALENDAR -->
+  <section id="calendar">
+    <div class="kicker">09 · Distribution plan</div>
+    <h2>4-week distribution plan, scheduled for you</h2>
+    <div class="h2sub">Here's the part that matters: <b>you don't post any of this.</b> We map every asset across four weeks, load it into your scheduler, and you approve the whole batch in about five minutes. Then it publishes itself while you focus on client work and recording. The mix follows a founder-optimized ratio: 40% education, 30% story, 20% POV, 10% offer.</div>
+    <div class="note" style="margin-top:0">
+      <b>How the hands-off part works:</b> You record. We create the pack, schedule everything into your posting tool, and send you one approval link. One click and a month of content goes live on autopilot. Add a second show later and we fold it into the same managed queue, so it never becomes more work for you, no matter how many episodes you run.
+    </div>
+
+    <div class="wk">Week 1 — Launch</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 1</b> (series finale hook) + link to episode in comments</td></tr>
+      <tr><td>Mon</td><td>X</td><td><b>The 10-tweet thread</b></td></tr>
+      <tr><td>Tue</td><td>Newsletter</td><td><b>Full edition</b> (subject A)</td></tr>
+      <tr><td>Wed</td><td>LinkedIn + X</td><td><b>Audiogram 1</b> ("Trust isn't a vibe")</td></tr>
+      <tr><td>Thu</td><td>LinkedIn</td><td><b>Post 3</b> (the trust checklist)</td></tr>
+      <tr><td>Fri</td><td>LinkedIn</td><td><b>Post 6</b> carousel + <b>Quote graphic 1</b></td></tr>
+    </table>
+
+    <div class="wk">Week 2 — Depth</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 2</b> (contrarian: the signal nobody wants to build)</td></tr>
+      <tr><td>Tue</td><td>LinkedIn + X</td><td><b>Audiogram 2</b> ("The boring checklist that ranks")</td></tr>
+      <tr><td>Wed</td><td>Blog</td><td>Publish <b>SEO article</b> on jonnyross.com</td></tr>
+      <tr><td>Thu</td><td>X</td><td>Repost thread w/ new hook + <b>Quote graphic 3</b></td></tr>
+      <tr><td>Fri</td><td>LinkedIn</td><td><b>Post 5</b> (data: Google weights trust more)</td></tr>
+    </table>
+
+    <div class="wk">Week 3 — Engagement</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 7</b> (poll: what builds trust fastest)</td></tr>
+      <tr><td>Wed</td><td>LinkedIn + X</td><td><b>Audiogram 3</b> ("Ask AI about your brand")</td></tr>
+      <tr><td>Thu</td><td>LinkedIn</td><td><b>Post 4</b> (why the series — origin story)</td></tr>
+      <tr><td>Fri</td><td>X + IG</td><td><b>Quote graphics 4 &amp; 5</b></td></tr>
+    </table>
+
+    <div class="wk">Week 4 — Payoff</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn + X</td><td><b>Video 5</b> ("Trust beats content")</td></tr>
+      <tr><td>Wed</td><td>LinkedIn</td><td><b>Post 8</b> (personal reflection + soft CTA)</td></tr>
+      <tr><td>Thu</td><td>Newsletter</td><td>Follow-up: "the one CTA I stole this month" (repurpose Post 8)</td></tr>
+      <tr><td>Fri</td><td>IG + X</td><td><b>Quote graphics 6, 7 &amp; 8</b> to close the cycle</td></tr>
+    </table>
+  </section>
+
+  <div class="final">
+    <h2>This is one episode.</h2>
+    <p style="color:var(--muted);max-width:560px;margin:0 auto 22px">18+ assets, five platforms, a full month of distribution, all pulled from a single recording and written in your voice. Imagine this landing in your inbox every time you publish, with nothing left for you to do but hit post.</p>
+    <a class="cta" href="mailto:hello@episodeloop.com?subject=Let's%20talk%20EpisodeLoop">Email me to get started →</a>
+    <p style="color:var(--muted);font-size:14px;margin-top:16px">Or just reply to my email. Either way, this pack is yours to keep.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    Made by <b>EpisodeLoop</b> · <a class="mail" href="mailto:hello@episodeloop.com">hello@episodeloop.com</a><br>
+    Created from publicly available episode content, shared free with our best wishes.
+  </div>
+</footer>
+
+</body>
+</html>

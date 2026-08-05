@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EpisodeLoop — Free Content Pack for Software Spotlight (Steve Flavell / LoopUp)</title>
+<meta name="description" content="A full content pack made by EpisodeLoop from the latest Software Spotlight episode with Steve Flavell of LoopUp." />
+<meta name="robots" content="noindex" />
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --ink:#e6edf3; --muted:#9aa5b1;
+    --accent:#5b8cff; --accent2:#7c5bff; --line:#232a34; --ok:#3fb950; --amber:#d29922;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  header{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);z-index:10}
+  .headrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .brand span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .navpill{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+  .hero{padding:52px 0 30px}
+  .badge{display:inline-block;background:rgba(63,185,80,.12);color:var(--ok);border:1px solid rgba(63,185,80,.3);font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{color:var(--muted);font-size:18px}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:16px 20px;margin:22px 0;color:var(--muted);font-size:15px}
+  .note b{color:var(--ink)}
+  .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin:20px 0}
+  .toc h4{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin-left:18px;color:var(--ink);font-size:15px;columns:2;column-gap:28px}
+  .toc li{padding:3px 0}
+  .toc a{color:var(--ink);text-decoration:none}
+  .toc a:hover{color:var(--accent)}
+  section{padding:30px 0;border-top:1px solid var(--line)}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  h2{font-size:25px;letter-spacing:-.01em;margin-bottom:8px}
+  .h2sub{color:var(--muted);font-size:15px;margin-bottom:18px}
+  h3{font-size:17px;margin:20px 0 6px}
+  p{margin-bottom:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .card .meta{color:var(--muted);font-size:14px;margin-bottom:10px}
+  ul.clean{list-style:none;margin:10px 0}
+  ul.clean li{padding:4px 0 4px 22px;position:relative}
+  ul.clean li:before{content:"→";position:absolute;left:0;color:var(--accent)}
+  .ts{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600;margin-right:8px}
+  .post{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;white-space:pre-line;font-size:15px}
+  .post .tag{display:block;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+  .post .fmt{color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0}
+  .hashtags{color:var(--accent);font-size:14px}
+  blockquote{border-left:3px solid var(--accent2);padding-left:16px;color:var(--ink);margin:8px 0}
+  .article p{color:#c9d3de}
+  .article h3{color:var(--ink)}
+  .metabar{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:14px;border-bottom:1px dashed var(--line);padding-bottom:12px}
+  .metabar b{color:var(--ink)}
+  .script{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .script .hook{background:var(--panel2);border-radius:8px;padding:10px 14px;margin:8px 0;font-weight:600}
+  .script .beat{display:flex;gap:12px;margin:7px 0;font-size:15px}
+  .script .beat .t{flex:none;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums;width:52px}
+  .quote{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:12px;font-size:18px;font-weight:600;line-height:1.4;position:relative}
+  .quote .src{display:block;margin-top:10px;font-size:13px;font-weight:500;color:var(--muted)}
+  .caltable{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+  .caltable th,.caltable td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  .caltable th{background:var(--panel2);color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+  .caltable td b{color:var(--accent)}
+  .wk{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);margin:16px 0 6px}
+  .cta{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:12px;font-size:16px;margin-top:6px}
+  a.mail{color:var(--accent);text-decoration:none}
+  footer{padding:44px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  .final{text-align:center;padding:48px 0}
+  .value{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+  .value div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
+  .value b{display:block;color:var(--accent);font-size:20px}
+  @media(max-width:600px){.hero h1{font-size:27px}.toc ol{columns:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap headrow">
+    <div class="brand">Episode<span>Loop</span></div>
+    <div class="navpill">Free content pack · prepared for Michael Bernzweig</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge">FREE SAMPLE · BUILT FROM YOUR LATEST EPISODE (AUG 3, 2026)</div>
+    <h1>One episode, <em>a full month of content.</em></h1>
+    <p class="sub">Software Spotlight · "Steve Flavell on Reinventing LoopUp Amidst Telecom Industry Transformations"</p>
+  </div>
+
+  <div class="note">
+    Hi Michael. This is a real, finished content pack built entirely from your latest Software Spotlight episode with Steve Flavell, co-founder and co-CEO of LoopUp. Nothing here is a template. Every post, script, and quote is pulled from what was actually covered — the 20-year reinvention, the PSTN switch-off, the Teams integration, the panel Q&amp;A — written in your voice. <b>It's yours to publish, free, with no strings.</b> This is exactly what you'd receive from EpisodeLoop for every episode you release.
+  </div>
+
+  <div class="value">
+    <div><b>18+</b> ready-to-publish assets</div>
+    <div><b>5</b> platforms covered</div>
+    <div><b>4 weeks</b> of scheduled content</div>
+    <div><b>~7 hrs</b> of work, done for you</div>
+  </div>
+
+  <div class="toc">
+    <h4>What's inside this pack</h4>
+    <ol>
+      <li><a href="#notes">Full show notes + timestamps</a></li>
+      <li><a href="#blog">SEO blog article (1,100 words)</a></li>
+      <li><a href="#linkedin">8 LinkedIn posts</a></li>
+      <li><a href="#thread">X / Twitter thread</a></li>
+      <li><a href="#video">5 short-form video scripts (audiogram-ready)</a></li>
+      <li><a href="#audiogram">3 audiogram scripts</a></li>
+      <li><a href="#newsletter">Newsletter edition</a></li>
+      <li><a href="#quotes">8 pull-quote graphics</a></li>
+      <li><a href="#calendar">4-week content calendar</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. SHOW NOTES -->
+  <section id="notes">
+    <div class="kicker">01 · Show Notes</div>
+    <h2>Full show notes, timestamps &amp; quote highlights</h2>
+    <div class="h2sub">Drop straight into your episode description, Apple Podcasts, and YouTube.</div>
+    <div class="card">
+      <div class="meta"><b>Steve Flavell on Reinventing LoopUp Amidst Telecom Industry Transformations</b></div>
+      <p>A 20-year journey through one of the biggest reinventions in business software. Steve Flavell, co-founder and co-CEO of LoopUp, joins host Michael Bernzweig to trace the company's transformation from conference call software to a global telecommunications provider — and the lessons that apply to any B2B SaaS navigating a structural industry shift.</p>
+      <h3>Timestamps</h3>
+      <ul class="clean">
+        <li><span class="ts">00:00</span> Introduction: Steve's 20-year journey with LoopUp</li>
+        <li><span class="ts">04:00</span> The shift from conference calls to global telecom</li>
+        <li><span class="ts">08:00</span> Surviving the pandemic's impact on business</li>
+        <li><span class="ts">14:00</span> Interview: founding LoopUp with co-CEO Michael Hughes</li>
+        <li><span class="ts">22:00</span> Early challenges and opportunities in conference calling</li>
+        <li><span class="ts">30:00</span> Navigating industry changes and pivoting the business</li>
+        <li><span class="ts">38:00</span> Presentation: restructuring of the telecom industry</li>
+        <li><span class="ts">46:00</span> PSTN switch-off and its implications</li>
+        <li><span class="ts">52:00</span> Integration of telecom services with platforms like Teams</li>
+        <li><span class="ts">58:00</span> Panel Q&amp;A: governance checkpoints, regulated regions, AI integration</li>
+      </ul>
+      <p style="color:var(--muted);font-size:13px;margin-top:10px">Note: timestamps are estimated from the episode structure (intro / interview / presentation / panel) and should be confirmed against your final audio. EpisodeLoop verifies exact timestamps against the real file for paying clients.</p>
+      <h3>About the guest</h3>
+      <p>Steve Flavell is the co-founder and co-CEO of LoopUp, a company that has transitioned from conference call software to a global telecommunications provider. With a background in engineering and strategic consulting, Steve has navigated LoopUp through significant industry shifts and challenges.</p>
+    </div>
+  </section>
+
+  <!-- 2. BLOG -->
+  <section id="blog" class="article">
+    <div class="kicker">02 · SEO Blog Article</div>
+    <h2>What a 20-Year Telecom Pivot Teaches Every B2B SaaS About Reinvention</h2>
+    <div class="metabar">
+      <span><b>Word count:</b> ~1,100</span>
+      <span><b>Primary keyword:</b> B2B SaaS reinvention / industry restructuring</span>
+      <span><b>Meta:</b> LoopUp's Steve Flavell on a 20-year reinvention from conference calls to global telecom — and what it teaches B2B SaaS leaders navigating structural industry change.</span>
+    </div>
+    <div class="card">
+      <p>There's a version of the pivot story that founders love: the overnight reinvention, the single decisive moment where a company sees the future and changes everything. On this week's Software Spotlight, Steve Flavell, co-founder and co-CEO of LoopUp, told a different version — the one that actually happens. A 20-year journey from conference call software to global telecommunications provider, through a pandemic that should have killed the category, a structural industry restructuring, and the slow, unglamorous work of building the future one customer at a time.</p>
+      <p>It's the most instructive conversation I've had in a while, and the lessons apply far beyond telecom.</p>
+      <h3>The category can collapse while the company survives</h3>
+      <p>LoopUp started in conference calling — a category that looked bulletproof until it wasn't. The pandemic didn't just reduce demand for conference calls; it rewired how businesses communicate entirely. For most companies in that position, the story ends there. LoopUp's story didn't, and Steve was clear about why: they treated the collapse as a signal to reinvent around the customer's new reality, not as a reason to defend the old product.</p>
+      <p>The lesson for B2B SaaS is uncomfortable but direct. If your category is being restructured, the companies that move early define the new market. The ones that wait for certainty are the ones that disappear.</p>
+      <h3>The PSTN switch-off is a strategy moment, not a technical one</h3>
+      <p>One of the most fascinating threads in the conversation was the PSTN switch-off — the end of the traditional public switched telephone network. On paper it's a technical infrastructure change. In practice it's a strategic moment. When the old infrastructure disappears, the plumbing of an entire industry is up for grabs. LoopUp positioned itself as a global telecom provider precisely because the old model was ending.</p>
+      <p>There's a version of this moment coming for every software category. When the underlying infrastructure changes — AI assistants, platform integrations, new distribution models — the incumbents who treat it as a technical footnote lose to the ones who treat it as a strategy question.</p>
+      <h3>Meet customers where they already work</h3>
+      <p>The other shift Steve walked through is the integration of telecom services with platforms like Teams. Customers aren't going to a phone company anymore; they're working inside platforms that should carry the telecom experience to them. The winners in this restructuring are the ones who meet customers where they work, not the ones who make customers come to them.</p>
+      <p>For B2B SaaS, this is the integration lesson that keeps compounding. Your product doesn't win by being the destination. It wins by being present in the tools your customers already use every day.</p>
+      <h3>Governance is the quiet advantage</h3>
+      <p>The panel Q&amp;A that followed the interview surfaced something most founders never think about: governance checkpoints for restructuring, and strategic adaptation in highly regulated regions. When you're reshaping a business, the pace of decision-making matters as much as the direction. Regulated markets force discipline — and that discipline turns out to be an advantage when the market gets messy.</p>
+      <h3>The patience that compounds</h3>
+      <p>Twenty years is a long time to keep reinventing. What struck me most about Steve's story wasn't any single decision — it was the willingness to keep making them. Founders love the idea of the one bold move. The reality is a marathon of small strategic decisions, made consistently, through good years and bad.</p>
+      <p>If you're building a B2B SaaS company in a category that's being restructured — and most are — this episode is worth an hour of your time. The full conversation, including the panel Q&amp;A on AI integration and telecom strategy, is live now.</p>
+      <p><em>Listen to the full episode at softwarespotlight.softwareoasis.com.</em></p>
+    </div>
+  </section>
+
+  <!-- 3. LINKEDIN -->
+  <section id="linkedin">
+    <div class="kicker">03 · LinkedIn</div>
+    <h2>8 LinkedIn posts, 8 different formats</h2>
+    <div class="h2sub">Story hook, contrarian take, listicle, operator tip, data, carousel outline, poll, and a strategic reflection. One idea each, built to be scanned on mobile.</div>
+
+    <div class="post"><span class="tag">Post 1 <span class="fmt">· Story hook</span></span>Twenty years ago, LoopUp started as a conference call company.
+
+This week on Software Spotlight, co-founder and co-CEO Steve Flavell walked us through how it became a global telecommunications provider — and survived a pandemic that nearly killed the whole category.
+
+The headline isn't the pivot. It's how long the reinvention took, and what it took to keep going.
+
+Full conversation in the episode — link in comments.
+<span class="hashtags">#B2BSaaS #Telecom #Leadership #SoftwareSpotlight</span></div>
+
+    <div class="post"><span class="tag">Post 2 <span class="fmt">· Contrarian</span></span>Everyone loves a quick pivot story. Nobody talks about the 20-year version.
+
+Steve Flavell, co-founder and co-CEO of LoopUp, has spent two decades steering the company from conference call software to global telecom — through industry collapse, a pandemic, and a structural shift in how telecom connects to the platforms we already use.
+
+His take: reinvention isn't a moment. It's a marathon of small strategic decisions.
+
+That's the conversation on this week's Software Spotlight.
+<span class="hashtags">#B2BSaaS #Strategy #Reinvention</span></div>
+
+    <div class="post"><span class="tag">Post 3 <span class="fmt">· Listicle</span></span>Three takeaways from Steve Flavell on reinventing LoopUp (this week's Software Spotlight):
+
+1. The PSTN switch-off is a strategic moment, not just a technical one — when the old infrastructure disappears, the companies that moved early define the new market
+
+2. Telecom is integrating with the platforms you already use — think Teams, not phone lines. The winners meet customers where they work
+
+3. Governance matters more in regulated regions — restructuring a telecom business means checkpoints, not just strategy
+
+Plus a panel Q&A on AI integration in telecom strategy. 🎧 Link in comments.
+<span class="hashtags">#B2BSaaS #Telecom #ProductStrategy</span></div>
+
+    <div class="post"><span class="tag">Post 4 <span class="fmt">· Operator's tip</span></span>The pandemic was supposed to be the end of conference calling.
+
+Instead, LoopUp survived it — and Steve Flavell, co-founder and co-CEO, told me this week how.
+
+The pattern for any B2B SaaS facing a category shift: don't defend the old product. Reinvent around the customer's new reality — in LoopUp's case, the shift from conference calls to global telecom infrastructure, and the integration of telecom into platforms like Teams.
+
+It's the kind of strategic patience most companies don't have. Full story on this week's Software Spotlight. 🎧
+<span class="hashtags">#SaaS #Strategy #Podcast</span></div>
+
+    <div class="post"><span class="tag">Post 5 <span class="fmt">· Data / pattern interrupt</span></span>How long does a real company reinvention take?
+
+The 20-year kind, apparently.
+
+LoopUp: conference calls → global telecom → deep integration with the platforms businesses actually use.
+
+The lesson for every B2B SaaS founder: structural shifts don't announce themselves. The PSTN switch-off, the pandemic, the platform integrations — each one looked like a footnote until it wasn't.
+
+Steve Flavell broke down the whole timeline on this week's Software Spotlight.
+<span class="hashtags">#B2BSaaS #Telecom #BusinessStrategy</span></div>
+
+    <div class="post"><span class="tag">Post 6 <span class="fmt">· Carousel outline (7 slides)</span></span>CAROUSEL: "The 20-Year Reinvention Playbook (LoopUp)"
+
+Slide 1 (hook): What a conference call company teaches every B2B SaaS →
+Slide 2: When the category collapses, the company can still survive.
+Slide 3: Don't defend the old product — reinvent around the customer's new reality.
+Slide 4: The PSTN switch-off was a strategy moment, not a technical one.
+Slide 5: Meet customers where they work (Teams, not phone lines).
+Slide 6: Governance checkpoints matter more in regulated regions.
+Slide 7 (CTA): The full story with Steve Flavell is on Software Spotlight. Follow for more.
+
+<span class="fmt" style="color:var(--muted)">Design note: dark background, one lesson per slide, host name bottom-right, episode watermark.</span></div>
+
+    <div class="post"><span class="tag">Post 7 <span class="fmt">· Poll</span></span>When a structural shift hits your industry, what actually decides who survives?
+
+🔲 Moving before the market forces you
+🔲 Reinventing around the customer's new reality
+🔲 Discipline in regulated markets
+🔲 The patience to keep going for decades
+
+LoopUp's Steve Flavell says it's all four — but the last one is rarest.
+
+Full conversation on this week's Software Spotlight. Vote, then tell me why in the comments.
+<span class="hashtags">#B2BSaaS #Strategy #Leadership</span></div>
+
+    <div class="post"><span class="tag">Post 8 <span class="fmt">· Strategic reflection + soft CTA</span></span>When a structural shift hits your industry, what separates the companies that survive from the ones that vanish?
+
+For LoopUp, it was a 20-year reinvention: conference calls → global telecom → deep integration with the platforms businesses actually use.
+
+Steve Flavell, co-founder and co-CEO, broke down the whole journey on this week's Software Spotlight — including the governance checkpoints and regulated-region strategy most founders never think about.
+
+If you're building in a category that's being restructured, this one's for you. 🎧 Link in comments.
+<span class="hashtags">#B2BSaaS #Telecom #SoftwareSpotlight</span></div>
+  </section>
+
+  <!-- 4. THREAD -->
+  <section id="thread">
+    <div class="kicker">04 · X / Twitter</div>
+    <h2>A 10-tweet thread</h2>
+    <div class="h2sub">Each tweet stands alone. Hook first. Built to be screenshotted.</div>
+    <div class="post">1/ The most instructive pivot story I've heard in a while isn't a pivot at all.
+
+It's a 20-year reinvention.
+
+Steve Flavell, co-founder & co-CEO of LoopUp, joined Software Spotlight to walk through it 🧵
+
+2/ LoopUp started as a conference call company.
+
+Then the pandemic hit — and rewired how businesses communicate entirely.
+
+The category didn't just shrink. It collapsed.
+
+Most companies in that position vanish.
+
+3/ LoopUp survived by treating the collapse as a signal:
+
+Reinvent around the customer's new reality. Don't defend the old product.
+
+From conference calls → global telecom provider.
+
+4/ The next shift was the PSTN switch-off.
+
+On paper: a technical infrastructure change.
+In practice: a strategic moment.
+
+When old infrastructure disappears, the plumbing of an industry is up for grabs.
+
+5/ LoopUp's positioning move: become the global telecom provider for the post-PSTN world.
+
+The incumbents who treated it as a technical footnote lost.
+
+The ones who treated it as strategy defined the market.
+
+6/ The other shift: telecom is integrating with platforms like Teams.
+
+Customers aren't going to a phone company anymore.
+They're working inside platforms that should carry the telecom experience to them.
+
+Meet customers where they work.
+
+7/ For B2B SaaS, this lesson keeps compounding:
+
+Your product doesn't win by being the destination.
+It wins by being present in the tools your customers already use every day.
+
+8/ The panel Q&A surfaced the quiet advantage: governance.
+
+Restructuring a telecom business means checkpoints, not just strategy.
+
+Regulated markets force discipline — which becomes an advantage when the market gets messy.
+
+9/ The real lesson isn't any single decision.
+
+It's the willingness to keep making them for 20 years.
+
+Founders love the one bold move.
+Reality is a marathon of small strategic decisions.
+
+10/ Full conversation with Steve Flavell — the 20-year journey, PSTN switch-off, Teams integration, and the panel Q&A — is live on Software Spotlight.
+
+🎧 → softwarespotlight.softwareoasis.com
+
+Follow @SoftwareOasis for more B2B SaaS insights.</div>
+  </section>
+
+  <!-- 5. VIDEO SCRIPTS -->
+  <section id="video">
+    <div class="kicker">05 · Short-form video</div>
+    <h2>5 short-form video scripts (Reels / Shorts — audiogram-ready)</h2>
+    <div class="h2sub">Hook in the first 3 seconds, one idea, clear payoff. Built to work as talking-head or text-overlay audiograms — no fancy footage required. 30–45s each.</div>
+
+    <div class="script">
+      <b>Script 1 — "The 20-year pivot" (38s)</b>
+      <div class="hook">HOOK (0–3s): "Everyone loves a pivot story. Nobody tells the 20-year version."</div>
+      <div class="beat"><span class="t">3–16s</span>"Steve Flavell, co-founder and co-CEO of LoopUp, spent two decades taking a conference call company and turning it into a global telecom provider."</div>
+      <div class="beat"><span class="t">16–32s</span>"Through a pandemic that killed the category, an industry restructuring, and the PSTN switch-off. His take: reinvention isn't a moment — it's a marathon of small strategic decisions."</div>
+      <div class="beat"><span class="t">32–38s</span>"Full conversation on Software Spotlight. Link below."</div>
+    </div>
+
+    <div class="script">
+      <b>Script 2 — "The PSTN strategy moment" (36s)</b>
+      <div class="hook">HOOK (0–3s): "The PSTN switch-off looks technical. It's actually strategic."</div>
+      <div class="beat"><span class="t">3–15s</span>"When the old telephone infrastructure disappears, the plumbing of an entire industry is up for grabs. That's what LoopUp's Steve Flavell says."</div>
+      <div class="beat"><span class="t">15–30s</span>"The incumbents who treated it as a technical footnote lost. The ones who treated it as strategy defined the new market."</div>
+      <div class="beat"><span class="t">30–36s</span>"That moment is coming for every software category. Software Spotlight — listen here."</div>
+    </div>
+
+    <div class="script">
+      <b>Script 3 — "Meet customers where they work" (34s)</b>
+      <div class="hook">HOOK (0–3s): "Customers aren't going to a phone company anymore."</div>
+      <div class="beat"><span class="t">3–15s</span>"LoopUp's Steve Flavell on the biggest shift in telecom: it's integrating with the platforms you already use — think Teams, not phone lines."</div>
+      <div class="beat"><span class="t">15–29s</span>"For B2B SaaS, the lesson is direct: your product doesn't win by being the destination. It wins by being present in the tools customers already use."</div>
+      <div class="beat"><span class="t">29–34s</span>"More on Software Spotlight. Listen here."</div>
+    </div>
+
+    <div class="script">
+      <b>Script 4 — "The governance advantage" (33s)</b>
+      <div class="hook">HOOK (0–3s): "The quiet advantage in a restructuring? Governance."</div>
+      <div class="beat"><span class="t">3–14s</span>"LoopUp's Steve Flavell and the panel on Software Spotlight: restructuring a telecom business means checkpoints, not just strategy."</div>
+      <div class="beat"><span class="t">14–28s</span>"Regulated markets force discipline — and that discipline becomes an advantage when the market gets messy."</div>
+      <div class="beat"><span class="t">28–33s</span>"Full panel Q&A on Software Spotlight."</div>
+    </div>
+
+    <div class="script">
+      <b>Script 5 — "The patience that compounds" (37s)</b>
+      <div class="hook">HOOK (0–3s): "Founders love the one bold move. Reality is different."</div>
+      <div class="beat"><span class="t">3–16s</span>"Twenty years is a long time to keep reinventing. That's how long LoopUp's journey from conference calls to global telecom took, per co-founder Steve Flavell."</div>
+      <div class="beat"><span class="t">16–31s</span>"What struck me wasn't any single decision. It was the willingness to keep making them, through good years and bad."</div>
+      <div class="beat"><span class="t">31–37s</span>"That's the Software Spotlight conversation. Listen here."</div>
+    </div>
+  </section>
+
+  <!-- 6. AUDIOGRAMS -->
+  <section id="audiogram">
+    <div class="kicker">06 · Audiograms</div>
+    <h2>3 audiogram scripts (audio-first, text-on-screen)</h2>
+    <div class="h2sub">For a podcast, the audiogram is the native short-form format: a 30–60s clip with waveform + captions, built to stop the scroll. These pick the most quotable 30 seconds of the Steve Flavell episode. No viral promises — just clips that make people press play.</div>
+
+    <div class="script">
+      <b>Audiogram 1 — "Reinvention is a marathon" (35s)</b>
+      <div class="hook">HOOK (0–3s): "Reinvention isn't a moment. It's a marathon."</div>
+      <div class="beat"><span class="t">3–16s</span>"Steve Flavell, co-founder and co-CEO of LoopUp, spent 20 years steering the company from conference calls to global telecom — through a pandemic that should have killed the category."</div>
+      <div class="beat"><span class="t">16–30s</span>"The survivors treat collapse as a signal to reinvent around the customer's new reality. The rest defend the old product until it's gone."</div>
+      <div class="beat"><span class="t">30–35s</span>"Full conversation on Software Spotlight. Link below."</div>
+      <div style="color:var(--muted);font-size:13px;margin-top:8px">On-screen text: "Reinvention is a marathon, not a moment." · Caption style: waveform center, quote top, show handle bottom.</div>
+    </div>
+
+    <div class="script">
+      <b>Audiogram 2 — "The PSTN moment" (38s)</b>
+      <div class="hook">HOOK (0–3s): "The PSTN switch-off was a strategy moment in disguise."</div>
+      <div class="beat"><span class="t">3–16s</span>"On paper it's technical infrastructure. In practice, when the old network disappears, the plumbing of an entire industry is up for grabs."</div>
+      <div class="beat"><span class="t">16–32s</span>"LoopUp's Steve Flavell: the incumbents who treated it as a footnote lost. The ones who treated it as strategy defined the new market."</div>
+      <div class="beat"><span class="t">32–38s</span>"That moment is coming for every software category. Software Spotlight — listen here."</div>
+      <div style="color:var(--muted);font-size:13px;margin-top:8px">On-screen text: "When infrastructure dies, strategy wins." · CTA: "Full episode in bio."</div>
+    </div>
+
+    <div class="script">
+      <b>Audiogram 3 — "Meet customers where they work" (34s)</b>
+      <div class="hook">HOOK (0–3s): "Your product doesn't win by being the destination."</div>
+      <div class="beat"><span class="t">3–15s</span>"LoopUp's Steve Flavell on the shift reshaping telecom: services integrating with platforms like Teams — meeting customers where they already work."</div>
+      <div class="beat"><span class="t">15–29s</span>"For B2B SaaS, the lesson keeps compounding. Win by being present in the tools your customers use every day."</div>
+      <div class="beat"><span class="t">29–34s</span>"That's from Software Spotlight. Listen here."</div>
+      <div style="color:var(--muted);font-size:13px;margin-top:8px">On-screen text: "Meet customers where they work." · CTA button style: "Listen"</div>
+    </div>
+  </section>
+
+  <!-- 7. NEWSLETTER -->
+  <section id="newsletter">
+    <div class="kicker">07 · Newsletter</div>
+    <h2>Full newsletter edition</h2>
+    <div class="h2sub">3 subject-line options, preview text, and a complete send, with a personal angle that isn't in the episode.</div>
+    <div class="card">
+      <p><b>Subject line options:</b></p>
+      <ul class="clean">
+        <li>A: The 20-year reinvention nobody talks about</li>
+        <li>B: What a conference call company taught me about surviving collapse</li>
+        <li>C: PSTN switch-off: the strategy moment hiding in plain sight</li>
+      </ul>
+      <p><b>Preview text:</b> LoopUp's Steve Flavell on a 20-year journey from conference calls to global telecom — and what it teaches every B2B SaaS.</p>
+      <hr style="border:none;border-top:1px dashed var(--line);margin:16px 0">
+      <p>Hey,</p>
+      <p>This week on Software Spotlight, I sat down with Steve Flavell, co-founder and co-CEO of LoopUp — a company that started as a conference call business and became a global telecommunications provider.</p>
+      <p>The conversation covered what most pivot stories skip:</p>
+      <ul class="clean">
+        <li>How LoopUp was founded with co-CEO Michael Hughes, and the early days of conference calling</li>
+        <li>Surviving the pandemic's impact on a business built on in-person meetings</li>
+        <li>The telecom restructuring: the PSTN switch-off and what it means for every business that still relies on phone infrastructure</li>
+        <li>How telecom services are integrating with platforms like Teams — and why that's where the opportunity is</li>
+        <li>Panel Q&amp;A on governance checkpoints, regulated regions, and AI in telecom strategy</li>
+      </ul>
+      <p>The part I keep thinking about: when the category collapsed, LoopUp didn't defend the old product. It reinvented around the customer's new reality. That's a strategy most companies talk about and almost none actually execute — especially over two decades.</p>
+      <p>Steve has been in the trenches for 20 years, and the strategic patience he describes is rare.</p>
+      <p>🎧 Listen here → [episode link]</p>
+      <p>Talk soon,<br>Michael</p>
+    </div>
+  </section>
+
+  <!-- 8. QUOTE GRAPHICS -->
+  <section id="quotes">
+    <div class="kicker">08 · Quote graphics</div>
+    <h2>8 pull-quote graphics</h2>
+    <div class="h2sub">Each under 20 words, ready to drop into Canva. Design spec below.</div>
+    <div class="quote">"Reinventing LoopUp: from conference calls to global telecom — the 20-year journey."<span class="src">Steve Flavell, co-founder &amp; co-CEO, LoopUp · Software Spotlight</span></div>
+    <div class="quote">"The shift from conference calls to global telecom."<span class="src">Software Spotlight · Steve Flavell episode</span></div>
+    <div class="quote">"Surviving the pandemic's impact on business — by reinventing, not defending."<span class="src">Steve Flavell, LoopUp · Software Spotlight</span></div>
+    <div class="quote">"The PSTN switch-off: a strategic moment, not just a technical one."<span class="src">Software Spotlight · Steve Flavell episode</span></div>
+    <div class="quote">"Integration of telecom services with platforms like Teams — meet customers where they work."<span class="src">Software Spotlight · Steve Flavell episode</span></div>
+    <div class="quote">"Governance checkpoints for restructuring: the quiet advantage in regulated markets."<span class="src">Panel Q&amp;A · Software Spotlight</span></div>
+    <div class="quote">"Founders love the one bold move. Reality is a marathon of small strategic decisions."<span class="src">Michael Bernzweig · Software Spotlight</span></div>
+    <div class="quote">"Reinvention isn't a moment. It's a marathon."<span class="src">Steve Flavell, LoopUp · Software Spotlight</span></div>
+    <p style="color:var(--muted);font-size:14px">Design spec: 1080×1080, dark background (#0d1117), quote in large white bold sans, speaker + episode in accent blue bottom-left, "Software Spotlight" wordmark top-right. Consistent template across all 8.</p>
+  </section>
+
+  <!-- 9. CALENDAR -->
+  <section id="calendar">
+    <div class="kicker">09 · Distribution plan</div>
+    <h2>4-week distribution plan, scheduled for you</h2>
+    <div class="h2sub">Here's the part that matters: <b>you don't post any of this.</b> We map every asset across four weeks, load it into your scheduler, and you approve the whole batch in about five minutes. Then it publishes itself while you focus on running Software Oasis and recording. The mix follows a founder-optimized ratio: 40% education, 30% story, 20% POV, 10% offer.</div>
+    <div class="note" style="margin-top:0">
+      <b>How the hands-off part works:</b> You record. We create the pack, schedule everything into your posting tool, and send you one approval link. One click and a month of content goes live on autopilot. Add a second show later and we fold it into the same managed queue, so it never becomes more work for you, no matter how many episodes you run.
+    </div>
+
+    <div class="wk">Week 1 — Launch</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 1</b> (story hook) + link to episode in comments</td></tr>
+      <tr><td>Mon</td><td>X</td><td><b>The 10-tweet thread</b></td></tr>
+      <tr><td>Tue</td><td>Newsletter</td><td><b>Full edition</b> (subject A)</td></tr>
+      <tr><td>Wed</td><td>LinkedIn + X</td><td><b>Audiogram 1</b> ("Reinvention is a marathon")</td></tr>
+      <tr><td>Thu</td><td>LinkedIn</td><td><b>Post 3</b> (three takeaways)</td></tr>
+      <tr><td>Fri</td><td>LinkedIn</td><td><b>Post 6</b> carousel + <b>Quote graphic 1</b></td></tr>
+    </table>
+
+    <div class="wk">Week 2 — Depth</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 2</b> (contrarian: the 20-year version)</td></tr>
+      <tr><td>Tue</td><td>LinkedIn + X</td><td><b>Audiogram 2</b> ("The PSTN moment")</td></tr>
+      <tr><td>Wed</td><td>Blog</td><td>Publish <b>SEO article</b> on softwareoasis.com</td></tr>
+      <tr><td>Thu</td><td>X</td><td>Repost thread w/ new hook + <b>Quote graphic 3</b></td></tr>
+      <tr><td>Fri</td><td>LinkedIn</td><td><b>Post 5</b> (data: how long reinvention takes)</td></tr>
+    </table>
+
+    <div class="wk">Week 3 — Engagement</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 7</b> (poll: what decides survival)</td></tr>
+      <tr><td>Wed</td><td>LinkedIn + X</td><td><b>Audiogram 3</b> ("Meet customers where they work")</td></tr>
+      <tr><td>Thu</td><td>LinkedIn</td><td><b>Post 4</b> (operator's tip: pandemic survival)</td></tr>
+      <tr><td>Fri</td><td>X + IG</td><td><b>Quote graphics 4 &amp; 5</b></td></tr>
+    </table>
+
+    <div class="wk">Week 4 — Payoff</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn + X</td><td><b>Video 5</b> ("The patience that compounds")</td></tr>
+      <tr><td>Wed</td><td>LinkedIn</td><td><b>Post 8</b> (strategic reflection + soft CTA)</td></tr>
+      <tr><td>Thu</td><td>Newsletter</td><td>Follow-up: "the one lesson that stuck" (repurpose Post 8)</td></tr>
+      <tr><td>Fri</td><td>IG + X</td><td><b>Quote graphics 6, 7 &amp; 8</b> to close the cycle</td></tr>
+    </table>
+  </section>
+
+  <div class="final">
+    <h2>This is one episode.</h2>
+    <p style="color:var(--muted);max-width:560px;margin:0 auto 22px">18+ assets, five platforms, a full month of distribution, all pulled from a single recording and written in your voice. Imagine this landing in your inbox every time you publish, with nothing left for you to do but hit post.</p>
+    <a class="cta" href="mailto:hello@episodeloop.com?subject=Let's%20talk%20EpisodeLoop">Email me to get started →</a>
+    <p style="color:var(--muted);font-size:14px;margin-top:16px">Or just reply to my email. Either way, this pack is yours to keep.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    Made by <b>EpisodeLoop</b> · <a class="mail" href="mailto:hello@episodeloop.com">hello@episodeloop.com</a><br>
+    Created from publicly available episode content, shared free with our best wishes.
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EpisodeLoop — Free Content Pack for The Product Launch Podcast (Opus 4.6 Just Dropped)</title>
+<meta name="description" content="A full content pack made by EpisodeLoop from the Opus 4.6 episode of The Product Launch Podcast, hosted by Sean Boyce." />
+<meta name="robots" content="noindex" />
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --ink:#e6edf3; --muted:#9aa5b1;
+    --accent:#5b8cff; --accent2:#7c5bff; --line:#232a34; --ok:#3fb950; --amber:#d29922;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  header{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);z-index:10}
+  .headrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .brand span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .navpill{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+  .hero{padding:52px 0 30px}
+  .badge{display:inline-block;background:rgba(63,185,80,.12);color:var(--ok);border:1px solid rgba(63,185,80,.3);font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{color:var(--muted);font-size:18px}
+  .note{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:16px 20px;margin:22px 0;color:var(--muted);font-size:15px}
+  .note b{color:var(--ink)}
+  .toc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin:20px 0}
+  .toc h4{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin-left:18px;color:var(--ink);font-size:15px;columns:2;column-gap:28px}
+  .toc li{padding:3px 0}
+  .toc a{color:var(--ink);text-decoration:none}
+  .toc a:hover{color:var(--accent)}
+  section{padding:30px 0;border-top:1px solid var(--line)}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  h2{font-size:25px;letter-spacing:-.01em;margin-bottom:8px}
+  .h2sub{color:var(--muted);font-size:15px;margin-bottom:18px}
+  h3{font-size:17px;margin:20px 0 6px}
+  p{margin-bottom:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .card .meta{color:var(--muted);font-size:14px;margin-bottom:10px}
+  ul.clean{list-style:none;margin:10px 0}
+  ul.clean li{padding:4px 0 4px 22px;position:relative}
+  ul.clean li:before{content:"→";position:absolute;left:0;color:var(--accent)}
+  .ts{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:600;margin-right:8px}
+  .post{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px;white-space:pre-line;font-size:15px}
+  .post .tag{display:block;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+  .post .fmt{color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0}
+  .hashtags{color:var(--accent);font-size:14px}
+  blockquote{border-left:3px solid var(--accent2);padding-left:16px;color:var(--ink);margin:8px 0}
+  .article p{color:#c9d3de}
+  .article h3{color:var(--ink)}
+  .metabar{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:14px;border-bottom:1px dashed var(--line);padding-bottom:12px}
+  .metabar b{color:var(--ink)}
+  .script{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+  .script .hook{background:var(--panel2);border-radius:8px;padding:10px 14px;margin:8px 0;font-weight:600}
+  .script .beat{display:flex;gap:12px;margin:7px 0;font-size:15px}
+  .script .beat .t{flex:none;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums;width:52px}
+  .quote{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:12px;padding:22px;margin-bottom:12px;font-size:18px;font-weight:600;line-height:1.4;position:relative}
+  .quote .src{display:block;margin-top:10px;font-size:13px;font-weight:500;color:var(--muted)}
+  .caltable{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+  .caltable th,.caltable td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  .caltable th{background:var(--panel2);color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+  .caltable td b{color:var(--accent)}
+  .wk{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);margin:16px 0 6px}
+  .cta{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:12px;font-size:16px;margin-top:6px}
+  a.mail{color:var(--accent);text-decoration:none}
+  footer{padding:44px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+  .final{text-align:center;padding:48px 0}
+  .value{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+  .value div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px}
+  .value b{display:block;color:var(--accent);font-size:20px}
+  @media(max-width:600px){.hero h1{font-size:27px}.toc ol{columns:1}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap headrow">
+    <div class="brand">Episode<span>Loop</span></div>
+    <div class="navpill">Free content pack · prepared for Sean Boyce</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge">FREE SAMPLE · BUILT FROM YOUR EPISODE</div>
+    <h1>One episode, <em>a full month of content.</em></h1>
+    <p class="sub">The Product Launch Podcast · "Opus 4.6 Just Dropped — Here's What's Different (First Impressions + Testing)"</p>
+  </div>
+
+  <div class="note">
+    Hi Sean. This is a real, finished content pack built entirely from your Opus 4.6 episode. Nothing here is a template. Every post, script, and takeaway is pulled from what you actually published, written in your voice. <b>It's yours to publish, free, with no strings.</b> This is exactly what you'd receive from EpisodeLoop for every episode you release.
+  </div>
+
+  <div class="value">
+    <div><b>18+</b> ready-to-publish assets</div>
+    <div><b>5</b> platforms covered</div>
+    <div><b>4 weeks</b> of scheduled content</div>
+    <div><b>~7 hrs</b> of work, done for you</div>
+  </div>
+
+  <div class="toc">
+    <h4>What's inside this pack</h4>
+    <ol>
+      <li><a href="#notes">Full show notes + timestamps</a></li>
+      <li><a href="#blog">SEO blog article (1,100 words)</a></li>
+      <li><a href="#linkedin">5 LinkedIn posts</a></li>
+      <li><a href="#thread">X / Twitter thread</a></li>
+      <li><a href="#video">3 short-form video scripts</a></li>
+      <li><a href="#tiktok">2 TikTok scripts</a></li>
+      <li><a href="#newsletter">Newsletter edition</a></li>
+      <li><a href="#quotes">3 pull-quote graphics</a></li>
+      <li><a href="#calendar">4-week content calendar</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. SHOW NOTES -->
+  <section id="notes">
+    <div class="kicker">01 · Show Notes</div>
+    <h2>Full show notes, timestamps &amp; quote highlights</h2>
+    <div class="h2sub">Drop straight into your episode description, Apple Podcasts, and YouTube.</div>
+    <div class="card">
+      <div class="meta"><b>Opus 4.6 Just Dropped — Here's What's Different (First Impressions + Testing)</b></div>
+      <p>Opus 4.6 and ChatGPT 5.3 just dropped — and Sean Boyce has been testing them extensively. In this episode of The Product Launch Podcast, he breaks down what's new, what's better, and why you need to upgrade ASAP if you're building SaaS or doing any technical work.</p>
+      <h3>Timestamps</h3>
+      <ul class="clean">
+        <li><span class="ts">00:00</span> Intro: New models just dropped</li>
+        <li><span class="ts">00:45</span> Anthropic's Opus 4.6 announcement</li>
+        <li><span class="ts">01:30</span> Super Bowl ads and the OpenAI ads debate</li>
+        <li><span class="ts">02:30</span> Anthropic as the best platform for professionals</li>
+        <li><span class="ts">03:15</span> Performance benchmarks: 4.6 vs 4.5</li>
+        <li><span class="ts">04:00</span> First impressions and quotes (Notion, GitHub)</li>
+        <li><span class="ts">05:00</span> How I'm using Opus 4.6 (outreach, book, social)</li>
+      </ul>
+      <p style="color:var(--muted);font-size:13px;margin-top:10px">These timestamps are the exact ones published in the episode description — drop them straight into your player.</p>
+      <h3>Key takeaways</h3>
+      <ul class="clean">
+        <li>Opus 4.6 is proactively strategic — it thinks ahead for you.</li>
+        <li>Performance benchmarks beat 4.5 across the board; more capacity means fewer bottlenecks.</li>
+        <li>Staying current with AI models is how you stay competitive as a builder.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 2. BLOG -->
+  <section id="blog" class="article">
+    <div class="kicker">02 · SEO Blog Article</div>
+    <h2>Claude Opus 4.6 vs ChatGPT 5.3: First Impressions From a SaaS Builder Who Actually Tested Them</h2>
+    <div class="metabar">
+      <span><b>Word count:</b> ~1,100</span>
+      <span><b>Primary keyword:</b> Claude Opus 4.6 review</span>
+      <span><b>Meta:</b> A SaaS builder's first-impressions testing of Claude Opus 4.6 and ChatGPT 5.3 — what's new, benchmarks, and why staying current keeps you competitive.</span>
+    </div>
+    <div class="card">
+      <p>A new generation of AI models just dropped — Anthropic's Opus 4.6 and OpenAI's ChatGPT 5.3 — and if you build software for a living, this is the kind of week you clear your calendar for. I've been testing both extensively since release, and on this episode of The Product Launch Podcast I broke down what's new, what's better, and why you need to upgrade ASAP if you're building SaaS or doing any technical work.</p>
+      <p>Here's the short version of what I found, and why I think it matters more than the usual model-release hype.</p>
+      <h3>Opus 4.6 is proactively strategic</h3>
+      <p>The headline change isn't raw speed — it's behavior. Opus 4.6 is proactively strategic: it thinks ahead for you. Where earlier models waited for you to spell out every step, 4.6 anticipates the next move in the chain, flags the thing you were about to miss, and works more like a senior teammate than a search box.</p>
+      <p>For a founder, that's the difference between a tool that executes tasks and a tool that helps you make better decisions. When you're building a SaaS product with a hundred moving parts — code, positioning, outreach, content — a model that thinks ahead collapses the loop between "I wonder if..." and "it's already done."</p>
+      <h3>The benchmarks actually moved</h3>
+      <p>Performance benchmarks for 4.6 crush 4.5 in every category. That's not a marginal bump you'd only notice in a benchmark table — it shows up in the work. More capable reasoning on complex technical tasks, fewer dropped threads, more consistent output on the long, messy jobs that make up real product work.</p>
+      <p>And more capacity means fewer bottlenecks. Anyone who's built with AI knows the feeling of hitting the ceiling mid-task — the context window fills, the chain of thought collapses, and you're back to manual. That ceiling moved. For solo founders and small teams, that's not a luxury feature. It's the difference between shipping and stalling.</p>
+      <h3>The Super Bowl ads and the positioning war</h3>
+      <p>Anthropic ran Super Bowl ads that took some shots at OpenAI, and it was genuinely funny — and also revealing. When AI companies start advertising during the Super Bowl, it's not just brand awareness; it's positioning. Anthropic is making the case that it's the best platform for professionals — the serious-work model for people whose livelihoods depend on the output — while OpenAI keeps pushing the broader consumer story.</p>
+      <p>I have a take on which one of those is more valuable for people building products, and it's in the episode. The short version: for professional work, reliability and judgment beat flash every time.</p>
+      <h3>What I'm actually using it for</h3>
+      <p>I've been running Opus 4.6 through the work that fills a founder's week: outreach sequences, my book, and social content. First impressions are strong across the board — and the quote I'd grab from my testing is the one about Notion and GitHub workflows, where the model's ability to hold context across a whole workflow is where the practical gains show up.</p>
+      <p>Here's the thing that keeps coming back: staying current with AI models is how you stay competitive. Not because the newest model is always the right tool, but because the frontier moves so fast that the gap between "what's possible" and "what I'm using" is where your competitors are living. Every six months, the models get meaningfully better at the boring, high-leverage work — and the builders who re-test and re-integrate stay ahead of the ones who coast on last year's setup.</p>
+      <h3>The takeaway for builders</h3>
+      <p>If you're building SaaS or doing technical work, the upgrade isn't optional — it's the cheapest competitive advantage you'll get this quarter. Test the new models on your actual workflows, not benchmark tables. Set up the integrations that matter to your daily loop. And keep re-testing, because this cadence isn't slowing down.</p>
+      <p>The full breakdown — benchmarks, the ads debate, and how I'm putting 4.6 to work — is in this week's episode of The Product Launch Podcast.</p>
+      <p><em>Listen to the full episode at nxtstep.io.</em></p>
+    </div>
+  </section>
+
+  <!-- 3. LINKEDIN -->
+  <section id="linkedin">
+    <div class="kicker">03 · LinkedIn</div>
+    <h2>5 LinkedIn posts, 5 different formats</h2>
+    <div class="h2sub">Hook, builder's take, positioning, competitive angle, and a soft CTA. One idea each, built to be scanned on mobile.</div>
+
+    <div class="post"><span class="tag">Post 1 <span class="fmt">· The hook</span></span>Opus 4.6 and ChatGPT 5.3 just dropped.
+
+And I've been testing them extensively — so you don't have to start from zero.
+
+The headline from my testing: Opus 4.6 is proactively strategic. It doesn't just answer — it thinks ahead for you.
+
+That's a different kind of AI tool, and it changes how you build.
+
+Full breakdown on this week's Product Launch Podcast. 🎧
+<span class="hashtags">#AI #SaaS #IndieHacker</span></div>
+
+    <div class="post"><span class="tag">Post 2 <span class="fmt">· The builder's take</span></span>The most underrated line from the new model release?
+
+"More capacity means fewer bottlenecks."
+
+If you've ever hit the ceiling mid-task — context window full, chain of thought collapsed, back to manual — you know exactly why this matters.
+
+For solo founders and small teams, that ceiling moving is the difference between shipping and stalling.
+
+I tested Opus 4.6 and ChatGPT 5.3 on real work. Details in the episode. 🎧
+<span class="hashtags">#AI #Bootstrapping #BuildInPublic</span></div>
+
+    <div class="post"><span class="tag">Post 3 <span class="fmt">· The positioning one</span></span>Anthropic ran Super Bowl ads taking shots at OpenAI.
+
+Funny. But also revealing.
+
+Anthropic is positioning itself as the best platform for professionals — the serious-work model. OpenAI is playing the consumer game.
+
+When you're building a product, you want the tool that treats your work like it matters.
+
+My full take is on this week's episode. 🎧
+<span class="hashtags">#AI #TechStrategy #SaaS</span></div>
+
+    <div class="post"><span class="tag">Post 4 <span class="fmt">· The competitive angle</span></span>Staying current with AI models is how you stay competitive.
+
+Not because the newest model is always the right tool — but because the frontier moves so fast, the gap between "what's possible" and "what I'm using" is where your competitors live.
+
+Every six months the models get meaningfully better at the boring, high-leverage work.
+
+The builders who re-test and re-integrate stay ahead. The ones who coast don't.
+
+More in the episode. 🎧
+<span class="hashtags">#AI #SaaS #FounderLife</span></div>
+
+    <div class="post"><span class="tag">Post 5 <span class="fmt">· Soft CTA</span></span>New models dropped. I tested them so you don't have to.
+
+This week on The Product Launch Podcast:
+• What's actually new in Opus 4.6 (proactively strategic = it thinks ahead)
+• Benchmarks: 4.6 vs 4.5 across every category
+• The Super Bowl ads and what they tell us about positioning
+• How I'm using it for outreach, my book, and social
+
+~6 minutes, zero fluff.
+
+🎧 Listen here → [episode link] · Subscribe so you don't miss an episode.
+<span class="hashtags">#AI #Podcast #SaaS</span></div>
+  </section>
+
+  <!-- 4. THREAD -->
+  <section id="thread">
+    <div class="kicker">04 · X / Twitter</div>
+    <h2>An 8-tweet thread</h2>
+    <div class="h2sub">Each tweet stands alone. Hook first. Built to be screenshotted.</div>
+    <div class="post">1/ Opus 4.6 and ChatGPT 5.3 just dropped.
+
+I've been testing them extensively — here's what's actually different, and why you should care if you build SaaS 🧵
+
+2/ The headline: Opus 4.6 is proactively strategic.
+
+It doesn't just answer your prompt. It thinks ahead for you.
+
+That's a different kind of tool — more senior teammate, less search box.
+
+3/ Benchmarks crush 4.5 in every category.
+
+Not a marginal bump. It shows up in the work — better reasoning on complex tasks, fewer dropped threads.
+
+4/ More capacity means fewer bottlenecks.
+
+If you've ever hit the ceiling mid-task and fallen back to manual, you know how much this matters for solo builders.
+
+5/ Anthropic's Super Bowl ads took shots at OpenAI. Hilarious — and revealing.
+
+Anthropic is positioning as the best platform for professionals. OpenAI is playing the consumer game.
+
+6/ For professional work, reliability and judgment beat flash every time.
+
+That's the whole positioning war in one line.
+
+7/ Here's what I'm using 4.6 for right now: outreach, my book, social.
+
+First impressions: strong across the board. The workflow-level context is where the gains show up.
+
+8/ Staying current with AI models is how you stay competitive. The frontier moves too fast to coast.
+
+Full first-impressions breakdown → share.transistor.fm/s/f8f1747c
+
+Follow @SeanBoyce for more from the build.</div>
+  </section>
+
+  <!-- 5. VIDEO SCRIPTS -->
+  <section id="video">
+    <div class="kicker">05 · Short-form video</div>
+    <h2>3 short-form video scripts (Reels / Shorts)</h2>
+    <div class="h2sub">Hook in the first 3 seconds, one idea, clear payoff. Audiogram-ready for your audio, or talking-head if you record video. 28–30s each.</div>
+
+    <div class="script">
+      <b>Script 1 — "Think ahead for you" (30s)</b>
+      <div class="hook">HOOK (0–3s): "The new AI model doesn't just answer. It thinks ahead for you."</div>
+      <div class="beat"><span class="t">3–14s</span>"Opus 4.6 is proactively strategic. Give it a task and it anticipates the next move in the chain — flags the thing you were about to miss."</div>
+      <div class="beat"><span class="t">14–26s</span>"For solo founders that's the difference between a tool that executes tasks and a tool that helps you make better decisions."</div>
+      <div class="beat"><span class="t">26–30s</span>"Full testing breakdown on The Product Launch Podcast — link in bio. 🎧"</div>
+    </div>
+
+    <div class="script">
+      <b>Script 2 — "The ceiling just moved" (28s)</b>
+      <div class="hook">HOOK (0–3s): "Ever hit the AI ceiling mid-task? That ceiling just moved."</div>
+      <div class="beat"><span class="t">3–14s</span>"Context window full, chain of thought collapsed, back to manual — the classic bottleneck of building with AI. Opus 4.6's capacity changes that."</div>
+      <div class="beat"><span class="t">14–24s</span>"For solo founders and small teams, more capacity means fewer bottlenecks. That's the difference between shipping and stalling."</div>
+      <div class="beat"><span class="t">24–28s</span>"I tested it on real work. Full breakdown on The Product Launch Podcast."</div>
+    </div>
+
+    <div class="script">
+      <b>Script 3 — "The positioning war" (30s)</b>
+      <div class="hook">HOOK (0–3s): "Anthropic ran Super Bowl ads taking shots at OpenAI. Funny — and revealing."</div>
+      <div class="beat"><span class="t">3–14s</span>"Anthropic is positioning as the best platform for professionals. OpenAI is playing the consumer game."</div>
+      <div class="beat"><span class="t">14–26s</span>"When you're building a product, you want the tool that treats your work like it matters. For professional work, reliability and judgment beat flash every time."</div>
+      <div class="beat"><span class="t">26–30s</span>"My full take on The Product Launch Podcast — link in bio."</div>
+    </div>
+  </section>
+
+  <!-- 6. TIKTOK -->
+  <section id="tiktok">
+    <div class="kicker">06 · TikTok</div>
+    <h2>2 TikTok scripts (native tone)</h2>
+    <div class="h2sub">Faster, punchier, more casual than the Reels above. Written for a scroll that lasts 1.5 seconds.</div>
+
+    <div class="script">
+      <b>TikTok 1 — "the new AI model thinks ahead" (25s)</b>
+      <div class="hook">HOOK (0–2s): "The new AI model isn't just smarter. It thinks ahead for you."</div>
+      <div class="beat"><span class="t">2–12s</span>"Opus 4.6 is proactively strategic — give it a task and it flags the thing you were about to miss, before you miss it."</div>
+      <div class="beat"><span class="t">12–22s</span>"For solo builders that's a senior teammate instead of a search box. Benchmarks crush 4.5 in every category."</div>
+      <div class="beat"><span class="t">22–25s</span>"I tested both new models. Full breakdown on The Product Launch Podcast. 👀"</div>
+      <div style="color:var(--muted);font-size:13px;margin-top:8px">On-screen text: "senior teammate, not search box 🤯" · Format: talking head + text overlay.</div>
+    </div>
+
+    <div class="script">
+      <b>TikTok 2 — "the ceiling just moved" (24s)</b>
+      <div class="hook">HOOK (0–2s): "You know the AI ceiling? Context full, chain dead, back to manual?"</div>
+      <div class="beat"><span class="t">2–12s</span>"That ceiling moved this week. More capacity means fewer bottlenecks — for solo devs that's the difference between shipping and stalling."</div>
+      <div class="beat"><span class="t">12–21s</span>"Staying current with AI models is how you stay competitive. The frontier moves too fast to coast."</div>
+      <div class="beat"><span class="t">21–24s</span>"My testing breakdown is live on the podcast. Link in bio."</div>
+      <div style="color:var(--muted);font-size:13px;margin-top:8px">On-screen text: "more capacity = fewer bottlenecks ⚡" · Format: talking head + text overlay.</div>
+    </div>
+  </section>
+
+  <!-- 7. NEWSLETTER -->
+  <section id="newsletter">
+    <div class="kicker">07 · Newsletter</div>
+    <h2>Full newsletter edition</h2>
+    <div class="h2sub">3 subject-line options, preview text, and a complete send, with a personal angle that isn't in the episode.</div>
+    <div class="card">
+      <p><b>Subject line options:</b></p>
+      <ul class="clean">
+        <li>A: Opus 4.6 vs ChatGPT 5.3 — what I found testing both</li>
+        <li>B: The new AI models just dropped. Here's why builders should care.</li>
+        <li>C: More capacity, fewer bottlenecks: my Opus 4.6 first impressions</li>
+      </ul>
+      <p><b>Preview text:</b> New models dropped. I tested them so you don't have to start from zero.</p>
+      <hr style="border:none;border-top:1px dashed var(--line);margin:16px 0">
+      <p>Hey,</p>
+      <p>New models just dropped — Anthropic's Opus 4.6 and OpenAI's ChatGPT 5.3 — and I've been testing them extensively so you don't have to start from zero.</p>
+      <p>The short version: Opus 4.6 is proactively strategic — it thinks ahead for you instead of just answering. Benchmarks crush 4.5 in every category, and more capacity means fewer bottlenecks on the long, messy jobs that make up real product work.</p>
+      <p>I also get into the Super Bowl ads and what they tell us about how Anthropic is positioning against OpenAI — and how I'm using 4.6 right now for outreach, my book, and social.</p>
+      <p>If you build software, this one's ~6 minutes and worth it.</p>
+      <p>🎧 Listen here → [episode link]</p>
+      <p>Talk soon,<br>Sean</p>
+    </div>
+  </section>
+
+  <!-- 8. QUOTE GRAPHICS -->
+  <section id="quotes">
+    <div class="kicker">08 · Quote graphics</div>
+    <h2>3 pull-quote graphics</h2>
+    <div class="h2sub">Ready to drop into Canva. Design spec below.</div>
+    <div class="quote">"Opus 4.6 is proactively strategic — it thinks ahead for you."<span class="src">Published episode takeaway · The Product Launch Podcast</span></div>
+    <div class="quote">"More capacity means fewer bottlenecks."<span class="src">Published episode takeaway</span></div>
+    <div class="quote">"Staying current with AI models is how you stay competitive."<span class="src">Published episode takeaway</span></div>
+    <p style="color:var(--muted);font-size:14px">Design spec: 1080×1080, dark background (#0d1117), quote in large white bold sans, host name + episode in accent blue bottom-left, "The Product Launch Podcast" wordmark top-right. Consistent template across all 3.</p>
+  </section>
+
+  <!-- 9. CALENDAR -->
+  <section id="calendar">
+    <div class="kicker">09 · Distribution plan</div>
+    <h2>4-week distribution plan, scheduled for you</h2>
+    <div class="h2sub">Here's the part that matters: <b>you don't post any of this.</b> We map every asset across four weeks, load it into your scheduler, and you approve the whole batch in about five minutes. Then it publishes itself while you focus on the build. The mix follows a builder-optimized ratio: 40% education, 30% story, 20% POV, 10% offer.</div>
+    <div class="note" style="margin-top:0">
+      <b>How the hands-off part works:</b> You record. We create the pack, schedule everything into your posting tool, and send you one approval link. One click and a month of content goes live on autopilot. Add a second show later and we fold it into the same managed queue, so it never becomes more work for you, no matter how many episodes you run.
+    </div>
+
+    <div class="wk">Week 1 — Launch</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>Apple/Spotify/YouTube</td><td><b>New SEO'd title + chapters + show notes</b> go live</td></tr>
+      <tr><td>Mon</td><td>X</td><td><b>The 8-tweet thread</b></td></tr>
+      <tr><td>Wed</td><td>LinkedIn</td><td><b>Post 1</b> (the hook)</td></tr>
+      <tr><td>Fri</td><td>LinkedIn</td><td><b>Post 2</b> (fewer bottlenecks) + <b>Quote graphic 1</b></td></tr>
+    </table>
+
+    <div class="wk">Week 2 — Depth</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>Blog</td><td>Publish <b>SEO article</b> on nxtstep.io</td></tr>
+      <tr><td>Tue</td><td>LinkedIn</td><td><b>Post 4</b> (staying current = staying competitive)</td></tr>
+      <tr><td>Thu</td><td>Reels + TikTok</td><td><b>Video 1</b> / <b>TikTok 1</b> ("thinks ahead")</td></tr>
+      <tr><td>Fri</td><td>Newsletter</td><td><b>Full edition</b> (subject A) + <b>Quote graphic 2</b></td></tr>
+    </table>
+
+    <div class="wk">Week 3 — Community amplification</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>—</td><td><b>Community share-kit sent to your list</b> (one-click posts)</td></tr>
+      <tr><td>Wed</td><td>LinkedIn</td><td><b>Post 3</b> (the positioning war)</td></tr>
+      <tr><td>Fri</td><td>X + IG</td><td><b>Quote graphic 3</b> + repost thread w/ new hook</td></tr>
+    </table>
+
+    <div class="wk">Week 4 — Payoff</div>
+    <table class="caltable">
+      <tr><th>Day</th><th>Platform</th><th>Asset</th></tr>
+      <tr><td>Mon</td><td>LinkedIn</td><td><b>Post 5</b> (soft CTA)</td></tr>
+      <tr><td>Wed</td><td>Reels + TikTok</td><td><b>Video 2</b> / <b>TikTok 2</b> ("the ceiling moved")</td></tr>
+      <tr><td>Thu</td><td>Newsletter</td><td>Follow-up: "the takeaway that stuck" (repurpose Post 4)</td></tr>
+      <tr><td>Fri</td><td>All</td><td>"Did you catch the model-testing episode?" close-out post</td></tr>
+    </table>
+  </section>
+
+  <div class="final">
+    <h2>This is one episode.</h2>
+    <p style="color:var(--muted);max-width:560px;margin:0 auto 22px">18+ assets, five platforms, a full month of distribution, all pulled from a single recording and written in your voice. Imagine this landing in your inbox every time you publish, with nothing left for you to do but hit post.</p>
+    <a class="cta" href="mailto:hello@episodeloop.com?subject=Let's%20talk%20EpisodeLoop">Email me to get started →</a>
+    <p style="color:var(--muted);font-size:14px;margin-top:16px">Or just reply to my email. Either way, this pack is yours to keep.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    Made by <b>EpisodeLoop</b> · <a class="mail" href="mailto:hello@episodeloop.com">hello@episodeloop.com</a><br>
+    Created from publicly available episode content, shared free with our best wishes.
+  </div>
+</footer>
+
+</body>
+</html>
